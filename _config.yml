@@ -1,2 +1,17 @@
+# File: _config.yml
+webrick:
+  headers:
+    My-Header: My-Value
+    My-Other-Header: My-Other-Value
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+      type: "posts" # previously `post` in Jekyll 2.2.
+    values:
+      layout: "default"
+
+
 source:      _source
 destination: _deploy
