@@ -1,0 +1,3 @@
+<h1>Mysql 一个字段定义成int类型，查询时传入String，会截取字符串</h1>
+WHERE CONCAT(t.int_id) = '***' ;
+WHERE CAST(t.int_id as char) = '***' ;
