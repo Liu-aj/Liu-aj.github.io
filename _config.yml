@@ -16,3 +16,28 @@ defaults:
 source:      _source
 destination: _deploy
 theme: jekyll-theme-midnight
+
+
+# Site settings
+name: NO name
+email: aijia930515@126.com
+author: Liuaj
+url: https://laijia.github.io/
+resume_site: https://laijia.github.io/
+github: https://github.com/Laijia/laijia.github.io
+baseurl: "/LessOrMore"
+description: Actually, less is more!
+meta_description: 刘爱佳;个人博客;学而不思则罔;思而不学则殆;生命不止;折腾不休
+motto: It's our wits that make us men.
+banner: 学而不思则罔，思而不学则殆。
+
+#permalink: /:categories/:year/:month/:day/:title/
+permalink: /:year/:month/:day/:title/
+paginate: 10
+
+exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
+
+github_username: Laijia
+
+# Build settings
+markdown: kramdown
