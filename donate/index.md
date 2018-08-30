@@ -17,9 +17,6 @@ header: 打赏
 点击上面小额赞助即可呦！
 <br>
 
-<!-- ![Thank you very much!]({{ '/styles/images/freud.jpg' | prepend: site.baseurl }})
-<br> -->
-
 >声明: 此博客空间用于分享作者个人的一些技术相关， 此网站基于[MIT开源协议](https://github.com/Laijia/laijia.github.io/blob/master/LICENSE)所有内容完全免费，请放心使用。
 
 <hr>
@@ -40,8 +37,6 @@ header: 打赏
 
 <hr>
 您可以选择手机微信扫一扫
-
-<!-- ![微信二维码付款给Liuaj]({{ '/styles/images/weixin.png' | prepend: site.baseurl }}) -->
 
 <img src="{{ '/styles/images/weixin.png' | prepend: site.baseurl }}" alt="微信二维码付款给Liuaj" width="310" />
 
