@@ -6320,7 +6320,7 @@ hr {
 }
 /* Page headers */
 .docs-header {
-  padding: 15px 15px 15px;
+  padding: 15px 15px 15px 15px;
   /* side padding builds on .container 15px, so 30px */
   font-size: 16px;
   text-align: center;
@@ -6338,11 +6338,11 @@ hr {
 }
 @media (min-width: 768px) {
   .docs-header {
-    font-size: 21px;
+    font-size: 18px;
     text-align: left;
   }
   .docs-header h1 {
-    font-size: 60px;
+    font-size: 40px;
     line-height: 1;
   }
 }
