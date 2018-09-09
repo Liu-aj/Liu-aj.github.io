@@ -11,6 +11,22 @@ header: Posts By Tag
 				<div id="navigation">
 					<h1>目录</h1>
 					<ul class="nav sidenav">
+						{% for tag in site.tags %}
+							<li>
+								<a href="#{{ category[0] }}-ref">{{ tag[0] | join: "/" }} 
+									<span style="color: #999999;">({{tag[1].size }})</span> 
+								</a> 
+								<ul>
+									{% for post in tag[1] %}
+										<li>
+											<a href="{{ post.url }}">{{ post.title }}</a>
+										</li> 
+									{% endfor %}
+								</ul> 
+							</li>
+						{% endfor %}
+					</ul>
+<!-- 					<ul class="nav sidenav">
 						{% if site.tags.first[0] == null %}
 							{% for tag in site.tags %} 
 							<li><a href="{{ site.JB.tags_path }}#{{ tag }}-ref">{{ tag }} <span >({{ site.tags[tag].size }})</span></a></li>
@@ -20,7 +36,7 @@ header: Posts By Tag
 							<li><a href="{{ site.JB.tags_path }}#{{ tag[0] }}-ref">{{ tag[0] }} <span style="color: #999999;" >({{ tag[1].size }})</span></a></li>
 							{% endfor %}
 						{% endif %}
-					</ul>
+					</ul> -->
 				</div>
 			</div>
 		</div>

@@ -1,8 +1,8 @@
 ---
 layout: post
-title: mongoDB
+title: mongo去重统计
 date: 2018-09-07 18:11:26
-categories: [DB, DB]
+categories: DB
 tag: mongoDB
 ---
 
