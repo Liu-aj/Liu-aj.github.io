@@ -2,7 +2,7 @@
 layout: post
 title: Mysql
 date: 2018-08-29 14:27:25
-categories: DB
+categories: [DB, DB]
 tag: Mysql
 ---
 
