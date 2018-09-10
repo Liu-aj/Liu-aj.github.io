@@ -120,13 +120,13 @@
             </header>
             <article class="post-content">
               <ul id="markdown-toc">
-  <li><a href="#问题描述" id="markdown-toc-问题描述">问题描述：</a></li>
-  <li><a href="#解决方法" id="markdown-toc-解决方法">解决方法：</a></li>
-  <li><a href="#原因" id="markdown-toc-原因">原因：</a></li>
-  <li><a href="#引用" id="markdown-toc-引用">引用：</a></li>
+  <li><a href="#问题描述" id="markdown-toc-问题描述">问题描述</a></li>
+  <li><a href="#解决方法" id="markdown-toc-解决方法">解决方法</a></li>
+  <li><a href="#原因" id="markdown-toc-原因">原因</a></li>
+  <li><a href="#引用" id="markdown-toc-引用">引用</a></li>
 </ul>
 
-<h2 id="问题描述">问题描述：</h2>
+<h2 id="问题描述">问题描述</h2>
 <p>开发环境：jkd8、maven2.19</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;plugin&gt;
 	&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
@@ -142,15 +142,15 @@
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=256m; support was removed in 8.0
 </code></pre></div></div>
 
-<h2 id="解决方法">解决方法：</h2>
+<h2 id="解决方法">解决方法</h2>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Xmx512m -XX:MaxPermSize=256m
 </code></pre></div></div>
 <p>删除”-XX:MaxPermSize=256m”</p>
 
-<h2 id="原因">原因：</h2>
+<h2 id="原因">原因</h2>
 <p>在Java 8中，命令行标志MaxPermSize已被删除。</p>
 
-<h2 id="引用">引用：</h2>
+<h2 id="引用">引用</h2>
 <p>原文地址：<a href="https://codeday.me/bug/20170701/32022.html">Java HotSpot(TM)64位服务器VM警告：忽略选项MaxPermSize</a></p>
 
             </article>

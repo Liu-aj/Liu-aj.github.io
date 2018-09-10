@@ -119,15 +119,21 @@
               <br />
             </header>
             <article class="post-content">
-              <h2 id="问题描述">问题描述：</h2>
+              <ul id="markdown-toc">
+  <li><a href="#问题描述" id="markdown-toc-问题描述">问题描述</a></li>
+  <li><a href="#解决" id="markdown-toc-解决">解决</a></li>
+  <li><a href="#引用" id="markdown-toc-引用">引用</a></li>
+</ul>
+
+<h2 id="问题描述">问题描述</h2>
 <p>Mysql中某一字段定义成int类型，查询时传入String，会截取字符串</p>
 
-<h2 id="解决">解决：</h2>
+<h2 id="解决">解决</h2>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. SELECT COLUMN_NAME FROM TABLE_NAME t WHERE CONCAT(t.int_id) = '***' ;
 2. SELECT COLUMN_NAME FROM TABLE_NAME t WHERE CAST(t.int_id as char) = '***' ;
 </code></pre></div></div>
 
-<h2 id="引用">引用：</h2>
+<h2 id="引用">引用</h2>
 <p>原文地址：<a href="https://blog.csdn.net/xiaolyuh123/article/details/64441817?locationNum=3&amp;fps=1">Mysql 一个字段定义成int类型，查询时传入String，会截取字符串</a></p>
 
             </article>
