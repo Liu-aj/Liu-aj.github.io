@@ -2,8 +2,8 @@
 layout: post
 title: Mysql
 date: 2018-08-29 14:27:25
-forTypes: DB
-categories: DB
+forType: DB
+category: Mysql
 tag: Mysql
 ---
 

@@ -2,7 +2,8 @@
 layout: post
 title: mongo去重统计
 date: 2018-09-07 18:11:26
-categories: DB
+forType: DB
+category: mongoDB
 tag: mongoDB
 ---
 
