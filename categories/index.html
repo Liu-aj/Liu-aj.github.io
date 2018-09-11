@@ -40,7 +40,7 @@ header: Posts By Category
 								{% for post in site.posts %}
 									{% if post.forType == forType and post.category == category[0]%}
 										{% if my_variable != true %}
-											<h2 id="category_{{forType}}_{{category[0]}}">{{category[0]}}</h2>
+											<h3 id="category_{{forType}}_{{category[0]}}">{{category[0]}}</h3>
 											<ul>
 												{% assign my_variable = true %}
 										{% endif %}
@@ -48,7 +48,7 @@ header: Posts By Category
 												<li><span>{{ post.date | date: "%B %e, %Y" }}</span> &raquo; <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
 											</ol>
 									{% endif %}
-									{% if post.next != null %}
+									{% if post.next == null %}
 										</ul>
 									{% endif %}
 								{% endfor %}

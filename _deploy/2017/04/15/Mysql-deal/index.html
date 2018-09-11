@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Mysql定义类型与查询类型不一致问题处理 - Liuaj's blog</title>
+	<title>Mysql Deal - Liuaj's blog</title>
 
 	<link rel="shortcut icon" href="/styles/images/favicon.jpg">
 	<link rel="icon" href="/styles/images/favicon.jpg">
@@ -13,10 +13,10 @@
 	<link rel="stylesheet" href="/styles/css/index.css">
 	<link rel="stylesheet" href="/styles/css/fontawesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="/styles/css/syntax.css">
-	<link rel="canonical" href="/2018/08/29/MySql-int-type-query-by-string/">
+	<link rel="canonical" href="/2017/04/15/Mysql-deal/">
 	<link rel="alternate" type="application/rss+xml" title="Liuaj's blog" href="/feed.xml">
 	
-	<meta name="keywords" content="Mysql定义类型与查询类型不一致问题处理, Liuaj's blog, 刘爱佳;个人博客;学而不思则罔;思而不学则殆;生命不止;折腾不休">
+	<meta name="keywords" content="Mysql Deal, Liuaj's blog, 刘爱佳;个人博客;学而不思则罔;思而不学则殆;生命不止;折腾不休">
 	<meta name="description" content="刘爱佳;个人博客;学而不思则罔;思而不学则殆;生命不止;折腾不休">
 
 	<script src="/styles/js/jquery.min.js"></script>
@@ -114,27 +114,25 @@
       <div class="panel docs-content">
         <div class="wrapper">
             <header class="post-header">
-              <h1 class="post-title">Mysql定义类型与查询类型不一致问题处理</h1>
-              <div class="meta">Posted on <span class="postdate">Aug 29, 2018</span> By <a target="_blank" href="http://localhost:4000">Liuaj</a></div>
+              <h1 class="post-title">Mysql Deal</h1>
+              <div class="meta">Posted on <span class="postdate">Apr 15, 2017</span> By <a target="_blank" href="http://localhost:4000">Liuaj</a></div>
               <br />
             </header>
             <article class="post-content">
               <ul id="markdown-toc">
-  <li><a href="#问题描述" id="markdown-toc-问题描述">问题描述</a></li>
-  <li><a href="#解决" id="markdown-toc-解决">解决</a></li>
-  <li><a href="#引用" id="markdown-toc-引用">引用</a></li>
+  <li><a href="#锁表查询处理" id="markdown-toc-锁表查询处理">锁表查询处理</a></li>
 </ul>
 
-<h2 id="问题描述">问题描述</h2>
-<p>Mysql中某一字段定义成int类型，查询时传入String，会截取字符串</p>
+<h2 id="锁表查询处理">锁表查询处理</h2>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-- 查询表占用
+SHOW OPEN TABLES WHERE In_use &gt; 0;
 
-<h2 id="解决">解决</h2>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. SELECT COLUMN_NAME FROM TABLE_NAME t WHERE CONCAT(t.int_id) = '***' ;
-2. SELECT COLUMN_NAME FROM TABLE_NAME t WHERE CAST(t.int_id as char) = '***' ;
+-- 查询进程
+SHOW PROCESSLIST ;
+
+-- 杀进程
+KILL 486574 ;
 </code></pre></div></div>
-
-<h2 id="引用">引用</h2>
-<p>原文地址：<a href="https://blog.csdn.net/xiaolyuh123/article/details/64441817?locationNum=3&amp;fps=1">Mysql 一个字段定义成int类型，查询时传入String，会截取字符串</a></p>
 
             </article>
         </div>
