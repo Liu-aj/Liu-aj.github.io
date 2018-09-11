@@ -3,8 +3,8 @@ layout: post
 title: 求职的本质
 date: 2017-08-29 14:27:25
 forType: Other
-category: other
-tag: other
+category: Other
+tag: Other
 ---
 
 * content

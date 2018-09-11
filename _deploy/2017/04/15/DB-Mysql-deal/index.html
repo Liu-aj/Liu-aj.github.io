@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>mongo查询技巧 - Liuaj's blog</title>
+	<title>Db Mysql Deal - Liuaj's blog</title>
 
 	<link rel="shortcut icon" href="/styles/images/favicon.jpg">
 	<link rel="icon" href="/styles/images/favicon.jpg">
@@ -13,10 +13,10 @@
 	<link rel="stylesheet" href="/styles/css/index.css">
 	<link rel="stylesheet" href="/styles/css/fontawesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="/styles/css/syntax.css">
-	<link rel="canonical" href="/2018/09/08/mongoDB/">
+	<link rel="canonical" href="/2017/04/15/DB-Mysql-deal/">
 	<link rel="alternate" type="application/rss+xml" title="Liuaj's blog" href="/feed.xml">
 	
-	<meta name="keywords" content="mongo查询技巧, Liuaj's blog, 刘爱佳;个人博客;学而不思则罔;思而不学则殆;生命不止;折腾不休">
+	<meta name="keywords" content="Db Mysql Deal, Liuaj's blog, 刘爱佳;个人博客;学而不思则罔;思而不学则殆;生命不止;折腾不休">
 	<meta name="description" content="刘爱佳;个人博客;学而不思则罔;思而不学则殆;生命不止;折腾不休">
 
 	<script src="/styles/js/jquery.min.js"></script>
@@ -92,8 +92,8 @@
       <div class="banner">
   <div class="container">
   	
-    	<a href="/categories/#mongoDB-ref">mongoDB</a>	/
-    	<a href="/tag/#-ref"></a>
+    	<a href="/categories/#Mysql-ref">Mysql</a>	/
+    	<a href="/tag/#Mysql问题处理-ref">Mysql问题处理</a>
     
   </div>
 </div>
@@ -114,27 +114,25 @@
       <div class="panel docs-content">
         <div class="wrapper">
             <header class="post-header">
-              <h1 class="post-title">mongo查询技巧</h1>
-              <div class="meta">Posted on <span class="postdate">Sep 08, 2018</span> By <a target="_blank" href="http://localhost:4000">Liuaj</a></div>
+              <h1 class="post-title">Db Mysql Deal</h1>
+              <div class="meta">Posted on <span class="postdate">Apr 15, 2017</span> By <a target="_blank" href="http://localhost:4000">Liuaj</a></div>
               <br />
             </header>
             <article class="post-content">
               <ul id="markdown-toc">
-  <li><a href="#mongo检索" id="markdown-toc-mongo检索">mongo检索</a></li>
-  <li><a href="#mongo去重统计" id="markdown-toc-mongo去重统计">mongo去重统计</a></li>
+  <li><a href="#锁表查询处理" id="markdown-toc-锁表查询处理">锁表查询处理</a></li>
 </ul>
 
-<h2 id="mongo检索">mongo检索</h2>
-<p>模糊搜索：</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>db.getCollection('CollenctionName').find({"elementName":{$regex:"***"}});
-</code></pre></div></div>
-<p>时间段查询：</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>db.getCollection('CollenctionName').find({"elementName":{$gte: new Date("2018-01-01T00:00:00.000+08:00"), 
-                                                         $lt: new Date("2018-01-01T23:59:59.000+08:00")}});
-</code></pre></div></div>
+<h2 id="锁表查询处理">锁表查询处理</h2>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-- 查询表占用
+SHOW OPEN TABLES WHERE In_use &gt; 0;
 
-<h2 id="mongo去重统计">mongo去重统计</h2>
-<p>db.CollectionName.distinct(“elementName”);</p>
+-- 查询进程
+SHOW PROCESSLIST ;
+
+-- 杀进程
+KILL 486574 ;
+</code></pre></div></div>
 
             </article>
         </div>

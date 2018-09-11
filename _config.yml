@@ -81,4 +81,4 @@ markdown: kramdown
 
 baidu_analysis: 7501fa07838ede8c526fafa847ec5665
 
-forTypes: ['Java','DB','加密','Other']
+forTypes: ['Java','DB','OS','加密','Other']

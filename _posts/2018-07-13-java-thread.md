@@ -2,9 +2,9 @@
 layout: post
 title: Java-线程
 date: 2018-07-13 13:46:05
-forType: java
+forType: Java
 category: 线程
-tag: java
+tag: Java
 ---
 
 * content
