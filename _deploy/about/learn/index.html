@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>idea-maven启动java8项目异常 - Liuaj's blog</title>
+	<title>自学清单 - Liuaj's blog</title>
 
 	<link rel="shortcut icon" href="/styles/images/favicon.jpg">
 	<link rel="icon" href="/styles/images/favicon.jpg">
@@ -13,10 +13,10 @@
 	<link rel="stylesheet" href="/styles/css/index.css">
 	<link rel="stylesheet" href="/styles/css/fontawesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="/styles/css/syntax.css">
-	<link rel="canonical" href="/2018/08/30/Java-jkd8/">
+	<link rel="canonical" href="/about/learn/">
 	<link rel="alternate" type="application/rss+xml" title="Liuaj's blog" href="/feed.xml">
 	
-	<meta name="keywords" content="idea-maven启动java8项目异常, Liuaj's blog, 刘爱佳;个人博客;学而不思则罔;思而不学则殆;生命不止;折腾不休">
+	<meta name="keywords" content="自学清单, Liuaj's blog, 刘爱佳;个人博客;学而不思则罔;思而不学则殆;生命不止;折腾不休">
 	<meta name="description" content="刘爱佳;个人博客;学而不思则罔;思而不学则殆;生命不止;折腾不休">
 
 	<script src="/styles/js/jquery.min.js"></script>
@@ -93,8 +93,7 @@
       <div class="banner">
   <div class="container">
   	
-    	<a href="/categories/#Java-ref">Java</a>	/
-    	<a href="/tag/#-ref"></a>
+    	学而不思则罔，思而不学则殆。
     
   </div>
 </div>
@@ -115,44 +114,100 @@
       <div class="panel docs-content">
         <div class="wrapper">
             <header class="post-header">
-              <h1 class="post-title">idea-maven启动java8项目异常</h1>
-              <div class="meta">Posted on <span class="postdate">Aug 30, 2018</span> By <a target="_blank" href="http://localhost:4000">Liuaj</a></div>
+              <h1 class="post-title">自学清单</h1>
+              <div class="meta">Posted on <span class="postdate"></span> By <a target="_blank" href="http://localhost:4000">Liuaj</a></div>
               <br />
             </header>
             <article class="post-content">
               <ul id="markdown-toc">
-  <li><a href="#问题描述" id="markdown-toc-问题描述">问题描述</a></li>
-  <li><a href="#解决方法" id="markdown-toc-解决方法">解决方法</a></li>
-  <li><a href="#原因" id="markdown-toc-原因">原因</a></li>
-  <li><a href="#引用" id="markdown-toc-引用">引用</a></li>
+  <li><a href="#开发框架" id="markdown-toc-开发框架">开发框架</a></li>
+  <li><a href="#db" id="markdown-toc-db">DB</a></li>
+  <li><a href="#web容器" id="markdown-toc-web容器">web容器</a></li>
+  <li><a href="#应用容器" id="markdown-toc-应用容器">应用容器</a></li>
+  <li><a href="#负载" id="markdown-toc-负载">负载</a></li>
+  <li><a href="#版本控制" id="markdown-toc-版本控制">版本控制</a></li>
+  <li><a href="#项目构建" id="markdown-toc-项目构建">项目构建</a></li>
+  <li><a href="#缓存" id="markdown-toc-缓存">缓存</a></li>
+  <li><a href="#分布式" id="markdown-toc-分布式">分布式</a></li>
+  <li><a href="#消息队列" id="markdown-toc-消息队列">消息队列</a></li>
+  <li><a href="#linux" id="markdown-toc-linux">Linux</a></li>
+  <li><a href="#集群" id="markdown-toc-集群">集群</a></li>
 </ul>
 
-<h2 id="问题描述">问题描述</h2>
-<p>开发环境：jkd8、maven2.19</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;plugin&gt;
-	&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
-	&lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt;
-	&lt;version&gt;2.19&lt;/version&gt;
-	&lt;configuration&gt;
-		&lt;argLine&gt;-Xmx512m -XX:MaxPermSize=256m&lt;/argLine&gt;
-	&lt;/configuration&gt;
-&lt;/plugin&gt;
-</code></pre></div></div>
+<h2 id="开发框架">开发框架</h2>
+<ul>
+  <li>Spring</li>
+  <li>Spring MVC</li>
+  <li>Spring boot</li>
+  <li>Spring Cloud</li>
+</ul>
 
-<p>异常信息：项目启动时，抛出异常</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=256m; support was removed in 8.0
-</code></pre></div></div>
+<h2 id="db">DB</h2>
+<ul>
+  <li>Oracle</li>
+  <li>Mysql</li>
+  <li>Mongodb</li>
+  <li>Nosql</li>
+</ul>
 
-<h2 id="解决方法">解决方法</h2>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Xmx512m -XX:MaxPermSize=256m
-</code></pre></div></div>
-<p>删除”-XX:MaxPermSize=256m”</p>
+<h2 id="web容器">web容器</h2>
+<ul>
+  <li>Tomcat</li>
+  <li>Weblogic</li>
+</ul>
 
-<h2 id="原因">原因</h2>
-<p>在Java 8中，命令行标志MaxPermSize已被删除。</p>
+<h2 id="应用容器">应用容器</h2>
+<ul>
+  <li>Docker</li>
+</ul>
 
-<h2 id="引用">引用</h2>
-<p>原文地址：<a href="https://codeday.me/bug/20170701/32022.html">Java HotSpot(TM)64位服务器VM警告：忽略选项MaxPermSize</a></p>
+<h2 id="负载">负载</h2>
+<ul>
+  <li>Nginx</li>
+  <li>F5</li>
+</ul>
+
+<h2 id="版本控制">版本控制</h2>
+<ul>
+  <li>Svn</li>
+  <li>Git</li>
+</ul>
+
+<h2 id="项目构建">项目构建</h2>
+<ul>
+  <li>maven</li>
+  <li>gradle</li>
+</ul>
+
+<h2 id="缓存">缓存</h2>
+<ul>
+  <li>Redis</li>
+  <li>Memcache</li>
+</ul>
+
+<h2 id="分布式">分布式</h2>
+<ul>
+  <li>Zookeeper</li>
+  <li>Dubbo</li>
+</ul>
+
+<h2 id="消息队列">消息队列</h2>
+<ul>
+  <li>RabbitMQ</li>
+  <li>ActiveMQ</li>
+  <li>Kafka</li>
+</ul>
+
+<h2 id="linux">Linux</h2>
+<ul>
+  <li>shell</li>
+</ul>
+
+<h2 id="集群">集群</h2>
+<ul>
+  <li>数据库集群</li>
+  <li>应用部署集群</li>
+</ul>
 
             </article>
         </div>
