@@ -126,13 +126,15 @@ sudo tar -zxvf ideaIC-2019.2.4.tar.gz
 Navicat:
 ---
 ```
-sudo tar -zxvf navicat121_premium_cs_x64.tar.gz 
+sudo tar -zxvf navicat121_premium_cs_x64.tar.gz
+<!-- http://www.navicat.com.cn/images/02.Product_00_AllProducts_Premium_large.png -->
 ```
 
 Robo3t:
 ---
 ```
-sudo tar -zxvf robo3t-1.3.1-linux-x86_64-7419c406.tar.gz 
+sudo tar -zxvf robo3t-1.3.1-linux-x86_64-7419c406.tar.gz
+<!-- https://robomongo.org/static/robomongo-128x128-129df2f1.png -->
 ```
 
 Thunderbird:
@@ -153,6 +155,27 @@ phddns version
 
 桌面优化：
 ---
+
+应用图标
+---
+
+<!-- 以navicat为例 -->
+目录/usr/share/applications下新建文件start_navicat.desktop，内容如下
+```
+[Desktop Entry]
+Type=Application
+<!-- 启动命令 -->
+Exec=/opt/navicat/navicat121_premium_cs_x64/start_navicat
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[zh_CN]=navicat
+Name=navicat
+Comment[zh_CN]=navicat
+Comment=navicat
+<!-- 图标 -->
+Icon=/opt/navicat/navicat121_premium_cs_x64/icon/navicat.png
+```
 
 操作优化：
 ---
