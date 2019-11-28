@@ -1,10 +1,10 @@
 ---
 layout: post
 title: ubuntu系统指南
-date: 2016-08-03 16:21:00
-forType: Linux
-category: ubuntu
-tag: [linux, ubuntu]
+date: 2019-11-28 16:21:00
+forType: OS
+category: Linux
+tag: [Linux, ubuntu]
 ---
 
 * content
@@ -49,8 +49,10 @@ sudo dpkg -i bcmwl-kernel-source_6.30.223.271+bdcom-0ubuntu4_amd64.deb
 
 环境搭建：
 ---
+
 环境软件安装：
 ---
+
 Git:
 ---
 ```
@@ -74,6 +76,7 @@ sudo tar -zxvf jdk-8u231-linux-x64.tar.gz
 
 常用软件安装
 ---
+
 Chrome：
 ---
 ```

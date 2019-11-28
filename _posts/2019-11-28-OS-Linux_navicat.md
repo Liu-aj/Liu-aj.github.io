@@ -2,7 +2,7 @@
 layout: post
 title: ubuntu环境navicat应用
 date: 2019-11-28 13:42:00
-forType: linux
+forType: Linux
 category: navicat
 tag: [navicat, 使用技巧]
 ---
