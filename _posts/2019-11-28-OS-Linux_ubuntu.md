@@ -150,6 +150,12 @@ phddns start
 phddns version
 ```
 
+CoCoMusic：
+---
+```
+https://github.com/xtuJSer/CoCoMusic/releases
+```
+
 系统优化：
 ---
 
