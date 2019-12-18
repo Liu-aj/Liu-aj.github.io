@@ -191,6 +191,21 @@ sudo ./nginx
 系统优化：
 ---
 
+磁盘挂载：
+```
+sudo fdisk -l
+sudo mkfs.ext4 /dev/sdb
+sudo fdisk -l
+cd home/
+ls
+cd aijia/
+ls
+mkdir Data
+sudo mount /dev/sdb /home/aijia/Data
+sudo blkid
+sudo vim /etc/fstab
+```
+
 桌面优化：
 ---
 
