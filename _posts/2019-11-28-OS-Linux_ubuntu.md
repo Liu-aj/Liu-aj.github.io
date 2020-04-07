@@ -12,17 +12,15 @@ tag: [Linux, ubuntu]
 
 网络设置：
 ---
+
 初始化无线网卡：
+---
 ```
-sudo dpkg -i dkms_2.3-3ubuntu9.5_all.deb 
-sudo dpkg -i gcc_7.4.0-1ubuntu2.3_amd64.deb 
-sudo dpkg -i gcc-7_7.4.0-1ubuntu1~18.04.1_amd64.deb 
 sudo dpkg -i libgcc-7-dev_7.4.0-1ubuntu1~18.04.1_amd64.deb 
 sudo dpkg -i libitm1_8.3.0-6ubuntu1~18.04.1_amd64.deb 
 sudo dpkg -i libatomic1_8.3.0-6ubuntu1~18.04.1_amd64.deb 
 sudo dpkg -i ../gcc-7/libasan4_7.4.0-1ubuntu1~18.04.1_amd64.deb 
 sudo dpkg -i ../gcc-7/gcc-7_7.4.0-1ubuntu1~18.04.1_amd64.deb 
-sudo dpkg -i ../gcc-7/libgcc-7-dev_7.4.0-1ubuntu1~18.04.1_amd64.deb 
 sudo dpkg -i liblsan0_8.3.0-6ubuntu1~18.04.1_amd64.deb 
 sudo dpkg -i libtsan0_8.3.0-6ubuntu1~18.04.1_amd64.deb 
 sudo dpkg -i ../gcc-7/libubsan0_7.4.0-1ubuntu1~18.04.1_amd64.deb 
@@ -30,21 +28,70 @@ sudo dpkg -i ../gcc-7/libcilkrts5_7.4.0-1ubuntu1~18.04.1_amd64.deb
 sudo dpkg -i libmpx2_8.3.0-6ubuntu1~18.04.1_amd64.deb 
 sudo dpkg -i libquadmath0_8.3.0-6ubuntu1~18.04.1_amd64.deb 
 sudo dpkg -i ../gcc-7/libgcc-7-dev_7.4.0-1ubuntu1~18.04.1_amd64.deb 
-sudo dpkg -i gcc_7.4.0-1ubuntu2.3_amd64.deb 
 sudo dpkg -i gcc-7_7.4.0-1ubuntu1~18.04.1_amd64.deb 
 sudo dpkg -i gcc_7.4.0-1ubuntu2.3_amd64.deb 
-sudo dpkg -i dkms_2.3-3ubuntu9.5_all.deb 
-sudo dpkg -i dpkg-dev_1.19.0.5ubuntu2.1_all.deb 
 sudo dpkg -i make_4.1-9.1ubuntu1_amd64.deb 
 sudo dpkg -i dpkg-dev_1.19.0.5ubuntu2.1_all.deb 
 sudo dpkg -i dkms_2.3-3ubuntu9.5_all.deb 
-sudo dpkg -i bcmwl-kernel-source_6.30.223.271+bdcom-0ubuntu4_amd64.deb 
 sudo dpkg -i linux-libc-dev_4.15.0-55.60_amd64.deb 
-sudo dpkg -i bcmwl-kernel-source_6.30.223.271+bdcom-0ubuntu4_amd64.deb 
-sudo dpkg -i libc6-dev_2.27-3ubuntu1_amd64.deb 
 sudo dpkg -i libc-dev-bin_2.27-3ubuntu1_amd64.deb 
 sudo dpkg -i libc6-dev_2.27-3ubuntu1_amd64.deb 
 sudo dpkg -i bcmwl-kernel-source_6.30.223.271+bdcom-0ubuntu4_amd64.deb
+```
+
+替换国内源
+---
+```
+lsb_release -a
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.bcakup
+sudo gedit /etc/apt/sources.list
+
+# 阿里云源
+deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+##測試版源
+deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+# 源碼
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+##測試版源
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+
+
+# 清华大学源
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
+##測試版源
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
+# 源碼
+deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse
+deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
+deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
+deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
+##測試版源
+deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
+————————————————
+版权声明：本文为CSDN博主「寥廓长空」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/baidu_36602427/java/article/details/86551862
+
+sudo apt-get update
+sudo apt-get upgrade
+```
+
+开启22端口
+---
+```
+//安装后需要重启
+sudo apt-get install openssh-server openssh-client 
+service ssh start
+ssh localhost
+lsof -i:22
 ```
 
 环境搭建：
