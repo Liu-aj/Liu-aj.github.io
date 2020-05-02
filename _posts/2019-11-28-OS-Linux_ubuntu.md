@@ -16,27 +16,50 @@ tag: [Linux, ubuntu]
 初始化无线网卡：
 ---
 ```
-sudo dpkg -i libgcc-7-dev_7.4.0-1ubuntu1~18.04.1_amd64.deb 
-sudo dpkg -i libitm1_8.3.0-6ubuntu1~18.04.1_amd64.deb 
-sudo dpkg -i libatomic1_8.3.0-6ubuntu1~18.04.1_amd64.deb 
-sudo dpkg -i ../gcc-7/libasan4_7.4.0-1ubuntu1~18.04.1_amd64.deb 
-sudo dpkg -i ../gcc-7/gcc-7_7.4.0-1ubuntu1~18.04.1_amd64.deb 
-sudo dpkg -i liblsan0_8.3.0-6ubuntu1~18.04.1_amd64.deb 
-sudo dpkg -i libtsan0_8.3.0-6ubuntu1~18.04.1_amd64.deb 
-sudo dpkg -i ../gcc-7/libubsan0_7.4.0-1ubuntu1~18.04.1_amd64.deb 
-sudo dpkg -i ../gcc-7/libcilkrts5_7.4.0-1ubuntu1~18.04.1_amd64.deb 
-sudo dpkg -i libmpx2_8.3.0-6ubuntu1~18.04.1_amd64.deb 
-sudo dpkg -i libquadmath0_8.3.0-6ubuntu1~18.04.1_amd64.deb 
-sudo dpkg -i ../gcc-7/libgcc-7-dev_7.4.0-1ubuntu1~18.04.1_amd64.deb 
-sudo dpkg -i gcc-7_7.4.0-1ubuntu1~18.04.1_amd64.deb 
-sudo dpkg -i gcc_7.4.0-1ubuntu2.3_amd64.deb 
-sudo dpkg -i make_4.1-9.1ubuntu1_amd64.deb 
-sudo dpkg -i dpkg-dev_1.19.0.5ubuntu2.1_all.deb 
-sudo dpkg -i dkms_2.3-3ubuntu9.5_all.deb 
-sudo dpkg -i linux-libc-dev_4.15.0-55.60_amd64.deb 
-sudo dpkg -i libc-dev-bin_2.27-3ubuntu1_amd64.deb 
-sudo dpkg -i libc6-dev_2.27-3ubuntu1_amd64.deb 
-sudo dpkg -i bcmwl-kernel-source_6.30.223.271+bdcom-0ubuntu4_amd64.deb
+cd /media/liuaj/Ubuntu\ 20.0/pool/main/
+cd g/gcc-9/
+sudo dpkg -i libasan5_9.3.0-10ubuntu2_amd64.deb 
+cd ../gcc-10/
+sudo dpkg -i libitm1_10-20200411-0ubuntu1_amd64.deb 
+sudo dpkg -i libatomic1_10-20200411-0ubuntu1_amd64.deb
+sudo dpkg -i liblsan0_10-20200411-0ubuntu1_amd64.deb 
+sudo dpkg -i libubsan1_10-20200411-0ubuntu1_amd64.deb 
+sudo dpkg -i libquadmath0_10-20200411-0ubuntu1_amd64.deb 
+sudo dpkg -i libtsan0_10-20200411-0ubuntu1_amd64.deb 
+cd ../gcc-9/
+sudo dpkg -i libgcc-9-dev_9.3.0-10ubuntu2_amd64.deb 
+cd ../../m/make-dfsg/
+sudo dpkg -i make_4.2.1-1.2_amd64.deb 
+cd ../../b/binutils/
+sudo dpkg -i binutils-common_2.34-6ubuntu1_amd64.deb 
+cd ../../g//gcc-10/
+sudo dpkg -i gcc-10-base_10-20200411-0ubuntu1_i386.deb 
+cd ../../b/binutils/
+sudo dpkg -i libctf-nobfd0_2.34-6ubuntu1_amd64.deb 
+sudo dpkg -i libbinutils_2.34-6ubuntu1_amd64.deb 
+sudo dpkg -i libctf0_2.34-6ubuntu1_amd64.deb 
+sudo dpkg -i binutils-x86-64-linux-gnu_2.34-6ubuntu1_amd64.deb 
+sudo dpkg -i binutils_2.34-6ubuntu1_amd64.deb 
+cd ../../d/dpkg/
+sudo dpkg -i dpkg-dev_1.19.7ubuntu3_all.deb 
+cd ../../g/glibc/
+sudo dpkg -i libc-dev-bin_2.31-0ubuntu9_amd64.deb 
+cd ../../l/linux/
+sudo dpkg -i linux-libc-dev_5.4.0-26.30_amd64.deb 
+cd ../../libx/libxcrypt/
+sudo dpkg -i libcrypt-dev_4.4.10-10ubuntu4_amd64.deb 
+cd ../../g/glibc/
+sudo dpkg -i libc6-dev_2.31-0ubuntu9_amd64.deb 
+cd ../gcc-9/
+sudo dpkg -i libstdc++-9-dev_9.3.0-10ubuntu2_amd64.deb 
+sudo dpkg -i gcc-9_9.3.0-10ubuntu2_amd64.deb 
+sudo dpkg -i g++-9_9.3.0-10ubuntu2_amd64.deb 
+cd ../gcc-defaults/
+sudo dpkg -i gcc_9.3.0-1ubuntu2_amd64.deb
+cd ../../d/dkms/
+sudo dpkg -i dkms_2.8.1-5ubuntu1_all.deb 
+cd ../../../restricted/b/bcmwl/
+sudo dpkg -i bcmwl-kernel-source_6.30.223.271+bdcom-0ubuntu5_amd64.deb 
 ```
 
 替换国内源
@@ -46,42 +69,20 @@ lsb_release -a
 sudo cp /etc/apt/sources.list /etc/apt/sources.list.bcakup
 sudo gedit /etc/apt/sources.list
 
-# 阿里云源
-deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
-deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
-deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
-deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
-##測試版源
-deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
-# 源碼
-deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
-##測試版源
-deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+# 网易163源
+# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
+deb http://mirrors.163.com/ubuntu/ focal main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ focal-security main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ focal-updates main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ focal-backports main restricted universe multiverse
+# deb-src http://mirrors.163.com/ubuntu/ focal main restricted universe multiverse
+# deb-src http://mirrors.163.com/ubuntu/ focal-security main restricted universe multiverse
+# deb-src http://mirrors.163.com/ubuntu/ focal-updates main restricted universe multiverse
+# deb-src http://mirrors.163.com/ubuntu/ focal-backports main restricted universe multiverse
+# 预发布软件源，不建议启用
+# deb http://mirrors.163.com/ubuntu/ focal-proposed main restricted universe multiverse
+# deb-src http://mirrors.163.com/ubuntu/ focal-proposed main restricted universe multiverse
 
-
-# 清华大学源
-deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse
-deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
-deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
-deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
-##測試版源
-deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
-# 源碼
-deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse
-deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
-deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
-deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
-##測試版源
-deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
-————————————————
-版权声明：本文为CSDN博主「寥廓长空」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
-原文链接：https://blog.csdn.net/baidu_36602427/java/article/details/86551862
-
-sudo apt-get update
-sudo apt-get upgrade
 ```
 
 开启22端口
@@ -107,6 +108,8 @@ sudo apt install git
 git config --global user.name "Liuaj"
 git config --global user.email "aijia930515@163.com"
 git config --list
+
+sudo apt-get install git-cola
 ```
 
 Vim:
@@ -123,12 +126,12 @@ JDK:
 创建目录:
 	sudo mkdir /usr/lib/jvm
 解压缩到该目录:
-	sudo tar -zxvf jdk-7u60-linux-x64.gz -C /usr/lib/jvm
+	sudo tar -zxvf jdk-8u241-linux-x64.tar.gz -C /usr/lib/jvm/
 3.修改环境变量:　　
 	sudo vi ~/.bashrc
 在文件末尾追加下面内容：
 #set oracle jdk environment
-export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_191
+export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_241
 export JRE_HOME=${JAVA_HOME}/jre
 export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
 export PATH=${JAVA_HOME}/bin:$PATH
@@ -136,7 +139,7 @@ export PATH=${JAVA_HOME}/bin:$PATH
 使环境变量马上生效：
 	source ~/.bashrc
 4、系统注册此jdk
-	sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8.0_191/bin/java 300
+	sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8.0_241/bin/java 300
 5、查看java版本，看看是否安装成功：
 	java -version
 ```
@@ -162,7 +165,13 @@ sudo dpkg -i wps-office_11.1.0.8865_amd64.deb
 sublimetext:
 ---
 ```
-echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+sudo cp sublime_text_3_build_3211_x64.tar.bz2 /opt/
+cd /opt/
+sudo tar -jxvf sublime_text_3_build_3211_x64.tar.bz2 
+sudo mv sublime_text_3 sublime_text
+sudo vim sublime_text/sublime_text.desktop
+<!-- /opt/sublime_text/Icon/256x256/sublime-text.png -->
+sudo cp sublime_text/sublime_text.desktop /usr/share/applications/
 ```
 
 QQ:
@@ -174,10 +183,46 @@ sudo dpkg -i linuxqq_2.0.0-b1-1024_amd64.deb
 Shadowsocks:
 ---
 ```
-sudo tar -zxvf shadowsocks-local.tar.gz 
+mkdir -p /opt/Proxy
+cd /opt/Proxy
+sudo git clone --branch akkariiin/master https://github.com/shadowsocksrr/shadowsocksr.git
+cd /opt/Proxy/shadowsocksr/
+sudo bash initcfg.sh
+sudo mv user-config.json user-config.json.bak
+sudo vim user-config.json
+<!-- 
+{
+    "server":"45.32.170.153",		
+    "server_port":12020,
+    "password":"aijia",
+    "method":"aes-256-cfb",
+    "local_address":"127.0.0.1",
+    "local_port":1080,
+    "timeout":300
+}
+ -->
+sudo vim /lib/systemd/system/shadowsocksr.service
+<!-- 
+[Unit]
+Description=Shadowsocks Server
+After=network.target
+
+[Service]
+ExecStart=python3 /opt/Proxy/shadowsocksr/shadowsocks/local.py -c /opt/Proxy/shadowsocksr/user-config.json
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
+ -->
+
+sudo systemctl daemon-reload
+sudo systemctl restart shadowsocksr
+sudo systemctl status shadowsocksr
+
+<!-- sudo tar -zxvf shadowsocks-local.tar.gz 
 sudo tar -zxvf autoproxy.pac_.tar.gz 
 sudo gedit ss.json
-./shadowsocks-local -c ss.json 
+./shadowsocks-local -c ss.json  -->
 ```
 
 Pycharm:
@@ -189,21 +234,82 @@ sudo tar -zxvf pycharm-community-2019.2.4.tar.gz
 ideaIC:
 ---
 ```
-sudo tar -zxvf ideaIC-2019.2.4.tar.gz 
+sudo mkdir /opt/intelliJ
+sudo tar -zxvf ideaIC-2020.1.2.tar.gz -C /opt/intelliJ/ 
 ```
 
 Navicat:
 ---
 ```
 sudo tar -zxvf navicat121_premium_cs_x64.tar.gz
+
+sudo vim /usr/share/applications/navicat.desktop
+
+<!-- 
+[Desktop Entry]
+Encoding=UTF-8
+Name=Navicat
+Comment=The Smarter Way to manage dadabase
+Exec=/opt/navicat/navicat15-mysql-cs.AppImage
+Icon=/opt/navicat/navicat.png
+Categories=Application;Database;MySQL;navicat
+Version=1.0
+Type=Application
+Terminal=0
+ -->
+
 <!-- http://www.navicat.com.cn/images/02.Product_00_AllProducts_Premium_large.png -->
+rm -rf ~/.navicat
 ```
 
 Robo3t:
 ---
 ```
-sudo tar -zxvf robo3t-1.3.1-linux-x86_64-7419c406.tar.gz
+sudo mkdir /opt/robo3t
+sudo tar -zxvf robo3t-1.3.1-linux-x86_64-7419c406.tar.gz -C /opt/robo3t
+
+sudo vim /usr/share/applications/robo3t.desktop 
+
+<!-- 
+[Desktop Entry]
+Encoding=UTF-8
+Name=Robo3t
+Comment=The Smarter Way to manage dadabase
+Exec=/opt/robo3t/robo3t-1.3.1-linux-x86_64-7419c406/bin/robo3t
+Icon=/opt/robo3t/robo3t-1.3.1-linux-x86_64-7419c406/icon/robomongo.png
+Categories=Application;Database;mongoDB;robo3t
+Version=1.0
+Type=Application
+Terminal=0
+ -->
+
 <!-- https://robomongo.org/static/robomongo-128x128-129df2f1.png -->
+```
+
+postman：
+---
+```
+
+sudo tar -zxf Postman-linux-x64-7.29.1.tar.gz -C /opt/
+sudo vim /usr/share/applications/Postman.desktop
+
+<!-- 
+[Desktop Entry]
+Encoding=UTF-8
+Name=Postman
+Comment=Postman
+Exec=/opt/Postman/Postman
+Icon=/opt/Postman/app/resources/app/assets/icon.png
+Categories=Application;postman
+Version=1.0
+Type=Application
+Terminal=0
+ -->
+
+<!-- 
+/opt/Postman/Postman
+/opt/Postman/app/resources/app/assets/icon.png
+ -->
 ```
 
 Thunderbird:
@@ -223,6 +329,15 @@ CoCoMusic：
 ---
 ```
 https://github.com/xtuJSer/CoCoMusic/releases
+```
+
+thunderbird：
+---
+```
+安装
+sudo apt-get install thunderbird
+安装中文包
+sudo apt-get install thunderbird-locale-zh-cn
 ```
 
 Nginx:
@@ -257,6 +372,9 @@ sudo make install
 cd ../../nginx/
 sudo ./nginx 
 ```
+
+
+sudo apt-get  remove  ibus 
 系统优化：
 ---
 
@@ -273,31 +391,39 @@ mkdir Data
 sudo mount /dev/sdb /home/aijia/Data
 sudo blkid
 sudo vim /etc/fstab
+
+UUID=*** /* ext4 defaults 0 2
 ```
 
 桌面优化：
 ---
+sudo apt-get install gnome-shell-extensions
+sudo apt install chrome-gnome-shell
+sudo apt install gnome-tweaks
+sudo apt install gnome-tweak-tool
 
-应用图标
----
+必应每日壁纸
+安装方法有很多，我觉得最方便的还是用chrome装gnome扩展（Bing Wallpaper Changer）
 
-<!-- 以navicat为例 -->
-目录/usr/share/applications下新建文件start_navicat.desktop，内容如下
-```
-[Desktop Entry]
-Type=Application
-<!-- 启动命令 -->
-Exec=/opt/navicat/navicat121_premium_cs_x64/start_navicat
-Hidden=false
-NoDisplay=false
-X-GNOME-Autostart-enabled=true
-Name[zh_CN]=navicat
-Name=navicat
-Comment[zh_CN]=navicat
-Comment=navicat
-<!-- 图标 -->
-Icon=/opt/navicat/navicat121_premium_cs_x64/icon/navicat.png
-```
+good-bye-gdm-flick/
+
+[Plymouth Theme]
+Name=Ubuntu Logo
+Description=A theme that features a blank background with a logo
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/suade
+ScriptFile=/usr/share/plymouth/themes/suade/mdv.script
+
 
 操作优化：
 ---
+
+快捷鍵
+---
+```
+gsettings get org.gnome.desktop.wm.keybindings switch-to-workspace-left
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left "[]"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "[]"
+```
