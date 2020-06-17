@@ -180,16 +180,40 @@ sudo gedit ss.json
 ./shadowsocks-local -c ss.json 
 ```
 
+shadowsocks服务端
+---
+```
+apt-get install shadowsocks
+vim /etc/shadowsocks.json
+	{
+		"server": "0.0.0.0",
+		"server_port": 13090,
+		"local_port": 1080,
+		"password": "123456",
+		"timeout": 600,
+		"method": "aes-256-cfb"
+	}
+ssserver -c /etc/shadowsocks.json -d restart
+```
+
 Pycharm:
 ---
 ```
+sudo snap install pycharm-community --classic
 sudo tar -zxvf pycharm-community-2019.2.4.tar.gz 
 ```
 
 ideaIC:
 ---
 ```
+sudo snap install intellij-idea-community --classic
 sudo tar -zxvf ideaIC-2019.2.4.tar.gz 
+```
+
+eclipse:
+---
+```
+snap install --classic eclipse
 ```
 
 Navicat:
@@ -262,17 +286,19 @@ sudo ./nginx
 
 磁盘挂载：
 ```
+df -h
+lsblk -f
 sudo fdisk -l
-sudo mkfs.ext4 /dev/sdb
+sudo fdisk /dev/sdb
+sudo mkfs -t ext4 /dev/sdb1
+lsblk -f
 sudo fdisk -l
-cd home/
-ls
-cd aijia/
-ls
-mkdir Data
-sudo mount /dev/sdb /home/aijia/Data
-sudo blkid
+sudo mount /dev/sdb1 /home/liuaj/Data/
 sudo vim /etc/fstab
+"/dev/sdb1	/home/liuaj/Data	ext4	defaults	0 0"
+sudo mount -a
+df -h
+"卸载：umount 设备名称 或者 挂载目录"
 ```
 
 桌面优化：
@@ -299,5 +325,98 @@ Comment=navicat
 Icon=/opt/navicat/navicat121_premium_cs_x64/icon/navicat.png
 ```
 
+安装步骤：
+1.更新Ubuntu的apt源索引
+```
+$ sudo apt-get update
+```
+2.安装包允许apt通过HTTPS使用仓库
+```
+$ sudo dpkg --configure -a
+$ sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+```
+3.添加Docker官方GPG key
+```
+$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+```
+4.设置Docker稳定版仓库
+```
+$ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+```
+5.更新apt源索引
+```
+$ sudo apt-get update
+```
+6.安装最新版本Docker CE（社区版）
+```
+$ sudo apt-get install docker-ce
+```
+查看安装Docker的版本
+```
+$ docker --version
+```
+检查Docker CE 是否安装正确
+```
+$ sudo docker run hello-world
+```
+基本命令
+---
+# 启动docker
+```
+sudo service docker start
+```
+
+# 停止docker
+```
+sudo service docker stop
+```
+
+# 重启docker
+```
+sudo service docker restart
+```
+
+# 列出镜像
+```
+docker image ls
+```
+
+# 拉取镜像
+```
+docker image pull library/hello-world
+```
+
+# 删除镜像
+```
+docker image rm 镜像id/镜像ID
+```
+
+# 创建容器
+```
+docker run [选项参数] 镜像名 [命令]
+```
+
+# 停止一个已经在运行的容器
+```
+docker container stop 容器名或容器id
+```
+
+# 启动一个已经停止的容器
+```
+docker container start 容器名或容器id
+```
+
+# kill掉一个已经在运行的容器
+```
+docker container kill 容器名或容器id
+```
+
+# 删除容器
+```
+docker container rm 容器名或容器id
+```
+
 操作优化：
 ---
+
+
