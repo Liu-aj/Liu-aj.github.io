@@ -13,6 +13,7 @@ tag: [Linux, ubuntu]
 网络设置：
 ---
 
+
 初始化无线网卡：
 ---
 ```
@@ -68,7 +69,7 @@ sudo dpkg -i bcmwl-kernel-source_6.30.223.271+bdcom-0ubuntu5_amd64.deb
 lsb_release -a
 sudo cp /etc/apt/sources.list /etc/apt/sources.list.bcakup
 sudo gedit /etc/apt/sources.list
-
+<!-- 
 # 网易163源
 # 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
 deb http://mirrors.163.com/ubuntu/ focal main restricted universe multiverse
@@ -82,7 +83,9 @@ deb http://mirrors.163.com/ubuntu/ focal-backports main restricted universe mult
 # 预发布软件源，不建议启用
 # deb http://mirrors.163.com/ubuntu/ focal-proposed main restricted universe multiverse
 # deb-src http://mirrors.163.com/ubuntu/ focal-proposed main restricted universe multiverse
-
+-->
+sudo apt-get update
+sudo apt-get upgrade
 ```
 
 开启22端口
@@ -118,17 +121,17 @@ Vim:
 sudo apt install vim
 ```
 
-JDK:
+DK:
 ---
 ```
 1、前往oracle Java官网下载JDK（http://www.oracle.com/technetwork/java/javase/downloads/index.html）
 2、解压缩到指定目录（以jdk-8u191-linux-x64.tar.gz为例）
 创建目录:
-	sudo mkdir /usr/lib/jvm
+    sudo mkdir /usr/lib/jvm
 解压缩到该目录:
-	sudo tar -zxvf jdk-8u241-linux-x64.tar.gz -C /usr/lib/jvm/
+    sudo tar -zxvf jdk-8u241-linux-x64.tar.gz -C /usr/lib/jvm/
 3.修改环境变量:　　
-	sudo vi ~/.bashrc
+    sudo vi ~/.bashrc
 在文件末尾追加下面内容：
 #set oracle jdk environment
 export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_241
@@ -137,11 +140,11 @@ export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
 export PATH=${JAVA_HOME}/bin:$PATH
 
 使环境变量马上生效：
-	source ~/.bashrc
+    source ~/.bashrc
 4、系统注册此jdk
-	sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8.0_241/bin/java 300
+    sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8.0_241/bin/java 300
 5、查看java版本，看看是否安装成功：
-	java -version
+    java -version
 ```
 
 常用软件安装
@@ -172,12 +175,24 @@ sudo mv sublime_text_3 sublime_text
 sudo vim sublime_text/sublime_text.desktop
 <!-- /opt/sublime_text/Icon/256x256/sublime-text.png -->
 sudo cp sublime_text/sublime_text.desktop /usr/share/applications/
+<!-- 
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+-->
 ```
 
 QQ:
 ---
 ```
 sudo dpkg -i linuxqq_2.0.0-b1-1024_amd64.deb 
+```
+
+Shadowsocks:
+---
+```
+sudo tar -zxvf shadowsocks-local.tar.gz 
+sudo tar -zxvf autoproxy.pac_.tar.gz 
+sudo gedit ss.json
+./shadowsocks-local -c ss.json 
 ```
 
 Shadowsocks:
@@ -192,7 +207,7 @@ sudo mv user-config.json user-config.json.bak
 sudo vim user-config.json
 <!-- 
 {
-    "server":"45.32.170.153",		
+    "server":"45.32.170.153",       
     "server_port":12020,
     "password":"aijia",
     "method":"aes-256-cfb",
@@ -225,17 +240,40 @@ sudo gedit ss.json
 ./shadowsocks-local -c ss.json  -->
 ```
 
+shadowsocks服务端
+---
+```
+apt-get install shadowsocks
+vim /etc/shadowsocks.json
+    {
+        "server": "0.0.0.0",
+        "server_port": 13090,
+        "local_port": 1080,
+        "password": "123456",
+        "timeout": 600,
+        "method": "aes-256-cfb"
+    }
+ssserver -c /etc/shadowsocks.json -d restart
+```
+
 Pycharm:
 ---
 ```
+<!-- sudo snap install pycharm-community --classic -->
 sudo tar -zxvf pycharm-community-2019.2.4.tar.gz 
 ```
 
 ideaIC:
 ---
 ```
-sudo mkdir /opt/intelliJ
-sudo tar -zxvf ideaIC-2020.1.2.tar.gz -C /opt/intelliJ/ 
+<!-- sudo snap install intellij-idea-community --classic -->
+sudo tar -zxvf ideaIC-2019.2.4.tar.gz 
+```
+
+eclipse:
+---
+```
+snap install --classic eclipse
 ```
 
 Navicat:
@@ -315,7 +353,11 @@ Terminal=0
 Thunderbird:
 ---
 ```
-sudo tar -zxvf thunderbird-68.2.2.tar.gz 
+安装
+sudo apt-get install thunderbird
+安装中文包
+sudo apt-get install thunderbird-locale-zh-cn
+<!-- sudo tar -zxvf thunderbird-68.2.2.tar.gz  -->
 ```
 
 phddns(花生壳):
@@ -329,15 +371,6 @@ CoCoMusic：
 ---
 ```
 https://github.com/xtuJSer/CoCoMusic/releases
-```
-
-thunderbird：
----
-```
-安装
-sudo apt-get install thunderbird
-安装中文包
-sudo apt-get install thunderbird-locale-zh-cn
 ```
 
 Nginx:
@@ -373,26 +406,130 @@ cd ../../nginx/
 sudo ./nginx 
 ```
 
+docker:
+---
+安装步骤：
+1.更新Ubuntu的apt源索引
+```
+$ sudo apt-get update
+```
+2.安装包允许apt通过HTTPS使用仓库
+```
+$ sudo dpkg --configure -a
+$ sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+```
+3.添加Docker官方GPG key
+```
+$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+```
+4.设置Docker稳定版仓库
+```
+$ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+```
+5.更新apt源索引
+```
+$ sudo apt-get update
+```
+6.安装最新版本Docker CE（社区版）
+```
+$ sudo apt-get install docker-ce
+```
+查看安装Docker的版本
+```
+$ docker --version
+```
+检查Docker CE 是否安装正确
+```
+$ sudo docker run hello-world
+```
+基本命令
+---
+# 启动docker
+```
+sudo service docker start
+```
 
-sudo apt-get  remove  ibus 
+# 停止docker
+```
+sudo service docker stop
+```
+
+# 重启docker
+```
+sudo service docker restart
+```
+
+# 列出镜像
+```
+docker image ls
+```
+
+# 拉取镜像
+```
+docker image pull library/hello-world
+```
+
+# 删除镜像
+```
+docker image rm 镜像id/镜像ID
+```
+
+# 创建容器
+```
+docker run [选项参数] 镜像名 [命令]
+```
+
+# 停止一个已经在运行的容器
+```
+docker container stop 容器名或容器id
+```
+
+# 启动一个已经停止的容器
+```
+docker container start 容器名或容器id
+```
+
+# kill掉一个已经在运行的容器
+```
+docker container kill 容器名或容器id
+```
+
+# 删除容器
+```
+docker container rm 容器名或容器id
+```
+
 系统优化：
 ---
+输入法：
+---
+```
+<!-- ibus -->
+sudo apt-get  remove  ibus 
+```
 
 磁盘挂载：
+---
 ```
+df -h
+lsblk -f
 sudo fdisk -l
-sudo mkfs.ext4 /dev/sdb
+sudo fdisk /dev/sdb
+sudo mkfs -t ext4 /dev/sdb1
+lsblk -f
 sudo fdisk -l
-cd home/
-ls
-cd aijia/
-ls
-mkdir Data
-sudo mount /dev/sdb /home/aijia/Data
+mkdir appdata
+sudo mount /dev/sdb1 /home/liuaj/appdata/
 sudo blkid
-sudo vim /etc/fstab
 
+sudo vim /etc/fstab
+<!-- 
+"/dev/sdb1  /home/liuaj/Data    ext4    defaults    0 0" 
 UUID=*** /* ext4 defaults 0 2
+-->
+sudo mount -a
+df -h
+"卸载：umount 设备名称 或者 挂载目录"
 ```
 
 桌面优化：
@@ -416,6 +553,8 @@ ModuleName=script
 ImageDir=/usr/share/plymouth/themes/suade
 ScriptFile=/usr/share/plymouth/themes/suade/mdv.script
 
+应用图标
+---
 
 操作优化：
 ---
