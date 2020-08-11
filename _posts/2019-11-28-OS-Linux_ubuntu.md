@@ -13,7 +13,6 @@ tag: [Linux, ubuntu]
 网络设置：
 ---
 
-
 初始化无线网卡：
 ---
 ```
@@ -121,7 +120,7 @@ Vim:
 sudo apt install vim
 ```
 
-DK:
+JDK:
 ---
 ```
 1、前往oracle Java官网下载JDK（http://www.oracle.com/technetwork/java/javase/downloads/index.html）
@@ -175,24 +174,12 @@ sudo mv sublime_text_3 sublime_text
 sudo vim sublime_text/sublime_text.desktop
 <!-- /opt/sublime_text/Icon/256x256/sublime-text.png -->
 sudo cp sublime_text/sublime_text.desktop /usr/share/applications/
-<!-- 
-echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
--->
 ```
 
 QQ:
 ---
 ```
 sudo dpkg -i linuxqq_2.0.0-b1-1024_amd64.deb 
-```
-
-Shadowsocks:
----
-```
-sudo tar -zxvf shadowsocks-local.tar.gz 
-sudo tar -zxvf autoproxy.pac_.tar.gz 
-sudo gedit ss.json
-./shadowsocks-local -c ss.json 
 ```
 
 Shadowsocks:
@@ -240,40 +227,17 @@ sudo gedit ss.json
 ./shadowsocks-local -c ss.json  -->
 ```
 
-shadowsocks服务端
----
-```
-apt-get install shadowsocks
-vim /etc/shadowsocks.json
-    {
-        "server": "0.0.0.0",
-        "server_port": 13090,
-        "local_port": 1080,
-        "password": "123456",
-        "timeout": 600,
-        "method": "aes-256-cfb"
-    }
-ssserver -c /etc/shadowsocks.json -d restart
-```
-
 Pycharm:
 ---
 ```
-<!-- sudo snap install pycharm-community --classic -->
 sudo tar -zxvf pycharm-community-2019.2.4.tar.gz 
 ```
 
 ideaIC:
 ---
 ```
-<!-- sudo snap install intellij-idea-community --classic -->
-sudo tar -zxvf ideaIC-2019.2.4.tar.gz 
-```
-
-eclipse:
----
-```
-snap install --classic eclipse
+sudo mkdir /opt/intelliJ
+sudo tar -zxvf ideaIC-2020.1.2.tar.gz -C /opt/intelliJ/ 
 ```
 
 Navicat:
@@ -350,16 +314,6 @@ Terminal=0
  -->
 ```
 
-Thunderbird:
----
-```
-安装
-sudo apt-get install thunderbird
-安装中文包
-sudo apt-get install thunderbird-locale-zh-cn
-<!-- sudo tar -zxvf thunderbird-68.2.2.tar.gz  -->
-```
-
 phddns(花生壳):
 ---
 ```
@@ -371,6 +325,18 @@ CoCoMusic：
 ---
 ```
 https://github.com/xtuJSer/CoCoMusic/releases
+```
+
+Thunderbird
+---
+```
+安装
+sudo apt-get install thunderbird
+安装中文包
+sudo apt-get install thunderbird-locale-zh-cn
+<!-- 
+sudo tar -zxvf thunderbird-68.2.2.tar.gz 
+-->
 ```
 
 Nginx:
@@ -406,7 +372,7 @@ cd ../../nginx/
 sudo ./nginx 
 ```
 
-docker:
+docker
 ---
 安装步骤：
 1.更新Ubuntu的apt源索引
@@ -518,7 +484,7 @@ sudo fdisk /dev/sdb
 sudo mkfs -t ext4 /dev/sdb1
 lsblk -f
 sudo fdisk -l
-mkdir appdata
+mkdir ~/appdata
 sudo mount /dev/sdb1 /home/liuaj/appdata/
 sudo blkid
 
@@ -534,14 +500,16 @@ df -h
 
 桌面优化：
 ---
+```
 sudo apt-get install gnome-shell-extensions
 sudo apt install chrome-gnome-shell
 sudo apt install gnome-tweaks
 sudo apt install gnome-tweak-tool
 
+<!-- 
 必应每日壁纸
 安装方法有很多，我觉得最方便的还是用chrome装gnome扩展（Bing Wallpaper Changer）
-
+ -->
 good-bye-gdm-flick/
 
 [Plymouth Theme]
@@ -552,6 +520,7 @@ ModuleName=script
 [script]
 ImageDir=/usr/share/plymouth/themes/suade
 ScriptFile=/usr/share/plymouth/themes/suade/mdv.script
+```
 
 应用图标
 ---
