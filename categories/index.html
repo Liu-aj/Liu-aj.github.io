@@ -4,59 +4,60 @@ title: 分类
 header: Posts By Category
 ---
 
-<div class="container docs-container"> 
-	<div class="row"> 
-		<div class="col-md-3"> 
-			<div class="sidebar hidden-print" role="complementary"> 
-				<div id="navigation"> 
+<div class="container docs-container">
+	<div class="row">
+		<div class="col-md-3">
+			<div class="sidebar hidden-print" role="complementary">
+				<div id="navigation">
 					<h1>目录</h1>
 					<ul class="nav sidenav">
 						{% for forType in site.forTypes %}
-							<li><a href="#forType_{{forType}}">{{forType}}</a>
-								<ul>
-									{% for categorie in site.categories %}
-										{% for post in site.posts %}
-											{% if post.forType == forType and post.category == categorie[0] %}
-												<li><a href="#category_{{forType}}_{{post.category}}">{{ post.category }}</a></li>
-												{% break %}
-											{% endif %}
-										{% endfor %}
-									{% endfor %} 
-								</ul>
-							</li>
+						<li><a href="#forType_{{forType}}">{{forType}}</a>
+							<ul>
+								{% for categorie in site.categories %}
+								{% for post in site.posts %}
+								{% if post.forType == forType and post.category == categorie[0] %}
+								<li><a href="#category_{{forType}}_{{post.category}}">{{ post.category }}</a></li>
+								{% break %}
+								{% endif %}
+								{% endfor %}
+								{% endfor %}
+							</ul>
+						</li>
 						{% endfor %}
-					</ul> 
-				</div> 
-			</div> 
-		</div>	
-		<div class="col-md-9" role="main"> 
-			<div class="panel docs-content"> 
-				<div class="wrapper"> 
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-9" role="main">
+			<div class="panel docs-content">
+				<div class="wrapper">
 					<div class="home">
 						{% for forType in site.forTypes %}
-							<h1 id="forType_{{forType}}">{{forType}}</h1>
-							{% for category in site.categories %}
-							{% assign my_variable = false %}
-								{% for post in site.posts %}
-									{% if post.forType == forType and post.category == category[0]%}
-										{% if my_variable != true %}
-											<h3 id="category_{{forType}}_{{category[0]}}">{{category[0]}}</h3>
-											<ul>
-												{% assign my_variable = true %}
-										{% endif %}
-											<ol class="breadcrumb">
-												<li><span>{{ post.date | date: "%B %e, %Y" }}</span> &raquo; <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
-											</ol>
-									{% endif %}
-									{% if post.next == null %}
-										</ul>
-									{% endif %}
-								{% endfor %}
-							{% endfor %}
+						<h1 id="forType_{{forType}}">{{forType}}</h1>
+						{% for category in site.categories %}
+						{% assign my_variable = false %}
+						{% for post in site.posts %}
+						{% if post.forType == forType and post.category == category[0]%}
+						{% if my_variable != true %}
+						<h3 id="category_{{forType}}_{{category[0]}}">{{category[0]}}</h3>
+						<ul>
+							{% assign my_variable = true %}
+							{% endif %}
+							<ol class="breadcrumb">
+								<li><span>{{ post.date | date: "%B %e, %Y" }}</span> &raquo; <a
+										href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+							</ol>
+							{% endif %}
+							{% if post.next == null %}
+						</ul>
+						{% endif %}
 						{% endfor %}
-					</div> 
-				</div> 
-			</div> 
-		</div> 
-	</div> 
+						{% endfor %}
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
