@@ -527,6 +527,21 @@ ScriptFile=/usr/share/plymouth/themes/suade/mdv.script
 
 操作优化：
 ---
+系统设置
+```
+sudo apt-get install unity-control-center
+```
+
+注销
+```
+sudo pkill Xorg
+```
+
+截图软件
+```
+sudo apt-get install flameshot
+Command里添加flameshot gui
+```
 
 快捷鍵
 ---
@@ -535,3 +550,4 @@ gsettings get org.gnome.desktop.wm.keybindings switch-to-workspace-left
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left "[]"
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "[]"
 ```
+
