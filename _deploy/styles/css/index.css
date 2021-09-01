@@ -4775,7 +4775,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-inverse {
-	background-color: #1d365d;
+	background-color: #369;
 	border-color: #111f36;
 }
 
@@ -7663,7 +7663,7 @@ hr {
 .docs-header,
 .docs-home {
 	color: #b9c8e0;
-	background-color: #1d365d;
+	background-color: #369;
 }
 
 /* Page headers */
@@ -7838,9 +7838,9 @@ hr {
 .sidebar .nav > .active:hover > a,
 .sidebar .nav > .active:focus > a {
 	font-weight: bold;
-	color: #1d365d;
+	color: #369;
 	background-color: transparent;
-	border-right: 1px solid #1d365d;
+	border-right: 1px solid #369;
 }
 
 .sidebar .nav .nav {
@@ -7898,7 +7898,7 @@ hr {
 
 .docs-nav {
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15);
-	background-color: #1d365d;
+	background-color: #369;
 	border-color: rgba(0, 0, 0, 0.2);
 	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.07);
 }
@@ -7938,7 +7938,7 @@ hr {
 }
 
 .docs-nav .navbar-toggle {
-	border-color: #1d365d;
+	border-color: #369;
 }
 
 .docs-nav .navbar-toggle:hover {
@@ -7947,7 +7947,7 @@ hr {
 }
 
 .btn-outline {
-	color: #1d365d;
+	color: #369;
 	background-color: #fff;
 	border-color: #e5e5e5;
 }
@@ -7956,8 +7956,8 @@ hr {
 .btn-outline:focus,
 .btn-outline:active {
 	color: #fff;
-	background-color: #1d365d;
-	border-color: #1d365d;
+	background-color: #369;
+	border-color: #369;
 }
 
 /* Inverted outline button (white on dark) */
@@ -7970,7 +7970,7 @@ hr {
 .btn-outline-inverse:hover,
 .btn-outline-inverse:focus,
 .btn-outline-inverse:active {
-	color: #1d365d;
+	color: #369;
 	text-shadow: none;
 	background-color: #fff;
 	border-color: #fff;
