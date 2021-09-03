@@ -21,7 +21,7 @@ email: aijia930515@163.com
 #   line in _config.yml. It will appear in your document head meta (for
 #   Google search results) and in your feed.xml site description.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: https://laijia.github.io/ # the base hostname & protocol for your site, e.g. http://example.com
+url: https://Liu-aj.github.io/ # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username: Laijia
 
@@ -63,8 +63,8 @@ name: Liuaj's blog
 description: 学会积累，厚积薄发
 email: aijia930515@163.com
 author: Liuaj
-resume_site: https://laijia.github.io/
-github: https://github.com/Laijia/laijia.github.io
+resume_site: https://Liu-aj.github.io/
+github: https://github.com/Laijia/Liu-aj.github.io
 meta_description: Liuaj;个人博客;学而不思则罔;思而不学则殆;生命不止;折腾不休
 motto: 尝试总结分类
 banner: 学而不思则罔，思而不学则殆。

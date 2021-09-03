@@ -17,7 +17,7 @@ header: 打赏
 点击上面小额赞助即可呦！
 <br>
 
->声明: 此博客空间用于分享作者个人的一些技术相关， 此网站基于[MIT开源协议](https://github.com/Laijia/laijia.github.io/blob/master/LICENSE)所有内容完全免费，请放心使用。
+>声明: 此博客空间用于分享作者个人的一些技术相关， 此网站基于[MIT开源协议](https://github.com/Laijia/Liu-aj.github.io/blob/master/LICENSE)所有内容完全免费，请放心使用。
 
 <hr>
 
