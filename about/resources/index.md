@@ -11,18 +11,18 @@ title: 资源地址
 
 + TED（最优质的演讲）：<https://www.ted.com/>
 + 谷粉学术：<https://gfsoso.99lb.net/scholar.html>
-+ 大学资源网：<http://www.dxzy163.com/>
-+ 简答题：<http://www.jiandati.com/>
++ 大学资源网：<https://http://www.dxzy163.com/>
++ 简答题：<https://http://www.jiandati.com/>
 + 网易公开课：<https://open.163.com/ted/>
 + 网易云课堂：<https://study.163.com/>
-+ 中国大学MOOC：<www.icourse163.org>
-+ 哔哩哔哩弹幕网：<www.bilibili.com>
-+ 我要自学网：<www.51zxw.net>
-+ 知乎：<www.zhihu.com>
-+ 学堂在线：<www.xuetangx.com>
-+ 爱课程：<www.icourses.cn>
++ 中国大学MOOC：<https://www.icourse163.org>
++ 哔哩哔哩弹幕网：<https://www.bilibili.com>
++ 我要自学网：<https://www.51zxw.net>
++ 知乎：<https://www.zhihu.com>
++ 学堂在线：<https://www.xuetangx.com>
++ 爱课程：<https://www.icourses.cn>
 + 猫咪论文：<https://lunwen.im/>
-+ iData（论文搜索）：<www.cn-ki.net>
++ iData（论文搜索）：<https://www.cn-ki.net>
 + 文泉考试：<https://www.wqkaoshi.com>
 + CSDN：<https://www.csdn.net/>
 
@@ -30,33 +30,33 @@ title: 资源地址
 -----------------------------------------------------------------
 
 + 书栈网（极力推荐）：<https://www.bookstack.cn/>
-+ 码农之家（计算机电子书下载）：<www.xz577.com>
-+ 鸠摩搜书：<www.jiumodiary.com>
-+ 云海电子图书馆：<www.pdfbook.cn>
-+ 周读（书籍搜索）：<ireadweek.com>
-+ 知轩藏书：<http://www.zxcs.me/>
++ 码农之家（计算机电子书下载）：<https://www.xz577.com>
++ 鸠摩搜书：<https://www.jiumodiary.com>
++ 云海电子图书馆：<https://www.pdfbook.cn>
++ 周读（书籍搜索）：<https://ireadweek.com>
++ 知轩藏书：<https://http://www.zxcs.me/>
 + 脚本之家电子书下载：<https://www.jb51.net/books/>
-+ 搜书VIP-电子书搜索：<http://www.soshuvip.com/all.html>
++ 搜书VIP-电子书搜索：<https://http://www.soshuvip.com/all.html>
 + 书格（在线古籍图书馆）：<https://new.shuge.org/>
-+ caj云阅读：<http://cajviewer.cnki.net/cajcloud/>
++ caj云阅读：<https://http://cajviewer.cnki.net/cajcloud/>
 + 必看网（人生必看的书籍）：<https://www.biikan.com/>
 
 冷知识 / 黑科技
 -----------------------------------------------------------------
 
-+ 上班摸鱼必备（假装电脑系统升级）：<http://fakeupdate.net/>
-+ PIECES 拼图（30 个 CSS 碎片进行拼图，呈现 30 种濒临灭绝的动物）：<http://www.species-in-pieces.com/>
++ 上班摸鱼必备（假装电脑系统升级）：<https://http://fakeupdate.net/>
++ PIECES 拼图（30 个 CSS 碎片进行拼图，呈现 30 种濒临灭绝的动物）：<https://http://www.species-in-pieces.com/>
 + 图片立体像素画：<https://pissang.github.io/voxelize-image/>
-+ 福利单词（一个不太正经的背单词网站）：<http://dict.ftqq.com>
++ 福利单词（一个不太正经的背单词网站）：<https://http://dict.ftqq.com>
 + 查无此人（刷新网站，展现一张AI 生成的人脸照片）：<https://thispersondoesnotexist.com/>
 + 在线制作地图图例：<https://mapchart.net/>
-+ 创意光线绘画：<http://weavesilk.com/>
++ 创意光线绘画：<https://http://weavesilk.com/>
 + 星系观察：<https://stellarium-web.org/>
-+ 煎蛋：<http://jandan.net/>
++ 煎蛋：<https://http://jandan.net/>
 + 渣男-说话的艺术：<https://lovelive.tools/>
 + 全历史：<https://www.allhistory.com/>
 + iData：<https://www.cn-ki.net/>
-+ 术语在线：<http://www.termonline.cn/>
++ 术语在线：<https://http://www.termonline.cn/>
 
 写代码
 -----------------------------------------------------------------
@@ -71,27 +71,27 @@ title: 资源地址
 资源搜索
 -----------------------------------------------------------------
 
-+ DogeDoge搜索引擎：<www.dogedoge.com>
++ DogeDoge搜索引擎：<https://www.dogedoge.com>
 + 秘迹搜索：<https://mijisou.com/>
 + 小白盘：<https://www.xiaobaipan.com/>
-+ 云盘精灵（资源搜索）：<www.yunpanjingling.com>
-+ 虫部落（资源搜索）：<www.chongbuluo.com>
-+ 如风搜（资源搜索）：<http://www.rufengso.net/>
++ 云盘精灵（资源搜索）：<https://www.yunpanjingling.com>
++ 虫部落（资源搜索）：<https://www.chongbuluo.com>
++ 如风搜（资源搜索）：<https://http://www.rufengso.net/>
 + 爱扒：<https://www.zyboe.com/>
 
 小工具
 -----------------------------------------------------------------
 
-+ 奶牛快传（在线传输文件利器）：<cowtransfer.com>
++ 奶牛快传（在线传输文件利器）：<https://cowtransfer.com>
 + 文叔叔（大文件传输，不限速）：<https://www.wenshushu.cn/>
 + 云端超级应用空间（PS，PPT，Excel，Ai）：<https://uzer.me/>
 + 香当网（年终总结，个人简历，事迹材料，租赁合同，演讲稿）：<https://www.xiangdang.net/>
 + 二维码生成：<https://cli.im/>
-+ 搜狗翻译：<fanyi.sogou.com>
++ 搜狗翻译：<https://fanyi.sogou.com>
 + 熵数（图表制作，数据可视化）：<https://dydata.io/appv2/#/pages/index/home>
 + 拷贝兔：<https://cp.anyknew.com/>
-+ 图片无限变放大：<http://bigjpg.com/zh>
-+ 幕布（在线大纲笔记工具）：<mubu.com>
++ 图片无限变放大：<https://http://bigjpg.com/zh>
++ 幕布（在线大纲笔记工具）：<https://mubu.com>
 + 在线转换器（在线转换器转换任何测量单位）：<https://zh.justcnw.com/>
 + 调查问卷制作：<https://www.wenjuan.com/>
 + 果核剥壳（软件下载）：<https://www.ghpym.com/>
@@ -101,33 +101,33 @@ title: 资源地址
 导航页（工具集）
 -----------------------------------------------------------------
 
-+ 世界各国网址大全：<http://www.world68.com/>
-+ 小森林导航：<http://www.xsldh6.com/>
-+ 简捷工具：<http://www.shulijp.com/>
-+ NiceTool.net 好工具网：<http://www.nicetool.net/>
-+ 现实君工具箱（综合型在线工具集成网站）：<http://tool.uixsj.cn/>
-+ 蓝调网站：<http://lcoc.top/>
++ 世界各国网址大全：<https://http://www.world68.com/>
++ 小森林导航：<https://http://www.xsldh6.com/>
++ 简捷工具：<https://http://www.shulijp.com/>
++ NiceTool.net 好工具网：<https://http://www.nicetool.net/>
++ 现实君工具箱（综合型在线工具集成网站）：<https://http://tool.uixsj.cn/>
++ 蓝调网站：<https://http://lcoc.top/>
 + 偷渡鱼：<https://touduyu.com/>
-+ 牛导航：<http://www.ziliao6.com/>
++ 牛导航：<https://http://www.ziliao6.com/>
 + 小呆导航：<https://www.webjike.com/index.html>
-+ 简法主页：<http://www.jianfast.com/>
++ 简法主页：<https://http://www.jianfast.com/>
 + KIM主页：<https://kim.plopco.com/>
 + 聚BT：<https://jubt.net/cn/index.html>
 + 精准云工具合集：<https://jingzhunyun.com/>
 + 兔2工具合集：<https://www.tool2.cn/>
-+ 爱资料工具（在线实用工具集合）：<www.toolnb.com>
++ 爱资料工具（在线实用工具集合）：<https://www.toolnb.com>
 + 工具导航：<https://hao.logosc.cn/>
 
 看视频
 -----------------------------------------------------------------
 
 + 阿木影视：<https://www.aosk.online/>
-+ 电影推荐（分类别致）：<http://www.mvcat.com>
++ 电影推荐（分类别致）：<https://http://www.mvcat.com>
 + APP影院：<https://app.movie>
-+ 动漫视频网：<http://www.zzzfun.com/>
-+ NO视频官网：<http://www.novipnoad.com/>
-+ 大数据导航：<http://hao.199it.com/>
-+ VideoFk解析视频：<http://www.videofk.com/>
++ 动漫视频网：<https://http://www.zzzfun.com/>
++ NO视频官网：<https://http://www.novipnoad.com/>
++ 大数据导航：<https://http://hao.199it.com/>
++ VideoFk解析视频：<https://http://www.videofk.com/>
 
 学设计
 -----------------------------------------------------------------
@@ -138,14 +138,14 @@ title: 资源地址
 + Iconfont（阿里巴巴矢量图标库）：<https://www.iconfont.cn/>
 + 小图标下载：<https://www.easyicon.net/>
 + Flight Icon：<https://www.flighticon.co/>
-+ 第一字体转换器：<http://www.diyiziti.com/>
-+ doyoudosh（平面设计）：<www.doyoudo.com>
++ 第一字体转换器：<https://http://www.diyiziti.com/>
++ doyoudosh（平面设计）：<https://www.doyoudo.com>
 + 企业宣传视频在线制作：<https://duomu.tv/>
-+ MAKE海报设计官网：<http://maka.im/>
++ MAKE海报设计官网：<https://http://maka.im/>
 + 一键海报神器：<https://www.logosc.cn/photo/utm_source=hao.logosc.cn&utm_medium=referral>
-+ 字由（字体设计）：<http://www.hellofont.cn/>
++ 字由（字体设计）：<https://http://www.hellofont.cn/>
 + 查字体网站：<https://fonts.safe.360.cn/>
-+ 爱给网（免费素材下载的网站，包括音效、配乐，3D、视频、游戏，平面、教程）：<http://www.aigei.com/>
++ 爱给网（免费素材下载的网站，包括音效、配乐，3D、视频、游戏，平面、教程）：<https://http://www.aigei.com/>
 + 在线视频剪辑：<https://bilibili.clipchamp.com/editor>
 
 搞文档
@@ -157,30 +157,30 @@ title: 资源地址
 + PDF处理：<https://www.pdfpai.com/>
 + PDF处理：<https://www.hipdf.cn/>
 + 图片压缩，PDF处理：<https://docsmall.com/>
-+ 腾讯文档（在线协作编辑和管理文档）：<docs.qq.com>
-+ ProcessOn（在线协作制作结构图）：<www.processon.com>
-+ iLovePDF（在线转换PDF利器）：<www.ilovepdf.com>
++ 腾讯文档（在线协作编辑和管理文档）：<https://docs.qq.com>
++ ProcessOn（在线协作制作结构图）：<https://www.processon.com>
++ iLovePDF（在线转换PDF利器）：<https://www.ilovepdf.com>
 + PPT在线制作：<https://www.woodo.cn/>
 + PDF24工具（pdf处理工具）：<https://tools.pdf24.org/en>
-+ IMGBOT（在线图片处理）：<www.imgbot.ai>
-+ 福昕云编辑（在线编辑PDF）：<edit.foxitcloud.cn>
-+ TinyPNG（在线压缩图片）：<tinypng.com>
-+ UZER.ME（在线使用各种大应用，在线使用CAD，MATLAB，Office三件套）：<uzer.me>
-+ 优品PPT（模板下载）：<http://www.ypppt.com/>
-+ 第一PPT（模板下载）：<http://www.1ppt.com/xiazai/>
-+ 三顿PPT导航：<sandunppt.com>
++ IMGBOT（在线图片处理）：<https://www.imgbot.ai>
++ 福昕云编辑（在线编辑PDF）：<https://edit.foxitcloud.cn>
++ TinyPNG（在线压缩图片）：<https://tinypng.com>
++ UZER.ME（在线使用各种大应用，在线使用CAD，MATLAB，Office三件套）：<https://uzer.me>
++ 优品PPT（模板下载）：<https://http://www.ypppt.com/>
++ 第一PPT（模板下载）：<https://http://www.1ppt.com/xiazai/>
++ 三顿PPT导航：<https://sandunppt.com>
 + Excel函数表：<https://support.office.com/zh-cn/office/excel-函数-按字母顺序-b3944572-255d-4efb-bb96-c6d90033e188>
 
 找图片
 -----------------------------------------------------------------
 
-+ 电脑壁纸：<>
++ 电脑壁纸：<https://>
 + <https://unsplash.com/>
 + <https://pixabay.com/>
 + <https://www.pexels.com/>
 + <https://visualhunt.com/>
 + <https://www.ssyer.com/>
-+ <http://lcoc.top/bizhi/>
-+ 彼岸图网：<http://pic.netbian.com/>
++ <https://http://lcoc.top/bizhi/>
++ 彼岸图网：<https://http://pic.netbian.com/>
 + 极像素（超高清大图）：<https://www.sigoo.com/>
 + 免费版权图片搜索：<https://www.logosc.cn/so/>
