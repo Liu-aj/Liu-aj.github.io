@@ -1,6 +1,6 @@
 ---
 layout: post
-titel: Mysql问题处理
+title: Mysql问题处理
 date: 2017-04-14 16:21:00
 forType: DB
 category: Mysql
