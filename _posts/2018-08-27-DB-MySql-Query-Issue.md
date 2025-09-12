@@ -10,16 +10,18 @@ tag: [Mysql, 问题处理]
 * content
 {:toc}
 
-问题描述
------------------------------------------------------------------
+# 问题描述
+
 Mysql中某一字段定义成int类型，查询时传入String，会截取字符串
 
+# 解决方案
 
-解决
------------------------------------------------------------------
-```
-1. SELECT COLUMN_NAME FROM TABLE_NAME t WHERE CONCAT(t.int_id) = '***' ;
-2. SELECT COLUMN_NAME FROM TABLE_NAME t WHERE CAST(t.int_id as char) = '***' ;
+```sql
+-- 方法1：使用CONCAT函数将数字转换为字符串
+SELECT COLUMN_NAME FROM TABLE_NAME t WHERE CONCAT(t.int_id) = '12345';
+
+-- 方法2：使用CAST函数将数字转换为字符串
+SELECT COLUMN_NAME FROM TABLE_NAME t WHERE CAST(t.int_id as char) = '12345';
 ```
 
 引用
