@@ -5,7 +5,6 @@ date: 2026-03-18
 author: Liu
 categories: [Tools]
 tags: [Cursor, AI, IDE, 开发工具, 效率]
-forType: Tools
 description: "深入探索 Cursor AI 编程工具的核心功能、实际应用技巧和最佳实践，帮助你建立高效的 AI 辅助编程工作流。"
 ---
 
