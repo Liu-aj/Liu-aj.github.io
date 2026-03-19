@@ -2,9 +2,8 @@
 layout: post
 title: Ubuntu完全配置指南（20.04/22.04/24.04）
 date: 2024-06-15 16:21:00
-forType: OS
 category: Linux
-tag: [Linux, Ubuntu, 系统配置, 开发环境, 软件安装, 服务器配置]
+tags: [Linux, Ubuntu, 系统配置, 开发环境, 软件安装]
 ---
 
 * content

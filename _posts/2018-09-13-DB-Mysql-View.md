@@ -2,9 +2,8 @@
 layout: post
 title: MySQL视图详解
 date: 2018-09-13 16:27:42
-forType: DB
-category: Mysql
-tag: [Mysql, 数据库视图]
+category: DB
+tags: [数据库, SQL, 开发]
 ---
 
 * content

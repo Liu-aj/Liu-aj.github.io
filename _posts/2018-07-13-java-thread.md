@@ -2,9 +2,8 @@
 layout: post
 title: Java线程与并发编程完全指南
 date: 2018-07-13 13:46:05
-forType: Java
-category: 线程
-tag: [Java, 线程, 并发编程, 多线程]
+category: Java
+tags: [Java, 线程, 并发编程, 多线程]
 ---
 
 * content

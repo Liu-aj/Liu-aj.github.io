@@ -2,9 +2,8 @@
 layout: post
 title: 2026 开发者 AI 工具箱：5 款提升编码效率的智能工具实测
 date: 2026-03-18 10:00:00
-forType: Tools
-category: AI工具
-tag: [AI, 编程工具, 效率, Copilot, Cursor, Windsurf, Q Developer, JetBrains]
+category: AI
+tags: [AI, 编程工具, 效率, Copilot, Cursor]
 ---
 
 * content

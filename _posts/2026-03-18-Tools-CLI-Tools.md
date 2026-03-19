@@ -2,8 +2,8 @@
 layout: post
 title: "用好这 5 个 CLI 工具，终端效率翻倍"
 date: 2026-03-18
-categories: [工具, Linux, 终端]
-tags: [CLI, bat, eza, fd, ripgrep, btop, 效率工具]
+category: Tools
+tags: [CLI, bat, eza, fd, ripgrep]
 ---
 
 作为长期在终端工作的开发者，高效的命令行工具能极大提升日常效率。今天介绍 5 个让我用过就回不去的 CLI 工具，它们都是对传统命令的现代化替代——颜值更高、功能更强、速度更快。

@@ -2,9 +2,8 @@
 layout: post
 title: MySQL函数创建与管理完全指南
 date: 2017-09-13 16:21:00
-forType: DB
-category: Mysql
-tag: [Mysql, 数据库函数, 存储过程, 性能优化]
+category: DB
+tags: [Mysql, 数据库函数, 存储过程, 性能优化]
 ---
 
 * content

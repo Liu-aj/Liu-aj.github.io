@@ -2,9 +2,8 @@
 layout: post
 title: MongoDB查询技巧
 date: 2018-09-07 18:11:26
-forType: DB
-category: MongoDB
-tag: [MongoDB, 查询技巧]
+category: DB
+tags: [数据库, SQL, 开发]
 ---
 
 * content

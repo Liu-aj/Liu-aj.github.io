@@ -2,9 +2,8 @@
 layout: post
 title: Mysql定义类型与查询类型不一致问题处理
 date: 2018-08-29 14:27:25
-forType: DB
-category: Mysql
-tag: [Mysql, 问题处理]
+category: DB
+tags: [数据库, SQL, 开发]
 ---
 
 * content

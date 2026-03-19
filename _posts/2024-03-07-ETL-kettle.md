@@ -2,9 +2,8 @@
 layout: post
 title: Kettle入门指南与实战技巧
 date: 2024-03-07 23:00:31
-forType: ETL
-category: ETL
-tag: [ETL, Kettle, 数据集成, 数据迁移, 数据仓库]
+category: Workflow
+tags: [ETL, Kettle, 数据集成, 数据迁移, 数据仓库]
 ---
 
 * content
