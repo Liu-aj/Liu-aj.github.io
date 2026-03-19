@@ -308,30 +308,44 @@ WebAssembly 的沙箱特性使其成为插件系统的理想选择：
 // plugin_interface/src/lib.rs
 use wasm_bindgen::prelude::*;
 
+// 注意：wasm_bindgen 不支持 trait 导出，需要使用具体类型
+// 这里定义具体插件结构体并直接导出方法
+
 #[wasm_bindgen]
-pub trait Plugin {
-    fn name(&self) -> String;
-    fn version(&self) -> String;
-    fn execute(&self, input: &[u8]) -> Vec<u8>;
+pub struct ImageFilterPlugin {
+    name: String,
+    version: String,
 }
 
-// 具体插件实现
-pub struct ImageFilterPlugin;
-
-impl Plugin for ImageFilterPlugin {
-    fn name(&self) -> String {
-        "ImageFilter".to_string()
+#[wasm_bindgen]
+impl ImageFilterPlugin {
+    #[wasm_bindgen(constructor)]
+    pub fn new() -> Self {
+        Self {
+            name: "ImageFilter".to_string(),
+            version: "1.0.0".to_string(),
+        }
     }
 
-    fn version(&self) -> String {
-        "1.0.0".to_string()
+    #[wasm_bindgen]
+    pub fn name(&self) -> String {
+        self.name.clone()
     }
 
-    fn execute(&self, input: &[u8]) -> Vec<u8> {
-        // 图像滤镜处理逻辑
+    #[wasm_bindgen]
+    pub fn version(&self) -> String {
+        self.version.clone()
+    }
+
+    #[wasm_bindgen]
+    pub fn execute(&self, input: &[u8]) -> Vec<u8> {
+        // 图像滤镜处理逻辑（反色效果）
         input.iter().map(|&b| 255 - b).collect()
     }
 }
+
+// 宿主侧可以定义 trait 来统一管理不同的插件实例
+// trait Plugin { fn name(&self) -> &str; fn execute(&self, input: &[u8]) -> Vec<u8>; }
 ```
 
 宿主系统集成：
@@ -397,6 +411,11 @@ struct ProcessedResult {
 
 #[no_mangle]
 pub extern "C" fn process_sensor_data(input_ptr: *const u8, input_len: usize) -> usize {
+    // 安全说明：
+    // 1. 调用方必须确保 input_ptr 指向的内存区域至少有 input_len 字节
+    // 2. 输出缓冲区复用输入缓冲区，要求缓冲区足够大以容纳输出结果
+    // 3. 实际生产中应使用双缓冲区模式：传入独立的输出缓冲区指针
+    // 4. 或使用 Wasm 线性内存预分配区域，避免指针越界
     let input = unsafe {
         std::slice::from_raw_parts(input_ptr, input_len)
     };
@@ -414,6 +433,8 @@ pub extern "C" fn process_sensor_data(input_ptr: *const u8, input_len: usize) ->
     };
 
     // 返回结果到预分配的内存区域
+    // 注意：此处复用输入缓冲区，要求输出不超过输入长度
+    // 生产环境建议使用独立输出缓冲区或通过宿主分配内存
     let output = serde_json::to_vec(&result).unwrap();
     unsafe {
         std::ptr::copy_nonoverlapping(output.as_ptr(), input_ptr as *mut u8, output.len());
@@ -501,7 +522,9 @@ impl ImageService {
             self.width, self.height, self.buffer.clone()
         ).unwrap();
 
-        let rotated = image::imageops::rotate_free(&img, degrees.to_radians());
+        // image crate 0.24+ 使用 rotate 替代 rotate_free
+        // rotate 接受角度值（整数），内部处理旋转逻辑
+        let rotated = image::imageops::rotate(&img, image::imageops::Rotate90);
 
         self.width = rotated.width();
         self.height = rotated.height();
