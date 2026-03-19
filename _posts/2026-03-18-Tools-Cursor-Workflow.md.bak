@@ -5,6 +5,7 @@ date: 2026-03-18
 author: Liu
 categories: [Tools]
 tags: [Cursor, AI, IDE, 开发工具, 效率]
+forType: Tools
 description: "深入探索 Cursor AI 编程工具的核心功能、实际应用技巧和最佳实践，帮助你建立高效的 AI 辅助编程工作流。"
 ---
 
@@ -129,16 +130,9 @@ public void process(List<String> items) {
         }));
     }
     // 等待所有任务完成
-    for (Future<?> future : futures) {
-        try {
-            future.get();
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt(); // 恢复中断状态
-            break;
-        } catch (ExecutionException e) {
-            e.printStackTrace(); // 实际项目中应使用日志框架
-        }
-    }
+    futures.forEach(f -> {
+        try { f.get(); } catch (Exception e) { e.printStackTrace(); }
+    });
 }
 ```
 
