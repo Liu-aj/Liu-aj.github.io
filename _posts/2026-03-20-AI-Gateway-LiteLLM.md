@@ -790,7 +790,7 @@ def generate_race_report(result: RACEResult) -> str:
 FACT 框架特别适用于知识型 Agent：
 
 | 维度 | 英文 | 含义 | 典型评估方法 |
-|------|------|------|-------------|
+|:---|:---|:---|:---|
 | **F** | Factuality | 事实性 | 真伪判断、幻觉检测 |
 | **A** | Actionability | 可执行性 | 步骤完整性、指令可执行 |
 | **C** | Completeness | 完整性 | 信息覆盖度、多视角 |
@@ -799,10 +799,10 @@ FACT 框架特别适用于知识型 Agent：
 ### 6.2 FACT vs RACE 对比
 
 | 对比维度 | RACE | FACT |
-|---------|------|------|
+|:---|:---|:---|
 | **适用场景** | 通用 Agent | 知识型 Agent |
 | **评估重点** | 稳定性、效率 | 内容质量 |
-| **自动化程度** | 高（可全自动化） | 中（需部分人工） |
+| **自动化程度** | 高（全自动化） | 中（需部分人工） |
 | **实施成本** | 低 | 中 |
 | **典型应用** | 客服机器人、代码助手 | 文档问答、知识库查询 |
 
@@ -1428,6 +1428,5 @@ class MultimodalEvaluator:
 ---
 
 **作者**：AICode  
-**发布日期**：2026-03-20  
-**更新日期**：2026-03-20  
-**标签**：#AI-Agent #Evaluation #LLM #Quality-Assurance #Anthropic
+**日期**：2026-03-20  
+**标签**：#AI-Agent #Evaluation #LLM #Quality-Assurance
