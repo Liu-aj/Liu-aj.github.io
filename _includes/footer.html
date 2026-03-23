@@ -49,15 +49,16 @@ $(document).ready(function() {
 </script>
 
 <style>
-/* Footer 样式 */
+/* Footer 样式 - 使用统一配色 */
 .footer {
-	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	background: var(--primary-gradient);
 	color: rgba(255,255,255,0.9);
 	padding: 30px 0;
 	margin-top: 50px;
 }
 .footer a {
 	color: rgba(255,255,255,0.9);
+	transition: all 0.2s ease;
 }
 .footer a:hover {
 	color: #fff;
@@ -83,33 +84,47 @@ $(document).ready(function() {
 	height: 40px;
 	background: rgba(255,255,255,0.1);
 	border-radius: 50%;
-	transition: all 0.3s;
+	transition: all 0.3s ease;
 }
 .footer-links a:hover {
 	background: rgba(255,255,255,0.2);
 	transform: translateY(-3px);
 }
 
-/* 返回顶部按钮 */
+/* 返回顶部按钮 - 使用统一配色 */
 .back-to-top {
 	position: fixed;
 	bottom: 30px;
 	right: 30px;
 	width: 45px;
 	height: 45px;
-	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	background: var(--primary-gradient);
 	color: #fff;
 	border-radius: 50%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
-	box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-	transition: all 0.3s;
+	box-shadow: var(--shadow-md);
+	transition: all 0.3s ease;
 	z-index: 999;
 }
 .back-to-top:hover {
 	transform: translateY(-3px);
-	box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+	box-shadow: var(--shadow-lg);
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+	.footer-content {
+		flex-direction: column;
+		text-align: center;
+	}
+	.footer-info {
+		text-align: center;
+	}
+	.footer-links {
+		margin-top: 15px;
+	}
 }
 </style>
