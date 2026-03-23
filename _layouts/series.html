@@ -1,0 +1,57 @@
+---
+layout: default
+---
+
+<div class="container docs-container">
+	<div class="row">
+		<div class="col-md-3">
+			<div class="sidebar hidden-print" role="complementary">
+				{% if page.series %}
+				<div id="navigation">
+					<h1>本系列目录</h1>
+					{% assign series_posts = site.series | where: "series", page.series | sort: "order" %}
+					<ul class="nav sidenav">
+						{% for post in series_posts %}
+						<li {% if post.url == page.url %}style="font-weight: bold;"{% endif %}>
+							<a href="{{ post.url }}">{{ post.title }}</a>
+						</li>
+						{% endfor %}
+					</ul>
+				</div>
+				{% endif %}
+			</div>
+		</div>
+		<div class="col-md-9" role="main">
+			<div class="panel docs-content">
+				<div class="wrapper">
+					<header class="post-header">
+						{% if page.series %}
+						<div class="series-badge">📚 {{ page.series }}</div>
+						{% endif %}
+						<h1 class="post-title">{{ page.title }}</h1>
+						<div class="meta">
+							Posted on <span class="postdate">{{ page.date | date: "%b %d, %Y" }}</span> By
+							<a target="_blank" href="{{site.url}}">{{ site.author }}</a>
+						</div>
+						<br/>
+					</header>
+					<article class="post-content">
+						{{ content }}
+					</article>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<style>
+.series-badge {
+	display: inline-block;
+	background: #f0f0f0;
+	padding: 4px 12px;
+	border-radius: 4px;
+	font-size: 14px;
+	margin-bottom: 10px;
+	color: #666;
+}
+</style>
