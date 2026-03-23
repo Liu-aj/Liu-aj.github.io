@@ -20,19 +20,230 @@
 
 	<script src="{{ '/styles/js/jquery.min.js' | prepend: site.baseurl }}"></script>
 
-	<!-- 百度统计已关闭
-	<script>
-		var _hmt = _hmt || [];
-		(function () {
-			var hm = document.createElement("script");
-			hm.src = "https://hm.baidu.com/hm.js?{{ site.baidu_analysis }}";
-			var s = document.getElementsByTagName("script")[0];
-			s.parentNode.insertBefore(hm, s);
-		})();
-	</script>
-	-->
-
+	<!-- 自定义美化样式 -->
 	<style type="text/css">
+		/* ===== 全局样式 ===== */
+		body {
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+			line-height: 1.8;
+			color: #333;
+		}
+
+		/* ===== 导航栏美化 ===== */
+		.navbar {
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+			border: none !important;
+			box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+		}
+		.navbar a {
+			color: #fff !important;
+			font-weight: 500;
+		}
+		.navbar a:hover {
+			color: #f0f0f0 !important;
+		}
+
+		/* ===== Banner 美化 ===== */
+		.banner {
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			padding: 60px 0;
+			margin-bottom: 30px;
+		}
+		.banner h1 {
+			color: #fff;
+			font-size: 2.5em;
+			text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+		}
+		.banner p {
+			color: rgba(255,255,255,0.9);
+			font-size: 1.2em;
+		}
+
+		/* ===== 文章卡片美化 ===== */
+		.post-header {
+			border-bottom: 2px solid #f0f0f0;
+			padding-bottom: 20px;
+			margin-bottom: 30px;
+		}
+		.post-title {
+			color: #2c3e50;
+			font-size: 2em;
+			font-weight: 700;
+			line-height: 1.4;
+		}
+		.meta {
+			color: #7f8c8d;
+			font-size: 0.95em;
+			margin-top: 10px;
+		}
+
+		/* ===== 文章内容美化 ===== */
+		.post-content {
+			font-size: 16px;
+			line-height: 1.9;
+		}
+		.post-content h2 {
+			color: #2c3e50;
+			border-left: 4px solid #667eea;
+			padding-left: 15px;
+			margin-top: 40px;
+			margin-bottom: 20px;
+		}
+		.post-content h3 {
+			color: #34495e;
+			margin-top: 30px;
+		}
+		.post-content p {
+			margin-bottom: 1.2em;
+		}
+		.post-content a {
+			color: #667eea;
+			border-bottom: 1px dashed #667eea;
+		}
+		.post-content a:hover {
+			color: #764ba2;
+			border-bottom-color: #764ba2;
+		}
+
+		/* ===== 代码块美化 ===== */
+		.post-content pre {
+			background: #2d3748;
+			border-radius: 8px;
+			padding: 20px;
+			overflow-x: auto;
+			margin: 20px 0;
+		}
+		.post-content code {
+			font-family: 'Fira Code', 'Monaco', 'Consolas', monospace;
+			font-size: 14px;
+		}
+		.post-content pre code {
+			color: #e2e8f0;
+		}
+		.post-content p code {
+			background: #f7f7f7;
+			color: #e74c3c;
+			padding: 2px 6px;
+			border-radius: 4px;
+		}
+
+		/* ===== 引用块美化 ===== */
+		.post-content blockquote {
+			border-left: 4px solid #667eea;
+			background: #f8f9fa;
+			padding: 15px 20px;
+			margin: 20px 0;
+			color: #555;
+			border-radius: 0 8px 8px 0;
+		}
+
+		/* ===== 表格美化 ===== */
+		.post-content table {
+			width: 100%;
+			border-collapse: collapse;
+			margin: 20px 0;
+			box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+		}
+		.post-content th {
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			color: #fff;
+			padding: 12px 15px;
+		}
+		.post-content td {
+			padding: 12px 15px;
+			border-bottom: 1px solid #eee;
+		}
+		.post-content tr:hover td {
+			background: #f8f9fa;
+		}
+
+		/* ===== 侧边栏美化 ===== */
+		.sidebar {
+			background: #fff;
+			border-radius: 8px;
+			padding: 20px;
+			box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+		}
+		.sidebar h1 {
+			font-size: 1.2em;
+			color: #2c3e50;
+			border-bottom: 2px solid #667eea;
+			padding-bottom: 10px;
+		}
+		.sidebar ul {
+			list-style: none;
+			padding-left: 0;
+		}
+		.sidebar li a {
+			color: #555;
+			display: block;
+			padding: 8px 0;
+			transition: all 0.2s;
+		}
+		.sidebar li a:hover {
+			color: #667eea;
+			padding-left: 5px;
+		}
+
+		/* ===== 标签页美化 ===== */
+		.tag-page h2 {
+			color: #667eea;
+			border-bottom: 2px solid #f0f0f0;
+			padding-bottom: 10px;
+		}
+
+		/* ===== 专题页美化 ===== */
+		.series-badge {
+			display: inline-block;
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			color: #fff;
+			padding: 5px 15px;
+			border-radius: 20px;
+			font-size: 0.85em;
+			margin-bottom: 10px;
+		}
+		.home h1 {
+			color: #2c3e50;
+			margin-bottom: 20px;
+		}
+		.home h2 {
+			color: #667eea;
+			margin-top: 30px;
+		}
+		.home ol {
+			padding-left: 20px;
+		}
+		.home ol li a {
+			color: #555;
+		}
+		.home ol li a:hover {
+			color: #667eea;
+		}
+
+		/* ===== 响应式优化 ===== */
+		@media (max-width: 768px) {
+			.post-title {
+				font-size: 1.5em;
+			}
+			.banner h1 {
+				font-size: 1.8em;
+			}
+		}
+
+		/* ===== 滚动条美化 ===== */
+		::-webkit-scrollbar {
+			width: 8px;
+			height: 8px;
+		}
+		::-webkit-scrollbar-track {
+			background: #f1f1f1;
+		}
+		::-webkit-scrollbar-thumb {
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			border-radius: 4px;
+		}
+
+		/* ===== 文章内容底部间距 ===== */
 		.docs-content {
 			margin-bottom: 10px;
 		}

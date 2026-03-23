@@ -14,15 +14,91 @@ layout: default
 				<div class="wrapper">
 					<header class="post-header">
 						<h1 class="post-title">{{ page.title }}</h1>
-						<div class="meta">Posted on <span class="postdate">{{ page.date | date: "%b %d, %Y" }}</span> By
-							<a target="_blank" href="{{site.url}}">{{ site.author }}</a></div>
-						<br/>
+						<div class="meta">
+							<span class="post-date"><i class="fa fa-calendar"></i> {{ page.date | date: "%Y-%m-%d" }}</span>
+							<span class="post-author"><i class="fa fa-user"></i> {{ site.author }}</span>
+							{% if page.categories %}
+							<span class="post-categories"><i class="fa fa-folder"></i> {{ page.categories | join: ", " }}</span>
+							{% endif %}
+						</div>
+						{% if page.tags %}
+						<div class="post-tags">
+							{% for tag in page.tags %}
+							<a href="{{ '/tag/' | append: tag | prepend: site.baseurl }}" class="tag-link">#{{ tag }}</a>
+							{% endfor %}
+						</div>
+						{% endif %}
 					</header>
 					<article class="post-content">
 						{{ content }}
 					</article>
+					<footer class="post-footer">
+						<div class="post-nav">
+							{% if page.previous.url %}
+							<a href="{{ page.previous.url | prepend: site.baseurl }}" class="prev-post">
+								<i class="fa fa-arrow-left"></i> {{ page.previous.title | truncate: 40 }}
+							</a>
+							{% endif %}
+							{% if page.next.url %}
+							<a href="{{ page.next.url | prepend: site.baseurl }}" class="next-post">
+								{{ page.next.title | truncate: 40 }} <i class="fa fa-arrow-right"></i>
+							</a>
+							{% endif %}
+						</div>
+					</footer>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
+<style>
+/* 文章标签样式 */
+.post-tags {
+	margin-top: 15px;
+}
+.tag-link {
+	display: inline-block;
+	background: #f0f0f0;
+	color: #667eea;
+	padding: 4px 12px;
+	margin: 3px;
+	border-radius: 15px;
+	font-size: 0.85em;
+	transition: all 0.2s;
+}
+.tag-link:hover {
+	background: #667eea;
+	color: #fff;
+	text-decoration: none;
+}
+
+/* 文章导航样式 */
+.post-footer {
+	margin-top: 40px;
+	padding-top: 20px;
+	border-top: 1px solid #eee;
+}
+.post-nav {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 15px;
+}
+.post-nav a {
+	color: #555;
+	max-width: 45%;
+	padding: 10px 15px;
+	background: #f8f9fa;
+	border-radius: 8px;
+	transition: all 0.2s;
+}
+.post-nav a:hover {
+	background: #667eea;
+	color: #fff;
+	text-decoration: none;
+}
+.next-post {
+	text-align: right;
+}
+</style>
