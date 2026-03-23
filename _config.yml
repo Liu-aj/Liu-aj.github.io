@@ -1,83 +1,71 @@
-# File: _config.yml
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-
 # Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: Liuaj's blog
+title: Liuaj's Blog
+subtitle: 学会积累，厚积薄发
+description: 一个专注于技术分享的博客，涵盖 AI、后端开发、嵌入式等领域
+author: Liuaj
 email: aijia930515@163.com
-# description: >- # this means to ignore newlines until "baseurl:"
-#   Write an awesome description for your new site here. You can edit this
-#   line in _config.yml. It will appear in your document head meta (for
-#   Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: https://Liu-aj.github.io/ # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username: Laijia
+url: https://Liu-aj.github.io
+baseurl: ""
+
+# Social links
+github: Laijia
+github_repo: https://github.com/Laijia/Liu-aj.github.io
 
 # Build settings
 markdown: kramdown
-theme:
-# plugins:
+highlighter: rouge
+permalink: /:year/:month/:day/:title/
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+# Kramdown settings
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
+# Pagination
+paginate: 10
+paginate_path: "/page:num/"
 
-
-webrick:
-  headers:
-    My-Header: My-Value
-    My-Other-Header: My-Other-Value
-
+# Defaults
 defaults:
   - scope:
-      path: "" # an empty string here means all files in the project
-      type: "posts" # previously `post` in Jekyll 2.2.
+      path: ""
+      type: "posts"
     values:
-      layout: "default"
+      layout: "post"
+      author: "Liuaj"
 
-destination: _deploy
+# Collections (专题系列)
+collections:
+  series:
+    output: true
+    permalink: /series/:path/
 
-# Site settings
-name: Liuaj's blog
-description: 学会积累，厚积薄发
-email: aijia930515@163.com
-author: Liuaj
-resume_site: https://Liu-aj.github.io/
-github: https://github.com/Laijia/Liu-aj.github.io
+# Exclude
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - Rakefile
+  - README.md
+  - LICENSE
+  - _deploy
+  - _drafts
+
+# Keep files
+keep_files:
+  - .git
+  - CNAME
+
+# Timezone
+timezone: Asia/Shanghai
+lang: zh-CN
+
+# SEO
 meta_description: Liuaj;个人博客;学而不思则罔;思而不学则殆;生命不止;折腾不休
 motto: 尝试总结分类
 banner: 学而不思则罔，思而不学则殆。
 
-#permalink: /:categories/:year/:month/:day/:title/
-permalink: /:year/:month/:day/:title/
-paginate: 10
-
-exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
-
-# Build settings
-markdown: kramdown
-
+# Analytics
 baidu_analysis: 7501fa07838ede8c526fafa847ec5665
 
+# Categories
 categories: ['Java','DB','Linux','AI','Workflow','Tools','Other']
