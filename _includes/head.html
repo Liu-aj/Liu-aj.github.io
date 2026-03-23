@@ -221,12 +221,58 @@
 		}
 
 		/* ===== 响应式优化 ===== */
+		@media (max-width: 992px) {
+			.sidebar {
+				display: none;
+			}
+			.col-md-9 {
+				width: 100%;
+			}
+		}
 		@media (max-width: 768px) {
 			.post-title {
 				font-size: 1.5em;
 			}
-			.banner h1 {
-				font-size: 1.8em;
+			.banner-title {
+				font-size: 1.8em !important;
+			}
+			.banner-subtitle {
+				font-size: 1em !important;
+			}
+			.banner-stats {
+				display: none;
+			}
+			.footer-content {
+				flex-direction: column;
+				text-align: center;
+			}
+			.footer-info {
+				text-align: center;
+			}
+			.footer-links {
+				margin-top: 15px;
+			}
+			.post-nav {
+				flex-direction: column;
+			}
+			.post-nav a {
+				max-width: 100%;
+			}
+			.tag-cloud-item {
+				font-size: 0.9em !important;
+				padding: 6px 12px;
+			}
+		}
+		@media (max-width: 480px) {
+			.banner-title {
+				font-size: 1.5em !important;
+			}
+			.post-item {
+				flex-direction: column;
+				align-items: flex-start;
+			}
+			.post-date {
+				margin-bottom: 5px;
 			}
 		}
 
@@ -241,6 +287,60 @@
 		::-webkit-scrollbar-thumb {
 			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 			border-radius: 4px;
+		}
+
+		/* ===== 全局卡片阴影 ===== */
+		.panel {
+			border: none;
+			border-radius: 10px;
+			box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+		}
+		.sidebar {
+			border-radius: 10px;
+		}
+
+		/* ===== 图片美化 ===== */
+		.post-content img {
+			max-width: 100%;
+			border-radius: 8px;
+			box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+			margin: 15px 0;
+		}
+
+		/* ===== 列表美化 ===== */
+		.post-content ul, .post-content ol {
+			padding-left: 25px;
+			margin: 15px 0;
+		}
+		.post-content li {
+			margin: 8px 0;
+			line-height: 1.8;
+		}
+		.post-content ul li::marker {
+			color: #667eea;
+		}
+		.post-content ol li::marker {
+			color: #667eea;
+			font-weight: bold;
+		}
+
+		/* ===== 提示框样式 ===== */
+		.post-content .info, .post-content .warning, .post-content .tip {
+			padding: 15px 20px;
+			border-radius: 8px;
+			margin: 20px 0;
+		}
+		.post-content .info {
+			background: #e3f2fd;
+			border-left: 4px solid #2196f3;
+		}
+		.post-content .warning {
+			background: #fff3e0;
+			border-left: 4px solid #ff9800;
+		}
+		.post-content .tip {
+			background: #e8f5e9;
+			border-left: 4px solid #4caf50;
 		}
 
 		/* ===== 文章内容底部间距 ===== */
