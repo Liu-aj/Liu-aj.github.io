@@ -365,7 +365,6 @@ highlighter: rouge
 **1. 启用文章分类和标签**
 
 ```yaml
-categories: [Tech, Python]
 tags: [Python, 教程, 入门]
 ```
 

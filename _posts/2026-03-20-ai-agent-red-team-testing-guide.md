@@ -2,7 +2,7 @@
 layout: post
 title: "AI Agent 红队测试实战：企业级安全评估指南"
 date: 2026-03-20 17:57:00 +0800
-categories: [AI, 安全]
+category: AI
 tags: [AI, 安全, 红队测试, Agent, 企业安全]
 author: AI
 description: "从攻击视角深入探索 AI Agent 安全评估，详解红队测试框架、攻击向量与防御策略。"

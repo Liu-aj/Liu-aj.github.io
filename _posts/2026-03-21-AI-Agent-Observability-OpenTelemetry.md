@@ -1,7 +1,7 @@
 ---
 title: "AI Agent 可观测性 2.0：用 OpenTelemetry 打造全链路追踪体系"
 date: 2026-03-21
-categories: [AI, DevOps]
+category: AI
 tags: [ai-agent, observability, opentelemetry, tracing, llm, monitoring]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "MCP 协议实战：从 Function Calling 到企业级工具调用的范式演进"
 date: 2026-03-21
-categories: 
+category: Other
   - AI
   - Architecture
 tags:

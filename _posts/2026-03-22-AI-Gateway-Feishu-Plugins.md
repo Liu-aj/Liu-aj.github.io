@@ -1,7 +1,7 @@
 ---
 title: "AI Gateway 飞书插件集成实战：从零到企业级协作"
 date: 2026-03-22
-categories: [技术, AI]
+category: AI
 tags: [LiteLLM, AI-Gateway, Feishu, 飞书, 插件开发, 企业协作]
 ---
 

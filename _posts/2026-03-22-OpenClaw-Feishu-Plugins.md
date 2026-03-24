@@ -1,7 +1,7 @@
 ---
 title: "OpenClaw 飞书插件生态：打造智能办公自动化平台"
 date: 2026-03-22
-categories: [技术, AI]
+category: AI
 tags: [OpenClaw, Feishu, 插件开发, 办公自动化, AI-Agent]
 ---
 

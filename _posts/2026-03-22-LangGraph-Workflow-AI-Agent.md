@@ -1,7 +1,7 @@
 ---
 title: "LangGraph 工作流编排实战：用有向图构建可控的 AI Agent"
 date: 2026-03-22 22:00:00 +0800
-categories: [AI, LangChain]
+category: AI
 tags: [langgraph, agent, workflow, python, llm]
 ---
 
