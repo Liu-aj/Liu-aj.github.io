@@ -1,6 +1,6 @@
 ---
 title: "AI Agent 本地部署实战：Ollama + LangGraph 隐私优先工作流"
-date: 2026-03-20 10:00:00
+date: 2026-03-20 10:00:00 +0800
 category: AI
 tags: [Agent, Ollama, LangGraph, Local-Deployment, RAG, Docker]
 author: Liu AJ

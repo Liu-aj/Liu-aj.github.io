@@ -1,7 +1,7 @@
 ---
 layout: post
 title: MySQL函数创建与管理完全指南
-date: 2017-09-13 16:21:00
+date: 2017-09-13 16:21:00 +0800
 category: DB
 tags: [MySQL, Function, Stored-Procedure]
 ---

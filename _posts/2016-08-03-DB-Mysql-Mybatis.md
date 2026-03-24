@@ -1,7 +1,7 @@
 ---
 layout: post
 title: MyBatis框架使用技巧完全指南
-date: 2016-08-03 16:21:00
+date: 2016-08-03 16:21:00 +0800
 category: DB
 tags: [MyBatis, ORM, Tips]
 ---

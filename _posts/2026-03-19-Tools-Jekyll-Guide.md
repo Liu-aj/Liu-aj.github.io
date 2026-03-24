@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Jekyll博客搭建完全指南"
-date: 2026-03-19 16:00:00
+date: 2026-03-19 16:00:00 +0800
 category: Tools
 tags: [Jekyll, GitHub-Pages, Blog]
 ---
@@ -220,7 +220,7 @@ my-blog/
 ---
 layout: post
 title: "Jekyll博客搭建完全指南"
-date: 2026-03-19 10:30:00
+date: 2026-03-19 10:30:00 +0800
 ---
 
 文章内容从这里开始...

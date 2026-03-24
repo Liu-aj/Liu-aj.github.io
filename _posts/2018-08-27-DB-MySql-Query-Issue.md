@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Mysql定义类型与查询类型不一致问题处理
-date: 2018-08-27 14:27:25
+date: 2018-08-27 14:27:25 +0800
 category: DB
 tags: [MySQL, SQL, Query]
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Claude Code 安装与入门指南（国内踩坑版）"
-date: 2026-03-19 14:00:00
+date: 2026-03-19 14:00:00 +0800
 category: AI
 tags: [Claude-Code, Terminal, Installation]
 ---

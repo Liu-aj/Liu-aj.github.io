@@ -1,6 +1,6 @@
 ---
 title: "GUI Agent 实战：从 API 调用到屏幕操作的 AI 自动化演进"
-date: 2026-03-21 11:00:00
+date: 2026-03-21 11:00:00 +0800
 category: AI
 tags: [GUI-Agent, Playwright, Automation, Computer-Use]
 description: "深入探索 GUI Agent 核心技术，从 API 自动化到屏幕操作的完整演进路径，手把手教你构建能像人一样操作电脑的 AI Agent。"

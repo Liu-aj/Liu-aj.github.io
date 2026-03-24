@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Cursor 完全指南：2026 年 AI 编程利器深度解析"
-date: 2026-03-18 14:00:00
+date: 2026-03-18 14:00:00 +0800
 category: AI
 tags: [Cursor, Claude-Code, Comparison, AI-Coding]
 description: "从入门到实战，系统解析 Cursor 核心功能、使用技巧、高效工作流，以及与 Claude Code 的全面对比。"

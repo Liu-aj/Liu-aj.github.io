@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Ubuntu环境下Navicat安装与乱码问题解决
-date: 2019-11-28 13:42:00
+date: 2019-11-28 13:42:00 +0800
 category: Linux
 tags: [Navicat, Database-Tool]
 ---

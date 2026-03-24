@@ -1,7 +1,7 @@
 ---
 layout: post
 title: MySQL视图详解
-date: 2018-09-13 16:27:42
+date: 2018-09-13 16:27:42 +0800
 category: DB
 tags: [MySQL, View, SQL]
 ---

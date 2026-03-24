@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "用好这 5 个 CLI 工具，终端效率翻倍"
-date: 2026-03-18 12:00:00
+date: 2026-03-18 12:00:00 +0800
 category: Tools
 tags: [CLI, bat, eza, fd, ripgrep]
 ---

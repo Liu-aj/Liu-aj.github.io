@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 2026 开发者 AI 工具箱：5 款提升编码效率的智能工具实测
-date: 2026-03-18 10:00:00
+date: 2026-03-18 10:00:00 +0800
 category: AI
 tags: [Copilot, Cursor, AI-Coding, Productivity]
 ---

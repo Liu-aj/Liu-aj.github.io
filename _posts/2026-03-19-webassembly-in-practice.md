@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WebAssembly 实战：在浏览器之外运行高性能代码"
-date: 2026-03-19 17:00:00
+date: 2026-03-19 17:00:00 +0800
 category: Tools
 tags: [WebAssembly, Rust, Performance, Edge-Computing]
 ---
