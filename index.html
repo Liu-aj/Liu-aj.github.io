@@ -1,6 +1,6 @@
 ---
 layout: default
-titel: Blog
+title: Blog
 ---
 <div class="banner">
 	<div class="container">
@@ -144,7 +144,7 @@ titel: Blog
 .sidebar-section {
 	margin-top: 30px;
 	padding-top: 20px;
-	border-top: 1px solid #eee;
+	border-top: 1px solid var(--border-light);
 }
 .quick-links li a {
 	padding: 10px 0;
@@ -160,18 +160,18 @@ titel: Blog
 	display: flex;
 	align-items: flex-start;
 	padding: 15px 0;
-	border-bottom: 1px solid #f0f0f0;
+	border-bottom: 1px solid var(--border-light);
 	transition: all 0.2s;
 }
 .post-item:hover {
-	background: #fafafa;
+	background: var(--bg-secondary);
 	margin: 0 -10px;
 	padding: 15px 10px;
 	border-radius: 8px;
 }
 .post-date {
 	min-width: 60px;
-	color: #999;
+	color: var(--text-muted);
 	font-size: 0.9em;
 	font-family: monospace;
 }
@@ -179,7 +179,7 @@ titel: Blog
 	flex: 1;
 }
 .post-info a {
-	color: #333;
+	color: var(--text-primary);
 	font-size: 1.1em;
 	font-weight: 500;
 }
@@ -191,8 +191,8 @@ titel: Blog
 }
 .tag-mini {
 	display: inline-block;
-	background: #f0f0f0;
-	color: #666;
+	background: var(--bg-tertiary);
+	color: var(--text-muted);
 	padding: 2px 8px;
 	margin-right: 5px;
 	border-radius: 10px;
@@ -201,7 +201,7 @@ titel: Blog
 
 /* 归档标题 */
 .home h1 {
-	color: #2c3e50;
+	color: var(--text-primary);
 	font-size: 1.8em;
 	margin-top: 30px;
 }

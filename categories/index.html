@@ -82,7 +82,7 @@ header: Posts By Category
 	margin-bottom: 40px;
 }
 .category-title {
-	color: #2c3e50;
+	color: var(--text-primary);
 	font-size: 1.8em;
 	margin-bottom: 25px;
 	padding-bottom: 15px;
@@ -91,7 +91,7 @@ header: Posts By Category
 
 /* 分类组 */
 .category-group {
-	background: #f8f9fa;
+	background: var(--bg-secondary);
 	border-radius: 10px;
 	padding: 20px;
 	margin-bottom: 20px;
@@ -102,7 +102,7 @@ header: Posts By Category
 	margin-bottom: 15px;
 }
 .category-group h2 .count {
-	color: #999;
+	color: var(--text-muted);
 	font-size: 0.8em;
 }
 
@@ -117,23 +117,23 @@ header: Posts By Category
 	align-items: center;
 	gap: 15px;
 	padding: 10px 15px;
-	background: #fff;
+	background: var(--bg-primary);
 	margin-bottom: 8px;
 	border-radius: 6px;
 	transition: all 0.2s;
 }
 .category-post-list li:hover {
-	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+	box-shadow: var(--shadow-sm);
 	transform: translateX(5px);
 }
 .category-post-list .date {
-	color: #999;
+	color: var(--text-muted);
 	font-size: 0.9em;
 	font-family: monospace;
 	min-width: 90px;
 }
 .category-post-list a {
-	color: #333;
+	color: var(--text-primary);
 }
 .category-post-list a:hover {
 	color: var(--primary-color);
