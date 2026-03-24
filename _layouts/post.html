@@ -2,11 +2,41 @@
 layout: default
 ---
 
+<!-- 阅读进度条 -->
+<div class="reading-progress" id="readingProgress"></div>
+
 <div class="container docs-container">
 	<div class="row">
 		<div class="col-md-3">
 			<div class="sidebar hidden-print" role="complementary">
-				{% include lefttree.html %}
+				<!-- 文章目录 -->
+				<div id="toc" class="toc-section">
+					<h1><i class="fa fa-list"></i> 文章目录</h1>
+					<div id="toc-content"></div>
+				</div>
+				
+				<!-- 文章信息卡片 -->
+				<div class="post-info-card">
+					<h1><i class="fa fa-info-circle"></i> 文章信息</h1>
+					<div class="info-item">
+						<i class="fa fa-calendar"></i>
+						<span>{{ page.date | date: "%Y-%m-%d" }}</span>
+					</div>
+					<div class="info-item">
+						<i class="fa fa-clock-o"></i>
+						<span id="reading-time">计算中...</span>
+					</div>
+					<div class="info-item">
+						<i class="fa fa-file-text-o"></i>
+						<span id="word-count">计算中...</span>
+					</div>
+					{% if page.categories %}
+					<div class="info-item">
+						<i class="fa fa-folder"></i>
+						<span>{{ page.categories | join: ", " }}</span>
+					</div>
+					{% endif %}
+				</div>
 			</div>
 		</div>
 		<div class="col-md-9" role="main">
@@ -14,15 +44,296 @@ layout: default
 				<div class="wrapper">
 					<header class="post-header">
 						<h1 class="post-title">{{ page.title }}</h1>
-						<div class="meta">Posted on <span class="postdate">{{ page.date | date: "%b %d, %Y" }}</span> By
-							<a target="_blank" href="{{site.url}}">{{ site.author }}</a></div>
-						<br/>
+						<div class="meta">
+							<span class="post-date"><i class="fa fa-calendar"></i> {{ page.date | date: "%Y-%m-%d" }}</span>
+							<span class="post-author"><i class="fa fa-user"></i> {{ site.author }}</span>
+							{% if page.categories %}
+							<span class="post-categories"><i class="fa fa-folder"></i> {{ page.categories | join: ", " }}</span>
+							{% endif %}
+						</div>
+						{% if page.tags %}
+						<div class="post-tags">
+							{% for tag in page.tags %}
+							<a href="{{ '/tag/' | append: tag | prepend: site.baseurl }}" class="tag-link">#{{ tag }}</a>
+							{% endfor %}
+						</div>
+						{% endif %}
 					</header>
-					<article class="post-content">
+					<article class="post-content" id="post-content">
 						{{ content }}
 					</article>
+					
+					<!-- 版权声明 -->
+					<div class="copyright-notice">
+						<p><strong>版权声明：</strong>本文为博主原创文章，遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC 4.0 BY-NC-SA</a> 版权协议，转载请附上原文出处链接和本声明。</p>
+						<p><strong>本文链接：</strong><a href="{{ page.url | absolute_url }}">{{ page.url | absolute_url }}</a></p>
+					</div>
+					
+					<footer class="post-footer">
+						<div class="post-nav">
+							{% if page.previous.url %}
+							<a href="{{ page.previous.url | prepend: site.baseurl }}" class="prev-post">
+								<i class="fa fa-arrow-left"></i> {{ page.previous.title | truncate: 40 }}
+							</a>
+							{% endif %}
+							{% if page.next.url %}
+							<a href="{{ page.next.url | prepend: site.baseurl }}" class="next-post">
+								{{ page.next.title | truncate: 40 }} <i class="fa fa-arrow-right"></i>
+							</a>
+							{% endif %}
+						</div>
+					</footer>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
+<style>
+/* 阅读进度条 - 使用统一配色 */
+.reading-progress {
+	position: fixed;
+	top: 50px;
+	left: 0;
+	width: 0;
+	height: 3px;
+	background: var(--primary-gradient);
+	z-index: 9999;
+	transition: width 0.1s;
+}
+
+/* 文章目录 */
+.toc-section {
+	margin-bottom: 25px;
+}
+#toc-content {
+	max-height: 400px;
+	overflow-y: auto;
+}
+#toc-content ul {
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
+}
+#toc-content li {
+	margin: 0;
+}
+#toc-content a {
+	display: block;
+	color: var(--text-secondary);
+	padding: 6px 10px;
+	font-size: 0.9em;
+	border-left: 2px solid transparent;
+	transition: all 0.2s ease;
+}
+#toc-content a:hover {
+	color: var(--primary-color);
+	border-left-color: var(--primary-color);
+	background: var(--bg-secondary);
+}
+#toc-content ul ul {
+	padding-left: 15px;
+}
+#toc-content ul ul a {
+	font-size: 0.85em;
+	padding: 4px 10px;
+}
+
+/* 文章信息卡片 */
+.post-info-card {
+	background: var(--bg-secondary);
+	border-radius: var(--radius-md);
+	padding: 15px;
+	margin-top: 20px;
+}
+.post-info-card h1 {
+	font-size: 1em;
+	margin-bottom: 15px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid var(--border-light);
+	color: var(--text-primary);
+}
+.info-item {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 8px 0;
+	color: var(--text-muted);
+	font-size: 0.9em;
+}
+.info-item i {
+	color: var(--primary-color);
+	width: 20px;
+}
+
+/* 版权声明 */
+.copyright-notice {
+	background: var(--bg-secondary);
+	border-left: 4px solid var(--primary-color);
+	padding: 15px 20px;
+	margin: 30px 0;
+	border-radius: 0 var(--radius-md) var(--radius-md) 0;
+	font-size: 0.9em;
+	color: var(--text-muted);
+}
+.copyright-notice p {
+	margin: 5px 0;
+}
+.copyright-notice a {
+	color: var(--primary-color);
+}
+
+/* 文章导航样式 */
+.post-footer {
+	margin-top: 40px;
+	padding-top: 20px;
+	border-top: 1px solid var(--border-light);
+}
+.post-nav {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 15px;
+}
+.post-nav a {
+	color: var(--text-secondary);
+	max-width: 45%;
+	padding: 15px 20px;
+	background: var(--bg-secondary);
+	border-radius: var(--radius-md);
+	transition: all 0.2s ease;
+	box-shadow: var(--shadow-sm);
+}
+.post-nav a:hover {
+	background: var(--primary-gradient);
+	color: #fff;
+	text-decoration: none;
+	transform: translateY(-2px);
+	box-shadow: var(--shadow-md);
+}
+.next-post {
+	text-align: right;
+}
+
+/* 代码块包装器 */
+.code-wrapper {
+	position: relative;
+	margin: 20px 0;
+}
+.code-wrapper .copy-btn {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background: rgba(255,255,255,0.1);
+	color: #fff;
+	border: none;
+	padding: 5px 10px;
+	border-radius: var(--radius-sm);
+	cursor: pointer;
+	font-size: 0.85em;
+	opacity: 0;
+	transition: all 0.2s ease;
+}
+.code-wrapper:hover .copy-btn {
+	opacity: 1;
+}
+.code-wrapper .copy-btn:hover {
+	background: rgba(255,255,255,0.2);
+}
+
+/* 响应式 */
+@media (max-width: 992px) {
+	.toc-section {
+		display: none;
+	}
+}
+@media (max-width: 768px) {
+	.post-nav {
+		flex-direction: column;
+	}
+	.post-nav a {
+		max-width: 100%;
+	}
+}
+</style>
+
+<script>
+// 阅读进度条
+window.addEventListener('scroll', function() {
+	var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+	var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+	var scrolled = (winScroll / height) * 100;
+	document.getElementById('readingProgress').style.width = scrolled + '%';
+});
+
+// 计算阅读时间
+document.addEventListener('DOMContentLoaded', function() {
+	var content = document.getElementById('post-content').innerText;
+	var wordCount = content.length;
+	var readingTime = Math.ceil(wordCount / 500);
+	document.getElementById('reading-time').innerText = readingTime + ' 分钟';
+	document.getElementById('word-count').innerText = wordCount + ' 字';
+});
+
+// 生成目录
+document.addEventListener('DOMContentLoaded', function() {
+	var content = document.getElementById('post-content');
+	var headings = content.querySelectorAll('h2, h3');
+	var toc = document.getElementById('toc-content');
+	var tocHtml = '<ul>';
+	var h2Count = 0;
+	var h3Count = 0;
+	
+	headings.forEach(function(heading, index) {
+		var id = 'heading-' + index;
+		heading.id = id;
+		var text = heading.innerText;
+		
+		if (heading.tagName === 'H2') {
+			if (h3Count > 0) tocHtml += '</ul>';
+			h2Count++;
+			h3Count = 0;
+			tocHtml += '<li><a href="#' + id + '">' + text + '</a></li>';
+		} else if (heading.tagName === 'H3') {
+			if (h3Count === 0) tocHtml += '<ul>';
+			h3Count++;
+			tocHtml += '<li><a href="#' + id + '">' + text + '</a></li>';
+		}
+	});
+	
+	if (h3Count > 0) tocHtml += '</ul>';
+	tocHtml += '</ul>';
+	
+	if (headings.length > 0) {
+		toc.innerHTML = tocHtml;
+	} else {
+		document.querySelector('.toc-section').style.display = 'none';
+	}
+});
+
+// 代码块复制功能
+document.addEventListener('DOMContentLoaded', function() {
+	var codeBlocks = document.querySelectorAll('pre code');
+	codeBlocks.forEach(function(codeBlock) {
+		var pre = codeBlock.parentElement;
+		var wrapper = document.createElement('div');
+		wrapper.className = 'code-wrapper';
+		pre.parentNode.insertBefore(wrapper, pre);
+		wrapper.appendChild(pre);
+		
+		var copyBtn = document.createElement('button');
+		copyBtn.className = 'copy-btn';
+		copyBtn.innerHTML = '<i class="fa fa-copy"></i> 复制';
+		wrapper.appendChild(copyBtn);
+		
+		copyBtn.addEventListener('click', function() {
+			navigator.clipboard.writeText(codeBlock.innerText).then(function() {
+				copyBtn.innerHTML = '<i class="fa fa-check"></i> 已复制';
+				setTimeout(function() {
+					copyBtn.innerHTML = '<i class="fa fa-copy"></i> 复制';
+				}, 2000);
+			});
+		});
+	});
+});
+</script>

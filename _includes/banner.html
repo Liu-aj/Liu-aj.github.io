@@ -1,12 +1,17 @@
 <div class="banner">
 	<div class="container">
-		{% if page.categories != null %}
-		<a href="{{ '/categories/' | prepend: site.baseurl }}#{{page.categories}}-ref">{{page.categories}}</a> /
-		{% for tag in page.tag %}
-			<a href="{{ '/tag/' | prepend: site.baseurl }}#{{tag}}-ref"> {{tag}}</a>
-		{% endfor %}
-		{% else %}
-		{{ site.banner }}
-		{% endif %}
+		<div class="banner-content">
+			{% if page.categories != null %}
+			<div class="breadcrumb-nav">
+				<a href="{{ '/categories/' | prepend: site.baseurl }}#{{page.categories}}-ref"><i class="fa fa-folder"></i> {{page.categories}}</a>
+				{% for tag in page.tag %}
+				<a href="{{ '/tag/' | prepend: site.baseurl }}#{{tag}}-ref"><i class="fa fa-tag"></i> {{tag}}</a>
+				{% endfor %}
+			</div>
+			{% else %}
+			<h1 class="banner-title">{{ site.title }}</h1>
+			<p class="banner-subtitle">{{ site.subtitle }}</p>
+			{% endif %}
+		</div>
 	</div>
 </div>

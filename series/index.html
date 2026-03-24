@@ -1,0 +1,199 @@
+---
+layout: default
+title: 专题系列
+---
+
+<div class="banner">
+	<div class="container">
+		<div class="banner-content">
+			<h1 class="banner-title"><i class="fa fa-book"></i> 专题系列</h1>
+			<p class="banner-subtitle">按主题组织的系列文章，帮助系统学习特定领域</p>
+		</div>
+	</div>
+</div>
+
+<div class="container docs-container">
+	<div class="row">
+		<div class="col-md-3">
+			<div class="sidebar hidden-print" role="complementary">
+				<div id="navigation">
+					<h1><i class="fa fa-list"></i> 专题列表</h1>
+					<ul class="nav sidenav">
+						{% assign series_names = site.series | map: "series" | uniq %}
+						{% for series_name in series_names %}
+						<li>
+							<a href="#{{ series_name | slugify }}">
+								<i class="fa fa-bookmark"></i> {{ series_name }}
+							</a>
+						</li>
+						{% endfor %}
+						{% if series_names.size == 0 %}
+						<li class="text-muted">暂无专题</li>
+						{% endif %}
+					</ul>
+				</div>
+				
+				<div class="sidebar-section">
+					<h1><i class="fa fa-info-circle"></i> 说明</h1>
+					<p style="font-size: 0.9em; color: #666; line-height: 1.6;">
+						专题系列将相关主题的多篇文章组织在一起，便于系统学习。
+						<br><br>
+						如需创建专题，请在文章 Front Matter 中添加：
+						<br>
+						<code>series: "专题名称"</code>
+						<code>order: 1</code>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-9" role="main">
+			<div class="panel docs-content">
+				<div class="wrapper">
+					<div class="home">
+						{% assign series_names = site.series | map: "series" | uniq %}
+						
+						{% if series_names.size > 0 %}
+							{% for series_name in series_names %}
+							<div class="series-card" id="{{ series_name | slugify }}">
+								<div class="series-header">
+									<h2><i class="fa fa-bookmark"></i> {{ series_name }}</h2>
+									{% assign series_posts = site.series | where: "series", series_name | sort: "order" %}
+									<span class="series-count">{{ series_posts.size }} 篇文章</span>
+								</div>
+								<ul class="series-post-list">
+									{% for post in series_posts %}
+									<li>
+										<span class="order">{{ forloop.index }}</span>
+										<div class="post-info">
+											<a href="{{ post.url }}">{{ post.title }}</a>
+											<span class="date">{{ post.date | date: "%Y-%m-%d" }}</span>
+										</div>
+									</li>
+									{% endfor %}
+								</ul>
+							</div>
+							{% endfor %}
+						{% else %}
+						<div class="no-series">
+							<i class="fa fa-book" style="font-size: 4em; color: #ddd; margin-bottom: 20px;"></i>
+							<h2>暂无专题系列</h2>
+							<p>专题系列将相关主题的文章组织在一起，敬请期待！</p>
+						</div>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<style>
+/* 专题卡片 */
+.series-card {
+	background: #fff;
+	border: 1px solid #eee;
+	border-radius: 10px;
+	padding: 25px;
+	margin-bottom: 25px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+	transition: all 0.3s;
+}
+.series-card:hover {
+	box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+.series-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+	padding-bottom: 15px;
+	border-bottom: 2px solid #f0f0f0;
+}
+.series-header h2 {
+	margin: 0;
+	color: #2c3e50;
+	font-size: 1.3em;
+}
+.series-count {
+	background: #667eea;
+	color: #fff;
+	padding: 4px 12px;
+	border-radius: 15px;
+	font-size: 0.85em;
+}
+
+/* 专题文章列表 */
+.series-post-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.series-post-list li {
+	display: flex;
+	align-items: flex-start;
+	padding: 12px 0;
+	border-bottom: 1px solid #f5f5f5;
+}
+.series-post-list li:last-child {
+	border-bottom: none;
+}
+.series-post-list .order {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 28px;
+	height: 28px;
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	color: #fff;
+	border-radius: 50%;
+	font-size: 0.85em;
+	margin-right: 15px;
+}
+.series-post-list .post-info {
+	flex: 1;
+}
+.series-post-list .post-info a {
+	color: #333;
+	font-weight: 500;
+}
+.series-post-list .post-info a:hover {
+	color: #667eea;
+}
+.series-post-list .date {
+	display: block;
+	color: #999;
+	font-size: 0.85em;
+	margin-top: 3px;
+}
+
+/* 暂无专题 */
+.no-series {
+	text-align: center;
+	padding: 60px 20px;
+	color: #999;
+}
+.no-series h2 {
+	color: #666;
+	margin-bottom: 10px;
+}
+
+/* 侧边栏说明 */
+.sidebar-section {
+	margin-top: 30px;
+	padding: 20px;
+	background: #f8f9fa;
+	border-radius: 8px;
+}
+.sidebar-section h1 {
+	font-size: 1em;
+	margin-bottom: 15px;
+}
+.sidebar-section code {
+	display: block;
+	background: #fff;
+	padding: 8px;
+	margin: 5px 0;
+	border-radius: 4px;
+	font-size: 0.85em;
+}
+</style>

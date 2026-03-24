@@ -1,15 +1,130 @@
 <footer class="footer" role="contentinfo">
 	<div class="container">
-		<p class="copyright">Copyright &copy; 2018-{{ site.time | date: '%Y' | prepend: site.baseurl }} <a
-				href="{{site.resume_site}}"><code>{{ site.author }}</code></a>.</p>
-		<p>Powered by <a href="https://jekyllrb.com">Jekyll</a>, themed from <a href="https://www.hifreud.com/">LessOrMore</a>,
-			refactored by <a href="https://Liu-aj.github.io/">{{ site.author }}</a></p>
+		<div class="footer-content">
+			<div class="footer-info">
+				<p class="copyright">
+					Copyright &copy; 2018-{{ site.time | date: '%Y' }} 
+					<a href="{{site.resume_site}}"><code>{{ site.author }}</code></a>
+				</p>
+				<p class="powered-by">
+					Powered by <a href="https://jekyllrb.com" target="_blank">Jekyll</a> | 
+					Theme from <a href="https://www.hifreud.com/" target="_blank">LessOrMore</a> |
+					<a href="{{ '/feed.xml' | prepend: site.baseurl }}"><i class="fa fa-rss"></i> RSS</a>
+				</p>
+			</div>
+			<div class="footer-links">
+				<a href="{{site.github}}" target="_blank" title="GitHub"><i class="fa fa-github fa-lg"></i></a>
+				<a href="mailto:{{site.email}}" title="Email"><i class="fa fa-envelope fa-lg"></i></a>
+			</div>
+		</div>
 	</div>
 </footer>
+
+<!-- 返回顶部按钮 -->
+<div id="back-to-top" class="back-to-top" style="display: none;">
+	<i class="fa fa-chevron-up"></i>
+</div>
 
 <script src="{{ '/styles/js/jquery.min.js' | prepend: site.baseurl }}"></script>
 <script src="{{ '/styles/js/bootstrap.min.js' | prepend: site.baseurl }}"></script>
 <script src="{{ '/styles/js/holder.min.js' | prepend: site.baseurl }}"></script>
 <script src="{{ '/styles/js/lessismore.js' | prepend: site.baseurl }}"></script>
 <script src="{{ '/styles/js/application.js' | prepend: site.baseurl }}"></script>
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>
+// 返回顶部
+$(document).ready(function() {
+	$(window).scroll(function() {
+		if ($(this).scrollTop() > 300) {
+			$('#back-to-top').fadeIn();
+		} else {
+			$('#back-to-top').fadeOut();
+		}
+	});
+	$('#back-to-top').click(function() {
+		$('html, body').animate({scrollTop: 0}, 500);
+		return false;
+	});
+});
+</script>
+
+<style>
+/* Footer 样式 - 使用统一配色 */
+.footer {
+	background: var(--primary-gradient);
+	color: rgba(255,255,255,0.9);
+	padding: 30px 0;
+	margin-top: 50px;
+}
+.footer a {
+	color: rgba(255,255,255,0.9);
+	transition: all 0.2s ease;
+}
+.footer a:hover {
+	color: #fff;
+}
+.footer-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.footer-info {
+	text-align: left;
+}
+.footer-links {
+	display: flex;
+	gap: 15px;
+}
+.footer-links a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	background: rgba(255,255,255,0.1);
+	border-radius: 50%;
+	transition: all 0.3s ease;
+}
+.footer-links a:hover {
+	background: rgba(255,255,255,0.2);
+	transform: translateY(-3px);
+}
+
+/* 返回顶部按钮 - 使用统一配色 */
+.back-to-top {
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	width: 45px;
+	height: 45px;
+	background: var(--primary-gradient);
+	color: #fff;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	box-shadow: var(--shadow-md);
+	transition: all 0.3s ease;
+	z-index: 999;
+}
+.back-to-top:hover {
+	transform: translateY(-3px);
+	box-shadow: var(--shadow-lg);
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+	.footer-content {
+		flex-direction: column;
+		text-align: center;
+	}
+	.footer-info {
+		text-align: center;
+	}
+	.footer-links {
+		margin-top: 15px;
+	}
+}
+</style>

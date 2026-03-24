@@ -4,39 +4,32 @@ title: Tags
 header: Posts By Tag
 ---
 
+<div class="banner">
+	<div class="container">
+		<div class="banner-content">
+			<h1 class="banner-title"><i class="fa fa-tags"></i> 标签云</h1>
+			<p class="banner-subtitle">共 {{ site.tags | size }} 个标签</p>
+		</div>
+	</div>
+</div>
+
 <div class="container docs-container">
 	<div class="row">
 		<div class="col-md-3">
 			<div class="sidebar hidden-print" role="complementary">
 				<div id="navigation">
-					<h1>目录</h1>
-					<ul class="nav sidenav">
-						{% for tag in site.tags %}
+					<h1><i class="fa fa-tags"></i> 标签列表</h1>
+					<ul class="nav sidenav tag-nav">
+						{% assign sorted_tags = site.tags | sort %}
+						{% for tag in sorted_tags %}
 						<li>
-							<a href="#{{ tag[0] }}-ref">{{ tag[0] | join: "/" }}
-								<span style="color: #999999;">({{tag[1].size }})</span>
+							<a href="#{{ tag[0] | slugify }}">
+								<span class="tag-name">{{ tag[0] }}</span>
+								<span class="tag-count">{{ tag[1].size }}</span>
 							</a>
-							<ul>
-								{% for post in tag[1] %}
-								<li>
-									<a href="{{ post.url }}">{{ post.title }}</a>
-								</li>
-								{% endfor %}
-							</ul>
 						</li>
 						{% endfor %}
 					</ul>
-					<!-- 					<ul class="nav sidenav">
-											{% if site.tags.first[0] == null %}
-												{% for tag in site.tags %}
-												<li><a href="{{ site.JB.tags_path }}#{{ tag }}-ref">{{ tag }} <span >({{ site.tags[tag].size }})</span></a></li>
-												{% endfor %}
-											{% else %}
-												{% for tag in site.tags %}
-												<li><a href="{{ site.JB.tags_path }}#{{ tag[0] }}-ref">{{ tag[0] }} <span style="color: #999999;" >({{ tag[1].size }})</span></a></li>
-												{% endfor %}
-											{% endif %}
-										</ul> -->
 				</div>
 			</div>
 		</div>
@@ -44,12 +37,31 @@ header: Posts By Tag
 			<div class="panel docs-content">
 				<div class="wrapper">
 					<div class="home">
-						{% for tag in site.tags %}
-						<h2 id="{{ tag[0] }}-ref">{{ tag[0] }}</h2>
-						<ul>
-							{% assign pages_list = tag[1] %}
-							{% include my/pages_list %}
-						</ul>
+						<!-- 标签云 -->
+						<div class="tag-cloud">
+							{% assign sorted_tags = site.tags | sort %}
+							{% for tag in sorted_tags %}
+							<a href="#{{ tag[0] | slugify }}" class="tag-cloud-item" style="font-size: {{ tag[1].size | times: 0.1 | plus: 0.8 }}em;">
+								{{ tag[0] }} <span>({{ tag[1].size }})</span>
+							</a>
+							{% endfor %}
+						</div>
+						
+						<!-- 标签详情 -->
+						{% assign sorted_tags = site.tags | sort %}
+						{% for tag in sorted_tags %}
+						<div class="tag-section" id="{{ tag[0] | slugify }}">
+							<h2><i class="fa fa-tag"></i> {{ tag[0] }} <span class="count">({{ tag[1].size }})</span></h2>
+							<ul class="tag-post-list">
+								{% assign sorted_posts = tag[1] | sort: 'date' | reverse %}
+								{% for post in sorted_posts %}
+								<li>
+									<span class="date">{{ post.date | date: "%Y-%m-%d" }}</span>
+									<a href="{{ post.url }}">{{ post.title }}</a>
+								</li>
+								{% endfor %}
+							</ul>
+						</div>
 						{% endfor %}
 					</div>
 				</div>
@@ -57,3 +69,99 @@ header: Posts By Tag
 		</div>
 	</div>
 </div>
+
+<style>
+/* 标签导航 */
+.tag-nav li a {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.tag-count {
+	background: #667eea;
+	color: #fff;
+	padding: 2px 8px;
+	border-radius: 10px;
+	font-size: 0.8em;
+}
+
+/* 标签云 */
+.tag-cloud {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin-bottom: 40px;
+	padding: 20px;
+	background: #f8f9fa;
+	border-radius: 10px;
+}
+.tag-cloud-item {
+	display: inline-block;
+	background: #fff;
+	color: #667eea;
+	padding: 8px 15px;
+	border-radius: 20px;
+	border: 1px solid #e0e0e0;
+	transition: all 0.2s;
+}
+.tag-cloud-item:hover {
+	background: #667eea;
+	color: #fff;
+	border-color: #667eea;
+	text-decoration: none;
+}
+.tag-cloud-item span {
+	color: #999;
+	font-size: 0.85em;
+}
+.tag-cloud-item:hover span {
+	color: rgba(255,255,255,0.8);
+}
+
+/* 标签区块 */
+.tag-section {
+	margin-bottom: 30px;
+}
+.tag-section h2 {
+	color: #2c3e50;
+	font-size: 1.3em;
+	margin-bottom: 15px;
+	padding-bottom: 10px;
+	border-bottom: 2px solid #667eea;
+}
+.tag-section h2 .count {
+	color: #999;
+	font-size: 0.8em;
+}
+
+/* 标签文章列表 */
+.tag-post-list {
+	list-style: none;
+	padding: 0;
+}
+.tag-post-list li {
+	padding: 10px 0;
+	border-bottom: 1px solid #f0f0f0;
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+.tag-post-list li:hover {
+	background: #fafafa;
+	margin: 0 -10px;
+	padding: 10px;
+	border-radius: 5px;
+}
+.tag-post-list .date {
+	color: #999;
+	font-size: 0.9em;
+	font-family: monospace;
+	min-width: 90px;
+}
+.tag-post-list a {
+	color: #333;
+}
+.tag-post-list a:hover {
+	color: #667eea;
+}
+</style>
