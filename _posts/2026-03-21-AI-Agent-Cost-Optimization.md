@@ -1,6 +1,6 @@
 ---
 title: "AI Agent 成本优化实战：从 Token 失控到预算可控的完整指南"
-date: 2026-03-21 12:00:00
+date: 2026-03-21 09:00:00
 category: AI
 tags: [Agent, Token-Optimization, Cost-Control, LLM, Prometheus]
 description: "深入探索 AI Agent 成本优化策略，从提示词精简到 Token 预算控制，帮助企业从 Token 失控走向预算可控。"

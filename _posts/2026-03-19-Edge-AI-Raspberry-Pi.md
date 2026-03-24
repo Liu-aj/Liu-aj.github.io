@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "边缘智能实战：在Raspberry Pi上部署轻量化AI模型"
-date: 2026-03-19 12:00:00
+date: 2026-03-19 15:00:00
 category: AI
 tags: [Edge-AI, Raspberry-Pi, TensorFlow-Lite, ONNX]
 ---

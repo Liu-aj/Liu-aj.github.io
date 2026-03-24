@@ -1,6 +1,6 @@
 ---
 title: "深入理解 OpenClaw Skills：让 AI Agent 更智能的技能系统"
-date: 2026-03-20 12:00:00
+date: 2026-03-20 13:00:00
 category: AI
 tags: [OpenClaw, Skills, Agent]
 ---
