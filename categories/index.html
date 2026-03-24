@@ -1,14 +1,13 @@
 ---
 layout: default
 title: 分类
-header: Posts By Category
 ---
 
 <div class="banner">
 	<div class="container">
 		<div class="banner-content">
 			<h1 class="banner-title"><i class="fa fa-folder-open"></i> 文章分类</h1>
-			<p class="banner-subtitle">按技术领域组织文章</p>
+			<p class="banner-subtitle">按技术领域组织文章，便于系统学习</p>
 		</div>
 	</div>
 </div>
@@ -17,25 +16,19 @@ header: Posts By Category
 	<div class="row">
 		<div class="col-md-3">
 			<div class="sidebar hidden-print" role="complementary">
-				<div id="navigation">
+				<div class="sidebar-card">
 					<h1><i class="fa fa-folder"></i> 分类目录</h1>
-					<ul class="nav sidenav">
-						{% for forType in site.forTypes %}
-						<li>
-							<a href="#forType_{{forType}}"><i class="fa fa-folder"></i> {{forType}}</a>
-							<ul class="nav">
-								{% for categorie in site.categories %}
-								{% for post in site.posts %}
-								{% if post.forType == forType and post.category == categorie[0] %}
-								<li><a href="#category_{{forType}}_{{post.category}}">{{ post.category }}</a></li>
-								{% break %}
-								{% endif %}
-								{% endfor %}
-								{% endfor %}
-							</ul>
-						</li>
+					<ul class="nav sidenav category-nav">
+						{% assign categories_str = "AI,Java,DB,Linux,Workflow,Tools,Other" | split: "," %}
+						{% for cat in categories_str %}
+						{% assign posts_in_cat = site.posts | where: "category", cat %}
+						<li><a href="#{{ cat | downcase }}">{{ cat }} ({{ posts_in_cat.size }})</a></li>
 						{% endfor %}
 					</ul>
+				</div>
+				<div class="sidebar-card">
+					<h1><i class="fa fa-chart-pie"></i> 统计</h1>
+					<div class="stats-item"><span>文章总数</span><span class="stats-value">{{ site.posts | size }}</span></div>
 				</div>
 			</div>
 		</div>
@@ -43,31 +36,22 @@ header: Posts By Category
 			<div class="panel docs-content">
 				<div class="wrapper">
 					<div class="home">
-						{% for forType in site.forTypes %}
-						<div class="category-section" id="forType_{{forType}}">
-							<h1 class="category-title"><i class="fa fa-folder-open"></i> {{forType}}</h1>
-							{% for category in site.categories %}
-							{% assign my_variable = false %}
-							{% for post in site.posts %}
-							{% if post.forType == forType and post.category == category[0]%}
-							{% if my_variable != true %}
-							<div class="category-group" id="category_{{forType}}_{{category[0]}}">
-								<h2>{{category[0]}} <span class="count">({{category[1].size}})</span></h2>
-								<ul class="category-post-list">
-								{% assign my_variable = true %}
-								{% endif %}
+						{% assign categories_str = "AI,Java,DB,Linux,Workflow,Tools,Other" | split: "," %}
+						{% for cat in categories_str %}
+						{% assign posts_in_cat = site.posts | where: "category", cat | sort: 'date' | reverse %}
+						{% if posts_in_cat.size > 0 %}
+						<div class="category-section" id="{{ cat | downcase }}">
+							<h1 class="category-title"><i class="fa fa-folder-open"></i> {{ cat }}</h1>
+							<ul class="category-post-list">
+								{% for post in posts_in_cat %}
 								<li>
 									<span class="date">{{ post.date | date: "%Y-%m-%d" }}</span>
 									<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
 								</li>
-								{% endif %}
-								{% if post.next == null %}
-								</ul>
-							</div>
-							{% endif %}
-							{% endfor %}
-							{% endfor %}
+								{% endfor %}
+							</ul>
 						</div>
+						{% endif %}
 						{% endfor %}
 					</div>
 				</div>
@@ -77,52 +61,46 @@ header: Posts By Category
 </div>
 
 <style>
-/* 分类区块 */
-.category-section {
-	margin-bottom: 40px;
-}
-.category-title {
-	color: var(--text-primary);
-	font-size: 1.8em;
-	margin-bottom: 25px;
-	padding-bottom: 15px;
-	border-bottom: 2px solid var(--primary-color);
-}
-
-/* 分类组 */
-.category-group {
-	background: var(--bg-secondary);
-	border-radius: 10px;
+.sidebar-card {
+	background: var(--bg-primary);
+	border-radius: var(--radius-lg);
 	padding: 20px;
+	box-shadow: var(--shadow-sm);
 	margin-bottom: 20px;
 }
-.category-group h2 {
-	color: var(--primary-color);
-	font-size: 1.2em;
-	margin-bottom: 15px;
-}
-.category-group h2 .count {
-	color: var(--text-muted);
-	font-size: 0.8em;
-}
+.sidebar-card h1 { font-size: 1em; margin-bottom: 15px; }
+.category-nav li a { padding: 8px 12px; display: block; border-radius: var(--radius-sm); }
+.category-nav li a:hover { background: var(--bg-secondary); }
+.stats-item { display: flex; justify-content: space-between; padding: 8px 0; }
+.stats-value { font-weight: 600; color: var(--primary-color); }
 
-/* 分类文章列表 */
-.category-post-list {
-	list-style: none;
-	padding: 0;
-	margin: 0;
+.category-section { margin-bottom: 40px; }
+.category-title {
+	color: var(--text-primary);
+	font-size: 1.5em;
+	margin-bottom: 20px;
+	padding-bottom: 15px;
+	border-bottom: 2px solid var(--primary-color);
+	display: flex;
+	align-items: center;
+	gap: 10px;
 }
+.category-title i { color: var(--primary-color); }
+
+.category-post-list { list-style: none; padding: 0; margin: 0; }
 .category-post-list li {
 	display: flex;
 	align-items: center;
 	gap: 15px;
-	padding: 10px 15px;
+	padding: 15px;
 	background: var(--bg-primary);
-	margin-bottom: 8px;
-	border-radius: 6px;
-	transition: all 0.2s;
+	margin-bottom: 10px;
+	border-radius: var(--radius-md);
+	border: 1px solid var(--border-light);
+	transition: all 0.2s ease;
 }
 .category-post-list li:hover {
+	border-color: var(--primary-color);
 	box-shadow: var(--shadow-sm);
 	transform: translateX(5px);
 }
@@ -130,12 +108,10 @@ header: Posts By Category
 	color: var(--text-muted);
 	font-size: 0.9em;
 	font-family: monospace;
-	min-width: 90px;
+	min-width: 95px;
 }
-.category-post-list a {
-	color: var(--text-primary);
-}
-.category-post-list a:hover {
-	color: var(--primary-color);
-}
+.category-post-list a { color: var(--text-primary); font-weight: 500; }
+.category-post-list a:hover { color: var(--primary-color); }
+
+@media (max-width: 992px) { .sidebar { display: none; } }
 </style>
