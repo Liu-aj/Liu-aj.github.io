@@ -1148,7 +1148,7 @@ class TestDataHandler:
 ---
 
 **相关阅读：**
-- [AI Agent 安全护栏：企业级防御策略与实践]({% post_url 2026-03-19-ai-agent-security-guardrails %})
+- [AI Agent 安全护栏：企业级防御策略与实践](#)
 - [Prompt 注入攻击：原理、案例与防御](#)
 - [企业 AI 安全体系建设指南](#)
 

@@ -262,6 +262,7 @@ def hello():
 
 Jekyll 支持 Liquid 模板语法：
 
+{% raw %}
 ```liquid
 {% for post in site.posts %}
   - [{{ post.title }}]({{ post.url }})
@@ -269,6 +270,7 @@ Jekyll 支持 Liquid 模板语法：
 
 {{ page.date | date: "%Y年%m月%d日" }}
 ```
+{% endraw %}
 
 ---
 
@@ -370,10 +372,12 @@ tags: [Python, 教程, 入门]
 
 **2. 在文章中显示目录**
 
+{% raw %}
 ```liquid
 {% toc %}
 # 需要安装 jekyll-toc 插件
 ```
+{% endraw %}
 
 **3. 添加 Google Analytics**
 
