@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Kettle入门指南与实战技巧
-date: 2024-03-07 23:00:31
+date: 2024-03-07 20:00:00
 category: Workflow
 tags: [ETL, Kettle, Data-Integration]
 ---
