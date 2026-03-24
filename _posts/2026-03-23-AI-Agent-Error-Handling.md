@@ -2,7 +2,7 @@
 title: "AI Agent 错误处理实战：重试、熔断与优雅降级"
 date: 2026-03-23 09:30:00
 category: AI
-tags: [AI-Agent, Error-Handling, Circuit-Breaker, Resilience]]
+tags: [Agent, Error-Handling, Circuit-Breaker, Resilience]
 ---
 
 # AI Agent 错误处理实战：重试、熔断与优雅降级

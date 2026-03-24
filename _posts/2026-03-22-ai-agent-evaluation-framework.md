@@ -4,7 +4,7 @@ date: 2026-03-22 12:00:00
 category: AI
   - AI
   - 技术实践
-tags: [AI-Agent, Evaluation, Benchmark]
+tags: [Agent, Evaluation, Benchmark]
   - AI Agent
   - 评估测试
   - RAGAS
