@@ -1,14 +1,13 @@
 ---
 layout: default
-title: Tags
-header: Posts By Tag
+title: 标签
 ---
 
 <div class="banner">
 	<div class="container">
 		<div class="banner-content">
 			<h1 class="banner-title"><i class="fa fa-tags"></i> 标签云</h1>
-			<p class="banner-subtitle">共 {{ site.tags | size }} 个标签</p>
+			<p class="banner-subtitle">共 {{ site.tags | size }} 个标签，快速定位感兴趣的内容</p>
 		</div>
 	</div>
 </div>
@@ -17,19 +16,26 @@ header: Posts By Tag
 	<div class="row">
 		<div class="col-md-3">
 			<div class="sidebar hidden-print" role="complementary">
-				<div id="navigation">
-					<h1><i class="fa fa-tags"></i> 标签列表</h1>
-					<ul class="nav sidenav tag-nav">
+				<div class="sidebar-card">
+					<h1><i class="fa fa-fire"></i> 热门标签</h1>
+					<ul class="nav sidenav hot-tags">
 						{% assign sorted_tags = site.tags | sort %}
 						{% for tag in sorted_tags %}
+						{% if tag[1].size >= 2 %}
 						<li>
 							<a href="#{{ tag[0] | slugify }}">
 								<span class="tag-name">{{ tag[0] }}</span>
 								<span class="tag-count">{{ tag[1].size }}</span>
 							</a>
 						</li>
+						{% endif %}
 						{% endfor %}
 					</ul>
+				</div>
+				<div class="sidebar-card">
+					<h1><i class="fa fa-chart-bar"></i> 统计</h1>
+					<div class="stats-item"><span>标签总数</span><span class="stats-value">{{ site.tags | size }}</span></div>
+					<div class="stats-item"><span>文章总数</span><span class="stats-value">{{ site.posts | size }}</span></div>
 				</div>
 			</div>
 		</div>
@@ -38,31 +44,42 @@ header: Posts By Tag
 				<div class="wrapper">
 					<div class="home">
 						<!-- 标签云 -->
-						<div class="tag-cloud">
-							{% assign sorted_tags = site.tags | sort %}
-							{% for tag in sorted_tags %}
-							<a href="#{{ tag[0] | slugify }}" class="tag-cloud-item" style="font-size: {{ tag[1].size | times: 0.1 | plus: 0.8 }}em;">
-								{{ tag[0] }} <span>({{ tag[1].size }})</span>
-							</a>
-							{% endfor %}
+						<div class="tag-cloud-section">
+							<h2 class="section-title"><i class="fa fa-tags"></i> 标签云</h2>
+							<div class="tag-cloud">
+								{% assign sorted_tags = site.tags | sort %}
+								{% for tag in sorted_tags %}
+								<a href="#{{ tag[0] | slugify }}" class="tag-cloud-item {% if tag[1].size >= 3 %}tag-hot{% endif %}">
+									{{ tag[0] }} <span class="tag-num">{{ tag[1].size }}</span>
+								</a>
+								{% endfor %}
+							</div>
 						</div>
 						
-						<!-- 标签详情 -->
-						{% assign sorted_tags = site.tags | sort %}
-						{% for tag in sorted_tags %}
-						<div class="tag-section" id="{{ tag[0] | slugify }}">
-							<h2><i class="fa fa-tag"></i> {{ tag[0] }} <span class="count">({{ tag[1].size }})</span></h2>
-							<ul class="tag-post-list">
-								{% assign sorted_posts = tag[1] | sort: 'date' | reverse %}
-								{% for post in sorted_posts %}
-								<li>
-									<span class="date">{{ post.date | date: "%Y-%m-%d" }}</span>
-									<a href="{{ post.url }}">{{ post.title }}</a>
-								</li>
-								{% endfor %}
-							</ul>
+						<!-- 热门标签详情 -->
+						<div class="tag-details-section">
+							<h2 class="section-title"><i class="fa fa-list"></i> 热门标签详情</h2>
+							{% assign sorted_tags = site.tags | sort %}
+							{% for tag in sorted_tags %}
+							{% if tag[1].size >= 2 %}
+							<div class="tag-section" id="{{ tag[0] | slugify }}">
+								<div class="tag-header">
+									<h3><i class="fa fa-tag"></i> {{ tag[0] }}</h3>
+									<span class="tag-post-count">{{ tag[1].size }} 篇文章</span>
+								</div>
+								<ul class="tag-post-list">
+									{% assign sorted_posts = tag[1] | sort: 'date' | reverse %}
+									{% for post in sorted_posts %}
+									<li>
+										<span class="date">{{ post.date | date: "%Y-%m-%d" }}</span>
+										<a href="{{ post.url }}">{{ post.title }}</a>
+									</li>
+									{% endfor %}
+								</ul>
+							</div>
+							{% endif %}
+							{% endfor %}
 						</div>
-						{% endfor %}
 					</div>
 				</div>
 			</div>
@@ -71,97 +88,53 @@ header: Posts By Tag
 </div>
 
 <style>
-/* 标签导航 */
-.tag-nav li a {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-.tag-count {
-	background: #667eea;
-	color: #fff;
-	padding: 2px 8px;
-	border-radius: 10px;
-	font-size: 0.8em;
-}
-
-/* 标签云 */
-.tag-cloud {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 10px;
-	margin-bottom: 40px;
+.sidebar-card {
+	background: var(--bg-primary);
+	border-radius: var(--radius-lg);
 	padding: 20px;
-	background: #f8f9fa;
-	border-radius: 10px;
+	box-shadow: var(--shadow-sm);
+	margin-bottom: 20px;
 }
+.sidebar-card h1 { font-size: 1em; margin-bottom: 15px; }
+.hot-tags li a { display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; border-radius: var(--radius-sm); }
+.hot-tags li a:hover { background: var(--bg-secondary); }
+.tag-count { background: var(--primary-gradient); color: #fff; padding: 2px 8px; border-radius: var(--radius-full); font-size: 0.75em; }
+.stats-item { display: flex; justify-content: space-between; padding: 8px 0; }
+.stats-value { font-weight: 600; color: var(--primary-color); }
+
+.tag-cloud-section { margin-bottom: 40px; }
+.section-title { color: var(--text-primary); font-size: 1.3em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--primary-color); }
+.tag-cloud { display: flex; flex-wrap: wrap; gap: 10px; padding: 25px; background: var(--bg-secondary); border-radius: var(--radius-lg); }
 .tag-cloud-item {
-	display: inline-block;
-	background: #fff;
-	color: #667eea;
-	padding: 8px 15px;
-	border-radius: 20px;
-	border: 1px solid #e0e0e0;
-	transition: all 0.2s;
+	display: inline-flex; align-items: center; gap: 5px;
+	background: var(--bg-primary); color: var(--text-secondary);
+	padding: 8px 14px; border-radius: var(--radius-full);
+	border: 1px solid var(--border-color); transition: all 0.2s ease;
 }
 .tag-cloud-item:hover {
-	background: #667eea;
-	color: #fff;
-	border-color: #667eea;
-	text-decoration: none;
+	background: var(--primary-color); color: #fff;
+	border-color: var(--primary-color); text-decoration: none;
+	transform: translateY(-2px); box-shadow: var(--shadow-sm);
 }
-.tag-cloud-item span {
-	color: #999;
-	font-size: 0.85em;
-}
-.tag-cloud-item:hover span {
-	color: rgba(255,255,255,0.8);
-}
+.tag-cloud-item.tag-hot { border-color: var(--primary-color); color: var(--primary-color); font-weight: 500; }
+.tag-cloud-item.tag-hot:hover { background: var(--primary-gradient); }
+.tag-num { background: var(--bg-tertiary); color: var(--text-muted); padding: 1px 6px; border-radius: 10px; font-size: 0.75em; }
+.tag-cloud-item:hover .tag-num { background: rgba(255,255,255,0.2); color: #fff; }
 
-/* 标签区块 */
-.tag-section {
-	margin-bottom: 30px;
-}
-.tag-section h2 {
-	color: #2c3e50;
-	font-size: 1.3em;
-	margin-bottom: 15px;
-	padding-bottom: 10px;
-	border-bottom: 2px solid #667eea;
-}
-.tag-section h2 .count {
-	color: #999;
-	font-size: 0.8em;
-}
+.tag-details-section { margin-top: 40px; }
+.tag-section { margin-bottom: 25px; background: var(--bg-primary); border-radius: var(--radius-lg); border: 1px solid var(--border-light); overflow: hidden; }
+.tag-header { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; background: var(--bg-secondary); }
+.tag-header h3 { margin: 0; color: var(--text-primary); font-size: 1.1em; }
+.tag-header h3 i { color: var(--primary-color); margin-right: 8px; }
+.tag-post-count { background: var(--primary-bg); color: var(--primary-color); padding: 4px 12px; border-radius: var(--radius-full); font-size: 0.85em; }
 
-/* 标签文章列表 */
-.tag-post-list {
-	list-style: none;
-	padding: 0;
-}
-.tag-post-list li {
-	padding: 10px 0;
-	border-bottom: 1px solid #f0f0f0;
-	display: flex;
-	align-items: center;
-	gap: 15px;
-}
-.tag-post-list li:hover {
-	background: #fafafa;
-	margin: 0 -10px;
-	padding: 10px;
-	border-radius: 5px;
-}
-.tag-post-list .date {
-	color: #999;
-	font-size: 0.9em;
-	font-family: monospace;
-	min-width: 90px;
-}
-.tag-post-list a {
-	color: #333;
-}
-.tag-post-list a:hover {
-	color: #667eea;
-}
+.tag-post-list { list-style: none; padding: 0; margin: 0; }
+.tag-post-list li { display: flex; align-items: center; gap: 15px; padding: 12px 20px; border-bottom: 1px solid var(--border-light); transition: all 0.2s ease; }
+.tag-post-list li:last-child { border-bottom: none; }
+.tag-post-list li:hover { background: var(--bg-secondary); }
+.tag-post-list .date { color: var(--text-muted); font-size: 0.85em; font-family: monospace; min-width: 90px; }
+.tag-post-list a { color: var(--text-primary); font-weight: 500; }
+.tag-post-list a:hover { color: var(--primary-color); }
+
+@media (max-width: 992px) { .sidebar { display: none; } }
 </style>

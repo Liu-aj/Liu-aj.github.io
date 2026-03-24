@@ -4,14 +4,14 @@ title: 404 - 页面未找到
 ---
 
 <div class="not-found-page" style="text-align: center; padding: 80px 20px;">
-	<div class="error-code" style="font-size: 8em; font-weight: bold; color: #667eea; line-height: 1;">404</div>
-	<h1 style="color: #2c3e50; margin: 20px 0;">页面未找到</h1>
-	<p style="color: #7f8c8d; font-size: 1.1em; margin-bottom: 30px;">抱歉，您访问的页面不存在或已被移除。</p>
+	<div class="error-code" style="font-size: 8em; font-weight: bold; color: var(--primary-color); line-height: 1;">404</div>
+	<h1 style="color: var(--text-primary); margin: 20px 0;">页面未找到</h1>
+	<p style="color: var(--text-muted); font-size: 1.1em; margin-bottom: 30px;">抱歉，您访问的页面不存在或已被移除。</p>
 	<div class="actions">
-		<a href="{{ '/' | prepend: site.baseurl }}" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; padding: 12px 30px; border-radius: 25px; text-decoration: none; margin: 5px;">
+		<a href="{{ '/' | prepend: site.baseurl }}" style="display: inline-block; background: var(--primary-gradient); color: #fff; padding: 12px 30px; border-radius: 25px; text-decoration: none; margin: 5px;">
 			<i class="fa fa-home"></i> 返回首页
 		</a>
-		<a href="{{ '/tag/' | prepend: site.baseurl }}" style="display: inline-block; background: #f0f0f0; color: #333; padding: 12px 30px; border-radius: 25px; text-decoration: none; margin: 5px;">
+		<a href="{{ '/tag/' | prepend: site.baseurl }}" style="display: inline-block; background: var(--bg-secondary); color: var(--text-primary); padding: 12px 30px; border-radius: 25px; text-decoration: none; margin: 5px;">
 			<i class="fa fa-tags"></i> 浏览标签
 		</a>
 	</div>

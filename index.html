@@ -1,6 +1,6 @@
 ---
 layout: default
-titel: Blog
+title: Blog
 ---
 <div class="banner">
 	<div class="container">
@@ -56,9 +56,9 @@ titel: Blog
 				<div class="sidebar-section">
 					<h1><i class="fa fa-link"></i> 快捷链接</h1>
 					<ul class="nav quick-links">
-						<li><a href="{{ '/tag/' | prepend: site.baseurl }}"><i class="fa fa-tags"></i> 所有标签</a></li>
-						<li><a href="{{ '/series/' | prepend: site.baseurl }}"><i class="fa fa-book"></i> 专题系列</a></li>
 						<li><a href="{{ '/categories/' | prepend: site.baseurl }}"><i class="fa fa-folder-open"></i> 文章分类</a></li>
+						<li><a href="{{ '/series/' | prepend: site.baseurl }}"><i class="fa fa-book"></i> 专题系列</a></li>
+						<li><a href="{{ '/tag/' | prepend: site.baseurl }}"><i class="fa fa-tags"></i> 所有标签</a></li>
 					</ul>
 				</div>
 			</div>
@@ -117,34 +117,11 @@ titel: Blog
 </div>
 
 <style>
-/* Banner 样式 */
-.banner-content {
-	text-align: center;
-	padding: 30px 0;
-}
-.banner-title {
-	color: #fff;
-	font-size: 2.5em;
-	margin-bottom: 10px;
-}
-.banner-subtitle {
-	color: rgba(255,255,255,0.9);
-	font-size: 1.2em;
-	margin-bottom: 15px;
-}
-.banner-stats {
-	color: rgba(255,255,255,0.8);
-	font-size: 0.95em;
-}
-.banner-stats span {
-	margin: 0 15px;
-}
-
 /* 侧边栏快捷链接 */
 .sidebar-section {
 	margin-top: 30px;
 	padding-top: 20px;
-	border-top: 1px solid #eee;
+	border-top: 1px solid var(--border-light);
 }
 .quick-links li a {
 	padding: 10px 0;
@@ -160,18 +137,18 @@ titel: Blog
 	display: flex;
 	align-items: flex-start;
 	padding: 15px 0;
-	border-bottom: 1px solid #f0f0f0;
+	border-bottom: 1px solid var(--border-light);
 	transition: all 0.2s;
 }
 .post-item:hover {
-	background: #fafafa;
+	background: var(--bg-secondary);
 	margin: 0 -10px;
 	padding: 15px 10px;
 	border-radius: 8px;
 }
 .post-date {
 	min-width: 60px;
-	color: #999;
+	color: var(--text-muted);
 	font-size: 0.9em;
 	font-family: monospace;
 }
@@ -179,20 +156,20 @@ titel: Blog
 	flex: 1;
 }
 .post-info a {
-	color: #333;
+	color: var(--text-primary);
 	font-size: 1.1em;
 	font-weight: 500;
 }
 .post-info a:hover {
-	color: #667eea;
+	color: var(--primary-color);
 }
 .post-tags-mini {
 	margin-top: 5px;
 }
 .tag-mini {
 	display: inline-block;
-	background: #f0f0f0;
-	color: #666;
+	background: var(--bg-tertiary);
+	color: var(--text-muted);
 	padding: 2px 8px;
 	margin-right: 5px;
 	border-radius: 10px;
@@ -201,12 +178,12 @@ titel: Blog
 
 /* 归档标题 */
 .home h1 {
-	color: #2c3e50;
+	color: var(--text-primary);
 	font-size: 1.8em;
 	margin-top: 30px;
 }
 .home h2 {
-	color: #667eea;
+	color: var(--primary-color);
 	font-size: 1.2em;
 	margin-top: 20px;
 	margin-bottom: 10px;
