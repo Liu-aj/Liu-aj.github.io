@@ -1,10 +1,10 @@
 ---
 title: "AI Agent 评估体系实战：从 RAGAS 到生产级测试框架"
 date: 2026-03-22
-category: Other
+category: AI
   - AI
   - 技术实践
-tags:
+tags: [AI-Agent, Evaluation, Benchmark]
   - AI Agent
   - 评估测试
   - RAGAS

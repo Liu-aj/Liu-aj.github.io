@@ -3,7 +3,7 @@ layout: post
 title: "边缘智能实战：在Raspberry Pi上部署轻量化AI模型"
 date: 2026-03-19
 category: AI
-tags: [AI, 边缘计算, Raspberry Pi, TensorFlow Lite, ONNX]
+tags: [Edge-AI, Raspberry-Pi, TensorFlow-Lite, ONNX]
 ---
 
 随着物联网设备的普及和实时响应需求的激增，边缘AI（Edge AI）正成为炙手可热的技术方向。本文将以 Raspberry Pi 为平台，带你深入探索如何部署轻量化 AI 模型，在本地设备上实现智能推理。

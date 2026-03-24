@@ -3,7 +3,7 @@ layout: post
 title: "AI Agent生产化落地：从原型到架构的5个关键设计模式"
 date: 2026-03-19
 category: AI
-tags: [AI, Agent, 架构设计, 生产化]
+tags: [Agent, Architecture, Production]
 ---
 
 ## 引言

@@ -3,7 +3,7 @@ layout: post
 title: "WebAssembly 实战：在浏览器之外运行高性能代码"
 date: 2026-03-19
 category: Tools
-tags: [WebAssembly, Wasm, Rust, 性能优化, 边缘计算]
+tags: [WebAssembly, Rust, Performance, Edge-Computing]
 ---
 
 WebAssembly（简称 Wasm）最初是为浏览器设计的一种二进制指令格式，旨在提供接近原生的执行性能。然而，随着生态的蓬勃发展，WebAssembly 已经突破了浏览器的边界，成为云原生、边缘计算、插件系统等场景的理想选择。本文将深入探讨 WebAssembly 在浏览器之外的应用实践。

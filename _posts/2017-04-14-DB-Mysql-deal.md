@@ -3,7 +3,7 @@ layout: post
 title: MySQL数据库常见问题与解决方案
 date: 2017-04-14 16:21:00
 category: DB
-tags: [MySQL, 问题处理, 数据库优化, 性能调优, 备份恢复]
+tags: [MySQL, Troubleshooting, Optimization]
 ---
 
 * content

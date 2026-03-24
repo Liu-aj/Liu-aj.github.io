@@ -3,7 +3,7 @@ layout: post
 title: "vLLM 核心技术揭秘：PagedAttention 如何消灭显存碎片化"
 date: 2026-03-20
 category: AI
-tags: [AI, vLLM, PagedAttention, 显存优化, 推理加速]
+tags: [vLLM, PagedAttention, Memory-Optimization, Inference]
 ---
 
 # vLLM 核心技术揭秘：PagedAttention 如何消灭显存碎片化

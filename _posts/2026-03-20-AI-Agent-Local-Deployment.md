@@ -2,7 +2,7 @@
 title: "AI Agent 本地部署实战：Ollama + LangGraph 隐私优先工作流"
 date: 2026-03-20 10:00:00 +0800
 category: AI
-tags: [AI-Agent, Ollama, LangGraph, 本地部署, 隐私保护, RAG, Docker]
+tags: [Agent, Ollama, LangGraph, Local-Deployment, RAG, Docker]
 author: Liu AJ
 excerpt: "2026 年数据隐私要求日益严格，企业面临公有云 AI 数据泄露风险。本文详解如何使用 Ollama + LangGraph 搭建 100% 本地化 AI Agent，实现零数据出境、零 API 成本、完全可控的隐私优先工作流。"
 ---

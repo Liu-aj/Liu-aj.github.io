@@ -3,7 +3,7 @@ layout: post
 title: MyBatis框架使用技巧完全指南
 date: 2016-08-03 16:21:00
 category: DB
-tags: [Mybatis, 使用技巧, ORM框架, 数据库, Java]
+tags: [MyBatis, ORM, Tips]
 ---
 
 * content

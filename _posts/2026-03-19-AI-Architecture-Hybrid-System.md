@@ -3,7 +3,7 @@ layout: post
 title: "AI架构中的油水难融：确定性系统与概率性智能的融合挑战"
 date: 2026-03-19
 category: AI
-tags: [AI, 架构, 确定性, 大模型, 系统设计]
+tags: [Architecture, LLM, Hybrid-System]
 ---
 
 # AI 架构中的"油水难融"：确定性系统与概率性智能的融合挑战

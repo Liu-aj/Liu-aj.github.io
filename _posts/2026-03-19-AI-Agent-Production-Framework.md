@@ -3,7 +3,7 @@ layout: post
 title: "AI智能体生产落地：评估框架与架构模式深度解析"
 date: 2026-03-19
 category: AI
-tags: [AI, Agent, 生产落地, 架构模式, 评估框架]
+tags: [Agent, Production, Architecture, Evaluation]
 ---
 
 # AI 智能体生产落地：评估框架与架构模式深度解析

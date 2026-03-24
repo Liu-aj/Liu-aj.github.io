@@ -19,7 +19,7 @@ title: 分类
 				<div class="sidebar-card">
 					<h1><i class="fa fa-folder"></i> 分类目录</h1>
 					<ul class="nav sidenav category-nav">
-						{% assign categories_str = "AI,Java,DB,Linux,Workflow,Tools,Other" | split: "," %}
+						{% assign categories_str = "AI,Java,DB,Linux,Workflow,Tools,Frontend" | split: "," %}
 						{% for cat in categories_str %}
 						{% assign posts_in_cat = site.posts | where: "category", cat %}
 						<li><a href="#{{ cat | downcase }}">{{ cat }} ({{ posts_in_cat.size }})</a></li>
@@ -36,7 +36,7 @@ title: 分类
 			<div class="panel docs-content">
 				<div class="wrapper">
 					<div class="home">
-						{% assign categories_str = "AI,Java,DB,Linux,Workflow,Tools,Other" | split: "," %}
+						{% assign categories_str = "AI,Java,DB,Linux,Workflow,Tools,Frontend" | split: "," %}
 						{% for cat in categories_str %}
 						{% assign posts_in_cat = site.posts | where: "category", cat | sort: 'date' | reverse %}
 						{% if posts_in_cat.size > 0 %}

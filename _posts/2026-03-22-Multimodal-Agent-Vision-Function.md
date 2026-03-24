@@ -2,7 +2,7 @@
 title: "多模态 Agent 实战：从视觉 Function 到脑眼协同系统"
 date: 2026-03-22
 category: AI
-tags: [multimodal, vision, agent, llm, function-calling, clip, gpt-4-vision]
+tags: [Multimodal, Vision, Agent, Function-Calling, GPT-4V]
 ---
 
 ## 引言

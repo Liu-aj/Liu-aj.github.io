@@ -1,10 +1,10 @@
 ---
 title: "MCP 协议实战：从 Function Calling 到企业级工具调用的范式演进"
 date: 2026-03-21
-category: Other
+category: AI
   - AI
   - Architecture
-tags:
+tags: [MCP, Model-Context-Protocol, AI-Integration]
   - MCP
   - AI Agent
   - Function Calling

@@ -3,7 +3,7 @@ layout: post
 title: 求职的本质与职业发展思考
 date: 2017-08-29 14:27:25
 category: Other
-tags: [职业发展, 求职, 个人成长]
+tags: [Career, Job-Search]
 ---
 
 * content

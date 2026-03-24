@@ -2,7 +2,7 @@
 title: "OpenClaw 飞书集成：打造智能办公助手"
 date: 2026-03-22 14:00:00 +0800
 category: AI
-tags: [openclaw, feishu, integration, ai-assistant, automation]
+tags: [OpenClaw, Feishu, Integration, Automation]
 ---
 
 ## 背景

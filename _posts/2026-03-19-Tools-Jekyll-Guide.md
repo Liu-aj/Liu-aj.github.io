@@ -3,7 +3,7 @@ layout: post
 title: "Jekyll博客搭建完全指南"
 date: 2026-03-19
 category: Tools
-tags: [Jekyll, 静态博客, GitHub Pages, 教程]
+tags: [Jekyll, GitHub-Pages, Blog]
 ---
 
 > Jekyll 是一个简洁、强大的静态博客生成器，让你能专注于写作本身。本文将带你从零开始搭建属于自己的 Jekyll 博客 🚀
@@ -221,9 +221,6 @@ my-blog/
 layout: post
 title: "Jekyll博客搭建完全指南"
 date: 2026-03-19 10:00:00
-category: Tools
-tags: [Jekyll, 静态博客, GitHub Pages]
-published: true
 ---
 
 文章内容从这里开始...
@@ -367,17 +364,6 @@ highlighter: rouge
 **1. 启用文章分类和标签**
 
 ```yaml
-tags: [Python, 教程, 入门]
-```
-
-**2. 在文章中显示目录**
-
-{% raw %}
-```liquid
-{% toc %}
-# 需要安装 jekyll-toc 插件
-```
-{% endraw %}
 
 **3. 添加 Google Analytics**
 

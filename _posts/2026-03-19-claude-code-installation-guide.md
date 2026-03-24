@@ -3,7 +3,7 @@ layout: post
 title: "Claude Code 安装与入门指南（国内踩坑版）"
 date: 2026-03-19
 category: AI
-tags: [Claude Code, AI编程, 终端工具, 安装教程]
+tags: [Claude-Code, Terminal, Installation]
 ---
 
 # Claude Code 安装与入门指南（国内踩坑版）

@@ -3,7 +3,7 @@ layout: post
 title: MySQL视图详解
 date: 2018-09-13 16:27:42
 category: DB
-tags: [数据库, SQL, 开发]
+tags: [MySQL, View, SQL]
 ---
 
 * content
