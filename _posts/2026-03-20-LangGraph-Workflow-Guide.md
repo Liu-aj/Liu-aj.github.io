@@ -1,8 +1,8 @@
 ---
-title: "LangGraph 工作流编排实战：用有向图构建可控的 AI Agent"
+title: "LangGraph 工作流编排实战指南：从原理到生产落地"
 date: 2026-03-20 16:00:00
 category: AI
-tags: [LangGraph, Agent, Workflow]
+tags: [LangGraph, Agent, Workflow, Production]
 toc: true
 ---
 
