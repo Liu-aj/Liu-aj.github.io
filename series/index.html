@@ -6,39 +6,8 @@ title: 专题系列
 <div class="banner">
 	<div class="container">
 		<div class="banner-content">
-			<div class="banner-icon"><i class="fa fa-book"></i></div>
-			<h1 class="banner-title">专题系列</h1>
-			<p class="banner-subtitle">按主题组织的系列文章，系统化学习特定领域</p>
-		</div>
-	</div>
-</div>
-
-<!-- 统计信息条 -->
-<div class="stats-bar">
-	<div class="container">
-		{% assign series_names = site.series | map: "series" | uniq %}
-		<div class="stats-grid">
-			<div class="stat-item">
-				<i class="fa fa-bookmark"></i>
-				<div class="stat-info">
-					<span class="stat-number">{{ series_names.size }}</span>
-					<span class="stat-label">专题</span>
-				</div>
-			</div>
-			<div class="stat-item">
-				<i class="fa fa-file-text"></i>
-				<div class="stat-info">
-					<span class="stat-number">{{ site.series | size }}</span>
-					<span class="stat-label">系列文章</span>
-				</div>
-			</div>
-			<div class="stat-item">
-				<i class="fa fa-lightbulb-o"></i>
-				<div class="stat-info">
-					<span class="stat-number">系统学习</span>
-					<span class="stat-label">更高效</span>
-				</div>
-			</div>
+			<h1 class="banner-title"><i class="fa fa-book"></i> 专题系列</h1>
+			<p class="banner-subtitle">按主题组织的系列文章，帮助系统学习特定领域</p>
 		</div>
 	</div>
 </div>
@@ -47,7 +16,7 @@ title: 专题系列
 	<div class="row">
 		<div class="col-md-3">
 			<div class="sidebar hidden-print" role="complementary">
-				<div id="navigation" class="sidebar-card">
+				<div id="navigation">
 					<h1><i class="fa fa-list"></i> 专题列表</h1>
 					<ul class="nav sidenav">
 						{% assign series_names = site.series | map: "series" | uniq %}
@@ -119,75 +88,18 @@ title: 专题系列
 </div>
 
 <style>
-/* Banner 增强 */
-.banner-icon {
-	font-size: 3em;
-	margin-bottom: 15px;
-	opacity: 0.9;
-}
-.banner-icon i {
-	color: #fff;
-}
-
-/* 统计信息条 */
-.stats-bar {
-	background: var(--bg-secondary);
-	padding: 25px 0;
-	border-bottom: 1px solid var(--border-light);
-}
-.stats-grid {
-	display: flex;
-	justify-content: center;
-	gap: 60px;
-	flex-wrap: wrap;
-}
-.stat-item {
-	display: flex;
-	align-items: center;
-	gap: 15px;
-}
-.stat-item > i {
-	font-size: 2em;
-	color: var(--primary-color);
-	opacity: 0.8;
-}
-.stat-info {
-	display: flex;
-	flex-direction: column;
-}
-.stat-number {
-	font-size: 1.8em;
-	font-weight: 700;
-	color: var(--text-primary);
-	line-height: 1.2;
-}
-.stat-label {
-	font-size: 0.9em;
-	color: var(--text-muted);
-}
-
-/* 侧边栏卡片 */
-.sidebar-card {
-	background: var(--bg-primary);
-	border-radius: var(--radius-lg);
-	padding: 20px;
-	box-shadow: var(--shadow-sm);
-}
-
 /* 专题卡片 */
 .series-card {
-	background: var(--bg-primary);
-	border: 1px solid var(--border-light);
-	border-radius: var(--radius-lg);
+	background: #fff;
+	border: 1px solid #eee;
+	border-radius: 10px;
 	padding: 25px;
 	margin-bottom: 25px;
-	box-shadow: var(--shadow-sm);
-	transition: all 0.3s ease;
-	border-left: 4px solid var(--primary-color);
+	box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+	transition: all 0.3s;
 }
 .series-card:hover {
-	box-shadow: var(--shadow-lg);
-	transform: translateY(-3px);
+	box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
 .series-header {
 	display: flex;
@@ -195,26 +107,19 @@ title: 专题系列
 	align-items: center;
 	margin-bottom: 20px;
 	padding-bottom: 15px;
-	border-bottom: 2px solid var(--border-light);
+	border-bottom: 2px solid #f0f0f0;
 }
 .series-header h2 {
 	margin: 0;
-	color: var(--text-primary);
+	color: #2c3e50;
 	font-size: 1.3em;
-	display: flex;
-	align-items: center;
-	gap: 10px;
-}
-.series-header h2 i {
-	color: var(--primary-color);
 }
 .series-count {
-	background: var(--primary-gradient);
+	background: #667eea;
 	color: #fff;
-	padding: 5px 14px;
-	border-radius: var(--radius-full);
+	padding: 4px 12px;
+	border-radius: 15px;
 	font-size: 0.85em;
-	font-weight: 500;
 }
 
 /* 专题文章列表 */
@@ -226,96 +131,69 @@ title: 专题系列
 .series-post-list li {
 	display: flex;
 	align-items: flex-start;
-	padding: 15px 10px;
-	border-radius: var(--radius-md);
-	margin-bottom: 5px;
-	transition: all 0.2s ease;
+	padding: 12px 0;
+	border-bottom: 1px solid #f5f5f5;
 }
-.series-post-list li:hover {
-	background: var(--bg-secondary);
+.series-post-list li:last-child {
+	border-bottom: none;
 }
 .series-post-list .order {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	min-width: 32px;
-	height: 32px;
-	background: var(--primary-gradient);
+	min-width: 28px;
+	height: 28px;
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 	color: #fff;
 	border-radius: 50%;
 	font-size: 0.85em;
-	font-weight: 600;
 	margin-right: 15px;
-	flex-shrink: 0;
 }
 .series-post-list .post-info {
 	flex: 1;
 }
 .series-post-list .post-info a {
-	color: var(--text-primary);
+	color: #333;
 	font-weight: 500;
-	transition: color 0.2s;
 }
 .series-post-list .post-info a:hover {
-	color: var(--primary-color);
+	color: #667eea;
 }
 .series-post-list .date {
 	display: block;
-	color: var(--text-muted);
+	color: #999;
 	font-size: 0.85em;
-	margin-top: 5px;
+	margin-top: 3px;
 }
 
 /* 暂无专题 */
 .no-series {
 	text-align: center;
 	padding: 60px 20px;
-	color: var(--text-muted);
+	color: #999;
 }
 .no-series h2 {
-	color: var(--text-secondary);
+	color: #666;
 	margin-bottom: 10px;
-}
-.no-series i {
-	color: var(--primary-light);
 }
 
 /* 侧边栏说明 */
 .sidebar-section {
 	margin-top: 30px;
 	padding: 20px;
-	background: var(--bg-secondary);
-	border-radius: var(--radius-md);
-	border-left: 4px solid var(--primary-color);
+	background: #f8f9fa;
+	border-radius: 8px;
 }
 .sidebar-section h1 {
 	font-size: 1em;
 	margin-bottom: 15px;
-	color: var(--text-primary);
-}
-.sidebar-section p {
-	color: var(--text-muted);
 }
 .sidebar-section code {
 	display: block;
-	background: var(--bg-primary);
-	padding: 10px 12px;
-	margin: 8px 0;
-	border-radius: var(--radius-sm);
+	background: #fff;
+	padding: 8px;
+	margin: 5px 0;
+	border-radius: 4px;
 	font-size: 0.85em;
-	border: 1px solid var(--border-light);
-}
-
-/* 响应式 */
-@media (max-width: 768px) {
-	.stats-grid {
-		gap: 30px;
-	}
-	.stat-item > i {
-		font-size: 1.5em;
-	}
-	.stat-number {
-		font-size: 1.4em;
-	}
 }
 </style>

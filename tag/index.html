@@ -7,38 +7,8 @@ header: Posts By Tag
 <div class="banner">
 	<div class="container">
 		<div class="banner-content">
-			<div class="banner-icon"><i class="fa fa-tags"></i></div>
-			<h1 class="banner-title">标签云</h1>
-			<p class="banner-subtitle">通过标签快速定位感兴趣的内容</p>
-		</div>
-	</div>
-</div>
-
-<!-- 统计信息条 -->
-<div class="stats-bar">
-	<div class="container">
-		<div class="stats-grid">
-			<div class="stat-item">
-				<i class="fa fa-tags"></i>
-				<div class="stat-info">
-					<span class="stat-number">{{ site.tags | size }}</span>
-					<span class="stat-label">标签</span>
-				</div>
-			</div>
-			<div class="stat-item">
-				<i class="fa fa-file-text"></i>
-				<div class="stat-info">
-					<span class="stat-number">{{ site.posts | size }}</span>
-					<span class="stat-label">文章</span>
-				</div>
-			</div>
-			<div class="stat-item">
-				<i class="fa fa-calendar"></i>
-				<div class="stat-info">
-					<span class="stat-number">{{ site.posts | first | date: "%Y" }}-{{ 'now' | date: '%Y' }}</span>
-					<span class="stat-label">年份跨度</span>
-				</div>
-			</div>
+			<h1 class="banner-title"><i class="fa fa-tags"></i> 标签云</h1>
+			<p class="banner-subtitle">共 {{ site.tags | size }} 个标签</p>
 		</div>
 	</div>
 </div>
@@ -47,7 +17,7 @@ header: Posts By Tag
 	<div class="row">
 		<div class="col-md-3">
 			<div class="sidebar hidden-print" role="complementary">
-				<div id="navigation" class="sidebar-card">
+				<div id="navigation">
 					<h1><i class="fa fa-tags"></i> 标签列表</h1>
 					<ul class="nav sidenav tag-nav">
 						{% assign sorted_tags = site.tags | sort %}
@@ -101,204 +71,97 @@ header: Posts By Tag
 </div>
 
 <style>
-/* Banner 增强 */
-.banner-icon {
-	font-size: 3em;
-	margin-bottom: 15px;
-	opacity: 0.9;
-}
-.banner-icon i {
-	color: #fff;
-}
-
-/* 统计信息条 */
-.stats-bar {
-	background: var(--bg-secondary);
-	padding: 25px 0;
-	border-bottom: 1px solid var(--border-light);
-}
-.stats-grid {
-	display: flex;
-	justify-content: center;
-	gap: 60px;
-	flex-wrap: wrap;
-}
-.stat-item {
-	display: flex;
-	align-items: center;
-	gap: 15px;
-}
-.stat-item > i {
-	font-size: 2em;
-	color: var(--primary-color);
-	opacity: 0.8;
-}
-.stat-info {
-	display: flex;
-	flex-direction: column;
-}
-.stat-number {
-	font-size: 1.8em;
-	font-weight: 700;
-	color: var(--text-primary);
-	line-height: 1.2;
-}
-.stat-label {
-	font-size: 0.9em;
-	color: var(--text-muted);
-}
-
-/* 侧边栏卡片 */
-.sidebar-card {
-	background: var(--bg-primary);
-	border-radius: var(--radius-lg);
-	padding: 20px;
-	box-shadow: var(--shadow-sm);
-}
-
 /* 标签导航 */
 .tag-nav li a {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 10px 12px;
-	border-radius: var(--radius-sm);
-	transition: all 0.2s ease;
-}
-.tag-nav li a:hover {
-	background: var(--bg-secondary);
-	padding-left: 15px;
-}
-.tag-nav li a:hover .tag-name {
-	color: var(--primary-color);
 }
 .tag-count {
-	background: var(--primary-gradient);
+	background: #667eea;
 	color: #fff;
-	padding: 3px 10px;
-	border-radius: var(--radius-full);
+	padding: 2px 8px;
+	border-radius: 10px;
 	font-size: 0.8em;
-	font-weight: 500;
 }
 
 /* 标签云 */
 .tag-cloud {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 12px;
+	gap: 10px;
 	margin-bottom: 40px;
-	padding: 30px;
-	background: var(--bg-secondary);
-	border-radius: var(--radius-lg);
-	box-shadow: var(--shadow-sm);
+	padding: 20px;
+	background: #f8f9fa;
+	border-radius: 10px;
 }
 .tag-cloud-item {
 	display: inline-block;
-	background: var(--bg-primary);
-	color: var(--primary-color);
-	padding: 10px 18px;
-	border-radius: var(--radius-full);
-	border: 1px solid var(--border-color);
-	transition: all 0.2s ease;
-	font-weight: 500;
+	background: #fff;
+	color: #667eea;
+	padding: 8px 15px;
+	border-radius: 20px;
+	border: 1px solid #e0e0e0;
+	transition: all 0.2s;
 }
 .tag-cloud-item:hover {
-	background: var(--primary-gradient);
+	background: #667eea;
 	color: #fff;
-	border-color: transparent;
+	border-color: #667eea;
 	text-decoration: none;
-	transform: translateY(-3px);
-	box-shadow: var(--shadow-md);
 }
 .tag-cloud-item span {
-	color: var(--text-muted);
+	color: #999;
 	font-size: 0.85em;
-	margin-left: 5px;
 }
 .tag-cloud-item:hover span {
-	color: rgba(255,255,255,0.9);
+	color: rgba(255,255,255,0.8);
 }
 
 /* 标签区块 */
 .tag-section {
-	margin-bottom: 35px;
-	padding: 25px;
-	background: var(--bg-primary);
-	border-radius: var(--radius-lg);
-	box-shadow: var(--shadow-sm);
-	border-left: 4px solid var(--primary-color);
+	margin-bottom: 30px;
 }
 .tag-section h2 {
-	color: var(--text-primary);
+	color: #2c3e50;
 	font-size: 1.3em;
-	margin-bottom: 18px;
-	padding-bottom: 12px;
-	border-bottom: 2px solid var(--border-light);
-	display: flex;
-	align-items: center;
-	gap: 10px;
-}
-.tag-section h2 i {
-	color: var(--primary-color);
+	margin-bottom: 15px;
+	padding-bottom: 10px;
+	border-bottom: 2px solid #667eea;
 }
 .tag-section h2 .count {
-	color: var(--text-muted);
+	color: #999;
 	font-size: 0.8em;
-	background: var(--bg-secondary);
-	padding: 4px 12px;
-	border-radius: var(--radius-full);
-	margin-left: auto;
 }
 
 /* 标签文章列表 */
 .tag-post-list {
 	list-style: none;
 	padding: 0;
-	margin: 0;
 }
 .tag-post-list li {
-	padding: 12px 15px;
-	border-bottom: 1px solid var(--border-light);
+	padding: 10px 0;
+	border-bottom: 1px solid #f0f0f0;
 	display: flex;
 	align-items: center;
 	gap: 15px;
-	transition: all 0.2s ease;
-	border-radius: var(--radius-sm);
 }
 .tag-post-list li:hover {
-	background: var(--bg-secondary);
-	transform: translateX(5px);
-}
-.tag-post-list li:last-child {
-	border-bottom: none;
+	background: #fafafa;
+	margin: 0 -10px;
+	padding: 10px;
+	border-radius: 5px;
 }
 .tag-post-list .date {
-	color: var(--text-muted);
+	color: #999;
 	font-size: 0.9em;
-	font-family: 'SF Mono', Monaco, monospace;
-	min-width: 95px;
+	font-family: monospace;
+	min-width: 90px;
 }
 .tag-post-list a {
-	color: var(--text-primary);
-	font-weight: 500;
+	color: #333;
 }
 .tag-post-list a:hover {
-	color: var(--primary-color);
-}
-
-/* 响应式 */
-@media (max-width: 768px) {
-	.stats-grid {
-		gap: 30px;
-	}
-	.stat-item > i {
-		font-size: 1.5em;
-	}
-	.stat-number {
-		font-size: 1.4em;
-	}
-	.tag-cloud {
-		padding: 20px;
-	}
+	color: #667eea;
 }
 </style>
