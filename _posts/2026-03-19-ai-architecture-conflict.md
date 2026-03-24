@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "AI架构中的"油水难融"：确定性系统与概率性智能的融合挑战"
-date: 2026-03-19
+date: 2026-03-19 12:00:00
 category: AI
 tags: [Architecture, Deterministic, Probabilistic]
 ---

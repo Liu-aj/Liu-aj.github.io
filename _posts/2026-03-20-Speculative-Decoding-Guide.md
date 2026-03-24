@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "大模型推理加速新范式：推测解码 (Speculative Decoding) 实战指南"
-date: 2026-03-20
+date: 2026-03-20 12:00:00
 category: AI
 tags: [LLM, Speculative-Decoding, vLLM, Inference-Optimization]
 ---
