@@ -6,8 +6,10 @@
 <body class="index">
 
 {% include header.html %}
+{% if page.url != '/' %}
 {% include docs_header.html %}
-{% if page.title %}
+{% endif %}
+{% if page.title and page.url != '/' %}
 {% include banner.html %}
 {% endif %}
 

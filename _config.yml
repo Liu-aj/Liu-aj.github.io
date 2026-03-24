@@ -10,6 +10,7 @@ baseurl: ""
 # Social links
 github: Laijia
 github_repo: https://github.com/Laijia/Liu-aj.github.io
+resume_site: https://github.com/Laijia
 
 # Build settings
 markdown: kramdown
