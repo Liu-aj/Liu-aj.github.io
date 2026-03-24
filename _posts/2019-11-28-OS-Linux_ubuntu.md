@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Ubuntu完全配置指南（20.04/22.04/24.04）
-date: 2024-06-15 16:21:00
+date: 2019-11-28 16:21:00
 category: Linux
 tags: [Ubuntu, Dev-Environment, Installation]
 ---

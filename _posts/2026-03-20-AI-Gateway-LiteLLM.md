@@ -2,14 +2,7 @@
 title: "LangGraph 工作流编排实战：用有向图构建可控的 AI Agent"
 date: 2026-03-20 16:00:00
 category: AI
-  - AI
-  - LLM
-tags: [LiteLLM, API-Gateway, Model-Management]
-  - LangGraph
-  - LangChain
-  - Agent
-  - Workflow
-  - AI
+tags: [LangGraph, Agent, Workflow]
 toc: true
 ---
 
