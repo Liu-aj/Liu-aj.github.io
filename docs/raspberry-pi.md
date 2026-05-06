@@ -26,7 +26,7 @@ description: 树莓派开发指南
 
 # 或使用命令行
 sudo dd if=raspberrypi.img of=/dev/sdX bs=4M status=progress
-```
+```bash
 
 ### 首次配置
 ```bash
@@ -47,7 +47,7 @@ passwd pi
 ```bash
 # 编辑 wpa_supplicant.conf
 sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
-```
+```bash
 
 ### 静态 IP
 ```bash

@@ -93,7 +93,7 @@ pip install pyautogui
 
 # 可选：LangChain 集成
 pip install langchain-community
-```
+```python
 
 ### 3.2 基础图像分析
 
@@ -260,7 +260,7 @@ class ScreenAnalyzer:
             return True
         
         return False
-```
+```python
 
 ### 3.4 使用示例
 
@@ -445,7 +445,7 @@ class MultimodalAligner:
         
         result = self._analyze_image(image_path, prompt)
         return json.loads(result)
-```
+```python
 
 ### 4.3 多模态 RAG 系统
 
@@ -764,7 +764,7 @@ class ActionModule:
         
         except Exception as e:
             return {"success": False, "message": str(e)}
-```
+```python
 
 ### 5.2 脑眼协同 Agent
 
@@ -994,7 +994,7 @@ result = analyzer.analyze(
     "这份合同有哪些风险条款？请详细分析。"
 )
 print(result)
-```
+```python
 
 ### 6.2 表格理解
 
@@ -1253,7 +1253,7 @@ class SmartVisionClient:
                 self.stats["cache_hits"] / max(self.stats["total_calls"], 1)
             )
         }
-```
+```python
 
 ### 7.3 成本控制
 

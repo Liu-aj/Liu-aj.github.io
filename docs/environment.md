@@ -22,7 +22,7 @@ echo $HOME
 # 查看用户
 cat ~/.bashrc
 cat ~/.profile
-```
+```bash
 
 ## 临时设置
 

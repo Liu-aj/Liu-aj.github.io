@@ -25,7 +25,7 @@ async def main():
         fetch_data(url2),
         fetch_data(url3),
     )
-```
+```javascript
 
 ## JavaScript
 

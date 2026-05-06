@@ -27,7 +27,7 @@ CREATE [OR REPLACE] [ALGORITHM={UNDEFINED | MERGE | TEMPTABLE}]
 VIEW view_name [(column_list)] 
 AS SELECT_statement 
 [WITH [CASCADED | LOCAL] CHECK OPTION];
-```
+```sql
 
 **参数说明：**
 - 使用CREATE OR REPLACE VIEW语句时，如果视图存在，则修改视图；如果不存在，则创建新视图
@@ -52,7 +52,7 @@ ALTER [ALGORITHM={UNDEFINED | MERGE | TEMPTABLE}]
 VIEW view_name [(column_list)] 
 AS SELECT_statement 
 [WITH [CASCADED | LOCAL] CHECK OPTION];
-```
+```sql
 
 **示例：**
 
@@ -80,7 +80,7 @@ CREATE VIEW view_name AS
 SELECT column1, column2, ...
 FROM table_name
 WHERE condition;
-```
+```sql
 
 **示例：**
 

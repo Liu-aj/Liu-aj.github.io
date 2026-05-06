@@ -33,7 +33,7 @@ prompt = """
 3. 包含必要注释
 """
 # 消耗：1500 tokens（直接解决问题）
-```
+```markdown
 
 ### 3.2 建立 Rules 防御边界
 
@@ -78,7 +78,7 @@ memory = ConversationSummaryMemory(
     return_messages=True
 )
 # 每轮只增加 200-300 tokens，10 轮后仍保持约 2000 tokens
-```
+```python
 
 **滑动窗口 + 摘要混合**：
 
@@ -206,7 +206,7 @@ except TokenBudgetExceeded as e:
     print(f"预算超限: {e}")
 
 print(budget_callback.get_report())
-```
+```python
 
 ### 4.2 分级预算策略
 
@@ -300,7 +300,7 @@ class CostOptimizer:
             input_tokens / 1_000_000 * model.input_price +
             output_tokens / 1_000_000 * model.output_price
         )
-```
+```markdown
 
 ---
 
@@ -377,7 +377,7 @@ groups:
           severity: critical
         annotations:
           summary: "成本异常激增"
-```
+```markdown
 
 ### 5.3 成本仪表盘
 
@@ -407,7 +407,7 @@ groups:
 │  └───────────────────────┘  └───────────────────────────────────┘  │
 │                                                                     │
 └─────────────────────────────────────────────────────────────────────┘
-```
+```python
 
 ---
 
@@ -480,7 +480,7 @@ class CostReportGenerator:
     def send_email_report(self, report: CostReport, recipients: List[str]):
         content = self.format_report(report)
         # 发送邮件逻辑
-```
+```markdown
 
 ---
 
@@ -494,7 +494,7 @@ class CostReportGenerator:
 人工分析报告       →      AI 自动识别优化点
 手动调整策略       →      自动调整模型选择
 经验驱动           →      数据驱动决策
-```
+```markdown
 
 ### 7.2 多模型智能路由
 
@@ -509,7 +509,7 @@ class CostReportGenerator:
     ├── 简单任务 → GPT-4o-mini
     ├── 中等任务 → DeepSeek-V3
     └── 复杂任务 → GPT-4-Turbo
-```
+```markdown
 
 **成本节省**：相比单一使用 GPT-4，可节省 **40-60%**
 
@@ -543,7 +543,7 @@ class CostReportGenerator:
 ├── 监控仪表盘完善
 ├── 成本报告自动化
 └── AI 驱动优化探索
-```
+```markdown
 
 ### 核心建议
 

@@ -34,7 +34,7 @@ agent = initialize_agent(
 # - 没问环境信息就直接诊断
 # - 没确认类型就检索
 # - 无法暂停等待用户输入
-```
+```python
 
 用 LangGraph 实现：
 
@@ -119,7 +119,7 @@ class AgentState(TypedDict):
     intent: str
     # 中间结果
     intermediate_results: dict
-```
+```markdown
 
 `Annotated` 类型配合 `operator.add`，表示这个字段会**累加更新**而非覆盖。这对于 `messages` 这种需要持续追加的字段尤其重要。
 
@@ -164,7 +164,7 @@ def generate_answer(state: AgentState) -> dict:
 ```python
 workflow.add_edge("node_a", "node_b")
 # node_a 执行完必定执行 node_b
-```
+```markdown
 
 #### 2.3.2 条件边
 
@@ -197,7 +197,7 @@ workflow.add_conditional_edges(
     "generate",
     lambda s: "retrieve" if not s.get("satisfied") else END
 )
-```
+```python
 
 ### 2.4 编译与执行
 
@@ -329,7 +329,7 @@ result = app.invoke({
 })
 
 print(result["messages"][-1].content)
-```
+```markdown
 
 ### 3.3 执行流程可视化
 
@@ -352,7 +352,7 @@ print(result["messages"][-1].content)
 ┌─────────┐
 │   END   │
 └─────────┘
-```
+```python
 
 ### 3.4 关键点解析
 
@@ -541,7 +541,7 @@ app = workflow.compile(checkpointer=checkpointer)
 # 用户A在网页端发起审批请求
 # 管理员B在移动端审批
 # 完全支持！
-```
+```python
 
 ---
 
@@ -729,7 +729,7 @@ checkpointer = PostgresSaver(
 )
 
 app = workflow.compile(checkpointer=checkpointer)
-```
+```markdown
 
 ### 6.2 断点续传
 
@@ -765,7 +765,7 @@ client = Client()
 # 或手动记录
 with client.trace("my_workflow") as trace:
     result = app.invoke(inputs, config={"callbacks": [trace]})
-```
+```python
 
 ### 6.4 流式输出
 

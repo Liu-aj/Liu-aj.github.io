@@ -19,7 +19,7 @@ description: 密码学基础知识
 ```python
 from Crypto.Cipher import AES
 cipher = AES.new(key, AES.MODE_CBC, iv)
-```
+```markdown
 
 ## 非对称加密
 

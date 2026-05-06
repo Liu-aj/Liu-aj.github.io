@@ -27,7 +27,7 @@ def handler(event, context):
         'statusCode': 200,
         'body': 'Hello'
     }
-```
+```markdown
 
 ### 触发器
 - HTTP 请求

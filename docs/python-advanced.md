@@ -28,7 +28,7 @@ def timer(func):
 def slow_function():
     import time
     time.sleep(1)
-```
+```python
 
 ## 上下文管理器
 
@@ -61,7 +61,7 @@ async def main():
         fetch_data("url1"),
         fetch_data("url2"),
     )
-```
+```python
 
 ## 类型注解
 

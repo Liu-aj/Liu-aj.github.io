@@ -23,7 +23,7 @@ MySQL函数是一种存储在数据库中的可重用代码块，可以接受输
 
 ```sql
 ERROR 1418 (HY000): This function has none of DETERMINISTIC, NO SQL, or READS SQL DATA in its declaration and binary logging is enabled (you *might* want to use the less safe log_bin_trust_function_creators variable)
-```
+```markdown
 
 这是因为MySQL在启用二进制日志时，需要确保复制环境中的函数行为一致。
 
@@ -47,7 +47,7 @@ SHOW VARIABLES LIKE '%func%';
 ```ini
 [mysqld]
 log_bin_trust_function_creators = 1
-```
+```markdown
 
 #### 方法2：在函数定义中指定特性
 
@@ -95,7 +95,7 @@ DELIMITER ;
 
 -- 调用函数
 SELECT calculate_average(10, 20); -- 返回 15.00
-```
+```sql
 
 ### 2. 字符串处理函数示例
 
@@ -141,7 +141,7 @@ DELIMITER ;
 
 -- 调用函数
 SELECT workdays_between('2023-01-01', '2023-01-10');
-```
+```sql
 
 ## 函数管理与维护
 
@@ -166,7 +166,7 @@ DROP FUNCTION IF EXISTS your_function_name;
 -- 重新创建函数
 CREATE FUNCTION your_function_name()
 -- ... 函数定义 ...
-```
+```sql
 
 ### 查看函数依赖关系
 

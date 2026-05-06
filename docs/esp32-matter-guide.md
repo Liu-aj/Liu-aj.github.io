@@ -71,7 +71,7 @@ description: ESP32开发指南
 **第一步：安装 ESP32 board package**
 
 1. Arduino IDE → 文件 → 首选项 → 附加开发板管理器网址添加：
-   ```
+```markdown
    https://espressif.github.io/arduino-esp32/package_esp32_index.json
    ```
 2. 工具 → 开发板 → 开发板管理器 → 搜索 `esp32` → 安装
@@ -157,7 +157,7 @@ void setup() {
 void loop() {
   Matter.process();
 }
-```
+```markdown
 
 ### 3.3 配对流程
 
@@ -242,7 +242,7 @@ description: ESP32开发指南
 
 ❌ 原因3：手机离设备太远
 ✅ 解决：确保手机和 ESP32 在同一 Wi-Fi 环境下，距离 < 3米
-```
+```python
 
 ### Q2: Wi-Fi 连不上
 

@@ -23,7 +23,7 @@ description: JSON 和 YAML 数据格式
     "zip": "100000"
   }
 }
-```
+```markdown
 
 ### Python 操作
 ```python
@@ -50,7 +50,7 @@ scores:
 address:
   city: Beijing
   zip: "100000"
-```
+```markdown
 
 ### Python 操作
 ```python

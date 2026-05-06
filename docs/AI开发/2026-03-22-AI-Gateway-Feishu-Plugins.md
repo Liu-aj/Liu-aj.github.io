@@ -91,7 +91,7 @@ response = ai_gateway.call(
         "folder_token": "fldcnXXXXXX"
     }
 )
-```
+```markdown
 
 ### 2. feishu_chat - 消息通信
 
@@ -144,7 +144,7 @@ response = ai_gateway.call(
         "obj_type": "docx"
     }
 )
-```
+```markdown
 
 ### 4. feishu_drive - 云存储
 
@@ -192,7 +192,7 @@ response = ai_gateway.call(
         "perm": "view"
     }
 )
-```
+```markdown
 
 ### 6. feishu_bitable - 多维表格
 
@@ -252,7 +252,7 @@ def handle_feishu_error(func):
                 raise RateLimitError("请求频率超限，请稍后重试")
             raise
     return wrapper
-```
+```python
 
 ### 2. 缓存策略
 
@@ -291,7 +291,7 @@ async def batch_create_records(app_token: str, table_id: str, records: list):
         results.extend(result)
     
     return results
-```
+```javascript
 
 ### 4. 权限预检查
 
@@ -376,7 +376,7 @@ class WeeklyReportAutomation:
         )
         
         return doc
-```
+```markdown
 
 ## 安全与合规
 

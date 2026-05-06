@@ -23,7 +23,7 @@ server {
         proxy_set_header X-Real-IP $remote_addr;
     }
 }
-```
+```markdown
 
 ### SSL 配置
 ```nginx

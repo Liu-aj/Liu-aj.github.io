@@ -18,7 +18,7 @@ main ←───────────────←─── production
   ↑                       ↑
   │ merge                 │ merge
   ├── develop ←─── feat/ │─────── fix/
-```
+```bash
 
 ### Code Review
 ```bash
@@ -38,7 +38,7 @@ git rebase -i HEAD~3
 ```bash
 # 选择性合并提交
 git cherry-pick <commit-hash>
-```
+```markdown
 
 ### Stash
 ```bash
@@ -57,7 +57,7 @@ git submodule add <url> <path>
 
 # 初始化子模块
 git submodule update --init
-```
+```bash
 
 ## Git 钩子
 

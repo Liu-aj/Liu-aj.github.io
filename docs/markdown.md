@@ -16,7 +16,7 @@ description: Markdown 完全语法指南
 # H1
 ## H2
 ### H3
-```
+```markdown
 
 ### 强调
 ```markdown
@@ -33,7 +33,7 @@ description: Markdown 完全语法指南
 
 1. 有序列表
 2. 项目2
-```
+```markdown
 
 ### 链接与图片
 ```markdown
@@ -46,7 +46,7 @@ description: Markdown 完全语法指南
 ### 行内代码
 ```markdown
 `const x = 1`
-```
+```javascript
 
 ### 代码块
 ~~~markdown
@@ -61,7 +61,7 @@ const hello = 'world';
 | 列1 | 列2 | 列3 |
 |------|------|------|
 | 内容 | 内容 | 内容 |
-```
+```markdown
 
 ## 高级
 
@@ -74,7 +74,7 @@ const hello = 'world';
 ### 引用
 ```markdown
 > 引用内容
-```
+```markdown
 
 ### 水平线
 ```markdown

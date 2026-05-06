@@ -20,7 +20,7 @@ ssh -p 2222 user@host
 
 # 密钥登录
 ssh -i ~/.ssh/key_name user@host
-```
+```markdown
 
 ## 密钥管理
 
@@ -54,7 +54,7 @@ Host alias
 ### 本地端口转发
 ```bash
 ssh -L 8080:remote:80 user@host
-```
+```bash
 
 ### 远程端口转发
 ```bash

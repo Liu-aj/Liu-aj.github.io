@@ -43,7 +43,7 @@ title: AI Agent 可观测性 2.0：用 OpenTelemetry 打造全链路追踪体系
 ```bash
 pip install opentelemetry-api opentelemetry-sdk
 pip install opentelemetry-exporter-otlp
-```
+```bash
 
 ### 2.2 最小化配置
 
@@ -96,7 +96,7 @@ def call_llm(prompt: str, model: str = "gpt-4o-mini"):
             span.record_exception(e)
             span.set_status(Status(StatusCode.ERROR, str(e)))
             raise
-```
+```markdown
 
 ### 3.2 多轮对话追踪
 
@@ -141,7 +141,7 @@ async def call_mcp_tool(tool_name: str, arguments: dict, timeout: float = 30.0):
             span.set_attribute("tool.success", False)
             span.record_exception(e)
             raise
-```
+```markdown
 
 ### 4.2 工具选择决策
 
@@ -178,7 +178,7 @@ async def retrieve_from_memory(query: str, top_k: int = 5):
         span.set_attribute("memory.latency.seconds", time.time() - start)
         
         return results
-```
+```markdown
 
 ### 5.2 记忆指标
 
@@ -203,7 +203,7 @@ def check_hallucination(response: str, sources: list) -> bool:
             hallucination_counter.add(1)
             span.add_event("hallucination_alert")
         return is_hallucination
-```
+```markdown
 
 ### 6.2 告警规则
 
@@ -239,7 +239,7 @@ class AdaptiveSampler:
         return self.normal.should_sample(parent, trace_id, name, kind, attrs, links)
 
 provider = TracerProvider(sampler=AdaptiveSampler(normal_rate=0.1))
-```
+```python
 
 ### 7.2 敏感信息脱敏
 
@@ -296,7 +296,7 @@ def traced_agent(name: str):
                     raise
         return wrapper
     return decorator
-```
+```javascript
 
 ### 使用
 

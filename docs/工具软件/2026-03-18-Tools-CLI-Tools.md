@@ -26,7 +26,7 @@ title: 用好这 5 个 CLI 工具，终端效率翻倍
 **macOS (Homebrew)**
 ```bash
 brew install eza
-```
+```bash
 
 **Ubuntu/Debian**
 ```bash
@@ -41,7 +41,7 @@ sudo apt install -y eza
 **Arch Linux**
 ```bash
 sudo pacman -S eza
-```
+```bash
 
 **Fedora**
 ```bash
@@ -52,7 +52,7 @@ sudo dnf install eza
 **通用方式 (Cargo)**
 ```bash
 cargo install eza
-```
+```markdown
 
 ### 常用配置
 
@@ -81,7 +81,7 @@ filekinds:
   directory: { foreground: "Blue", bold: true }
   symlink: { foreground: "Cyan" }
   executable: { foreground: "Green" }
-```
+```markdown
 
 ### 对比示例
 
@@ -134,7 +134,7 @@ eza -l --time-style=relative
 
 # 显示挂载点详情
 eza -l --mounts
-```
+```bash
 
 ---
 
@@ -162,7 +162,7 @@ brew install fd
 sudo apt install fd-find
 # 创建别名
 ln -s $(which fdfind) ~/.local/bin/fd
-```
+```bash
 
 **Arch Linux**
 ```bash
@@ -192,7 +192,7 @@ alias fde='fd -x'
 
 # 批量执行
 alias fdx='fd -X'
-```
+```markdown
 
 ### 对比示例
 
@@ -253,7 +253,7 @@ fd -l pattern
 
 # 按完整路径搜索
 fd -p '.*/lesson-\d+/[a-z]+\.(jpg|png)'
-```
+```bash
 
 ---
 
@@ -281,7 +281,7 @@ brew install ripgrep
 **Ubuntu/Debian**
 ```bash
 sudo apt install ripgrep
-```
+```bash
 
 **Arch Linux**
 ```bash
@@ -316,7 +316,7 @@ cargo install ripgrep
 --colors=path:fg:green
 --colors=line:fg:yellow
 --colors=match:fg:red
-```
+```bash
 
 添加到 `~/.bashrc` 或 `~/.zshrc`：
 
@@ -349,7 +349,7 @@ $ rg -Tjs "console"     # 排除 JavaScript 文件
 $ rg -C 3 "function"    # 显示 3 行上下文
 $ rg -B 2 "function"    # 显示前 2 行
 $ rg -A 2 "function"    # 显示后 2 行
-```
+```markdown
 
 ### 实用技巧
 
@@ -407,7 +407,7 @@ rg --auto-hybrid-regex pattern
 **macOS (Homebrew)**
 ```bash
 brew install btop
-```
+```bash
 
 **Ubuntu/Debian**
 ```bash
@@ -417,7 +417,7 @@ sudo apt install btop
 **Arch Linux**
 ```bash
 sudo pacman -S btop
-```
+```bash
 
 **Fedora**
 ```bash
@@ -434,7 +434,7 @@ git clone https://github.com/aristocratos/btop.git
 cd btop
 make GPU_SUPPORT=true
 sudo make install
-```
+```markdown
 
 ### 常用配置
 
@@ -476,7 +476,7 @@ $ btop
 # - 磁盘 I/O
 # - 进程列表（可排序、过滤）
 # - GPU 信息（Linux，需编译支持）
-```
+```markdown
 
 ### 实用技巧
 
@@ -545,7 +545,7 @@ fe() {
 sg() {
     rg -t "$1" "$2"
 }
-```
+```bash
 
 ### 字体提示
 

@@ -107,7 +107,7 @@ RSSI 值参考：
    
    bluetooth_proxy:
      active: true
-   ```
+```markdown
 
 2. **安装 Bermuda 集成**
    - HACS → 搜索 `bermuda` → 安装
@@ -238,7 +238,7 @@ automation:
       service: light.turn_on
       target:
         entity_id: light.living_room_main
-```
+```markdown
 
 ---
 
@@ -279,7 +279,7 @@ automation:
         data:
           entity_id: light.bedroom
           brightness_pct: 60
-```
+```markdown
 
 ### 场景 3：宠物定位
 

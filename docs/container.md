@@ -18,7 +18,7 @@ docker run -d -p 80:80 myapp
 docker ps
 docker logs -f container_id
 docker exec -it container_id sh
-```
+```dockerfile
 
 ### Dockerfile
 ```dockerfile

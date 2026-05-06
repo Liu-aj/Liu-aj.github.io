@@ -33,7 +33,7 @@ response = llm.generate("分析这段代码的风险")
 # 第一次运行：可能输出"内存泄漏风险"
 # 第二次运行：可能输出"线程安全问题"
 # 第三次运行：可能完全偏离主题
-```
+```markdown
 
 这种非确定性带来三个工程挑战：
 
@@ -114,7 +114,7 @@ def evaluate_intelligence(agent, test_cases):
         results['accuracy'].append(accuracy_score)
     
     return aggregate_metrics(results)
-```
+```python
 
 ### 2.2 性能与效率 ⚡
 
@@ -191,7 +191,7 @@ class ReliabilityEvaluator:
                 })
         
         return results
-```
+```python
 
 ### 2.4 责任与安全 🔐
 
@@ -279,7 +279,7 @@ class UXEvaluator:
             'clarification_rate': metrics['clarification_rate'] / len(conversation_logs),
             'satisfaction_score': np.mean(metrics['user_satisfaction'])
         }
-```
+```python
 
 ---
 
@@ -438,7 +438,7 @@ if response.choices[0].message.tool_calls:
             tool_call.function.name,
             json.loads(tool_call.function.arguments)
         )
-```
+```python
 
 **工具设计最佳实践**：
 
@@ -717,7 +717,7 @@ class TraceAnalyzer:
                             "context": trace[max(0, i-2):i+1]
                         })
         return errors
-```
+```python
 
 ### 4.3 可复现测试工具 🧪
 
@@ -891,7 +891,7 @@ anonymized, mapping = anonymizer.anonymize(user_input)
 
 response = llm.generate(anonymized)
 restored = anonymizer.restore(response, mapping)
-```
+```python
 
 ### 5.2 持续监控与迭代优化 📈
 

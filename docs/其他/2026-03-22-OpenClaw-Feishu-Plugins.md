@@ -226,7 +226,7 @@ await message({
   chat_id: "aaa",
   message: `周报已更新，请查阅: ${doc_url}`
 });
-```
+```markdown
 
 ## 配置指南
 
@@ -281,7 +281,7 @@ try {
     console.log("权限不足，请检查应用配置");
   }
 }
-```
+```javascript
 
 ### 2. 批量操作优化
 

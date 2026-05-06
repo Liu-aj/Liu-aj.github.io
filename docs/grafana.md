@@ -19,7 +19,7 @@ description: Grafana 可视化仪表盘
 - MySQL
 - PostgreSQL
 - Loki
-```
+```markdown
 
 ## Dashboard
 

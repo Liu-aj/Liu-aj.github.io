@@ -22,7 +22,7 @@ description: 微服务架构
 ```bash
 GET /api/users/123
 POST /api/users
-```
+```markdown
 
 ### gRPC
 ```protobuf

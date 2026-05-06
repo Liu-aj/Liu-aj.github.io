@@ -32,7 +32,7 @@ git pull
 
 # 查看状态
 git status
-```
+```bash
 
 ## Docker
 

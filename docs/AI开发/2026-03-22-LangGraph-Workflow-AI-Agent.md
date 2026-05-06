@@ -129,7 +129,7 @@ result = app.invoke({
 })
 
 print(result["messages"][-1].content)
-```
+```markdown
 
 ### 2.3 可视化
 
@@ -295,7 +295,7 @@ state2 = app.invoke(
 )
 
 print(state2["result"])  # 输出：成功预订航班 MU1234
-```
+```markdown
 
 ### 3.3 关键点解析
 
@@ -340,7 +340,7 @@ print(state2["result"])  # 输出：成功预订航班 MU1234
               ┌─────────┐
               │  总结   │
               └─────────┘
-```
+```python
 
 ### 4.2 完整实现
 
@@ -458,7 +458,7 @@ result = app.invoke(input_state, config)
 # 恢复中断的会话
 history = app.get_state(config)
 print(history.values)  # 查看当前状态
-```
+```markdown
 
 ### 5.2 监控：集成 LangSmith
 
@@ -503,7 +503,7 @@ async def chat(request: ChatRequest):
     return {"response": result["messages"][-1].content}
 
 # 部署：uvicorn main:app --host 0.0.0.0 --port 8000
-```
+```python
 
 ### 5.4 断点续传示例
 
@@ -543,7 +543,7 @@ class GoodState(TypedDict):
     messages: Annotated[list[BaseMessage], operator.add]
     current_step: str
     user_preferences: dict
-```
+```markdown
 
 ### 6.2 循环检测
 

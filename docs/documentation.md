@@ -31,7 +31,7 @@ description: 技术文档编写技巧
 ## 示例
 
 ## License
-```
+```markdown
 
 ### API 文档
 ```markdown

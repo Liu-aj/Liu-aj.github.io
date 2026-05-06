@@ -41,7 +41,7 @@ cd /mnt/c/Users/xxx
 
 # 从 Linux 访问 Windows 文件
 cd /home/username
-```
+```bash
 
 ## Docker in WSL
 

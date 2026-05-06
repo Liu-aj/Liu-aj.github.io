@@ -60,7 +60,7 @@ pub extern "C" fn add(a: i32, b: i32) -> i32 {
 
 // 宿主环境调用
 // instance.exports.add(1, 2) → 3
-```
+```markdown
 
 ## 使用 Rust 编写 Wasm 模块
 
@@ -235,7 +235,7 @@ impl ImageProcessor {
         Uint8Array::from(&self.data[..])
     }
 }
-```
+```bash
 
 ## 使用 C++ 编写 Wasm 模块
 
@@ -349,7 +349,7 @@ impl ImageFilterPlugin {
 
 // 宿主侧可以定义 trait 来统一管理不同的插件实例
 // trait Plugin { fn name(&self) -> &str; fn execute(&self, input: &[u8]) -> Vec<u8>; }
-```
+```javascript
 
 宿主系统集成：
 
@@ -549,7 +549,7 @@ impl ImageService {
         self.buffer.clone()
     }
 }
-```
+```javascript
 
 ## WebAssembly vs 容器技术
 
@@ -623,7 +623,7 @@ wasmedge module.wasm
 # 编译为原生机器码（AOT）
 wasmedgec module.wasm module.wasm.so
 wasmedge module.wasm.so
-```
+```yaml
 
 与 Kubernetes 集成：
 
@@ -675,7 +675,7 @@ async function loadWasm() {
 const wasm = await loadWasm();
 const result = wasm.add(10, 20);
 console.log(result); // 30
-```
+```javascript
 
 使用 wasm-pack 生成的模块：
 
@@ -701,7 +701,7 @@ wasm-opt -Oz -o output.wasm input.wasm
 
 # 使用 wasm-strip 移除调试信息
 wasm-strip output.wasm
-```
+```javascript
 
 ### 内存管理
 

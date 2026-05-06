@@ -16,7 +16,7 @@ description: 常用数据结构
 arr = [1, 2, 3]
 arr.append(4)  # O(1)
 arr.insert(0, 0)  # O(n)
-```
+```python
 
 ## 链表
 

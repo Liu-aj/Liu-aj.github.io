@@ -25,7 +25,7 @@ title: MyBatis框架使用技巧完全指南
 <insert id="insertUser" parameterType="com.example.User" useGeneratedKeys="true" keyProperty="id">
     INSERT INTO user (username, password, email) VALUES (#{username}, #{password}, #{email})
 </insert>```
-```
+```sql
 
 插入数据成功后，MyBatis会自动将生成的主键值设置到传入的User对象的id属性中，无需额外查询操作。
 
@@ -72,7 +72,7 @@ map.put("endTime", endTime);```
 <if test="startTime != null and endTime != null">
     and t.create_time BETWEEN #{startTime} and #{endTime}
 </if>```
-```
+```sql
 
 ### 1.3 模糊查询的实现方法
 
@@ -103,7 +103,7 @@ sqlParam.setA("%" + keyword + "%");```
 ```xml
 <!-- XML中直接使用参数 -->
 SELECT * FROM tableName t WHERE t.a LIKE #{a};```
-```
+```sql
 
 **方式三：使用MyBatis的concat函数（推荐）**
 ```xml
@@ -118,7 +118,7 @@ SELECT * FROM tableName t WHERE t.a LIKE CONCAT('%', #{a}, '%');```
     <bind name="pattern" value="'%' + keyword + '%'" />
     SELECT * FROM user WHERE username LIKE #{pattern}
 </select>```
-```
+```sql
 
 **推荐使用方式二、三或四**，以避免SQL注入风险。方式四特别适合在复杂条件下使用，且更具可读性。
 
@@ -178,7 +178,7 @@ MyBatis支持多种关联查询方式，以下是一对一和一对多关联的�
         <result property="totalAmount" column="total_amount" />
     </collection>
 </resultMap>```
-```
+```sql
 
 ### 2.3 分页查询实现
 
@@ -398,7 +398,7 @@ MyBatis与Spring集成的基础配置：
     <property name="basePackage" value="com.example.mapper"/>
     <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
 </bean>
-```
+```python
 
 ### 5.2 Spring Boot整合MyBatis
 
@@ -479,7 +479,7 @@ mybatis.configuration.cache-enabled=true
     <!-- 设置按需加载，而不是加载全部 -->
     <setting name="aggressiveLazyLoading" value="false" />
 </settings>
-```
+```sql
 
 ### 7.2 缓存配置
 

@@ -27,7 +27,7 @@ frontend:
   themes: !include_dir_merge_named themes/
   extra_module_url:
     - /local/community/lovelace-layout-card/layout.js
-```
+```markdown
 
 > card-mod 依赖 Lovelace UI，请确保 HA 版本 >= 2024.3
 
@@ -92,7 +92,7 @@ frontend:
 
 ```
 HACS → 界面 → 主题 → 搜索主题名 → 下载
-```
+```markdown
 
 **方法 B：手动下载主题 YAML**
 
@@ -105,7 +105,7 @@ HACS → 界面 → 主题 → 搜索主题名 → 下载
 
 ```
 HA 主界面 → 右上角三点 → 管理面板 → 主题 → 选择主题
-```
+```markdown
 
 ### 步骤 3：微调（用 card-mod）
 
@@ -138,7 +138,7 @@ card_mod:
 # 锁定版本，不自动更新
 card_mod:
   version: specific_version
-```
+```markdown
 或每次升级前先在测试环境验证
 
 ### ❌ 坑 2：Lovelace 刷新后主题消失
@@ -189,7 +189,7 @@ card_mod:
       border: 1px solid rgba(255,255,255,0.2);
       border-radius: 16px;
     }
-```
+```markdown
 
 ### 渐变背景
 

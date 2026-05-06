@@ -23,7 +23,7 @@ description: Web 安全最佳实践
 
 <!-- 好 - 转义 -->
 <div>{{ user_input | escape }}</div>
-```
+```sql
 
 ## CSRF
 

@@ -136,7 +136,7 @@ zigbee2mqtt:
     - /run/udev:/run/udev:ro
   environment:
     - TZ=Asia/Shanghai
-```
+```markdown
 
 ### 3.2 configuration.yaml 关键配置
 
@@ -191,7 +191,7 @@ advanced:
 docker exec -it zigbee2mqtt npm start
 
 # 或 Web UI → 右上角 "Permit join (All)"
-```
+```markdown
 
 ### Q3：固件更新
 

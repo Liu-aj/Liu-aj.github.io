@@ -18,7 +18,7 @@ awk -F',' '{print $1, $3}' file.csv
 
 # 条件过滤
 awk 'NR>1 && $3>100 {print $0}' data.txt
-```
+```markdown
 
 ### sed
 ```bash

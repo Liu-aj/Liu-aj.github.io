@@ -35,7 +35,7 @@ SELECT * FROM information_schema.processlist WHERE state LIKE '%lock%';
 SELECT * FROM information_schema.innodb_trx;
 SELECT * FROM information_schema.innodb_locks;
 SELECT * FROM information_schema.innodb_lock_waits;
-```
+```sql
 
 ### 1.2 锁表问题解决方法
 
@@ -85,7 +85,7 @@ SHOW STATUS LIKE 'Slow_queries';
 
 -- 使用pt-query-digest工具分析慢查询日志（需要安装Percona Toolkit）
 -- pt-query-digest /var/log/mysql/slow-query.log```
-```
+```sql
 
 ### 2.2 索引优化
 
@@ -139,7 +139,7 @@ SHOW BINARY LOGS;
 
 -- 查看临时表空间使用情况（MySQL 5.7+）
 SELECT * FROM INFORMATION_SCHEMA.FILES WHERE tablespace_name LIKE 'temp%';
-```
+```sql
 
 ### 3.2 表优化与碎片整理
 
@@ -191,7 +191,7 @@ SET GLOBAL max_connections = 2000;
 -- 设置连接超时时间
 SET GLOBAL wait_timeout = 3600;
 SET GLOBAL interactive_timeout = 7200;```
-```
+```sql
 
 ### 4.2 内存使用优化
 
@@ -253,7 +253,7 @@ DB_NAME=your_database
 mysqldump -u root -p"your_password" $DB_NAME | gzip > $BACKUP_DIR/${DB_NAME}_backup_$DATE.sql.gz
 # 删除7天前的备份
 find $BACKUP_DIR -name "${DB_NAME}_backup_*.sql.gz" -mtime +7 -delete
-```
+```markdown
 
 ### 5.2 数据恢复
 
@@ -376,7 +376,7 @@ FLUSH PRIVILEGES;
 
 -- 查看所有用户
 SELECT user, host FROM mysql.user;
-```
+```sql
 
 ### 7.2 安全加固措施
 
@@ -459,7 +459,7 @@ INSERT INTO target_db.table_name SELECT * FROM source_db.table_name;
 # 对于大型表，考虑使用分批插入
 INSERT INTO target_db.table_name SELECT * FROM source_db.table_name LIMIT 10000;
 -- 然后调整LIMIT偏移量继续插入
-```
+```bash
 
 ### 8.2 MySQL版本升级
 
@@ -537,7 +537,7 @@ SELECT * FROM sys.schema_unused_indexes;
 
 -- 查看表访问统计
 SELECT * FROM sys.schema_table_statistics ORDER BY rows_changed DESC LIMIT 10;
-```
+```markdown
 
 ### 10.2 第三方监控工具
 

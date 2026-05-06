@@ -33,7 +33,7 @@ kubectl logs -f pod-name
 
 # 进入容器
 kubectl exec -it pod-name -- /bin/bash
-```
+```yaml
 
 ## YAML 示例
 

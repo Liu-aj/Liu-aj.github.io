@@ -345,7 +345,7 @@ AI: 分析代码库后发现：
     "stop": [{ "command": "bun run .cursor/hooks/test-on-stop.ts" }]
   }
 }
-```
+```markdown
 
 ---
 

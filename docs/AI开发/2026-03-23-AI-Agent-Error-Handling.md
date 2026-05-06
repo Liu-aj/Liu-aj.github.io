@@ -67,7 +67,7 @@ for _ in range(100):
     result = call_llm(prompt)
     if result.success:
         return result
-```
+```python
 
 问题：
 - 固定间隔可能正好撞上服务恢复窗口
@@ -172,7 +172,7 @@ def classify_error(status_code: int, error_body: dict) -> Exception:
         return NonRetryableError(f"HTTP {status_code}: {error_body}")
     else:
         return NonRetryableError(f"Unknown error: {status_code}")
-```
+```markdown
 
 ### 2.4 重试的最佳实践
 
@@ -339,7 +339,7 @@ class CircuitBreaker:
             self.half_open_calls = 0
         
         logger.info(f"熔断器状态转换: {old_state.value} → {new_state.value}")
-```
+```python
 
 ### 3.3 Agent 中使用熔断器
 
@@ -547,7 +547,7 @@ class DegradationManager:
         """重置降级状态（恢复正常后调用）"""
         self.current_model_index = 0
         self.degradation_level = 0
-```
+```python
 
 ### 4.4 功能降级示例
 
@@ -644,7 +644,7 @@ class ToolError(Exception):
         self.params = params
         self.retry_after = retry_after
         super().__init__(message)
-```
+```python
 
 ### 5.3 工具执行器实现
 
@@ -970,7 +970,7 @@ class ToolCallValidator:
         if field in properties:
             return properties[field].get("default")
         return None
-```
+```markdown
 
 ---
 
@@ -1151,7 +1151,7 @@ class MonitoredAgent:
     def _execute_tool(self, tool_name: str, params: dict) -> Any:
         """执行工具（子类实现）"""
         raise NotImplementedError
-```
+```yaml
 
 ### 6.3 告警规则（Prometheus + Alertmanager）
 
@@ -1286,7 +1286,7 @@ groups:
     ]
   }
 }
-```
+```markdown
 
 ---
 
@@ -1328,7 +1328,7 @@ groups:
   ├─ ✅ Token 消耗监控
   ├─ ✅ 响应时间监控
   └─ ✅ 降级状态监控
-```
+```markdown
 
 ### 7.2 配置模板
 

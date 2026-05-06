@@ -28,7 +28,7 @@ config interface 'lan'
     option proto 'static'
     option ipaddr '192.168.1.1'
     option netmask '255.255.255.0'
-```
+```bash
 
 ## 软件包
 

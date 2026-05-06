@@ -34,7 +34,7 @@ Navicat是一款功能强大的数据库管理工具，支持MySQL、PostgreSQL�
 
 # 修改后
 export LANG="zh_CN.UTF-8"
-```
+```bash
 
 ### 步骤二：配置Navicat的字体设置
 

@@ -20,7 +20,7 @@ SOURCE_DIR=/home/user/data
 
 tar -czf $BACKUP_DIR/backup_$DATE.tar.gz $SOURCE_DIR
 find $BACKUP_DIR -name "*.tar.gz" -mtime +7 -delete
-```
+```bash
 
 ### 系统监控脚本
 ```bash
@@ -36,7 +36,7 @@ echo "Disk: $(df -h / | awk 'NR==2 {print $3 "/" $2}')"
 #!/bin/bash
 docker system prune -af
 docker volume prune -f
-```
+```python
 
 ## Python 脚本
 

@@ -21,7 +21,7 @@ chsh -s /bin/zsh
 
 # 使用 Oh My Zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
+```bash
 
 ### Fish
 ```bash
@@ -43,7 +43,7 @@ sudo apt install tmux
 tmux new -s session    # 新建会话
 Ctrl+b d               # 分离
 tmux attach            # 重新连接
-```
+```markdown
 
 ### screen
 ```bash

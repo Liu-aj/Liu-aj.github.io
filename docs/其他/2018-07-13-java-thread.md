@@ -33,7 +33,7 @@ public class MyThread extends Thread {
         thread.start(); // 启动线程
     }
 }
-```
+```markdown
 
 ### 2. 实现Runnable接口
 
@@ -128,7 +128,7 @@ thread.setName("MyThread"); // 设置线程名称
 
 ```
 NEW → RUNNABLE → BLOCKED/WAITING/TIMED_WAITING → RUNNABLE → TERMINATED
-```
+```markdown
 
 ## 四、线程同步机制
 
@@ -286,7 +286,7 @@ try {
     e.printStackTrace();
 }
 System.out.println("All tasks are completed");
-```
+```markdown
 
 **注意**：CountDownLatch的计数只能使用一次，无法重置
 
@@ -348,7 +348,7 @@ for (int i = 0; i < 10; i++) {
         }
     }).start();
 }
-```
+```python
 
 ### 4. Exchanger
 
@@ -408,7 +408,7 @@ map.computeIfPresent("key1", (k, v) -> v + 1); // 计算并更新
 
 // 批量操作
 map.forEach((k, v) -> System.out.println(k + ": " + v));
-```
+```markdown
 
 ### 2. CopyOnWriteArrayList
 
@@ -465,7 +465,7 @@ new Thread(() -> {
         e.printStackTrace();
     }
 }).start();
-```
+```markdown
 
 ## 八、线程安全与并发问题
 
@@ -535,7 +535,7 @@ public class FineGrainedLockExample {
         }
     }
 }
-```
+```markdown
 
 ### 3. 使用并发集合
 

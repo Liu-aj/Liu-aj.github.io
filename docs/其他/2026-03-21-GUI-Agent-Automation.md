@@ -21,7 +21,7 @@ export OPENAI_API_KEY="sk-..."
 export ANTHROPIC_API_KEY="sk-ant-..."
 # 或本地模型
 export OLLAMA_BASE_URL="http://localhost:11434"
-```
+```python
 
 ### 3.2 第一个 GUI Agent
 
@@ -77,7 +77,7 @@ agent = Agent(
     controller=controller,
 )
 result = await agent.run()
-```
+```javascript
 
 ### 3.4 多 Agent 协作
 
@@ -138,7 +138,7 @@ async def multi_agent_workflow():
     }
   }
 }
-```
+```yaml
 
 **方式二：Docker 部署**
 
@@ -164,7 +164,7 @@ response = client.messages.create(
     }],
     tools=[{"type": "mcp", "server": "playwright"}]
 )
-```
+```markdown
 
 ### 4.4 支持的操作
 
@@ -231,7 +231,7 @@ async def erp_automation():
     return await agent.run()
 
 asyncio.run(erp_automation())
-```
+```python
 
 ---
 
@@ -277,7 +277,7 @@ class BrowserPool:
             browser = await p.chromium.launch(headless=True)
             self.browsers.append(browser)
             await self.available.put(browser)
-```
+```javascript
 
 **并行执行**：
 
@@ -306,7 +306,7 @@ GUI_AGENT_LATENCY = Histogram(
     'Task latency',
     buckets=[1, 5, 10, 30, 60, 300]
 )
-```
+```markdown
 
 ---
 

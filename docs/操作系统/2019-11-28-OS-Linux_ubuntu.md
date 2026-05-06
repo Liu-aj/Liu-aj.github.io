@@ -30,7 +30,7 @@ sudo apt install bcmwl-kernel-source
 
 # 重新加载驱动模块
 sudo modprobe wl
-```
+```bash
 
 **Intel无线网卡驱动**：
 
@@ -47,7 +47,7 @@ sudo modprobe iwlwifi
 
 ```bash
 ip link show
-```
+```bash
 
 #### 1.1.2 替换国内源
 
@@ -66,7 +66,7 @@ sudo gedit /etc/apt/sources.list
 
 将文件内容替换为以下网易163源（适用于Ubuntu 20.04 "Focal Fossa"）：
 
-```
+```bash
 # 网易163源
 # 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
 deb http://mirrors.163.com/ubuntu/ focal main restricted universe multiverse
@@ -87,7 +87,7 @@ deb http://mirrors.163.com/ubuntu/ focal-backports main restricted universe mult
 ```bash
 sudo apt-get update
 sudo apt-get upgrade
-```
+```bash
 
 #### 1.1.3 开启SSH服务（22端口）
 
@@ -125,7 +125,7 @@ git config --list
 
 # 安装Git图形界面客户端
 sudo apt-get install git-cola
-```
+```bash
 
 #### 1.2.2 Vim编辑器安装
 
@@ -151,7 +151,7 @@ sudo tar -zxvf jdk-8u241-linux-x64.tar.gz -C /usr/lib/jvm/
 sudo vim ~/.bashrc
 
 
-```
+```bash
 
 ## 二、常用软件安装
 
@@ -210,7 +210,7 @@ sudo apt install wps-office
 sudo apt install ttf-mscorefonts-installer
 
 sudo fc-cache -f -v
-```
+```bash
 
 #### 2.1.3 Sublime Text编辑器
 
@@ -261,7 +261,7 @@ sudo dpkg -i linuxqq_2.0.0-b1-1024_amd64.deb
 
 # 修复依赖问题
 sudo apt-get install -f
-```
+```bash
 
 ### 2.2 开发工具
 
@@ -344,7 +344,7 @@ sudo nano /usr/share/applications/intellij-idea-community.desktop
 # Categories=Development;IDE;
 # Terminal=false
 # StartupWMClass=jetbrains-idea-ce
-```
+```bash
 
 #### 2.2.3 Navicat数据库管理工具
 
@@ -427,7 +427,7 @@ sudo nano /usr/share/applications/robo3t.desktop
 # Version=1.0
 # Type=Application
 # Terminal=false
-```
+```bash
 
 #### 2.2.5 Postman API测试工具
 
@@ -478,7 +478,7 @@ phddns version
 
 # 访问花生壳管理页面进行配置
 # 管理地址：http://b.oray.com
-```
+```bash
 
 ### 2.4 媒体工具
 
@@ -522,7 +522,7 @@ sudo systemctl enable nginx
 
 # 检查Nginx服务状态
 sudo systemctl status nginx
-```
+```bash
 
 安装完成后，可以通过浏览器访问服务器IP地址验证Nginx是否正常运行。
 
@@ -568,7 +568,7 @@ sudo nginx -t
 
 # 重启Nginx服务使配置生效
 sudo systemctl restart nginx
-```
+```bash
 
 #### 3.1.4 Nginx常用命令
 
@@ -632,7 +632,7 @@ sudo docker run hello-world
 sudo usermod -aG docker $USER
 
 # 注意：添加用户组后需要注销并重新登录才能生效
-```
+```bash
 
 #### 3.2.2 Docker基本命令
 
@@ -707,7 +707,7 @@ ibus-daemon -drx
 # 方法二：通过命令行添加输入法
 bus add ibus-libpinyin --name=libpinyin
 ibus add ibus-pinyin --name=pinyin
-```
+```bash
 
 #### 4.1.2 安装Fcitx5输入法框架（推荐）
 
@@ -772,7 +772,7 @@ sudo vim /etc/fstab
 
 ```
 UUID=12345678-1234-1234-1234-123456789012 /home/liuaj/appdata ext4 defaults 0 2
-```
+```bash
 
 保存后，测试挂载配置：
 
@@ -806,7 +806,7 @@ sudo find /var/log -type f -name "*.1" -delete
 # 清空大日志文件而不删除（对于正在使用的日志文件）
 # sudo truncate -s 0 /var/log/syslog
 # sudo truncate -s 0 /var/log/auth.log
-```
+```bash
 
 #### 4.2.2 清理旧内核
 
@@ -844,7 +844,7 @@ du -h /var/lib/snapd/snaps/
 sudo snap list --all | awk '/disabled/{print $1, $3}' | while read snapname revision;
     do sudo snap remove "$snapname" --revision="$revision";
 done
-```
+```bash
 
 #### 4.2.4 清理Flatpak应用缓存
 
@@ -896,7 +896,7 @@ sudo apt install paper-icon-theme
 sudo add-apt-repository ppa:moka/daily
 sudo apt update
 sudo apt install moka-icon-theme
-```
+```bash
 
 #### 4.3.2 字体优化
 
@@ -936,7 +936,7 @@ sudo apt install flat-remix-gtk
 sudo add-apt-repository ppa:jacob/media
 sudo apt update
 sudo apt install nordic-theme
-```
+```bash
 
 #### 4.3.4 其他桌面优化
 
@@ -977,7 +977,7 @@ sudo apt-get install flameshot
 # 配置快捷键：在系统设置->键盘快捷键中添加
 # 命令：flameshot gui
 # 快捷键：建议设置为PrintScreen键
-```
+```bash
 
 #### 4.4.2 Unity控制面板（可选）
 
@@ -998,7 +998,7 @@ gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left "[]"
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "[]"
 
 # 建议使用系统设置->键盘快捷键进行图形化配置
-```
+```bash
 
 ## 五、系统维护与管理
 
@@ -1055,7 +1055,7 @@ sudo timeshift --delete --snapshot '2024-06-15_12-00-00'
 
 # 自动删除旧快照（保留最新的3个）
 sudo timeshift --delete-older-than 3
-```
+```bash
 
 #### 5.2.2 备份用户数据
 
@@ -1095,7 +1095,7 @@ deja-dup --restore ~/lost_file.txt
 
 # 查看备份状态
 deja-dup --backup --display-notification
-```
+```bash
 
 #### 5.2.4 使用Clonezilla进行磁盘克隆
 
@@ -1133,7 +1133,7 @@ sudo journalctl -f
 
 # 查看最近的系统日志
 sudo journalctl -n 100
-```
+```bash
 
 ## 六、常见问题解决
 
@@ -1194,7 +1194,7 @@ sudo mkswap /swapfile
 sudo swapon /swapfile
 # 永久启用Swap文件
 echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
-```
+```bash
 
 ### 6.3 网络连接问题
 
@@ -1247,7 +1247,7 @@ sudo apt install bluetooth bluez bluez-tools
 sudo bluetoothctl
 # 在bluetoothctl提示符下输入：power on
 # 然后：scan on
-```
+```bash
 ### 6.5 图形界面问题
 
 ```bash

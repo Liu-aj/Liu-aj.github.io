@@ -117,7 +117,7 @@ for (var i = 0; i < maxLoops; i++) {
     setVariable('loop_count', i, 's');
     // 调用子作业或转换
 }
-```
+```markdown
 
 ---
 
@@ -179,7 +179,7 @@ ORDER BY id
 目标表：target_table
 提交数量：1000
 批量操作：勾选
-```
+```markdown
 
 **Step 5: 连接步骤**
 拖拽步骤之间的连接线建立数据流：
@@ -226,7 +226,7 @@ START_DATE       | ${PreviousDay}      | 开始日期
 END_DATE         | ${CurrentDay}       | 结束日期
 BATCH_SIZE       | 1000                | 批次大小
 THREADS          | 4                   | 并行线程数
-```
+```sql
 
 **Step 2: 在转换中使用参数**
 
@@ -259,7 +259,7 @@ var batchSize = parseInt(getVariable('BATCH_SIZE', '1000'));
 
 转换中使用：
   ${param_name}
-```
+```javascript
 
 **转换之间的参数传递：**
 1. 在转换A中使用"复制行到结果"
@@ -305,7 +305,7 @@ setVariable('YESTERDAY', dateStr, 's');
 ```
 
 **2. 转换_增量同步 - 配置：**
-```
+```sql
 步骤：表输入
 SQL：
 SELECT
@@ -346,7 +346,7 @@ ORDER BY create_time
 ```bash
 # Linux crontab
 0 2 * * * /opt/kettle/kitchen.sh -file=/jobs/order_sync.kjb -level=Basic
-```
+```markdown
 
 ---
 
@@ -397,7 +397,7 @@ timestamp|user_id|action|page_id|duration
 源字段：line
 分隔符：|
 目标字段：field1,field2,field3,field4,field5
-```
+```javascript
 
 **JavaScript代码：**
 ```javascript
@@ -456,7 +456,7 @@ putRow(result);
 ```
 
 **2. 转换_获取MySQL数据：**
-```
+```sql
 步骤：表输入
 数据库连接：MySQL_Prod
 SQL：
@@ -471,7 +471,7 @@ WHERE status = 1
 ```
 
 **3. 转换_获取Oracle数据：**
-```
+```sql
 步骤：表输入
 数据库连接：Oracle_ERP
 SQL：
@@ -548,7 +548,7 @@ for each (u in uniqueUsers) {
 目标表：dw_users
 模式：插入/更新
 关键字段：user_id
-```
+```markdown
 
 ---
 
@@ -567,7 +567,7 @@ for each (u in uniqueUsers) {
 [数据质量检查]
   ├─ 合格 → [表输出_清洗后数据]
   └─ 不合格 → [表输出_异常数据] → [发送邮件]
-```
+```javascript
 
 **2. JavaScript_数据清洗：**
 ```javascript
@@ -683,7 +683,7 @@ SELECT id, name, status FROM source_table WHERE status = 'PENDING'
                               [如果值等于] → [转换_处理数据]
                                       ↓
                               [成功] → [ABORT]
-```
+```python
 
 #### 方式二：JavaScript代码 + 循环文件夹
 
@@ -740,7 +740,7 @@ for (var i = 0; i < value; i++) {
 
 // 输出所有行
 putRows(rows);
-```
+```sql
 
 ---
 
@@ -784,7 +784,7 @@ LEFT JOIN order_items b ON a.id = b.order_id
 WHERE a.create_time BETWEEN ? AND ?
   AND a.order_status = ?
 ORDER BY a.create_time DESC
-```
+```sql
 **参数配置：**
 - 第1个参数：START_DATE（日期/时间）
 - 第2个参数：END_DATE（日期/时间）
@@ -811,7 +811,7 @@ SELECT
     AVG(amount) OVER (PARTITION BY user_id) as avg_amount
 FROM orders
 WHERE order_date >= DATE_SUB(CURRENT_DATE, INTERVAL 30 DAY)
-```
+```markdown
 
 #### 5. 存储过程调用
 ```sql
@@ -854,7 +854,7 @@ outputRow[getInputRowMeta().size() + 1] = domain;
 outputRow[getInputRowMeta().size() + 2] = isVIP;
 
 putRow(outputRowMeta, outputRow);
-```
+```markdown
 
 #### 2. Java代码 - 数据类型转换
 ```java
@@ -916,7 +916,7 @@ private String extractJsonValue(String json, String key) {
     Matcher matcher = pattern.matcher(json);
     return matcher.find() ? matcher.group(1) : "";
 }
-```
+```markdown
 
 #### 4. Java代码 - 文件操作
 ```java
@@ -971,7 +971,7 @@ result_row["tax"] = tax;
 
 // 输出行
 putRow(result_row);
-```
+```javascript
 
 #### 2. JavaScript - 字符串处理
 ```javascript
@@ -1045,7 +1045,7 @@ out["average"] = avg;
 out["response_json"] = responseJson;
 
 putRow(out);
-```
+```javascript
 
 #### 4. JavaScript - 日期时间处理
 ```javascript
@@ -1139,7 +1139,7 @@ out["status_code"] = statusCode;
 out["status_desc"] = statusDesc;
 
 putRow(out);
-```
+```markdown
 
 ## 5.调优
 
@@ -1162,7 +1162,7 @@ useCursorFetch：true
 
 (3) 通信压缩
 useCompression：true
-```
+```markdown
 
 **参数说明：**
 - `useServerPrepStmts=true`：启用服务器端预处理语句，减少SQL编译开销
@@ -1186,7 +1186,7 @@ useCursorFetch：true
 
 (3) 通信压缩
 useCompression：true
-```
+```bash
 
 **参数说明：**
 - `rewriteBatchedStatements=true`：将多条INSERT合并为一条批量INSERT

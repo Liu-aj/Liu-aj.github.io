@@ -19,7 +19,7 @@ class Singleton:
         if cls._instance is None:
             cls._instance = super().__new__(cls)
         return cls._instance
-```
+```python
 
 ## 工厂模式
 

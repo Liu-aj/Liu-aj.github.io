@@ -21,7 +21,7 @@ brew install ruby
 # 添加到 PATH（zsh 用户）
 echo 'export PATH="/usr/local/opt/ruby/bin:$PATH"' >> ~/.zshrc
 source ~/.zshrc
-```
+```bash
 
 **Linux 用户（Ubuntu/Debian）：**
 ```bash
@@ -42,7 +42,7 @@ gem install jekyll
 
 # 安装 Bundler（用于管理项目依赖）
 gem install bundler
-```
+```markdown
 
 > ⚠️ **注意**：如果你使用的是 macOS 系统自带的 Ruby，可能会遇到权限问题。建议使用 `rbenv` 或 `rvm` 管理多版本 Ruby。
 
@@ -68,7 +68,7 @@ jekyll new my-blog
 
 # 方式二：手动创建（如果你想完全自定义）
 mkdir my-blog && cd my-blog
-```
+```markdown
 
 ### 3.2 安装依赖
 
@@ -85,7 +85,7 @@ bundle install
 bundle exec jekyll serve
 # 或者简写
 jekyll s
-```
+```markdown
 
 现在打开浏览器访问 **http://127.0.0.1:4000**，你已经拥有了一个本地运行的博客！
 
@@ -202,7 +202,7 @@ date: 2026-03-19 10:30:00 +0800
 ---
 
 文章内容从这里开始...
-```
+```python
 
 ### 6.3 常用 Markdown 语法
 
@@ -231,7 +231,7 @@ date: 2026-03-19 10:30:00 +0800
 def hello():
     print("Hello, Jekyll!")
 ```
-```
+```markdown
 
 ### 6.4 文章内使用 Liquid 模板
 
@@ -276,7 +276,7 @@ git remote add origin https://github.com/yourusername/yourusername.github.io.git
 
 # 推送代码
 git push -u origin main
-```
+```markdown
 
 ### 7.3 访问你的博客
 
@@ -334,7 +334,7 @@ highlighter: rouge
 <pre>
 ```python
 # 你的代码
-```
+```javascript
 </pre>
 
 ### 8.2 实用技巧

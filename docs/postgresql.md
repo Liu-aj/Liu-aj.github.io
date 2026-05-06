@@ -29,7 +29,7 @@ UPDATE users SET email = 'new@example.com' WHERE id = 1;
 
 -- 删除
 DELETE FROM users WHERE id = 1;
-```
+```sql
 
 ## 高级特性
 

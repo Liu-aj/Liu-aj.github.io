@@ -21,7 +21,7 @@ async function fetchData() {
         console.error('Error:', error);
     }
 }
-```
+```javascript
 
 ## 解构赋值
 
@@ -49,7 +49,7 @@ const merged = { ...obj1, ...obj2 };
 function sum(...numbers) {
     return numbers.reduce((a, b) => a + b, 0);
 }
-```
+```javascript
 
 ## Promise
 

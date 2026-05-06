@@ -15,7 +15,7 @@ description: 编写整洁代码的原则
 ```python
 user_age = 25
 is_logged_in = True
-```
+```markdown
 
 ### 差
 ```python
@@ -42,7 +42,7 @@ def validate_input(data):
 
 def save_to_database(data):
     pass
-```
+```markdown
 
 ## 注释
 

@@ -47,7 +47,7 @@ CREATE TABLE users (
     email VARCHAR(255) UNIQUE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-```
+```sql
 
 ### 查询优化
 ```sql

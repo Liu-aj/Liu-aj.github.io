@@ -22,7 +22,7 @@ RUN go build -o main
 FROM alpine:latest
 COPY --from=builder /app/main /main
 CMD ["/main"]
-```
+```yaml
 
 ## Docker Compose
 
@@ -53,7 +53,7 @@ docker network connect mynet container1
 
 # 查看网络
 docker network inspect mynet
-```
+```bash
 
 ## 存储
 

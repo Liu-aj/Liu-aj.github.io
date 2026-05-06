@@ -29,7 +29,7 @@ test:
   stage: test
   script:
     - npm test
-```
+```bash
 
 ### Docker 集成
 ```yaml

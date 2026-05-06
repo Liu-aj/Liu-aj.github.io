@@ -23,7 +23,7 @@ sudo usermod -aG sudo username
 
 # 删除用户
 sudo userdel -r username
-```
+```bash
 
 ## 磁盘管理
 

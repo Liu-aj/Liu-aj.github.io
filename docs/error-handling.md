@@ -22,7 +22,7 @@ except Exception as e:
     raise
 finally:
     cleanup()
-```
+```javascript
 
 ## JavaScript
 

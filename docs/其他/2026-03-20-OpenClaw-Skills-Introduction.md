@@ -57,7 +57,7 @@ OpenClaw 提供了两类 Skills：内置 Skills 和自定义 Skills。
 ```python
 # 伪代码示例
 agent.use_skill("feishu-doc", action="read", doc_token="xxx")
-```
+```markdown
 
 ### 3. 通过命令行调用
 
@@ -116,7 +116,7 @@ my-custom-skill
 
 ## 注意事项
 使用限制或注意事项
-```
+```markdown
 
 ### 3. 定义 Skills 匹配规则
 
@@ -143,7 +143,7 @@ my-custom-skill
 ```bash
 # 通常放置在 ~/.openclaw/skills/ 目录下
 cp -r my-skill ~/.openclaw/skills/
-```
+```markdown
 
 ### 6. 使用 ClawHub 分享
 

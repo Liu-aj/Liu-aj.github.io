@@ -49,7 +49,7 @@ curl -fsSL https://ollama.com/install.sh | sh
 # 验证安装
 ollama --version
 # 输出：ollama version is 0.5.x
-```
+```bash
 
 #### Windows
 
@@ -97,7 +97,7 @@ ollama run qwen2.5:7b
 
 # 运行时指定参数
 ollama run qwen2.5:7b --num-ctx 8192 --temperature 0.7
-```
+```bash
 
 ### 3.3 测试 API 接口
 
@@ -325,7 +325,7 @@ with open("agent_workflow.png", "wb") as f:
      │  └───┘       │
      │              │
      └──────────────┘
-```
+```python
 
 ---
 
@@ -619,7 +619,7 @@ ENV PYTHONUNBUFFERED=1
 
 # 启动命令
 CMD ["python", "main.py"]
-```
+```bash
 
 ### 6.2 Docker Compose 编排
 
@@ -767,7 +767,7 @@ http {
         }
     }
 }
-```
+```markdown
 
 ### 6.4 网络安全配置
 
@@ -797,7 +797,7 @@ OLLAMA_HOST=192.168.1.100:11434
 # 并发设置
 OLLAMA_NUM_PARALLEL=4
 OLLAMA_MAX_LOADED_MODELS=2
-```
+```bash
 
 ---
 
@@ -895,7 +895,7 @@ def start_monitoring(port=9090):
     """启动 Prometheus 指标服务器"""
     start_http_server(port)
     print(f"📊 监控服务启动: http://localhost:{port}/metrics")
-```
+```python
 
 ### 7.3 健康检查与自动恢复
 
@@ -1002,7 +1002,7 @@ response = llm.invoke([
 ])
 
 print(response.content)
-```
+```python
 
 ### 8.3 自动模型选择
 

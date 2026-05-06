@@ -73,7 +73,7 @@ jobs:
         run: |
           python scripts/send_alert.py \
             --message "Agent accuracy dropped below 85%"
-```
+```sql
 
 **评估数据集构建**：
 
@@ -177,7 +177,7 @@ public class ReActAgent {
         return AgentResult.failure("推理步骤过多，请简化问题");
     }
 }
-```
+```python
 
 ### 模式 2：工具调用标准化
 
@@ -344,7 +344,7 @@ public class ConversationState {
     private Instant createdAt;
     private Instant updatedAt;
 }
-```
+```markdown
 
 ---
 
@@ -376,7 +376,7 @@ public class ConversationState {
 │  │  检测       │  │             │  │             │         │
 │  └─────────────┘  └─────────────┘  └─────────────┘         │
 └─────────────────────────────────────────────────────────────┘
-```
+```python
 
 ### 输入治理实现
 
@@ -486,7 +486,7 @@ public class OutputAudit {
         return AuditResult.approved();
     }
 }
-```
+```python
 
 ### 速率限制与成本控制
 
@@ -579,7 +579,7 @@ public class ContextCompressor {
         return llmClient.summarize(prompt);
     }
 }
-```
+```python
 
 ### 坑 2：工具调用循环
 
@@ -677,7 +677,7 @@ public class ToolCallValidator {
         return ValidationResult.ok();
     }
 }
-```
+```python
 
 ### 坑 4：生产环境调试困难
 

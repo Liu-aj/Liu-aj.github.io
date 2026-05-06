@@ -29,7 +29,7 @@ ws.onopen = () => {
 ws.onmessage = (event) => {
     console.log('Received:', event.data);
 };
-```
+```python
 
 ### Python
 ```python

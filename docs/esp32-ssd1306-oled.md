@@ -49,7 +49,7 @@ description: ESP32开发指南
    ```bash
    esptool.py --port /dev/ttyUSB0 erase_flash
    esptool.py --port /dev/ttyUSB0 --baud 460800 write_flash 0 ESP32C3-2026-xxxx.bin
-   ```
+```markdown
 4. **配置解释器**：Thonny → 运行 → 选择解释器 → MicroPython（ESP32）
 
 ### 2.2 常用 MicroPython 库
@@ -60,7 +60,7 @@ import mip
 mip.install("ssd1306")
 
 # 方法2：手动上传 .py 库文件到开发板
-```
+```markdown
 
 ---
 description: ESP32开发指南
@@ -99,7 +99,7 @@ display.circle(64, 32, 20)
 # 清除屏幕
 display.fill(0)
 display.show()
-```
+```markdown
 
 ### 3.3 滚动效果
 
@@ -145,7 +145,7 @@ while True:
     display.show()
     
     utime.sleep(10)
-```
+```python
 
 ### 项目二：Wi-Fi / MQTT 状态指示器
 
@@ -183,7 +183,7 @@ display = sh1106.SH1106_I2C(72, 40, i2c)  # 0.42寸 72x40
 
 display.text("Hello!", 10, 10)
 display.show()
-```
+```python
 
 > 安装 sh1106 库：`mip.install("sh1106")`
 

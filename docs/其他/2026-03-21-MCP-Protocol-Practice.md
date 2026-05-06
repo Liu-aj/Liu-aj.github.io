@@ -60,7 +60,7 @@ pip install mcp
 
 # Node.js
 npm install @modelcontextprotocol/sdk
-```
+```python
 
 ### 实现第一个 MCP Server
 
@@ -142,7 +142,7 @@ Tool(
         "required": ["cities"]
     }
 )
-```
+```python
 
 ### 资源（Resources）支持
 
@@ -188,7 +188,7 @@ async def main():
             print(f"结果：{result}")
 
 asyncio.run(main())
-```
+```python
 
 ### 动态工具协商
 
@@ -224,7 +224,7 @@ async def handle_tool_response(result: list):
                 f.write(content.data)
         elif isinstance(content, ResourceContent):
             print(f"资源：{content.uri}")
-```
+```bash
 
 ---
 
@@ -284,7 +284,7 @@ tools:
     enabled: false
     allowed_users: ["admin"]
     require_approval: true
-```
+```python
 
 权限检查中间件：
 
@@ -360,7 +360,7 @@ gateway.register_server("database", "http", "http://db-server:8080/mcp")
 
 await gateway.connect_all()
 weather = await gateway.call_tool("get_weather", {"city": "北京"})
-```
+```markdown
 
 ---
 
@@ -433,7 +433,7 @@ class AuditLogger:
             "result_status": result_status,
             "latency_ms": latency_ms
         }))
-```
+```yaml
 
 ### 高可用部署
 
@@ -511,7 +511,7 @@ prompt = """
 
 mcp_server_code = await llm.generate(prompt)
 # 生成的代码可以直接部署
-```
+```markdown
 
 ---
 

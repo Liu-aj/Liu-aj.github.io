@@ -22,7 +22,7 @@ pyenv global 3.12.0
 # 创建虚拟环境
 python -m venv venv
 source venv/bin/activate
-```
+```bash
 
 ## Node.js
 
@@ -48,7 +48,7 @@ sudo tar -C /usr/local -xzf go1.21.0.linux-amd64.tar.gz
 # 配置
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
-```
+```bash
 
 ## Rust
 
