@@ -9,15 +9,6 @@ tags:
 ---
 description: ESP32开发指南
 
-## 目录
-
-1. [电机类型与选型](#1-电机类型与选型)
-2. [驱动方案一览](#2-驱动方案一览)
-3. [ESP32 LEDC PWM 配置](#3-esp32-ledc-pwm-配置)
-4. [MicroPython 实现](#4-micropython-实现)
-5. [实战项目](#5-实战项目)
-6. [常见问题](#6-常见问题)
-
 ---
 description: ESP32开发指南
 
@@ -135,7 +126,7 @@ description: ESP32开发指南
 
 #### 引脚说明
 
-```
+```bash
 +------------------+
 |  +12V  GND  +5V  |  ← 电源端子（ Motors 供电）
 |  (ENA) (IN1)(IN2)|  ← 电机A控制
@@ -168,7 +159,7 @@ description: ESP32开发指南
 
 #### 接线图（ESP32 + L298N + DC Motor）
 
-```
+```bash
 ESP32                L298N                 DC Motor
 -------              -----                 --------
 GPIO25 ──────────── ENA (PWM)
@@ -195,7 +186,7 @@ description: ESP32开发指南
 
 #### 引脚说明
 
-```
+```bash
 +-------------------+
 |  V+  GND         |  ← 电源（9~42V）
 |  PUL+  PUL-      |  ← 脉冲输入
@@ -230,7 +221,7 @@ description: ESP32开发指南
 
 #### 接线图（ESP32 + TB6600 + NEMA 17）
 
-```
+```bash
 ESP32                TB6600                NEMA 17
 -------              ------                -------
 GPIO25 ──────────── PUL+
@@ -247,7 +238,7 @@ GND     ──────────── DIR-
                      V+ ←── 12V/24V 电源
                      GND ←── 电源负极
                      GND ←── ESP32 GND（共地）
-```
+```bash
 
 > 📌 **NEMA 17 接线颜色**：不同厂家可能不同，建议用万用表测量——相通的两根线为一组（电阻约几欧姆）。
 
@@ -258,13 +249,13 @@ description: ESP32开发指南
 
 舵机只需要 **PWM 信号 + 电源**，无需驱动模块：
 
-```
+```bash
 ESP32                SG90
 ------               ----
 GPIO23 ───────────── 橙线（信号）
 GND    ───────────── 棕线（GND）
 5V     ───────────── 红线（电源）  ← 仅限单个 SG90，多舵机请外接电源
-```
+```bash
 
 > ⚠️ **多个舵机**：必须外接 5V 电源（AMS1117-5.0 或 LM7805），ESP32 的 5V 引脚电流不足以驱动多个舵机。
 
@@ -283,7 +274,7 @@ ESP32 内置 LEDC（LED PWM Controller），**16 个通道**（高速 8 + 低速
 
 ### 3.2 关键参数计算
 
-```
+```bash
 PWM频率  f = APB时钟 / (分频系数 × 计数器最大值)
 
 APB时钟 = 80MHz
@@ -369,7 +360,7 @@ s.angle(180)  # 最大角度
 
 # 释放（切断PWM，舵机可手动转动）
 s.release()
-```
+```bash
 
 > 💡 **校准技巧**：如果角度偏差，可调整 `min_duty` 和 `max_duty`，或者传入自定义参数：
 > ```python
@@ -599,7 +590,7 @@ servos.set_angle(3, 45)  # 闭合夹取
 time.sleep(1)
 
 servos.release_all()
-```
+```bash
 
 ---
 description: ESP32开发指南
@@ -617,12 +608,12 @@ description: ESP32开发指南
 - 杜邦线若干
 
 **接线**：
-```
+```bash
 GPIO23 → 舵机信号（橙）
 GPIO34 → 光敏电阻（模拟输入）
 5V     → 舵机电源（红）/ 光敏电阻 VCC
 GND    → 共地
-```
+```bash
 
 **代码**：
 
@@ -680,7 +671,7 @@ curtain.close(speed=3)
 while True:
     curtain.auto_control()
     time.sleep(60)  # 每分钟检测一次
-```
+```bash
 
 **物理改造提示**：
 - 舵机安装：将舵机固定在窗帘轨道旁，用橡皮筋或细绳连接窗帘
@@ -695,12 +686,12 @@ description: ESP32开发指南
 **目标**：4轴机械臂，可通过串口指令控制各关节角度
 
 **接线**：
-```
+```bash
 GPIO23 → 底座舵机
 GPIO22 → 肩部舵机
 GPIO21 → 肘部舵机
 GPIO19 → 夹爪舵机
-```
+```bash
 
 **代码**：
 
@@ -773,7 +764,7 @@ arm.pick_and_place(sequence)
 # 串口控制模式（主循环）
 while True:
     arm.listen()
-```
+```bash
 
 ---
 description: ESP32开发指南
@@ -783,7 +774,7 @@ description: ESP32开发指南
 **目标**：用舵机或步进电机控制水阀/气阀的开关
 
 **舵机版**（适合 90° 角阀）：
-```
+```bash
 ESP32 GPIO23 → 舵机信号
 舵机臂固定在阀门手轮上，旋转 90° 实现开/关
 ```
@@ -831,7 +822,7 @@ rtc = machine.RTC()
 valve.open(delay=3)   # 开阀浇水3秒
 time.sleep(10)
 valve.close(delay=3)  # 关阀
-```
+```bash
 
 **步进版**（适合球阀，需要大力矩）：
 
@@ -860,7 +851,7 @@ class StepperValve:
 # --- 使用 ---
 valve = StepperValve()
 valve.open()
-```
+```bash
 
 ---
 description: ESP32开发指南
@@ -879,7 +870,7 @@ description: ESP32开发指南
 1. 用示波器或逻辑分析仪检查 PWM 波形是否标准 20ms 周期
 2. 逐步调整 min_duty / max_duty 值
 3. 确认电源能提供足够电流（SG90 需 ~500mA 峰值）
-```
+```bash
 
 **解决示例**：
 ```python
@@ -888,7 +879,7 @@ s = Servo(23, min_duty=3277, max_duty=6553)
 
 # 微调（校准后）
 s = Servo(23, min_duty=3000, max_duty=6800)  # 根据实际测试调整
-```
+```bash
 
 ---
 description: ESP32开发指南
@@ -907,7 +898,7 @@ description: ESP32开发指南
 2. 步进电机：降低 TB6600 电流拨档（SW1/SW2/SW3）
 3. 改善散热：加装散热片或风扇
 4. 间歇工作：PWM 占空比循环（如开1秒关0.5秒）
-```
+```bash
 
 ---
 description: ESP32开发指南
@@ -920,13 +911,13 @@ description: ESP32开发指南
 - ESP32 频繁重启（断电复位）
 
 **诊断思路**：
-```
+```bash
 电源 → 检查电压表读数
   ↓
 电流 → 串联万用表测量工作电流
   ↓
 布线 → 确认共地、线径足够粗
-```
+```bash
 
 **供电方案推荐**：
 
@@ -955,7 +946,7 @@ description: ESP32开发指南
 2. 使用加减速曲线（启动慢，逐渐加速）
 3. 提高供电电压（12V → 24V）
 4. 选择合适的微步（1/8 或 1/16 步更平滑）
-```
+```bash
 
 ---
 description: ESP32开发指南
@@ -968,7 +959,7 @@ description: ESP32开发指南
 2. 确认 ENA 跳线帽已拔掉（PWM 才能生效）
 3. 检查 IN1/IN2 逻辑是否正确（禁止同时为 HIGH）
 4. 测量 5V 稳压输出是否有 5V（跳线帽插上时）
-```
+```bash
 
 ---
 description: ESP32开发指南
@@ -985,7 +976,7 @@ description: ESP32开发指南
 1. 在 ESP32 的电源线上加 100μF + 100nF 去耦电容
 2. 电机线与信号线分开布线，或使用屏蔽线
 3. 所有连接点焊接或使用杜邦线插紧
-```
+```bash
 
 ---
 description: ESP32开发指南
@@ -993,14 +984,14 @@ description: ESP32开发指南
 ## 附录：接线速查图汇总
 
 ### ESP32 + SG90 舵机
-```
+```bash
 GPIO23 ────── 橙线（信号）
 GND    ────── 棕线
 5V     ────── 红线（单个舵机）
 ```
 
 ### ESP32 + L298N + DC 电机
-```
+```bash
 GPIO25 ── ENA(PWM)    L298N OUT1/OUT2 ── Motor
 GPIO26 ── IN1         +12V     ─────── 电源+
 GPIO27 ── IN2         GND      ─────── 电源-
@@ -1008,11 +999,11 @@ GPIO27 ── IN2         GND      ─────── 电源-
 ```
 
 ### ESP32 + TB6600 + NEMA 17
-```
+```bash
 GPIO25 ── PUL+        TB6600 A+ A- B+ B- ── NEMA17
 GPIO26 ── DIR+        V+ GND   ─────────── 12V/24V
 GND    ── PUL- DIR-   GND      ─────────── ESP32 GND（共地）
-```
+```bash
 
 ---
 description: ESP32开发指南

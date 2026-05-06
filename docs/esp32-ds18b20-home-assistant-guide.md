@@ -12,13 +12,7 @@ description: ESP32开发指南
 
 ## 目录
 
-1. [硬件准备](#1-硬件准备)
-2. [接线图](#2-接线图)
-3. [ESPHome 配置](#3-esphome-配置)
-4. [MQTT 集成 vs ESPHome 原生集成](#4-mqtt-集成-vs-esphome-原生集成)
-5. [Home Assistant 配置](#5-home-assistant-配置)
-6. [实用场景](#6-实用场景)
-7. [常见问题排查](#7-常见问题排查)
+*目录已移除，使用侧边栏自动生成*
 
 ---
 description: ESP32开发指南
@@ -51,7 +45,7 @@ description: ESP32开发指南
 > ⚠️ 市面上存在假冒 DS18B20，特征为读数跳动异常、地址异常（全 0 或全 F）。建议购买带包装的品牌件。
 
 **接线颜色（常见约定）：**
-```
+```bash
 红线   → VCC（电源 3.3V 或 5V）
 黑/黄线 → GND
 蓝/白线 → DATA（数据线）
@@ -67,7 +61,7 @@ GPIO4 ──┤  ├──────── DQ（数据线）
   │    └──┘          │
 3.3V ────────────────┴── VDD
 GND  ─────────────────── GND
-```
+```bash
 
 **为什么需要？**
 
@@ -87,7 +81,7 @@ description: ESP32开发指南
 
 ### 2.1 单传感器接线（推荐 GPIO4）
 
-```
+```bash
   ┌─────────────┐           ┌──────────────────┐
   │   ESP32    │           │    DS18B20       │
   │  DevKit v1  │           │  防水探头         │
@@ -104,7 +98,7 @@ description: ESP32开发指南
 
 ### 2.2 多传感器串联接线（同一 GPIO，总线式）
 
-```
+```bash
 ESP32 GPIO4
    │
    ├──[4.7kΩ]───┬──────────────────────────────────┐
@@ -114,7 +108,7 @@ ESP32 GPIO4
    │            │              │                  │
   所有红线(VCC)并联到 3.3V
   所有黑/黄线(GND)并联到 GND
-```
+```bash
 
 **关键规则：**
 - 所有传感器的 DATA 线并联到同一 GPIO
@@ -129,7 +123,7 @@ dallas:
     # 传感器组A
   - pin: GPIO15
     # 传感器组B
-```
+```bash
 
 > 💡 每路 GPIO 都需要独立的一个 4.7kΩ 电阻。
 
@@ -157,15 +151,15 @@ logger:
 
 api:
 ota:
-```
+```bash
 
 日志中会看到类似输出：
-```
+```bash
 [dallas.sensor]   Found sensors:
 [dallas.sensor]     0x3c0000031aa7c828
 [dallas.sensor]     0x3c0000031bc7b028
 [dallas.sensor]     0x3c0000031cc8d128
-```
+```bash
 
 > 📌 地址只需获取一次，写入配置文件后即可断网独立运行。
 
@@ -256,7 +250,7 @@ sensor:
   - platform: dallas_temp
     index: 1
     name: "传感器 2"
-```
+```bash
 
 > ⚠️ 索引方式简单但风险：如果传感器顺序变化，名称对应会错位。**正式项目建议使用 address 指定**。
 
@@ -324,7 +318,7 @@ sensor:
     id: temp_sensor
     name: "MQTT 模板温度"
     unit_of_measurement: "°C"
-```
+```bash
 
 ---
 description: ESP32开发指南
@@ -346,7 +340,7 @@ description: ESP32开发指南
 
 ### 4.2 推荐方案
 
-```
+```bash
 日常家庭使用 → 选择 ESPHome 原生 API ✅
 需要接 Node-RED / 第三方平台 → MQTT
 双保险方案 → API + MQTT 同时启用（配置更复杂）
@@ -371,7 +365,7 @@ sensor:
       state_topic: "home/boiler/temperature"
       value_template: "{{ value }}"
       unit_of_measurement: "°C"
-```
+```bash
 
 **Home Assistant MQTT Sensor 配置：**
 ```yaml
@@ -382,7 +376,7 @@ mqtt:
       unit_of_measurement: "°C"
       device_class: temperature
       value_template: "{{ value }}"
-```
+```bash
 
 ---
 description: ESP32开发指南
@@ -434,7 +428,7 @@ content: |
   | 热水器 | {{ states('sensor.boiler_temperature') }}°C | 🔴 正常 |
   | 回水温度 | {{ states('sensor.return_temperature') }}°C | 🟡 偏低 |
   | 室内 | {{ states('sensor.indoor_temperature') }}°C | 🟢 舒适 |
-```
+```bash
 
 **方式三：Gauge 卡片（可视化）**
 
@@ -449,7 +443,7 @@ severity:
   green: 40
   yellow: 70
   red: 85
-```
+```bash
 
 **方式四：迷你图卡（历史趋势）**
 
@@ -463,7 +457,7 @@ entities:
 hours_to_show: 24
 points_per_hour: 6
 line_size: 2
-```
+```bash
 
 > 💡 推荐安装 **HACS** 后在社区商店安装 `mini-graph-card` 插件。
 
@@ -577,7 +571,7 @@ description: ESP32开发指南
          - sliding_window_moving_average:
              window_size: 10
              send_every: 1
-   ```
+```bash
 
 5. **检查传感器真假**
    - 假冒传感器地址通常为 `0x0000000000000000` 或 `0xFFFFFFFFFFFFFFFF`
@@ -637,7 +631,7 @@ description: ESP32开发指南
 
 ## 快速参考卡
 
-```
+```bash
 硬件接线（单传感器）：
   ESP32 3.3V  ──── 红线(VCC)
   ESP32 GPIO4 ──[4.7kΩ]── 蓝线(DATA) ─── DS18B20 DQ
@@ -658,7 +652,7 @@ ESPHome 最小配置：
 
 长线方案：
   5V 供电 + 2.2kΩ 上拉 + Cat5 网线 → 可达 100m
-```
+```bash
 
 ---
 description: ESP32开发指南
