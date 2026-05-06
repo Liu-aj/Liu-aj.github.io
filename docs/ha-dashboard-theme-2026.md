@@ -90,8 +90,7 @@ frontend:
 
 **方法 A：通过 HACS 安装主题包**
 
-```
-HACS → 界面 → 主题 → 搜索主题名 → 下载
+```bash
 ```markdown
 
 **方法 B：手动下载主题 YAML**
@@ -103,8 +102,7 @@ HACS → 界面 → 主题 → 搜索主题名 → 下载
 
 ### 步骤 2：切换主题
 
-```
-HA 主界面 → 右上角三点 → 管理面板 → 主题 → 选择主题
+```bash
 ```markdown
 
 ### 步骤 3：微调（用 card-mod）
@@ -167,8 +165,7 @@ card_mod:
 
 ### ✅ 推荐工作流
 
-```
-1. 先安装 UI-Lovelace-Minimalist（入门最友好）
+```bash
 2. 搭配 button-card、bubble-card 使用
 3. 用 card-mod 做细节微调
 4. 最终效果通过 YAML 版本控制（可回溯）

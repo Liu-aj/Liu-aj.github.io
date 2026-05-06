@@ -12,8 +12,7 @@ description: Git 版本控制最佳实践
 ## 分支策略
 
 ### GitFlow
-```
-main ←── production
+```bash
   ↑
   ↑ merge
   ├── develop ←── feature

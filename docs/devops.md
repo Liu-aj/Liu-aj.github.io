@@ -11,8 +11,7 @@ description: DevOps 最佳实践
 
 ## CI/CD 流程
 
-```
-代码提交 → 编译 → 测试 → 构建 → 部署
+```bash
               ↓
            质量门禁
               ↓

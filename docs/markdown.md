@@ -52,8 +52,7 @@ description: Markdown 完全语法指南
 ~~~markdown
 ```javascript
 const hello = 'world';
-```
-~~~
+```bash
 
 ## 表格
 

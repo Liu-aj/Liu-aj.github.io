@@ -19,8 +19,7 @@ description: ML 基础
 
 ## 流程
 
-```
-数据 → 特征工程 → 模型训练 → 评估 → 部署
+```bash
 ```
 
 ## scikit-learn

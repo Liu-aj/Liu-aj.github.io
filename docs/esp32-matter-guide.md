@@ -37,8 +37,7 @@ description: ESP32开发指南
 
 ### 1.2 网络拓扑
 
-```
-┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
+```bash
 │  Matter Hub     │◄──►│   Wi-Fi 路由器    │◄──►│  Thread Border  │
 │  (HomePod etc)  │    │                  │    │    Router       │
 └─────────────────┘    └──────────────────┘    └─────────────────┘
@@ -73,8 +72,7 @@ description: ESP32开发指南
 1. Arduino IDE → 文件 → 首选项 → 附加开发板管理器网址添加：
 ```markdown
    https://espressif.github.io/arduino-esp32/package_esp32_index.json
-```
-2. 工具 → 开发板 → 开发板管理器 → 搜索 `esp32` → 安装
+```bash
 
 **第二步：安装 Matter 库**
 

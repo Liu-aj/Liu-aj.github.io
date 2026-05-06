@@ -26,8 +26,7 @@ description: Site Reliability Engineering
 
 ## 错误预算
 
-```
-错误预算 = 1 - SLO
+```bash
 ```
 
 ---

@@ -29,8 +29,7 @@ description: 快速上手指南
 
 左侧分类导航，按技术领域组织：
 
-```
-首页
+```bash
 ├── AI开发
 │   ├── AI Agent
 │   └── LangGraph
