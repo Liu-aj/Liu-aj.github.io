@@ -120,6 +120,8 @@ nav:
   - 云服务: cloud.md
   - DevOps: devops.md
   - 网络基础: networking.md
+  - Git进阶: git-advanced.md
+  - Docker进阶: docker-advanced.md
   - 术语表: glossary.md
   - 技术资源: resources.md
   - 速查表: cheatsheet.md
