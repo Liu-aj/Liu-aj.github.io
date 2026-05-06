@@ -40,7 +40,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install mkdocs-material "mkdocs-plugin[poetry]"  # plugin for potential future use
+          pip install mkdocs-material
           pip install pip-audit  # 安全审计
 
       - name: Run security audit
