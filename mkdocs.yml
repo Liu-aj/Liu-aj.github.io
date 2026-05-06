@@ -120,6 +120,9 @@ nav:
   - 混沌工程: chaos-engineering.md
   - 配置管理: configuration-management.md
   - 性能优化: performance.md
+  - Web性能: web-performance.md
+  - 跨平台开发: cross-platform.md
+  - 移动开发: mobile-development.md
   - 架构设计: architecture.md
   - 测试指南: testing.md
   - 监控运维: monitoring.md
