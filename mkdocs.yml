@@ -1,7 +1,6 @@
 site_name: Liuaj's Wiki
 site_description: 技术沉淀，持续精进 | AI/ESP32/Home Assistant/3D打印
 site_url: https://liu-aj.github.io/
-use_directory_urls: true
 site_author: Liuaj
 
 extra:
@@ -17,13 +16,18 @@ extra:
     actions:
       - accept
       - reject
+  sitemap:
+    changefreq: weekly
 
 theme:
   name: material
   language: zh
+  custom_dir: overrides
   font:
     text: Roboto
     code: Roboto Mono
+  icon:
+    favicon: assets/images/favicon.svg
   features:
     - navigation.instant
     - navigation.tracking
@@ -65,7 +69,6 @@ markdown_extensions:
   - tables
   - attr_list
   - md_in_html
-  - meta
   - toc:
       permalink: true
 
