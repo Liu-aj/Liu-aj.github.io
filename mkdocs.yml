@@ -132,6 +132,9 @@ nav:
   - 时间管理: time-management.md
   - 学习方法: learning.md
   - 面试指南: interview.md
+  - Scrum敏捷: scrum.md
+  - 远程办公: remote-work.md
+  - 文档编写: documentation.md
   - 正则表达式: regex.md
   - 命令行进阶: command-line.md
   - JSON/YAML: json-yaml.md
