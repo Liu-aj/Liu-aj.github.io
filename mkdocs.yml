@@ -79,6 +79,7 @@ nav:
   - 首页: index.md
   - 快速开始: quickstart.md
   - 学习路线: roadmap.md
+  - 技术对比: comparison.md
   - 阅读指南: guide.md
   - 更新日志: changelog.md
   - ESP32系列:
@@ -109,6 +110,7 @@ nav:
   - 关于: contributing.md
   - FAQ: faq.md
   - 问题排查: troubleshooting.md
+  - 经验总结: insights.md
   - 术语表: glossary.md
   - 技术资源: resources.md
   - 速查表: cheatsheet.md
@@ -120,3 +122,5 @@ copyright: © 2024-2026 Liuaj's Wiki | 使用 <a href="https://squidfunk.github.
 # Enhanced tables
 markdown_extensions:
   - tables
+
+# Add comparison to resources nav
