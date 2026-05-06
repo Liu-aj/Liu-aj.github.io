@@ -1,3 +1,7 @@
+tags:
+  - ESP32
+  - 嵌入式
+  - IoT
 # ESP32 Matter 协议开发实战指南（2026）
 
 > 基于乐鑫官方 Arduino ESP32 文档 + ESP-Matter 开发框架

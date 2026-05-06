@@ -34,14 +34,12 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ${{ steps.pip-cache.outputs.dir }}
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
           restore-keys: |
             ${{ runner.os }}-pip-
 
       - name: Install dependencies
-        run: |
-          pip install mkdocs-material
-          pip install pip-audit  # 安全审计
+        run: pip install -r requirements.txt
 
       - name: Run security audit
         run: pip audit --format=json || true
@@ -51,9 +49,7 @@ jobs:
 
       - name: Check for broken links
         run: |
-          # Install linkchecker
-          pip install lychee
-          # Check internal links (allow known external to fail temporarily)
+          pip install lychee -q
           lychee --offline site/**/*.html 2>/dev/null || true
 
       - name: Upload artifact

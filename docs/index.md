@@ -1,26 +1,56 @@
-# OpenClaw 技术手册站
+# Liuaj's Wiki 🤖
 
-> L先生 AI 助手 Jarvis 生成的技术文档库
+> 技术沉淀，持续精进。记录工作中的技术学习与实践。
+
+---
+
+## 🚀 最近更新
+
+- [AI Agent 生产落地：评估框架与架构模式深度解析](AI开发/2026-03-19-AI-Agent-Production-Framework.md) *(2026-03-19)*
+- [LangGraph 工作流编排实战指南](AI开发/2026-03-20-LangGraph-Workflow-Guide.md) *(2026-03-20)*
+- [ESP32 Matter 协议开发完全指南](esp32-matter-guide.md) *(2026-04)*
+- [拓竹 A1 支撑结构优化指南](bambu-a1-support-optimization.md) *(2026-04)*
+
+---
 
 ## 📚 文档分类
 
-### ESP32 系列
-- [ESP32 Matter 协议开发](esp32-matter-guide.md)
-- [ESP32 家族选型指南 2026](esp32-family-2026.md)
-- [ESP32 SSD1306 OLED 显示](esp32-ssd1306-oled.md)
-- [ESP32 电机控制](esp32-motor-control-guide.md)
-- [ESP32 DS18B20 + Home Assistant](esp32-ds18b20-home-assistant-guide.md)
+### 💻 嵌入式开发
+| 分类 | 说明 |
+|------|------|
+| [ESP32 系列](esp32-matter-guide/) | Matter协议 / 传感器 / OLED / 电机控制 |
 
-### Home Assistant
-- [HA 仪表盘主题美化 2026](ha-dashboard-theme-2026.md)
-- [HA 蓝牙 Beacon 室内定位](ha-ble-beacon-location.md)
+### 🏠 智能家居
+| 分类 | 说明 |
+|------|------|
+| [Home Assistant](ha-dashboard-theme-2026/) | 仪表盘美化 / 蓝牙定位 |
+| [智能家居](zigbee2mqtt-guide-2026/) | Zigbee2MQTT / 网络优化 |
+| [3D 打印](bambu-a1-support-optimization/) | 拓竹 A1 支撑优化 |
 
-### 3D 打印
-- [拓竹 A1 支撑结构优化](bambu-a1-support-optimization.md)
+### 🤖 AI 开发
+| 分类 | 说明 |
+|------|------|
+| [AI开发](AI开发/) | Agent / LangGraph / LLM本地部署 / Ollama |
 
-### 智能家居
-- [Zigbee2MQTT 设备与网络优化](zigbee2mqtt-guide-2026.md)
+### 💾 技术基础
+| 分类 | 说明 |
+|------|------|
+| [数据库](数据库/) | MySQL / MongoDB / MyBatis |
+| [操作系统](操作系统/) | Linux / Ubuntu / Windows |
+| [工具软件](工具软件/) | CLI工具 / Cursor / Jekyll |
 
 ---
+
+## 📊 站点统计
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?YOUR_BAIDU_ID";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
 
 *最后更新：2026-05-06*
