@@ -122,6 +122,8 @@ nav:
   - 网络基础: networking.md
   - Git进阶: git-advanced.md
   - Docker进阶: docker-advanced.md
+  - Python进阶: python-advanced.md
+  - JavaScript进阶: javascript-advanced.md
   - 术语表: glossary.md
   - 技术资源: resources.md
   - 速查表: cheatsheet.md
