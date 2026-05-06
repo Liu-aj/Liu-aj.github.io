@@ -134,6 +134,9 @@ nav:
   - 可观测性: observability.md
   - 云服务: cloud.md
   - DevOps: devops.md
+  - GitOps: gitops.md
+  - SRE: sre.md
+  - 云原生: cloud-native.md
   - 实用脚本: scripts.md
   - 网络基础: networking.md
   - Vim指南: vim.md
