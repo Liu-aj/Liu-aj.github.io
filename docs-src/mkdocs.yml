@@ -1,0 +1,43 @@
+site_name: OpenClaw 技术手册
+site_description: L先生的 AI 助手技术文档库
+site_url: https://liu-aj.github.io/
+
+theme:
+  name: material
+  language: zh
+  palette:
+    - scheme: default
+      primary: deep orange
+      accent: orange
+      toggle:
+        icon: material/brightness-7
+        name: 切换夜间模式
+    - scheme: slate
+      primary: deep orange
+      accent: orange
+      toggle:
+        icon: material/brightness-4
+        name: 切换白天模式
+
+nav:
+  - 首页: index.md
+  - ESP32系列:
+    - ESP32 Matter协议开发: esp32-matter-guide.md
+    - ESP32 家族选型指南2026: esp32-family-2026.md
+    - ESP32 SSD1306 OLED显示: esp32-ssd1306-oled.md
+    - ESP32 电机控制: esp32-motor-control-guide.md
+    - ESP32 DS18B20+HA: esp32-ds18b20-home-assistant-guide.md
+  - Home Assistant:
+    - HA 仪表盘主题美化2026: ha-dashboard-theme-2026.md
+    - HA 蓝牙Beacon室内定位: ha-ble-beacon-location.md
+  - 3D打印:
+    - 拓竹A1 支撑结构优化: bambu-a1-support-optimization.md
+  - 智能家居:
+    - Zigbee2MQTT设备与网络优化: zigbee2mqtt-guide-2026.md
+
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+  - tables
