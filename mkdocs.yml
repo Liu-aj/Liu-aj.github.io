@@ -77,6 +77,8 @@ markdown_extensions:
 
 nav:
   - 首页: index.md
+  - 快速开始: quickstart.md
+  - 学习路线: roadmap.md
   - 阅读指南: guide.md
   - 更新日志: changelog.md
   - ESP32系列:
