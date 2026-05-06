@@ -49,14 +49,17 @@ markdown_extensions:
 
 nav:
   - 首页: index.md
-  - 文档:
-      - ESP32 Matter协议开发: docs/esp32-matter-guide.md
-      - ESP32 家族选型指南2026: docs/esp32-family-2026.md
-      - ESP32 SSD1306 OLED显示: docs/esp32-ssd1306-oled.md
-      - ESP32 电机控制: docs/esp32-motor-control-guide.md
-      - ESP32 DS18B20+HA: docs/esp32-ds18b20-home-assistant-guide.md
-      - HA 仪表盘主题美化2026: docs/ha-dashboard-theme-2026.md
-      - HA 蓝牙Beacon室内定位: docs/ha-ble-beacon-location.md
-      - 拓竹A1 支撑结构优化: docs/bambu-a1-support-optimization.md
-      - Zigbee2MQTT设备与网络优化: docs/zigbee2mqtt-guide-2026.md
+  - ESP32系列:
+      - esp32-matter-guide.md
+      - esp32-family-2026.md
+      - esp32-ssd1306-oled.md
+      - esp32-motor-control-guide.md
+      - esp32-ds18b20-home-assistant-guide.md
+  - Home Assistant:
+      - ha-dashboard-theme-2026.md
+      - ha-ble-beacon-location.md
+  - 3D打印:
+      - bambu-a1-support-optimization.md
+  - 智能家居:
+      - zigbee2mqtt-guide-2026.md
   - 博客: blog/index.md
