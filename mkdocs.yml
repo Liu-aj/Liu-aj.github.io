@@ -117,6 +117,9 @@ nav:
   - 架构设计: architecture.md
   - 测试指南: testing.md
   - 监控运维: monitoring.md
+  - 云服务: cloud.md
+  - DevOps: devops.md
+  - 网络基础: networking.md
   - 术语表: glossary.md
   - 技术资源: resources.md
   - 速查表: cheatsheet.md
