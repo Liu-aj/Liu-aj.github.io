@@ -1,0 +1,1201 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="技术沉淀，持续精进">
+      
+      
+      
+        <link rel="canonical" href="https://liu-aj.github.io/bambu-a1-support-optimization/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>拓竹 A1 / Bambu Lab 3D 打印支撑结构优化完全指南（2026） - Liuaj's Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#a1-bambu-lab-3d-2026" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="Liuaj&#39;s Wiki" class="md-header__button md-logo" aria-label="Liuaj's Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Liuaj's Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              拓竹 A1 / Bambu Lab 3D 打印支撑结构优化完全指南（2026）
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="切换夜间模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换夜间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="切换白天模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换白天模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Liuaj&#39;s Wiki" class="md-nav__button md-logo" aria-label="Liuaj's Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Liuaj's Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文档
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    文档
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/esp32-matter-guide.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESP32 Matter协议开发
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/esp32-family-2026.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESP32 家族选型指南2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/esp32-ssd1306-oled.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESP32 SSD1306 OLED显示
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/esp32-motor-control-guide.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESP32 电机控制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/esp32-ds18b20-home-assistant-guide.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESP32 DS18B20+HA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/ha-dashboard-theme-2026.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HA 仪表盘主题美化2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/ha-ble-beacon-location.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HA 蓝牙Beacon室内定位
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/bambu-a1-support-optimization.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    拓竹A1 支撑结构优化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/zigbee2mqtt-guide-2026.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zigbee2MQTT设备与网络优化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一、支撑原理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、支撑原理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 为什么要支撑
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 支撑与模型接触面积
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bambu-studio-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二、Bambu Studio 智能支撑（2026 新特性）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、Bambu Studio 智能支撑（2026 新特性）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 智能支撑是什么
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 智能支撑使用步骤
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、支撑参数精细调节
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、支撑参数精细调节">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 支撑密度详解
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 支撑类型选择
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 关键参数设置
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pa6-cfgf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四、高温耗材专用支撑（PA6-CF/GF）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、高温耗材专用支撑（PA6-CF/GF）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-asa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 为什么用 ASA 作为支撑
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 操作步骤
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 注意事项
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        五、支撑拆除技巧
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="五、支撑拆除技巧">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 通用拆除方法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 减少表面痕迹
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        六、特殊模型支撑策略
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="六、特殊模型支撑策略">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 大跨度桥梁
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-90" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 90度垂直悬空
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 复杂镂空结构
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        七、新手常见错误与解决方案
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        八、推荐工作流
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        九、参考资源
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="a1-bambu-lab-3d-2026">拓竹 A1 / Bambu Lab 3D 打印支撑结构优化完全指南（2026）</h1>
+<blockquote>
+<p>更新日期：2026-05-06 | 基于 Bambu Studio 2.x 最新版本</p>
+</blockquote>
+<hr />
+<h2 id="_1">一、支撑原理</h2>
+<h3 id="11">1.1 为什么要支撑</h3>
+<p>FDM 3D 打印层层堆叠，向下悬空的模型会"掉下来"：</p>
+<div class="highlight"><pre><span></span><code>正确支撑           无支撑（失败）
+    │                  │
+    ▼                  ▼
+  ═══╗              ═══╗
+     ║                 
+     ║ ← 支撑接住      ║ ← 直接悬空，塌陷
+</code></pre></div>
+<p><strong>悬空角度阈值</strong>：通常 &gt; 45° 角需要支撑（越垂直越需要）</p>
+<h3 id="12">1.2 支撑与模型接触面积</h3>
+<ul>
+<li><strong>接触面积大</strong> → 支撑牢固但拆除难，模型表面痕迹明显</li>
+<li><strong>接触面积小</strong> → 拆除容易但支撑可能倒塌</li>
+</ul>
+<hr />
+<h2 id="bambu-studio-2026">二、Bambu Studio 智能支撑（2026 新特性）</h2>
+<h3 id="21">2.1 智能支撑是什么</h3>
+<p>Bambu Studio（2025+版本）的智能支撑能<strong>自动判断悬空角度</strong>，自动放置支撑，不需要手动逐个标记。</p>
+<h3 id="22">2.2 智能支撑使用步骤</h3>
+<div class="highlight"><pre><span></span><code>切片设置 → 支撑 → 支撑类型 → &quot;智能支撑&quot;
+         → 自动检测 → ON
+</code></pre></div>
+<p><strong>自动判断阈值</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>推荐值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>悬空角度阈值</td>
+<td>45° - 60°</td>
+<td>角度越大支撑越少，模型质量越高</td>
+</tr>
+<tr>
+<td>支撑密度</td>
+<td>10-15%</td>
+<td>最佳区间</td>
+</tr>
+<tr>
+<td>接触间距</td>
+<td>0.2mm</td>
+<td>支撑与模型最小间距</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_2">三、支撑参数精细调节</h2>
+<h3 id="31">3.1 支撑密度详解</h3>
+<table>
+<thead>
+<tr>
+<th>密度</th>
+<th>适用场景</th>
+<th>优缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5-8%</td>
+<td>简单模型、低角度悬空</td>
+<td>拆除容易，支撑可能不稳</td>
+</tr>
+<tr>
+<td><strong>10-15%</strong></td>
+<td>大部分模型</td>
+<td>⭐最佳平衡点</td>
+</tr>
+<tr>
+<td>18-25%</td>
+<td>高温耗材、复杂悬空</td>
+<td>支撑稳固，拆除较难</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32">3.2 支撑类型选择</h3>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>特点</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>线性支撑</strong></td>
+<td>垂直柱状，简单直接</td>
+<td>简单几何，列数少</td>
+</tr>
+<tr>
+<td><strong>树状支撑</strong></td>
+<td>枝状展开，接触点少</td>
+<td>复杂模型，减少表面痕迹</td>
+</tr>
+<tr>
+<td><strong>智能支撑</strong></td>
+<td>自动判断放置位置</td>
+<td>⭐推荐，新手友好</td>
+</tr>
+</tbody>
+</table>
+<h3 id="33">3.3 关键参数设置</h3>
+<div class="highlight"><pre><span></span><code><span class="nt">支撑类型</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">智能支撑</span>
+<span class="nt">支撑密度</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">12%</span>
+<span class="nt">悬空角度阈值</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">50°（可设为 45° 或 60°）</span>
+<span class="nt">接触点间距</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2mm</span>
+<span class="nt">顶棚间距</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2mm</span>
+<span class="nt">基础类型</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">平板/线/无（建议平板，稳固）</span>
+</code></pre></div>
+<hr />
+<h2 id="pa6-cfgf">四、高温耗材专用支撑（PA6-CF/GF）</h2>
+<h3 id="41-asa">4.1 为什么用 ASA 作为支撑</h3>
+<p>PA6-CF/GF（碳纤维/玻璃纤维尼龙）粘接力强，与同材质的支撑难以分离。</p>
+<p><strong>解决方案</strong>：用 <strong>Bambu ASA</strong> 作为支撑材料打印，支撑与模型粘附力低，拆除容易。</p>
+<h3 id="42">4.2 操作步骤</h3>
+<ol>
+<li>在切片器中选择支撑材料：<code>Bambu ASA</code>（与模型材料分开）</li>
+<li>配置支撑接缝处与模型接触面材质为 ASA</li>
+<li>打印完成后，ASA 支撑轻松拆除，模型表面干净</li>
+</ol>
+<blockquote>
+<p>ASA 的热膨胀率与 PA 类耗材相近，打印时温度接近，适配性好</p>
+</blockquote>
+<h3 id="43">4.3 注意事项</h3>
+<ul>
+<li>ASA 打印温度约 250-260°C，确保打印机温控稳定</li>
+<li>ASA 吸水注意干燥（建议 80°C 烘干 4 小时）</li>
+</ul>
+<hr />
+<h2 id="_3">五、支撑拆除技巧</h2>
+<h3 id="51">5.1 通用拆除方法</h3>
+<div class="highlight"><pre><span></span><code>1. 自然冷却后拆除（不要热的时候拆，容易拉坏模型）
+2. 从支撑底部敲击，使支撑与模型分离
+3. 使用支撑拆除工具（斜口钳、 sculpt 工具）
+4. 最后用砂纸或刮刀处理表面痕迹
+</code></pre></div>
+<h3 id="52">5.2 减少表面痕迹</h3>
+<ul>
+<li>支撑接触面越小，痕迹越小</li>
+<li>选择"树状支撑"减少接触面积</li>
+<li>在模型背面/隐蔽面添加支撑，减少外观影响</li>
+</ul>
+<hr />
+<h2 id="_4">六、特殊模型支撑策略</h2>
+<h3 id="61">6.1 大跨度桥梁</h3>
+<div class="highlight"><pre><span></span><code>模型：══╗    ╔══
+       ↓    ↓
+      支撑  支撑
+
+策略：双侧支撑 + 桥接加固（中间加一小段实心填充）
+</code></pre></div>
+<h3 id="62-90">6.2 90度垂直悬空</h3>
+<div class="highlight"><pre><span></span><code>策略：
+1. 降低悬空角度阈值到 45° 以下
+2. 增加支撑密度到 15-18%
+3. 使用线性支撑而非树状（更稳固）
+</code></pre></div>
+<h3 id="63">6.3 复杂镂空结构</h3>
+<div class="highlight"><pre><span></span><code>策略：
+1. 手动放置支撑标记（关键位置）
+2. 使用&quot;可变层高&quot;在复杂区域加密
+3. 考虑分色打印（先打主体后打悬空部分）
+</code></pre></div>
+<hr />
+<h2 id="_5">七、新手常见错误与解决方案</h2>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>原因</th>
+<th>解决方案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>支撑粘得太牢拆不下来</td>
+<td>支撑密度太高/接触面积太大</td>
+<td>降低密度到 10-15%，使用树状支撑</td>
+</tr>
+<tr>
+<td>模型底部拉丝/变形</td>
+<td>支撑顶棚间距太小</td>
+<td>增大顶棚间距到 0.3mm</td>
+</tr>
+<tr>
+<td>支撑倒塌</td>
+<td>密度太低/角度太大</td>
+<td>提高密度，减小悬空角度阈值</td>
+</tr>
+<tr>
+<td>打印时支撑移位</td>
+<td>打印平台不干净/第一层粘附差</td>
+<td>清洁平台，调平</td>
+</tr>
+<tr>
+<td>模型表面有明显痕迹</td>
+<td>支撑接触面积大/拆除粗暴</td>
+<td>选择小接触面积支撑，轻柔拆除</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_6">八、推荐工作流</h2>
+<div class="highlight"><pre><span></span><code>1. 导入模型 → 自动修复（MeshDoctor）
+2. 切片预览 → 检查悬空区域
+3. 支撑设置 → 智能支撑 + 密度 12% + 阈值 50°
+4. 高级设置 → 顶棚间距 0.2mm
+5. 保存预设 → 记录为&quot;通用 12% 支撑&quot;
+6. 高温耗材 → 换 ASA 支撑材料
+</code></pre></div>
+<hr />
+<h2 id="_7">九、参考资源</h2>
+<ul>
+<li>Bambu Lab Wiki：https://wiki.bambulab.com/</li>
+<li>Bambu Studio 支撑设置官方教程</li>
+<li>YouTube：Bambu Lab 官方频道支撑优化视频</li>
+</ul>
+<hr />
+<p><em>文档版本：v1.0 | 推荐配合 Bambu Studio 2.x 使用</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.expand", "search.suggest", "search.highlight", "content.tabs.link", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

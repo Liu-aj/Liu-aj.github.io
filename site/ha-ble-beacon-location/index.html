@@ -1,0 +1,1308 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="技术沉淀，持续精进">
+      
+      
+      
+        <link rel="canonical" href="https://liu-aj.github.io/ha-ble-beacon-location/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Home Assistant 蓝牙 Beacon 室内定位系统搭建指南（2026） - Liuaj's Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#home-assistant-beacon-2026" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="Liuaj&#39;s Wiki" class="md-header__button md-logo" aria-label="Liuaj's Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Liuaj's Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Home Assistant 蓝牙 Beacon 室内定位系统搭建指南（2026）
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="切换夜间模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换夜间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="切换白天模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换白天模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Liuaj&#39;s Wiki" class="md-nav__button md-logo" aria-label="Liuaj's Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Liuaj's Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文档
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    文档
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/esp32-matter-guide.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESP32 Matter协议开发
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/esp32-family-2026.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESP32 家族选型指南2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/esp32-ssd1306-oled.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESP32 SSD1306 OLED显示
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/esp32-motor-control-guide.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESP32 电机控制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/esp32-ds18b20-home-assistant-guide.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESP32 DS18B20+HA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/ha-dashboard-theme-2026.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HA 仪表盘主题美化2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/ha-ble-beacon-location.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HA 蓝牙Beacon室内定位
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/bambu-a1-support-optimization.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    拓竹A1 支撑结构优化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/zigbee2mqtt-guide-2026.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zigbee2MQTT设备与网络优化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一、技术原理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、技术原理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-ble-ibeacon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 BLE iBeacon 工作原理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-rssi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 RSSI 定位原理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 房间级定位 vs 物品追踪
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二、硬件方案
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、硬件方案">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-esp32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 ESP32 蓝牙代理节点布置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-ble-tag-ibeacon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 BLE Tag / iBeacon 信标选择
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 节点供电建议
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ha" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、HA 集成方案对比
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、HA 集成方案对比">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#abermuda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        方案 A：Bermuda 集成
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bespresense" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        方案 B：ESPresense 集成
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        两者对比
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四、完整配置流程
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、完整配置流程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esp32-ble-proxyesphome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第一步：部署 ESP32 BLE Proxy（ESPHome）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第二步：安装追踪集成
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第三步：创建自动化
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        五、实战应用场景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="五、实战应用场景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        场景 1：钥匙追踪
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        场景 2：人体感应触发（进房间自动开灯）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        场景 3：宠物定位
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        六、精度优化技巧
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        七、参考资源
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="home-assistant-beacon-2026">Home Assistant 蓝牙 Beacon 室内定位系统搭建指南（2026）</h1>
+<blockquote>
+<p>更新日期：2026-05-06</p>
+</blockquote>
+<hr />
+<h2 id="_1">一、技术原理</h2>
+<h3 id="11-ble-ibeacon">1.1 BLE iBeacon 工作原理</h3>
+<p>iBeacon 是 BLE 广播包的标准化格式：</p>
+<div class="highlight"><pre><span></span><code>设备广播：UUID + Major + Minor + RSSI
+          ↓
+   ESP32 蓝牙代理节点接收
+          ↓
+   根据 RSSI 估算距离
+          ↓
+   HA 判断&quot;在这个房间&quot;
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UUID</td>
+<td>标识信标用途/品牌（可自定义）</td>
+</tr>
+<tr>
+<td>Major/Minor</td>
+<td>区域/位置编码</td>
+</tr>
+<tr>
+<td>RSSI</td>
+<td>信号强度（用于距离估算）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="12-rssi">1.2 RSSI 定位原理</h3>
+<div class="highlight"><pre><span></span><code>RSSI 值参考：
+  -50 dBm  → 很近（&lt; 1米）
+  -70 dBm  → 约 2-3 米
+  -85 dBm  → 较远（约 5 米）
+  -100 dBm → 信号弱边缘
+
+注意：RSSI 受人体遮挡、金属反射影响大，精度有限（房间级OK，厘米级不行）
+</code></pre></div>
+<h3 id="13-vs">1.3 房间级定位 vs 物品追踪</h3>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>实现方式</th>
+<th>精度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>房间级定位</strong></td>
+<td>BLE Tag + 多节点 RSSI 对比</td>
+<td>房间级别</td>
+</tr>
+<tr>
+<td><strong>物品追踪</strong></td>
+<td>单点 BLE Tag 信号阈值</td>
+<td>大概区域</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_2">二、硬件方案</h2>
+<h3 id="21-esp32">2.1 ESP32 蓝牙代理节点布置</h3>
+<p><strong>原则</strong>：每个房间至少 1 个，信号重叠区域更好</p>
+<div class="highlight"><pre><span></span><code>房间布局示例：
+┌─────────┬─────────┐
+│  卧室   │  客厅    │
+│  [ESP32]│  [ESP32]│
+├─────────┼─────────┤
+│  厨房   │  卫生间  │
+│  [ESP32]│         │ ← 角落信号可能覆盖
+└─────────┴─────────┘
+</code></pre></div>
+<p><strong>推荐配置</strong>：
+- 小户型（&lt; 80㎡）：2-3 个 ESP32 节点
+- 中户型（80-150㎡）：4-6 个节点
+- 每个节点间距 5-8 米</p>
+<p><strong>推荐开发板</strong>：ESP32-C3 Mini / ESP32-S3 Mini（便宜、5V USB 供电）</p>
+<h3 id="22-ble-tag-ibeacon">2.2 BLE Tag / iBeacon 信标选择</h3>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>适用场景</th>
+<th>购买建议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>BLE 防丢器</strong>（如 Tile、Chipolo）</td>
+<td>钥匙、钱包追踪</td>
+<td>通用</td>
+</tr>
+<tr>
+<td><strong>Aqara M2 或其他 HA 设备</strong></td>
+<td>带 BLE 的传感器</td>
+<td>复用已有设备</td>
+</tr>
+<tr>
+<td><strong>专用 iBeacon</strong></td>
+<td>固定位置标记</td>
+<td>可自制（ESP32-C3）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>物品追踪推荐</strong>：Chipolo ONE（续航 1 年，信号稳定）</p>
+<h3 id="23">2.3 节点供电建议</h3>
+<ul>
+<li>USB 供电 + 固定位置（最稳定）</li>
+<li>避免放在金属配电箱内</li>
+<li>距地面 1-1.5 米</li>
+</ul>
+<hr />
+<h2 id="ha">三、HA 集成方案对比</h2>
+<h3 id="abermuda">方案 A：Bermuda 集成</h3>
+<p><strong>原理</strong>：利用 HA 的 Bermuda 集成，通过多个 ESP32 BLE Proxy 节点收集 RSSI，计算设备位置</p>
+<p><strong>配置步骤</strong>：</p>
+<ol>
+<li>
+<p><strong>部署 ESP32 BLE Proxy</strong>
+   <div class="highlight"><pre><span></span><code><span class="c1"># ESPHome 配置示例</span>
+<span class="nt">esp32_ble_tracker</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">scan_parameters</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0x10F0</span>
+<span class="w">    </span><span class="nt">window</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0x10F0</span>
+
+<span class="nt">bluetooth_proxy</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">active</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>安装 Bermuda 集成</strong></p>
+</li>
+<li>HACS → 搜索 <code>bermuda</code> → 安装</li>
+<li>HA → 配置 → 集成 → 添加 Bermuda</li>
+<li>
+<p>Bermuda 会自动发现 ESP32 BLE Proxy 节点</p>
+</li>
+<li>
+<p><strong>配置追踪规则</strong>
+   <div class="highlight"><pre><span></span><code><span class="c1"># configuration.yaml</span>
+<span class="nt">bermuda</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">devices</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;我的钥匙&quot;</span>
+<span class="w">      </span><span class="nt">uuid</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX&quot;</span>
+<span class="w">      </span><span class="nt">min_rssi</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-85</span>
+</code></pre></div></p>
+</li>
+</ol>
+<p><strong>优缺点</strong>：
+- ✅ 配置简单，HA 官方支持思路
+- ❌ 定位精度一般，依赖 RSSI 稳定性</p>
+<hr />
+<h3 id="bespresense">方案 B：ESPresense 集成</h3>
+<p><strong>原理</strong>：ESPresense 通过 MQTT 接收各节点的 RSSI 数据，在 Node-RED 或 HA 中计算位置</p>
+<p><strong>配置步骤</strong>：</p>
+<ol>
+<li><strong>刷 ESPresense 固件</strong></li>
+<li>
+<p>使用 ESPHome 刷入 ESPresense：https://esphome.io/projects?query=espresense</p>
+</li>
+<li>
+<p><strong>安装 ESPresense 集成</strong>
+   <div class="highlight"><pre><span></span><code><span class="c1"># ESPHome YAML</span>
+<span class="nt">esphome</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ble-presence</span>
+<span class="w">  </span><span class="nt">friendly_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BLE-Presence</span>
+
+<span class="nt">esp32_ble_tracker</span><span class="p">:</span>
+
+<span class="nt">bluetooth_proxy</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">active</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+
+<span class="nt">sensor</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ble_presence</span>
+<span class="w">    </span><span class="nt">mac_address</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;XX:XX:XX:XX:XX:XX&quot;</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Key</span><span class="nv"> </span><span class="s">Tracker&quot;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>MQTT 配置</strong>
+   <div class="highlight"><pre><span></span><code><span class="nt">mqtt</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">broker</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.1.x</span>
+<span class="w">  </span><span class="nt">topic_prefix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">espresense</span>
+</code></pre></div></p>
+</li>
+</ol>
+<p><strong>ESPresense 特点</strong>：
+- 支持多房间同时检测（通过 MQTT 主题区分）
+- 配置灵活，适合进阶用户</p>
+<h3 id="_3">两者对比</h3>
+<table>
+<thead>
+<tr>
+<th>对比项</th>
+<th>Bermuda</th>
+<th>ESPresense</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>配置难度</td>
+<td>低</td>
+<td>中</td>
+</tr>
+<tr>
+<td>精度</td>
+<td>一般</td>
+<td>较好（多节点融合）</td>
+</tr>
+<tr>
+<td>依赖</td>
+<td>BLE Proxy 节点</td>
+<td>MQTT Broker</td>
+</tr>
+<tr>
+<td>适合场景</td>
+<td>简单存在检测</td>
+<td>精准房间定位</td>
+</tr>
+<tr>
+<td>MQTT 必需？</td>
+<td>否</td>
+<td>是</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_4">四、完整配置流程</h2>
+<h3 id="esp32-ble-proxyesphome">第一步：部署 ESP32 BLE Proxy（ESPHome）</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># ble-proxy.yaml</span>
+<span class="nt">esphome</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ble-proxy-bedroom</span>
+<span class="w">  </span><span class="nt">friendly_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BLE Proxy 卧室</span>
+
+<span class="nt">esp32</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">board</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">esp32dev</span>
+
+<span class="nt">wifi</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ssid</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;你的WiFi&quot;</span>
+<span class="w">  </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;你的密码&quot;</span>
+
+<span class="nt">api</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;esphome密码&quot;</span>
+
+<span class="nt">logger</span><span class="p">:</span>
+
+<span class="nt">esp32_ble_tracker</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">scan_parameters</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0x30</span>
+<span class="w">    </span><span class="nt">window</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0x30</span>
+
+<span class="nt">bluetooth_proxy</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">active</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<ol>
+<li>ESPHome 安装 → 添加设备 → 粘贴 YAML → 部署</li>
+<li>重复此步骤，为每个房间部署一个节点</li>
+<li>记录各节点 IP 和名称（用于后续识别）</li>
+</ol>
+<h3 id="_5">第二步：安装追踪集成</h3>
+<div class="highlight"><pre><span></span><code>推荐顺序：
+1. HACS → 安装 Bermuda 或 ESPresense
+2. 配置 → 集成 → 添加
+3. 添加要追踪的 BLE 设备 UUID
+</code></pre></div>
+<h3 id="_6">第三步：创建自动化</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># 示例：进入客厅自动开灯</span>
+<span class="nt">automation</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;进入客厅开灯&quot;</span>
+<span class="w">    </span><span class="nt">trigger</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">state</span>
+<span class="w">      </span><span class="nt">entity_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">binary_sensor.living_room_occupied</span>
+<span class="w">      </span><span class="nt">to</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;on&quot;</span>
+<span class="w">    </span><span class="nt">action</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">service</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">light.turn_on</span>
+<span class="w">      </span><span class="nt">target</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">entity_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">light.living_room_main</span>
+</code></pre></div>
+<hr />
+<h2 id="_7">五、实战应用场景</h2>
+<h3 id="1">场景 1：钥匙追踪</h3>
+<div class="highlight"><pre><span></span><code><span class="nt">automation</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;钥匙忘在家里提醒&quot;</span>
+<span class="w">    </span><span class="nt">trigger</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">time</span>
+<span class="w">        </span><span class="nt">at</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;08:30:00&quot;</span>
+<span class="w">    </span><span class="nt">condition</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">state</span>
+<span class="w">        </span><span class="nt">entity_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">device_tracker.key_tracker</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;not_home&quot;</span>
+<span class="w">    </span><span class="nt">action</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">service</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">notify.persistent_notification</span>
+<span class="w">        </span><span class="nt">data</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">message</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;钥匙不在家！&quot;</span>
+</code></pre></div>
+<h3 id="2">场景 2：人体感应触发（进房间自动开灯）</h3>
+<div class="highlight"><pre><span></span><code><span class="nt">automation</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;进卧室自动开灯&quot;</span>
+<span class="w">    </span><span class="nt">trigger</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">state</span>
+<span class="w">      </span><span class="nt">entity_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">binary_sensor.bedroom_presence</span>
+<span class="w">      </span><span class="nt">to</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;on&quot;</span>
+<span class="w">    </span><span class="nt">condition</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">time</span>
+<span class="w">        </span><span class="nt">after</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;sunset&quot;</span>
+<span class="w">    </span><span class="nt">action</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">service</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">light.turn_on</span>
+<span class="w">        </span><span class="nt">data</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">entity_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">light.bedroom</span>
+<span class="w">          </span><span class="nt">brightness_pct</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">60</span>
+</code></pre></div>
+<h3 id="3">场景 3：宠物定位</h3>
+<p>配合宠物佩戴的 BLE Tag，设置"宠物进入某区域"触发通知</p>
+<hr />
+<h2 id="_8">六、精度优化技巧</h2>
+<table>
+<thead>
+<tr>
+<th>技巧</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>多节点冗余</strong></td>
+<td>一个房间放 2 个节点，取 RSSI 最强者</td>
+</tr>
+<tr>
+<td><strong>信号阈值调试</strong></td>
+<td>实际测试不同位置的 RSSI 值，设定合理阈值</td>
+</tr>
+<tr>
+<td><strong>防误判延迟</strong></td>
+<td>设置 10-30 秒延迟确认存在，避免短暂信号波动</td>
+</tr>
+<tr>
+<td><strong>睡眠区域排除</strong></td>
+<td>夜间关闭部分自动化，避免频繁触发</td>
+</tr>
+<tr>
+<td><strong>信号滤波</strong></td>
+<td>使用指数移动平均平滑 RSSI 数据</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_9">七、参考资源</h2>
+<ul>
+<li>ESP32 BLE Proxy 部署：https://esphome.io/guides/bluetooth_proxy.html</li>
+<li>Bermuda 集成：https://github.com/bdraco/bermuda</li>
+<li>ESPresense：https://esphome.io/projects?query=espresense</li>
+<li>Home Assistant BLE 追踪：https://www.home-assistant.io/integrations/bluetooth_le_tracker/</li>
+</ul>
+<hr />
+<p><em>文档版本：v1.0</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.expand", "search.suggest", "search.highlight", "content.tabs.link", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

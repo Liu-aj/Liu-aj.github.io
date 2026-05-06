@@ -1,0 +1,1770 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="技术沉淀，持续精进">
+      
+      
+      
+        <link rel="canonical" href="https://liu-aj.github.io/esp32-ds18b20-home-assistant-guide/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>ESP32 + DS18B20 + Home Assistant 完整实战手册 - Liuaj's Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#esp32-ds18b20-home-assistant" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="Liuaj&#39;s Wiki" class="md-header__button md-logo" aria-label="Liuaj's Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Liuaj's Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ESP32 + DS18B20 + Home Assistant 完整实战手册
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="切换夜间模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换夜间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="切换白天模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换白天模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Liuaj&#39;s Wiki" class="md-nav__button md-logo" aria-label="Liuaj's Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Liuaj's Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文档
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    文档
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/esp32-matter-guide.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESP32 Matter协议开发
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/esp32-family-2026.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESP32 家族选型指南2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/esp32-ssd1306-oled.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESP32 SSD1306 OLED显示
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/esp32-motor-control-guide.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESP32 电机控制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/esp32-ds18b20-home-assistant-guide.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESP32 DS18B20+HA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/ha-dashboard-theme-2026.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HA 仪表盘主题美化2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/ha-ble-beacon-location.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HA 蓝牙Beacon室内定位
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/bambu-a1-support-optimization.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    拓竹A1 支撑结构优化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/zigbee2mqtt-guide-2026.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zigbee2MQTT设备与网络优化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        目录
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 硬件准备
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 硬件准备">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-esp32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 ESP32 开发板推荐
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-ds18b20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 DS18B20 选购要点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-47k" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 4.7kΩ 上拉电阻原理
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 接线图
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 接线图">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-gpio4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 单传感器接线（推荐 GPIO4）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-gpio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 多传感器串联接线（同一 GPIO，总线式）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-gpio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 不同 GPIO 接多个传感器（每路独立上拉）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-esphome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. ESPHome 配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. ESPHome 配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-rom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 获取传感器 ROM 地址（首次配置前）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 基础单传感器配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 多传感器配置（推荐方式）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 多传感器按索引读取（无需地址，适用于不怕传感器顺序变化）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-mqtt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 完整示例（含 MQTT 备用）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-mqtt-vs-esphome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. MQTT 集成 vs ESPHome 原生集成
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. MQTT 集成 vs ESPHome 原生集成">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 对比一览
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 推荐方案
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-mqtt-esphome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 MQTT 集成示例（ESPHome 发布端）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-home-assistant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Home Assistant 配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Home Assistant 配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-esphome-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 ESPHome 原生 API 自动发现
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-mqtt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 MQTT 手动配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 温度监控 UI 卡片配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 实用场景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 实用场景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 热水器监测
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 地暖回水温度
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 水族箱 / 鱼缸
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 冷链监测
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 常见问题排查
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 常见问题排查">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q1-5c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q1: 读数不稳定，跳动剧烈（±5°C 以上）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q2-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q2: 只能读到部分传感器（超过 8 个时）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q3: 部分传感器完全读不到数据
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q4-esphome-too-many-devices-on-bus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q4: ESPHome 日志显示 "Too many devices on bus"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q5-home-assistant-esphome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q5: 设备离线（Home Assistant 中 ESPHome 实体消失）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q6: 传感器地址丢失（每次重启地址变化）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q7-20m" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q7: 长距离布线（&gt;20m）读数异常
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        快速参考卡
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="esp32-ds18b20-home-assistant">ESP32 + DS18B20 + Home Assistant 完整实战手册</h1>
+<blockquote>
+<p>参考来源：esp32.co.uk · ESPHome 官方文档<br />
+适用版本：ESPHome 2024.x + Home Assistant 2024.x</p>
+</blockquote>
+<hr />
+<h2 id="_1">目录</h2>
+<ol>
+<li><a href="#1-硬件准备">硬件准备</a></li>
+<li><a href="#2-接线图">接线图</a></li>
+<li><a href="#3-esphome-配置">ESPHome 配置</a></li>
+<li><a href="#4-mqtt-集成-vs-esphome-原生集成">MQTT 集成 vs ESPHome 原生集成</a></li>
+<li><a href="#5-home-assistant-配置">Home Assistant 配置</a></li>
+<li><a href="#6-实用场景">实用场景</a></li>
+<li><a href="#7-常见问题排查">常见问题排查</a></li>
+</ol>
+<hr />
+<h2 id="1">1. 硬件准备</h2>
+<h3 id="11-esp32">1.1 ESP32 开发板推荐</h3>
+<table>
+<thead>
+<tr>
+<th>型号</th>
+<th>特点</th>
+<th>推荐场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ESP32 DevKit v1</strong></td>
+<td>双核 240MHz，WiFi + BLE，GPIO 丰富</td>
+<td>通用场景，入门首选</td>
+</tr>
+<tr>
+<td><strong>ESP32-C3 DevKit</strong></td>
+<td>RISC-V 单核 160MHz，极低功耗，WiFi 4</td>
+<td>电池供电、极简项目</td>
+</tr>
+<tr>
+<td><strong>ESP32-S3 DevKit</strong></td>
+<td>双核 240MHz，AI 加速，更多 GPIO</td>
+<td>多传感器、大项目</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💡 DS18B20 对 GPIO 无特殊要求，任意 GPIO 均可。GPIO4（默认）最常用。</p>
+</blockquote>
+<h3 id="12-ds18b20">1.2 DS18B20 选购要点</h3>
+<p><strong>推荐购买防水探头版本</strong>（带不锈钢封装），特别适合液体和户外场景：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>规格</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>测温范围</td>
+<td>-55°C ~ +125°C</td>
+</tr>
+<tr>
+<td>精度</td>
+<td>±0.5°C（-10°C ~ +85°C）</td>
+</tr>
+<tr>
+<td>分辨率</td>
+<td>9~12bit 可调（默认 12bit = 0.0625°C）</td>
+</tr>
+<tr>
+<td>工作电压</td>
+<td>3.0V ~ 5.5V（建议 3.3V 或 5V）</td>
+</tr>
+<tr>
+<td>线缆长度</td>
+<td>常见 1m / 2m / 3m，可延长至 100m+</td>
+</tr>
+<tr>
+<td>接口类型</td>
+<td>三线：GND / DATA / VCC</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ 市面上存在假冒 DS18B20，特征为读数跳动异常、地址异常（全 0 或全 F）。建议购买带包装的品牌件。</p>
+</blockquote>
+<p><strong>接线颜色（常见约定）：</strong>
+<div class="highlight"><pre><span></span><code>红线   → VCC（电源 3.3V 或 5V）
+黑/黄线 → GND
+蓝/白线 → DATA（数据线）
+</code></pre></div></p>
+<h3 id="13-47k">1.3 4.7kΩ 上拉电阻原理</h3>
+<div class="highlight"><pre><span></span><code>        4.7kΩ 拉高电阻
+         ┌──┐
+ESP32   │  │      DS18B20
+GPIO4 ──┤  ├──────── DQ（数据线）
+  │    └──┘          │
+3.3V ────────────────┴── VDD
+GND  ─────────────────── GND
+</code></pre></div>
+<p><strong>为什么需要？</strong></p>
+<p>1-Wire 总线空闲时需要被上拉至高电平。DS18B20 的 DATA 线是开漏结构，自己只能拉低，无法主动拉高。电阻的三大作用：</p>
+<ol>
+<li><strong>空闲时保持高电平</strong> — 防止总线悬空产生噪声</li>
+<li><strong>通信时限制电流</strong> — 保护 GPIO 端口</li>
+<li><strong>电平匹配</strong> — ESP32（3.3V）与 DS18B20 电压协调</li>
+</ol>
+<blockquote>
+<p>📌 <strong>不要省略此电阻！</strong> 缺少会导致读数完全乱码或无法通信。<br />
+长线（&gt;10m）可将电阻降至 <strong>2.2kΩ~3.3kΩ</strong>，短线（&lt;1m）可用 <strong>5.1kΩ~10kΩ</strong>。</p>
+</blockquote>
+<hr />
+<h2 id="2">2. 接线图</h2>
+<h3 id="21-gpio4">2.1 单传感器接线（推荐 GPIO4）</h3>
+<div class="highlight"><pre><span></span><code>  ┌─────────────┐           ┌──────────────────┐
+  │   ESP32    │           │    DS18B20       │
+  │  DevKit v1  │           │  防水探头         │
+  │             │           │                  │
+  │  3.3V ──────┼───────────┼── 红线 (VCC)     │
+  │             │    4.7kΩ  │                  │
+  │  GPIO4 ─────┼──┤├──┼───┼── 蓝线 (DATA)   │
+  │             │    4.7kΩ  │                  │
+  │  GND  ──────┼───────────┼── 黑/黄线 (GND) │
+  └─────────────┘           └──────────────────┘
+
+注意：4.7kΩ 电阻并联在 DATA 与 VCC 之间
+</code></pre></div>
+<h3 id="22-gpio">2.2 多传感器串联接线（同一 GPIO，总线式）</h3>
+<div class="highlight"><pre><span></span><code>ESP32 GPIO4
+   │
+   ├──[4.7kΩ]───┬──────────────────────────────────┐
+   │            │              │                  │
+  DS18B20 #1   DS18B20 #2    DS18B20 #3    ...    DS18B20 #N
+  (蓝线DATA)   (蓝线DATA)    (蓝线DATA)         (蓝线DATA)
+   │            │              │                  │
+  所有红线(VCC)并联到 3.3V
+  所有黑/黄线(GND)并联到 GND
+</code></pre></div>
+<p><strong>关键规则：</strong>
+- 所有传感器的 DATA 线并联到同一 GPIO
+- <strong>仅需一个 4.7kΩ 电阻</strong>（总线上任意位置，靠近 ESP32 端最佳）
+- 每增加一个传感器，电阻不要重复添加</p>
+<h3 id="23-gpio">2.3 不同 GPIO 接多个传感器（每路独立上拉）</h3>
+<div class="highlight"><pre><span></span><code><span class="nt">dallas</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GPIO4</span>
+<span class="w">    </span><span class="c1"># 传感器组A</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GPIO15</span>
+<span class="w">    </span><span class="c1"># 传感器组B</span>
+</code></pre></div>
+<blockquote>
+<p>💡 每路 GPIO 都需要独立的一个 4.7kΩ 电阻。</p>
+</blockquote>
+<hr />
+<h2 id="3-esphome">3. ESPHome 配置</h2>
+<h3 id="31-rom">3.1 获取传感器 ROM 地址（首次配置前）</h3>
+<p>首次刷写时<strong>不指定地址</strong>，日志会输出每个传感器的 64-bit ROM 地址：</p>
+<div class="highlight"><pre><span></span><code><span class="nt">esphome</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">esp32-ds18b20</span>
+<span class="w">  </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ESP32</span>
+<span class="w">  </span><span class="nt">board</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">esp32dev</span>
+
+<span class="nt">wifi</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ssid</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;YOUR_WIFI_SSID&quot;</span>
+<span class="w">  </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;YOUR_WIFI_PASSWORD&quot;</span>
+
+<span class="nt">logger</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">level</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DEBUG</span><span class="w">   </span><span class="c1"># 关键：查看串口日志中的传感器地址</span>
+
+<span class="nt">api</span><span class="p">:</span>
+<span class="nt">ota</span><span class="p">:</span>
+</code></pre></div>
+<p>日志中会看到类似输出：
+<div class="highlight"><pre><span></span><code>[dallas.sensor]   Found sensors:
+[dallas.sensor]     0x3c0000031aa7c828
+[dallas.sensor]     0x3c0000031bc7b028
+[dallas.sensor]     0x3c0000031cc8d128
+</code></pre></div></p>
+<blockquote>
+<p>📌 地址只需获取一次，写入配置文件后即可断网独立运行。</p>
+</blockquote>
+<h3 id="32">3.2 基础单传感器配置</h3>
+<div class="highlight"><pre><span></span><code><span class="nt">esphome</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">esp32-ds18b20-single</span>
+<span class="w">  </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ESP32</span>
+<span class="w">  </span><span class="nt">board</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">esp32dev</span>
+
+<span class="nt">wifi</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ssid</span><span class="p">:</span><span class="w"> </span><span class="kt">!secret</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wifi_ssid</span>
+<span class="w">  </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="kt">!secret</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wifi_password</span>
+
+<span class="nt">api</span><span class="p">:</span>
+<span class="nt">ota</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">esphome</span>
+
+<span class="nt">logger</span><span class="p">:</span>
+
+<span class="nt">dallas</span><span class="p">:</span><span class="w">           </span><span class="c1"># OneWire 总线配置</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GPIO4</span><span class="w">    </span><span class="c1"># 指定 GPIO4，可改为任意 GPIO</span>
+
+<span class="nt">sensor</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dallas_temp</span>
+<span class="w">    </span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0x3c0000031aa7c828</span><span class="w">   </span><span class="c1"># 替换为实际地址</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;热水器温度&quot;</span><span class="w">             </span><span class="c1"># HA 中显示名称</span>
+<span class="w">    </span><span class="nt">unit_of_measurement</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;°C&quot;</span>
+<span class="w">    </span><span class="nt">accuracy_decimals</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w">         </span><span class="c1"># 显示一位小数</span>
+<span class="w">    </span><span class="nt">update_interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10s</span><span class="w">          </span><span class="c1"># 读取间隔，默认 60s</span>
+</code></pre></div>
+<h3 id="33">3.3 多传感器配置（推荐方式）</h3>
+<div class="highlight"><pre><span></span><code><span class="nt">esphome</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">esp32-ds18b20-multi</span>
+<span class="w">  </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ESP32</span>
+<span class="w">  </span><span class="nt">board</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">esp32dev</span>
+
+<span class="nt">wifi</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ssid</span><span class="p">:</span><span class="w"> </span><span class="kt">!secret</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wifi_ssid</span>
+<span class="w">  </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="kt">!secret</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wifi_password</span>
+
+<span class="nt">api</span><span class="p">:</span>
+<span class="nt">ota</span><span class="p">:</span>
+
+<span class="nt">logger</span><span class="p">:</span>
+
+<span class="nt">dallas</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GPIO4</span>
+
+<span class="nt">sensor</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># 传感器1：热水器进水</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dallas_temp</span>
+<span class="w">    </span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0x3c0000031aa7c828</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;热水器进水温度&quot;</span>
+<span class="w">    </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sensor_1</span>
+<span class="w">    </span><span class="nt">unit_of_measurement</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;°C&quot;</span>
+<span class="w">    </span><span class="nt">accuracy_decimals</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+
+<span class="w">  </span><span class="c1"># 传感器2：热水器出水</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dallas_temp</span>
+<span class="w">    </span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0x3c0000031bc7b028</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;热水器出水温度&quot;</span>
+<span class="w">    </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sensor_2</span>
+<span class="w">    </span><span class="nt">unit_of_measurement</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;°C&quot;</span>
+<span class="w">    </span><span class="nt">accuracy_decimals</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+
+<span class="w">  </span><span class="c1"># 传感器3：回水温度</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dallas_temp</span>
+<span class="w">    </span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0x3c0000031cc8d128</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;地暖回水温度&quot;</span>
+<span class="w">    </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sensor_3</span>
+<span class="w">    </span><span class="nt">unit_of_measurement</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;°C&quot;</span>
+<span class="w">    </span><span class="nt">accuracy_decimals</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</code></pre></div>
+<h3 id="34">3.4 多传感器按索引读取（无需地址，适用于不怕传感器顺序变化）</h3>
+<div class="highlight"><pre><span></span><code><span class="nt">sensor</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dallas_temp</span>
+<span class="w">    </span><span class="nt">index</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;传感器</span><span class="nv"> </span><span class="s">1&quot;</span>
+
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dallas_temp</span>
+<span class="w">    </span><span class="nt">index</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;传感器</span><span class="nv"> </span><span class="s">2&quot;</span>
+</code></pre></div>
+<blockquote>
+<p>⚠️ 索引方式简单但风险：如果传感器顺序变化，名称对应会错位。<strong>正式项目建议使用 address 指定</strong>。</p>
+</blockquote>
+<h3 id="35-mqtt">3.5 完整示例（含 MQTT 备用）</h3>
+<div class="highlight"><pre><span></span><code><span class="nt">esphome</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">esp32-ds18b20-full</span>
+<span class="w">  </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ESP32</span>
+<span class="w">  </span><span class="nt">board</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">esp32dev</span>
+
+<span class="nt">wifi</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ssid</span><span class="p">:</span><span class="w"> </span><span class="kt">!secret</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wifi_ssid</span>
+<span class="w">  </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="kt">!secret</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wifi_password</span>
+
+<span class="nt">api</span><span class="p">:</span>
+<span class="nt">ota</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">esphome</span>
+
+<span class="nt">logger</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">level</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DEBUG</span>
+
+<span class="nt">mqtt</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># MQTT 可选启用，与 api 二选一或共存</span>
+<span class="w">  </span><span class="nt">broker</span><span class="p">:</span><span class="w"> </span><span class="kt">!secret</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mqtt_broker</span>
+<span class="w">  </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="kt">!secret</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mqtt_user</span>
+<span class="w">  </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="kt">!secret</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mqtt_password</span>
+<span class="w">  </span><span class="nt">topic_prefix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">home/boiler/ds18b20</span>
+<span class="w">  </span><span class="nt">on_message</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">topic</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">home/boiler/ds18b20/set</span>
+<span class="w">      </span><span class="nt">then</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">sensor.template.publish</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">temp_sensor</span>
+<span class="w">            </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="kt">!lambda</span><span class="w"> </span><span class="s">&#39;return</span><span class="nv"> </span><span class="s">x;&#39;</span>
+
+<span class="nt">dallas</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GPIO4</span>
+
+<span class="nt">sensor</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dallas_temp</span>
+<span class="w">    </span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0x3c0000031aa7c828</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;热水器温度&quot;</span>
+<span class="w">    </span><span class="nt">unit_of_measurement</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;°C&quot;</span>
+<span class="w">    </span><span class="nt">accuracy_decimals</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">    </span><span class="nt">update_interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5s</span>
+<span class="w">    </span><span class="nt">filters</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">sliding_window_moving_average</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">window_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<span class="w">          </span><span class="nt">send_every</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dallas_temp</span>
+<span class="w">    </span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0x3c0000031bc7b028</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;回水温度&quot;</span>
+<span class="w">    </span><span class="nt">unit_of_measurement</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;°C&quot;</span>
+<span class="w">    </span><span class="nt">accuracy_decimals</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">    </span><span class="nt">update_interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5s</span>
+<span class="w">    </span><span class="nt">filters</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">sliding_window_moving_average</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">window_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<span class="w">          </span><span class="nt">send_every</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+
+<span class="c1"># 传感器模板（供 MQTT 自动化使用）</span>
+<span class="nt">sensor</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">template</span>
+<span class="w">    </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">temp_sensor</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;MQTT</span><span class="nv"> </span><span class="s">模板温度&quot;</span>
+<span class="w">    </span><span class="nt">unit_of_measurement</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;°C&quot;</span>
+</code></pre></div>
+<hr />
+<h2 id="4-mqtt-vs-esphome">4. MQTT 集成 vs ESPHome 原生集成</h2>
+<h3 id="41">4.1 对比一览</h3>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>ESPHome 原生 API</th>
+<th>MQTT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>配置复杂度</strong></td>
+<td>✅ 极简，零配置自动发现</td>
+<td>❌ 需要 broker、topic、payload 配置</td>
+</tr>
+<tr>
+<td><strong>自动发现</strong></td>
+<td>✅ Home Assistant 自动识别实体</td>
+<td>❌ 需要手动配置 MQTT sensor</td>
+</tr>
+<tr>
+<td><strong>双向通信</strong></td>
+<td>✅ ESP→HA + HA→ESP 双向均支持</td>
+<td>⚠️ 仅单向推送，可订阅主题</td>
+</tr>
+<tr>
+<td><strong>固件更新</strong></td>
+<td>✅ OTA 无缝，支持 API 调用 HA 操作</td>
+<td>❌ OTA 需单独配置</td>
+</tr>
+<tr>
+<td><strong>稳定性</strong></td>
+<td>✅ ESPHome 团队直接维护协议</td>
+<td>✅ MQTT broker 稳定性决定</td>
+</tr>
+<tr>
+<td><strong>外接兼容性</strong></td>
+<td>❌ 只能与 Home Assistant 通信</td>
+<td>✅ 可同时接入其他系统（Node-RED等）</td>
+</tr>
+<tr>
+<td><strong>网络依赖</strong></td>
+<td>需要 Home Assistant 在线</td>
+<td>离线缓冲（QOS 1/2）</td>
+</tr>
+<tr>
+<td><strong>适用场景</strong></td>
+<td>家庭私有部署，HA 作为唯一控制器</td>
+<td>多平台集成、公有云、工业采集</td>
+</tr>
+</tbody>
+</table>
+<h3 id="42">4.2 推荐方案</h3>
+<div class="highlight"><pre><span></span><code>日常家庭使用 → 选择 ESPHome 原生 API ✅
+需要接 Node-RED / 第三方平台 → MQTT
+双保险方案 → API + MQTT 同时启用（配置更复杂）
+</code></pre></div>
+<h3 id="43-mqtt-esphome">4.3 MQTT 集成示例（ESPHome 发布端）</h3>
+<p><strong>ESPHome YAML（发布）：</strong>
+<div class="highlight"><pre><span></span><code><span class="nt">mqtt</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">broker</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.1.100</span>
+<span class="w">  </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1883</span>
+<span class="w">  </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mqtt_user</span>
+<span class="w">  </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mqtt_pass</span>
+<span class="w">  </span><span class="nt">topic_prefix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">home/boiler</span>
+
+<span class="nt">sensor</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dallas_temp</span>
+<span class="w">    </span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0x3c0000031aa7c828</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Boiler</span><span class="nv"> </span><span class="s">Temperature&quot;</span>
+<span class="w">  </span><span class="w w-Error"> </span><span class="nt">MQTT</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">state_topic</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;home/boiler/temperature&quot;</span>
+<span class="w">      </span><span class="nt">value_template</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">value</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="nt">unit_of_measurement</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;°C&quot;</span>
+</code></pre></div></p>
+<p><strong>Home Assistant MQTT Sensor 配置：</strong>
+<div class="highlight"><pre><span></span><code><span class="nt">mqtt</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">sensor</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;热水器温度</span><span class="nv"> </span><span class="s">(MQTT)&quot;</span>
+<span class="w">      </span><span class="nt">state_topic</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;home/boiler/temperature&quot;</span>
+<span class="w">      </span><span class="nt">unit_of_measurement</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;°C&quot;</span>
+<span class="w">      </span><span class="nt">device_class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">temperature</span>
+<span class="w">      </span><span class="nt">value_template</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">value</span><span class="nv"> </span><span class="s">}}&quot;</span>
+</code></pre></div></p>
+<hr />
+<h2 id="5-home-assistant">5. Home Assistant 配置</h2>
+<h3 id="51-esphome-api">5.1 ESPHome 原生 API 自动发现</h3>
+<p><strong>无需任何配置！</strong> 刷写后，Home Assistant 自动发现设备：</p>
+<ol>
+<li>安装 ESPHome 插件（在 Home Assistant → 设置 → 插件）</li>
+<li>添加 ESPHome 设备（设置 → 设备与服务 → 添加集成 → ESPHome）</li>
+<li>输入 ESP32 的 IP 地址或主机名</li>
+<li>输入 API 密码（如设置了）</li>
+<li>✅ 自动发现所有传感器实体</li>
+</ol>
+<h3 id="52-mqtt">5.2 MQTT 手动配置</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># configuration.yaml</span>
+<span class="nt">mqtt</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">sensor</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;热水器温度&quot;</span>
+<span class="w">      </span><span class="nt">state_topic</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;home/boiler/ds18b20&quot;</span>
+<span class="w">      </span><span class="nt">unit_of_measurement</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;°C&quot;</span>
+<span class="w">      </span><span class="nt">device_class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">temperature</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;地暖回水温度&quot;</span>
+<span class="w">      </span><span class="nt">state_topic</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;home/boiler/ds18b20_return&quot;</span>
+<span class="w">      </span><span class="nt">unit_of_measurement</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;°C&quot;</span>
+<span class="w">      </span><span class="nt">device_class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">temperature</span>
+</code></pre></div>
+<h3 id="53-ui">5.3 温度监控 UI 卡片配置</h3>
+<p><strong>方式一：实体卡片（快速）</strong></p>
+<p>在仪表板添加「单体实体」卡片，绑定对应的温度传感器实体。</p>
+<p><strong>方式二：Markdown 卡片（精美）</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">markdown</span>
+<span class="nt">content</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">  </span><span class="no"># 🌡️ 温度监控</span>
+
+<span class="w">  </span><span class="no">| 位置 | 当前温度 | 状态 |</span>
+<span class="w">  </span><span class="no">|:-----|:-------:|:----:|</span>
+<span class="w">  </span><span class="no">| 热水器 | {{ states(&#39;sensor.boiler_temperature&#39;) }}°C | 🔴 正常 |</span>
+<span class="w">  </span><span class="no">| 回水温度 | {{ states(&#39;sensor.return_temperature&#39;) }}°C | 🟡 偏低 |</span>
+<span class="w">  </span><span class="no">| 室内 | {{ states(&#39;sensor.indoor_temperature&#39;) }}°C | 🟢 舒适 |</span>
+</code></pre></div>
+<p><strong>方式三：Gauge 卡片（可视化）</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gauge</span>
+<span class="nt">entity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sensor.boiler_temperature</span>
+<span class="nt">min</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="nt">max</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
+<span class="nt">unit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">°C</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">热水器温度</span>
+<span class="nt">severity</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">green</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">40</span>
+<span class="w">  </span><span class="nt">yellow</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">70</span>
+<span class="w">  </span><span class="nt">red</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">85</span>
+</code></pre></div>
+<p><strong>方式四：迷你图卡（历史趋势）</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">custom:mini-graph-card</span>
+<span class="nt">entities</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">entity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sensor.boiler_temperature</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">热水器</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">entity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sensor.return_temperature</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">回水</span>
+<span class="nt">hours_to_show</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24</span>
+<span class="nt">points_per_hour</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6</span>
+<span class="nt">line_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+</code></pre></div>
+<blockquote>
+<p>💡 推荐安装 <strong>HACS</strong> 后在社区商店安装 <code>mini-graph-card</code> 插件。</p>
+</blockquote>
+<hr />
+<h2 id="6">6. 实用场景</h2>
+<h3 id="61">6.1 热水器监测</h3>
+<p><strong>目标：</strong> 监测热水器内部水温，防止烫伤或冻裂</p>
+<p><strong>配置要点：</strong>
+- 温度范围设定：建议 0°C~95°C
+- 更新间隔：5s~10s（热水器周边环境温度变化快）
+- 阈值告警：&gt;80°C 推送通知</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># ESPHome 告警 filter</span>
+<span class="nt">sensor</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dallas_temp</span>
+<span class="w">    </span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0x3c0000031aa7c828</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;热水器温度&quot;</span>
+<span class="w">    </span><span class="nt">unit_of_measurement</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;°C&quot;</span>
+<span class="w">    </span><span class="nt">filters</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">multiply</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
+<span class="w">    </span><span class="nt">on_value_range</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">above</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+<span class="w">      </span><span class="nt">then</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">mqtt.publish</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">topic</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">home/boiler/alert</span>
+<span class="w">            </span><span class="nt">payload</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;热水器温度超80°C！&quot;</span>
+</code></pre></div>
+<h3 id="62">6.2 地暖回水温度</h3>
+<p><strong>目标：</strong> 判断地暖是否正常运行，回水温度过低说明管道堵塞或热源不足</p>
+<p><strong>参考值：</strong>
+| 回水温度 | 含义 |
+|---------|------|
+| 35°C~45°C | 正常 |
+| &lt;30°C | 可能管道堵塞或热源不足 |
+| &gt;50°C | 流量过大，热量未充分交换 |</p>
+<p><strong>配置要点：</strong>
+- 安装位置：地暖分集水器回水口
+- 可配合温差计算（进水-回水）判断流量
+- 更新间隔：30s~60s（温度变化缓慢）</p>
+<h3 id="63">6.3 水族箱 / 鱼缸</h3>
+<p><strong>目标：</strong> 监测水温，防止水温骤变导致鱼虾死亡</p>
+<p><strong>参考值：</strong>
+| 鱼种 | 适宜温度 |
+|------|---------|
+| 热带鱼 | 24°C~28°C |
+| 冷水鱼（金鱼等）| 18°C~22°C |
+| 海水缸 | 25°C~27°C |</p>
+<p><strong>配置要点：</strong>
+- 选用水密防水探头（DS18B20 防水版天然适合）
+- 告警阈值：±2°C 偏离适宜区间
+- 建议使用 ESP32-C3（低功耗，可电池供电做备用监测）</p>
+<h3 id="64">6.4 冷链监测</h3>
+<p><strong>目标：</strong> 监测冰箱、冷库、药品冷藏柜温度</p>
+<p><strong>参考值：</strong>
+| 场景 | 正常范围 |
+|------|---------|
+| 普通冰箱 | 2°C~8°C |
+| 冷冻柜 | -25°C~-18°C |
+| 药品冷藏 | 2°C~6°C |</p>
+<p><strong>配置要点：</strong>
+- DS18B20 测温范围 -55°C~125°C，完美覆盖
+- 长线延长可达 100m（使用 Cat5/Cat6 网线）
+- 长线建议：降低上拉电阻至 2.2kΩ，5V 供电
+- 告警：温度超范围立即推送（配合 Home Assistant 自动化）</p>
+<hr />
+<h2 id="7">7. 常见问题排查</h2>
+<h3 id="q1-5c">Q1: 读数不稳定，跳动剧烈（±5°C 以上）</h3>
+<p><strong>排查步骤：</strong></p>
+<ol>
+<li><strong>检查上拉电阻</strong></li>
+<li>是否连接？阻值是否为 4.7kΩ？</li>
+<li>
+<p>长线（&gt;5m）尝试换用 2.2kΩ~3.3kΩ</p>
+</li>
+<li>
+<p><strong>检查供电</strong></p>
+</li>
+<li>ESP32 的 3.3V 输出能力有限，多传感器同时转换时可能电压跌落</li>
+<li>
+<p>改用 5V 供电 DS18B20，ESP32 仍通过 GPIO 读取（1-Wire 信号兼容 3.3V）</p>
+</li>
+<li>
+<p><strong>检查线缆质量</strong></p>
+</li>
+<li>避免使用超长劣质线</li>
+<li>
+<p>建议使用带屏蔽层的双绞线或网线</p>
+</li>
+<li>
+<p><strong>添加软件滤波</strong>
+   <div class="highlight"><pre><span></span><code><span class="nt">sensor</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dallas_temp</span>
+<span class="w">    </span><span class="c1"># ...</span>
+<span class="w">    </span><span class="nt">filters</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">sliding_window_moving_average</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">window_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
+<span class="w">          </span><span class="nt">send_every</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>检查传感器真假</strong></p>
+</li>
+<li>假冒传感器地址通常为 <code>0x0000000000000000</code> 或 <code>0xFFFFFFFFFFFFFFFF</code></li>
+<li>读取误差在 2°C 以外的传感器极可能为假货</li>
+</ol>
+<h3 id="q2-8">Q2: 只能读到部分传感器（超过 8 个时）</h3>
+<ul>
+<li>ESP32 1-Wire 总线驱动默认缓冲区有限</li>
+<li>尝试在 <code>dallas</code> 配置中增加 <code>timeout</code> 参数</li>
+<li>将传感器分组到不同 GPIO（每个 GPIO 独立总线）</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nt">dallas</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GPIO4</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GPIO15</span>
+</code></pre></div>
+<h3 id="q3">Q3: 部分传感器完全读不到数据</h3>
+<ol>
+<li><strong>逐一排查</strong>：临时只接一个传感器，确认每个硬件正常工作</li>
+<li><strong>检查接线</strong>：确认 DATA 线没有与 GND 短路</li>
+<li><strong>确认地址正确</strong>：日志中的地址不要有误</li>
+<li><strong>尝试不同 GPIO</strong>：GPIO4 损坏时换用 GPIO21 等</li>
+</ol>
+<h3 id="q4-esphome-too-many-devices-on-bus">Q4: ESPHome 日志显示 "Too many devices on bus"</h3>
+<ul>
+<li>表示总线有冲突，可能是两根 DATA 线意外短接</li>
+<li>检查杜邦线连接是否松动</li>
+<li>检查是否有多个电阻并联（只需要一个）</li>
+</ul>
+<h3 id="q5-home-assistant-esphome">Q5: 设备离线（Home Assistant 中 ESPHome 实体消失）</h3>
+<ol>
+<li>检查 ESP32 供电（USB 断电或电源不足）</li>
+<li>检查 WiFi 信号强度（尝试靠近路由器测试）</li>
+<li>检查固件 OTA 更新是否失败</li>
+<li>重启 ESP32（手动断电再上电）</li>
+</ol>
+<h3 id="q6">Q6: 传感器地址丢失（每次重启地址变化）</h3>
+<ul>
+<li>正常情况下 DS18B20 的 64-bit ROM 地址是<strong>固定的</strong></li>
+<li>若地址变化，检查是否同时读到了其他 1-Wire 设备（如 DS18B20 以外）</li>
+<li>某些克隆芯片地址不稳定，需更换正品</li>
+</ul>
+<h3 id="q7-20m">Q7: 长距离布线（&gt;20m）读数异常</h3>
+<p><strong>解决方案：</strong>
+| 方法 | 实施难度 | 效果 |
+|------|---------|------|
+| 降低上拉电阻至 2.2kΩ | ⭐ 简单 | 中等改善 |
+| 使用 5V 供电 | ⭐ 简单 | 明显改善 |
+| 使用带供电的 RS485 1-Wire 中继器 | ⭐⭐⭐ 专业 | 最佳效果 |
+| 使用双绞屏蔽线（Cat5e）| ⭐⭐ 中等 | 明显改善 |
+| 缩短总线长度 | ⭐ 简单 | 彻底解决 |</p>
+<hr />
+<h2 id="_2">快速参考卡</h2>
+<div class="highlight"><pre><span></span><code>硬件接线（单传感器）：
+  ESP32 3.3V  ──── 红线(VCC)
+  ESP32 GPIO4 ──[4.7kΩ]── 蓝线(DATA) ─── DS18B20 DQ
+  ESP32 GND   ──── 黑线(GND)
+
+多传感器：所有 DATA 线并联到 GPIO4，只用 1 个电阻
+
+ESPHome 最小配置：
+  dallas:
+    - pin: GPIO4
+  sensor:
+    - platform: dallas_temp
+      address: &lt;实测地址&gt;
+
+自动发现：
+  ESPHome 原生 API = 刷写即用，零配置
+  MQTT = 需要 broker + 手动配置 sensor
+
+长线方案：
+  5V 供电 + 2.2kΩ 上拉 + Cat5 网线 → 可达 100m
+</code></pre></div>
+<hr />
+<p><em>整理自 esp32.co.uk · ESPHome 官方文档 · 社区实战经验</em>
+<em>最后更新：2026-04</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.expand", "search.suggest", "search.highlight", "content.tabs.link", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

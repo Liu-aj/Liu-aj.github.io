@@ -1,0 +1,62 @@
+site_name: Liuaj's Wiki
+site_description: 技术沉淀，持续精进
+site_url: https://liu-aj.github.io/
+
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: deep orange
+      accent: orange
+      toggle:
+        icon: material/brightness-7
+        name: 切换夜间模式
+    - scheme: slate
+      primary: deep orange
+      accent: orange
+      toggle:
+        icon: material/brightness-4
+        name: 切换白天模式
+
+plugins:
+  - search:
+      prebuild_index: true
+  - blog:
+      blog_path: blog
+      navigation_depth: 2
+      archive: true
+      tags: true
+      categories: true
+
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+  - tables
+  - tables
+  - attr_list
+  - md_in_html
+
+nav:
+  - 首页: index.md
+  - 文档:
+      - ESP32 Matter协议开发: docs/esp32-matter-guide.md
+      - ESP32 家族选型指南2026: docs/esp32-family-2026.md
+      - ESP32 SSD1306 OLED显示: docs/esp32-ssd1306-oled.md
+      - ESP32 电机控制: docs/esp32-motor-control-guide.md
+      - ESP32 DS18B20+HA: docs/esp32-ds18b20-home-assistant-guide.md
+      - HA 仪表盘主题美化2026: docs/ha-dashboard-theme-2026.md
+      - HA 蓝牙Beacon室内定位: docs/ha-ble-beacon-location.md
+      - 拓竹A1 支撑结构优化: docs/bambu-a1-support-optimization.md
+      - Zigbee2MQTT设备与网络优化: docs/zigbee2mqtt-guide-2026.md
