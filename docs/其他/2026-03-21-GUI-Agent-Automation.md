@@ -45,7 +45,7 @@ async def main():
     print(f"结果：{result}")
 
 asyncio.run(main())
-```
+```python
 
 > **推荐**：Browser Use 官方提供 `ChatBrowserUse()` 模型，针对浏览器任务优化，速度提升 3-5 倍。新用户可获得 5 次免费任务。
 > 
@@ -148,7 +148,7 @@ services:
     image: mcp/playwright:latest
     ports:
       - "3000:3000"
-```
+```python
 
 ### 4.3 使用 Playwright MCP
 
@@ -258,7 +258,7 @@ def get_credential(key: str) -> str:
         client = boto3.client('secretsmanager')
         value = client.get_secret_value(SecretId=key)['SecretString']
     return value
-```
+```python
 
 ### 6.2 性能优化
 

@@ -75,7 +75,7 @@ docker run -d --name ollama \
   -v ollama_data:/root/.ollama \
   -p 11434:11434 \
   ollama/ollama:latest
-```
+```bash
 
 ### 3.2 下载和运行模型
 
@@ -579,7 +579,7 @@ python rag_agent.py
 3. 事假：需提前 3 天申请，经部门主管批准
 
 来源: docs/员工手册.pdf, docs/请假制度.md
-```
+```bash
 
 ---
 
@@ -781,7 +781,7 @@ iptables -A INPUT -p tcp --dport 11434 -j DROP
 
 # 保存规则
 iptables-save > /etc/iptables/rules.v4
-```
+```bash
 
 #### Ollama 服务配置
 
@@ -971,7 +971,7 @@ if __name__ == "__main__":
 │   • 简单任务本地完成，成本低                             │
 │   • 复杂任务云端支援，效果好                             │
 └─────────────────────────────────────────────────────────┘
-```
+```python
 
 ### 8.2 多模态本地推理
 

@@ -175,7 +175,7 @@ display(Image(app.get_graph().draw_mermaid_png()))
 ┌─────────┐
 │ 执行订票 │
 └─────────┘
-```
+```python
 
 ### 3.2 完整实现
 
@@ -424,7 +424,7 @@ async def main():
     print(result["final_summary"])
 
 asyncio.run(main())
-```
+```python
 
 ### 4.3 性能对比
 
@@ -523,7 +523,7 @@ app.invoke(
     Command(resume="approve"),
     {"thread_id": "approval-001"}
 )
-```
+```python
 
 ---
 

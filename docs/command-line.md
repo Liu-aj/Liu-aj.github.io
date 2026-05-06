@@ -46,7 +46,7 @@ cat file | wc -l
 
 # 去重统计
 cat access.log | awk '{print $7}' | sort | uniq -c | sort -rn | head -10
-```
+```bash
 
 ## 环境变量
 

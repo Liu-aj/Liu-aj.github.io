@@ -220,7 +220,7 @@ response = ai_gateway.call(
         }
     }
 )
-```
+```python
 
 ## 插件开发最佳实践
 
@@ -306,7 +306,7 @@ async def check_permission(doc_token: str, user_id: str, required_perm: str):
         raise PermissionDeniedError(
             f"需要 {required_perm} 权限，当前仅有 {perms.get('perm')} 权限"
         )
-```
+```python
 
 ## 实际案例：AI 驱动的周报自动化
 

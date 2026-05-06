@@ -30,7 +30,7 @@ class Factory:
             return ProductA()
         elif type == 'B':
             return ProductB()
-```
+```python
 
 ## 观察者模式
 

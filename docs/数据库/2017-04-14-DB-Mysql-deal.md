@@ -61,7 +61,7 @@ INNER JOIN
 -- 在MySQL 8.0中，可以使用以下视图更直观地查看锁信息
 -- SELECT * FROM performance_schema.data_locks;
 -- SELECT * FROM performance_schema.data_lock_waits;
-```
+```sql
 
 ## 2. 性能优化问题
 
@@ -161,7 +161,7 @@ ALTER TABLE users ENGINE=InnoDB;
 
 -- 检查表碎片
 SHOW TABLE STATUS LIKE 'users';
-```
+```sql
 
 ## 4. 连接数与内存问题
 
@@ -282,7 +282,7 @@ mysqlbinlog --start-datetime="2023-01-01 00:00:00" --stop-datetime="2023-01-02 0
 # 5. 应用二进制日志到误操作前的状态
 # 6. 验证数据完整性
 # 7. 逐步恢复服务```
-```
+```sql
 
 ## 6. 主从复制问题
 
@@ -484,7 +484,7 @@ mysql_upgrade -u root -p
 
 # 6. 验证数据库完整性
 mysql -u root -p -e "SHOW DATABASES;"
-```
+```sql
 
 # 7. 测试应用连接和功能
 

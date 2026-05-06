@@ -36,7 +36,7 @@ echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable
 sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
 sudo apt update
 sudo apt install -y eza
-```
+```bash
 
 **Arch Linux**
 ```bash
@@ -155,7 +155,7 @@ eza -l --mounts
 **macOS (Homebrew)**
 ```bash
 brew install fd
-```
+```bash
 
 **Ubuntu/Debian**
 ```bash
@@ -286,7 +286,7 @@ sudo apt install ripgrep
 **Arch Linux**
 ```bash
 sudo pacman -S ripgrep
-```
+```bash
 
 **Fedora**
 ```bash
@@ -296,7 +296,7 @@ sudo dnf install ripgrep
 **通用方式 (Cargo)**
 ```bash
 cargo install ripgrep
-```
+```bash
 
 ### 常用配置
 
@@ -385,7 +385,7 @@ rg --column pattern
 
 # 使用自动混合正则引擎
 rg --auto-hybrid-regex pattern
-```
+```bash
 
 ---
 
@@ -422,7 +422,7 @@ sudo pacman -S btop
 **Fedora**
 ```bash
 sudo dnf install btop
-```
+```bash
 
 **从源码编译（启用 GPU 支持）**
 ```bash
@@ -499,7 +499,7 @@ btop --config /path/to/config
 
 # 仅监控 CPU 和内存
 btop --boxes cpu mem
-```
+```bash
 
 ---
 

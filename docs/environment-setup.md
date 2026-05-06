@@ -36,7 +36,7 @@ nvm use 20
 
 # npm 镜像
 npm config set registry https://registry.npmmirror.com
-```
+```bash
 
 ## Go
 

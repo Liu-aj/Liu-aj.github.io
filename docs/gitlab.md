@@ -39,7 +39,7 @@ build:
     - docker:dind
   script:
     - docker build -t myapp .
-```
+```bash
 
 ## GitLab Runner
 

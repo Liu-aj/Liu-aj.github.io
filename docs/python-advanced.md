@@ -43,7 +43,7 @@ class Database:
 
 with Database() as conn:
     conn.execute("SELECT * FROM users")
-```
+```python
 
 ## 异步编程
 

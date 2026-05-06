@@ -39,7 +39,7 @@ sudo systemctl start ssh
 
 # 更改密码
 passwd pi
-```
+```bash
 
 ## 常用配置
 

@@ -112,7 +112,7 @@ DELIMITER ;
 
 -- 调用函数
 SELECT capitalize_first('hello world'); -- 返回 'Hello world'
-```
+```sql
 
 ### 3. 日期处理函数示例
 

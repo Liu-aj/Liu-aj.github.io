@@ -34,7 +34,7 @@ data = json.loads('{"name": "John"}')
 
 # 序列化
 json_str = json.dumps(data, indent=2)
-```
+```python
 
 ## YAML
 

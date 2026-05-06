@@ -122,7 +122,7 @@ RSSI 值参考：
        - name: "我的钥匙"
          uuid: "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
          min_rssi: -85
-   ```
+```
 
 **优缺点**：
 - ✅ 配置简单，HA 官方支持思路
@@ -155,14 +155,14 @@ RSSI 值参考：
      - platform: ble_presence
        mac_address: "XX:XX:XX:XX:XX:XX"
        name: "Key Tracker"
-   ```
+```
 
 3. **MQTT 配置**
    ```yaml
    mqtt:
      broker: 192.168.1.x
      topic_prefix: espresense
-   ```
+```
 
 **ESPresense 特点**：
 - 支持多房间同时检测（通过 MQTT 主题区分）

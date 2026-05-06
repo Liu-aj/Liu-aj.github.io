@@ -61,7 +61,7 @@ provider.add_span_processor(processor)
 trace.set_tracer_provider(provider)
 
 tracer = trace.get_tracer("ai-agent")
-```
+```python
 
 ---
 
@@ -152,7 +152,7 @@ def select_tool(user_query: str, available_tools: list) -> str:
         selected = parse_decision(decision)
         span.set_attribute("tool.selected", selected)
         return selected
-```
+```python
 
 ---
 
@@ -217,7 +217,7 @@ def check_hallucination(response: str, sources: list) -> bool:
 
 - alert: LowMemoryHitRate
   expr: rate(memory_hit[1h]) / (rate(memory_hit[1h]) + rate(memory_miss[1h])) < 0.3
-```
+```python
 
 ---
 

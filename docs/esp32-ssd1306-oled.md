@@ -54,7 +54,7 @@ description: ESP32开发指南
 
 ### 2.2 常用 MicroPython 库
 
-```
+```python
 # 方法1：通过 mip 安装（联网情况下）
 import mip
 mip.install("ssd1306")
@@ -113,7 +113,7 @@ for x in range(128):
     display.text("Scroll", -x, 0)
     display.show()
     utime.sleep(0.05)
-```
+```python
 
 ---
 description: ESP32开发指南
@@ -239,7 +239,7 @@ machine.deepsleep(10000)  # 毫秒
 # 或使用定时唤醒
 # machine.wake_on_touch_wakeup()
 # machine.wake_on_timer_wakeup(10000)
-```
+```python
 
 **进阶**：配合 RTC 内存实现唤醒后数据恢复
 

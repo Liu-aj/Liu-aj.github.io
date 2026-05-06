@@ -78,7 +78,7 @@ cargo install wasm-pack
 # 创建项目
 cargo new --lib wasm-demo
 cd wasm-demo
-```
+```javascript
 
 ### 基础示例：计算密集型任务
 
@@ -125,7 +125,7 @@ wasm-pack build --target web
 
 # 编译纯 Wasm（无 JS 绑定）
 cargo build --target wasm32-unknown-unknown --release
-```
+```bash
 
 ### 复杂示例：图像处理模块
 
@@ -380,7 +380,7 @@ impl PluginManager {
         Ok(PluginInstance { instance, name, execute })
     }
 }
-```
+```javascript
 
 **优势**：
 - 插件崩溃不影响主程序
@@ -463,7 +463,7 @@ fn calculate_comfort_index(temp: f32, humidity: f32) -> f32 {
 cargo build --target wasm32-unknown-unknown --release
 wasm-opt -Oz target/wasm32-unknown-unknown/release/edge_function.wasm \
     -o edge_function_optimized.wasm
-```
+```javascript
 
 ### 案例三：图像处理微服务
 
@@ -637,7 +637,7 @@ spec:
   - name: wasm-app
     image: wasm_image:v1
     runtimeClassName: wasmedge
-```
+```javascript
 
 **特点**：
 
@@ -730,7 +730,7 @@ impl Buffer {
         unsafe { std::slice::from_raw_parts(self.ptr, self.len) }
     }
 }
-```
+```javascript
 
 ### 异步处理
 

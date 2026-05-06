@@ -152,7 +152,7 @@ for (var i = 0; i < maxLoops; i++) {
 
 **Step 2: 配置数据源**
 以"表输入"为例：
-```
+```sql
 步骤名称：表输入
 数据库连接：选择已配置的数据源
 SQL：
@@ -453,7 +453,7 @@ putRow(result);
 [转换_获取MySQL数据] ──┐
 [转换_获取Oracle数据] ──┼──> [转换_数据合并去重] ──> [转换_写入仓库] ──> [成功]
 [转换_获取PG数据]    ──┘
-```
+```sql
 
 **2. 转换_获取MySQL数据：**
 ```sql
@@ -642,7 +642,7 @@ putRow(result);
   异常订单数：${ERROR_COUNT}
   异常时间：${CURRENT_DATE}
   请登录系统查看详细异常数据
-```
+```sql
 
 ---
 
@@ -675,7 +675,7 @@ SELECT id, name, status FROM source_table WHERE status = 'PENDING'
    - 配合"ABORT"作业项在达到条件时终止循环
 
 **示例作业流程：**
-```
+```python
 [Start] → [表输入_获取数据] → [设置变量] → [复制行到结果]
                                       ↓
                               [检查表是否存在] ← (循环条件)
@@ -765,7 +765,7 @@ FROM users
 WHERE created_at >= '${START_DATE}'
   AND created_at < '${END_DATE}'
 ORDER BY created_at DESC
-```
+```sql
 
 #### 2. 表输入 - 参数化查询（使用占位符）
 ```sql
@@ -1175,7 +1175,7 @@ useCompression：true
 
 在"表输出"步骤的数据库连接中，添加以下参数：
 
-```
+```bash
 (1) 读取配置
 defaultFetchSize：5000
 
@@ -1237,7 +1237,7 @@ export PENTAHO_DI_JAVA_OPTIONS="-Xmx4096m -Xms1024m"
 4. **监控分析**：使用Spoon的预览和日志功能定位瓶颈
 
 ## 6.Java调用
-```
+```python
 import org.pentaho.di.job.Job;
 import org.pentaho.di.job.JobMeta;
 

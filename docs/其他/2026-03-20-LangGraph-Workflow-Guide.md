@@ -72,7 +72,7 @@ workflow.add_conditional_edges(
     "confirm",
     lambda s: END if s["user_satisfied"] else "retrieve"
 )
-```
+```python
 
 对比显而易见：
 
@@ -187,7 +187,7 @@ workflow.add_conditional_edges(
         "clarify_node": "clarify_node"
     }
 )
-```
+```python
 
 #### 2.3.3 循环边
 
@@ -333,7 +333,7 @@ print(result["messages"][-1].content)
 
 ### 3.3 执行流程可视化
 
-```
+```python
 ┌─────────┐
 │  START  │
 └────┬────┘
@@ -703,7 +703,7 @@ aggregate:                         ████ (汇总)
 
 总耗时 ≈ max(2, 3, 2.5) = 3s（并行）
 而非 2 + 3 + 2.5 = 7.5s（串行）
-```
+```python
 
 ---
 

@@ -49,7 +49,7 @@ public class MyRunnable implements Runnable {
         thread.start();
     }
 }
-```
+```python
 
 **优点**：避免了单继承的限制，可以同时实现其他接口
 
@@ -183,7 +183,7 @@ public void interruptibleLock() throws InterruptedException {
         }
     }
 }
-```
+```python
 
 **ReentrantLock vs synchronized**：
 - ReentrantLock提供了更灵活的锁定机制
@@ -316,7 +316,7 @@ for (int i = 0; i < 3; i++) {
         }
     }).start();
 }
-```
+```python
 
 **CyclicBarrier vs CountDownLatch**：
 - CyclicBarrier可以重用，CountDownLatch不能
@@ -427,7 +427,7 @@ list.add("element2");
 for (String element : list) {
     System.out.println(element);
 }
-```
+```python
 
 ### 3. BlockingQueue
 

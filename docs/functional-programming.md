@@ -27,7 +27,7 @@ const process = compose(
     filter(x => x > 0),
     map(x => x * 2)
 );
-```
+```python
 
 ## Python
 

@@ -63,7 +63,7 @@ String startTime = dealTime + " 00:00:00";
 String endTime = dealTime + " 23:59:59";
 map.put("startTime", startTime);
 map.put("endTime", endTime);```
-```
+```sql
 
 然后在XML中使用参数绑定：
 
@@ -109,7 +109,7 @@ SELECT * FROM tableName t WHERE t.a LIKE #{a};```
 ```xml
 <!-- 使用concat函数拼接百分号 -->
 SELECT * FROM tableName t WHERE t.a LIKE CONCAT('%', #{a}, '%');```
-```
+```sql
 
 **方式四：使用bind标签创建新变量（推荐）**
 ```xml
@@ -196,7 +196,7 @@ MyBatis实现分页查询的常用方法：
     ORDER BY create_time DESC
     LIMIT #{startRow}, #{pageSize}
 </select>```
-```
+```python
 
 **注意**：对于复杂场景，建议使用分页插件如PageHelper来简化分页实现。
 
@@ -370,7 +370,7 @@ public class LoggingPlugin implements Interceptor {
         <property name="logLevel" value="DEBUG"/>
     </plugin>
 </plugins>
-```
+```python
 
 ## 5. MyBatis与Spring集成
 

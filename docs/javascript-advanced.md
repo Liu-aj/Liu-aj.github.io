@@ -34,7 +34,7 @@ const [first, second] = array;
 
 // 默认值
 const { name = 'Anonymous' } = user;
-```
+```javascript
 
 ## 展开运算符
 

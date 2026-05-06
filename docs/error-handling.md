@@ -35,7 +35,7 @@ try {
 } finally {
     cleanup();
 }
-```
+```javascript
 
 ## HTTP 错误处理
 

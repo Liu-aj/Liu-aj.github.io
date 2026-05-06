@@ -37,7 +37,7 @@ sudo mount /dev/sdb1 /mnt/data
 
 # 卸载
 sudo umount /mnt/data
-```
+```bash
 
 ## 服务管理
 

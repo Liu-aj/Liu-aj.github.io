@@ -40,7 +40,7 @@ test('fetch data', async () => {
     const data = await fetchData();
     expect(data).toHaveProperty('id');
 });
-```
+```javascript
 
 ## Mock
 

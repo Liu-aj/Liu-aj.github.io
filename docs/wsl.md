@@ -17,7 +17,7 @@ wsl --install
 
 # 重启电脑后
 wsl --install -d Ubuntu
-```
+```bash
 
 ## 基本使用
 

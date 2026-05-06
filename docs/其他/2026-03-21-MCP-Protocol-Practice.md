@@ -121,7 +121,7 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
-```
+```python
 
 ### 工具版本管理
 
@@ -207,7 +207,7 @@ async def safe_call_tool(client, tool_name: str, arguments: dict, min_version: s
     if await check_tool_compatibility(client, tool_name, min_version):
         return await client.call_tool(tool_name, arguments)
     return {"error": "工具版本不兼容"}
-```
+```python
 
 ### 处理工具响应
 
@@ -312,7 +312,7 @@ class PermissionMiddleware:
             return False, f"用户 {user_id} 无权访问"
         
         return True, "OK"
-```
+```python
 
 ### 多 Server 联邦
 
@@ -490,7 +490,7 @@ services:
 │                                    │                        │
 │  企业 B：AI Agent ◄────────────────┘                        │
 └─────────────────────────────────────────────────────────────┘
-```
+```javascript
 
 ### MCP + A2A：多 Agent 协作
 

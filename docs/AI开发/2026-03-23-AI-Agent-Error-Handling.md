@@ -150,7 +150,7 @@ def call_with_retry(func, max_retries=5, base_delay=1.0, max_delay=60.0):
             raise NonRetryableError(f"未知错误: {e}")
     
     raise last_error
-```
+```python
 
 ### 2.3 哪些错误可以重试？
 
@@ -414,7 +414,7 @@ class LLMAgent:
 │  └─ 转人工客服 / 加入队列                                │
 │                                                        │
 └────────────────────────────────────────────────────────┘
-```
+```python
 
 ### 4.3 降级实现示例
 
@@ -810,7 +810,7 @@ class ToolExecutor:
                 tool_name=tool_name,
             )
         return self._tool_registry[tool_name]
-```
+```python
 
 ### 5.4 模型输出验证
 

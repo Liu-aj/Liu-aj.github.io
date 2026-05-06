@@ -21,7 +21,7 @@ is_logged_in = True
 ```python
 a = 25  # 什么 a？
 flag = True  # 什么 flag？
-```
+```python
 
 ## 函数
 

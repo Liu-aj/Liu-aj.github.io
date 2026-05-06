@@ -73,7 +73,7 @@ description: ESP32开发指南
 1. Arduino IDE → 文件 → 首选项 → 附加开发板管理器网址添加：
 ```markdown
    https://espressif.github.io/arduino-esp32/package_esp32_index.json
-   ```
+```
 2. 工具 → 开发板 → 开发板管理器 → 搜索 `esp32` → 安装
 
 **第二步：安装 Matter 库**
@@ -233,7 +233,7 @@ description: ESP32开发指南
 
 **最常见原因 + 解决方案：**
 
-```
+```python
 ❌ 原因1：NVS 分区残留旧的配对数据
 ✅ 解决：工具 → Erase All Flash Before Sketch Upload → Enabled → 重新上传
 

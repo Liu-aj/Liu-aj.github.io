@@ -30,7 +30,7 @@ cat ~/.profile
 # 命令行临时
 export VAR=value
 VAR=value command
-```
+```bash
 
 ## 永久设置
 

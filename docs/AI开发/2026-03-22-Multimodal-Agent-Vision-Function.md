@@ -147,7 +147,7 @@ def analyze_image(
     )
     
     return response.choices[0].message.content
-```
+```python
 
 ### 3.3 屏幕理解 Function
 
@@ -582,7 +582,7 @@ class MultimodalRAG:
             results.append(doc)
         
         return results
-```
+```python
 
 ---
 
@@ -1122,7 +1122,7 @@ class TableAnalyzer:
         )
         
         return json.loads(response.choices[0].message.content)
-```
+```python
 
 ---
 

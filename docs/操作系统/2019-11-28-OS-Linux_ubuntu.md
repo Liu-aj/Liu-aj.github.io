@@ -41,7 +41,7 @@ sudo apt install firmware-iwlwifi
 # 重新加载驱动模块
 sudo modprobe -r iwlwifi
 sudo modprobe iwlwifi
-```
+```bash
 
 安装完成后，可以通过以下命令检查网络连接状态：
 
@@ -80,7 +80,7 @@ deb http://mirrors.163.com/ubuntu/ focal-backports main restricted universe mult
 # 预发布软件源，不建议启用
 # deb http://mirrors.163.com/ubuntu/ focal-proposed main restricted universe multiverse
 # deb-src http://mirrors.163.com/ubuntu/ focal-proposed main restricted universe multiverse
-```
+```bash
 
 保存文件后执行以下命令更新软件包列表：
 
@@ -132,7 +132,7 @@ sudo apt-get install git-cola
 ```bash
 # 安装Vim
 sudo apt install vim
-```
+```bash
 
 #### 1.2.3 JDK安装与配置
 
@@ -251,7 +251,7 @@ sudo nano /usr/share/applications/sublime-text.desktop
 # Version=1.0
 # Type=Application
 # Terminal=false
-```
+```bash
 
 #### 2.1.4 Linux版QQ
 
@@ -390,7 +390,7 @@ sudo nano /usr/share/applications/navicat.desktop
 # Version=1.0
 # Type=Application
 # Terminal=false
-```
+```bash
 
 #### 2.2.4 Robo3T（MongoDB客户端）
 
@@ -492,7 +492,7 @@ sudo apt-get install thunderbird
 sudo apt-get install thunderbird-locale-zh-cn
 
 # 启动Thunderbird后，在设置中选择中文语言
-```
+```bash
 
 ## 三、服务器软件安装
 
@@ -593,7 +593,7 @@ sudo tail -f /var/log/nginx/error.log
 
 # 查看Nginx访问日志
 sudo tail -f /var/log/nginx/access.log
-```
+```bash
 
 ### 3.2 Docker安装与配置
 
@@ -735,7 +735,7 @@ systemctl --user start fcitx5
 
 # 设置Fcitx5开机自启
 systemctl --user enable fcitx5
-```
+```bash
 
 ### 4.2 磁盘挂载
 
@@ -770,7 +770,7 @@ sudo vim /etc/fstab
 
 在文件末尾添加类似以下内容（根据实际UUID修改）：
 
-```
+```bash
 UUID=12345678-1234-1234-1234-123456789012 /home/liuaj/appdata ext4 defaults 0 2
 ```bash
 
@@ -830,7 +830,7 @@ sudo apt purge linux-image-VERSION linux-headers-VERSION
 
 # 例如：
 # sudo apt purge linux-image-5.4.0-100-generic linux-headers-5.4.0-100-generic
-```
+```bash
 
 #### 4.2.3 清理Snap包缓存
 
@@ -913,7 +913,7 @@ sudo apt install ttf-mscorefonts-installer fontconfig
 # 配置字体渲染（可选）
 # 创建或编辑字体配置文件
 # nano ~/.fonts.conf
-```
+```bash
 
 #### 4.3.3 桌面主题管理
 
@@ -984,7 +984,7 @@ sudo apt-get install flameshot
 ```bash
 # 安装Unity控制面板（如果喜欢Unity风格的设置界面）
 sudo apt-get install unity-control-center
-```
+```bash
 
 ### 4.5 快捷键设置
 
@@ -1074,7 +1074,7 @@ crontab -e
 
 # 添加每日备份任务（在凌晨2点执行）
 # 0 2 * * * rsync -av --delete ~ /media/username/external_drive/daily_backup
-```
+```bash
 
 #### 5.2.3 使用Deja Dup进行综合备份
 
@@ -1162,7 +1162,7 @@ sudo dpkg -l | grep ^iF
 # 修复特定的损坏软件包
 sudo dpkg --purge --force-all 软件包名
 sudo apt install 软件包名
-```
+```bash
 
 ### 6.2 系统卡顿问题
 

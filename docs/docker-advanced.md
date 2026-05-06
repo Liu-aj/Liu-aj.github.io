@@ -40,7 +40,7 @@ services:
     image: postgres:15
   redis:
     image: redis:7
-```
+```bash
 
 ## 网络配置
 

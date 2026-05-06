@@ -29,7 +29,7 @@ echo "=== System Status ==="
 echo "CPU: $(top -bn1 | grep "Cpu(s)" | awk '{print $2}')%"
 echo "Memory: $(free -h | awk '/Mem:/ {print $3 "/" $2}')"
 echo "Disk: $(df -h / | awk 'NR==2 {print $3 "/" $2}')"
-```
+```bash
 
 ### Docker 清理脚本
 ```bash

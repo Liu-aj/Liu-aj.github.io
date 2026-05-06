@@ -42,7 +42,7 @@ CREATE OR REPLACE VIEW view_stu AS SELECT * FROM student;
 CREATE OR REPLACE VIEW view_stu AS 
 SELECT id, name, chinese, math, english 
 FROM student;
-```
+```sql
 
 ### 2.2 使用ALTER语句
 

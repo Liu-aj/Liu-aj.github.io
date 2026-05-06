@@ -30,7 +30,7 @@ sudo apt install fish
 
 # 设置默认
 chsh -s /bin/fish
-```
+```bash
 
 ## 终端复用
 

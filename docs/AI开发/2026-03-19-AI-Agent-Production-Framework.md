@@ -68,7 +68,7 @@ def test_agent_response():
     # 可能用冒泡排序、快排、甚至只是给出建议
     assert is_valid_code_response(response)  # 需要智能评估
     assert implements_sorting_algorithm(response)  # 语义理解
-```
+```python
 
 ---
 
@@ -241,7 +241,7 @@ class SafetyGuard:
             )
         
         return SafetyCheckResult(safe=True)
-```
+```python
 
 ### 2.5 用户体验 😊
 
@@ -524,7 +524,7 @@ class CodeWriterAgent(Agent):
         return await self.llm.generate(
             f"作为代码专家，{task}\n要求：输出可执行的代码，包含注释。"
         )
-```
+```python
 
 **协作模式对比**：
 
@@ -620,7 +620,7 @@ EVALUATION_DIMENSIONS = {
         "criteria": ["是否包含有害内容", "是否尊重隐私", "是否遵守伦理准则"]
     }
 }
-```
+```python
 
 ### 4.2 基于追踪的行为分析 🔍
 
@@ -980,7 +980,7 @@ class MetricsCollector:
             "tool_usage": self._aggregate_tool_usage(filtered),
             "error_distribution": self._aggregate_errors(filtered)
         }
-```
+```python
 
 ### 5.3 版本管理与回滚策略 🔄
 

@@ -128,7 +128,7 @@ ReAct 是最常用的 Agent 架构模式，将推理与行动交替进行：
 
 ```
 用户输入 → [思考] → [行动] → [观察] → [思考] → … → 最终回答
-```
+```python
 
 **工程化实现要点**：
 
@@ -352,7 +352,7 @@ public class ConversationState {
 
 ### 信任体系的三道防线
 
-```
+```python
 ┌─────────────────────────────────────────────────────────────┐
 │                    第一道防线：输入治理                      │
 │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐         │
@@ -533,7 +533,7 @@ public class CostController {
         return CostResult.approved();
     }
 }
-```
+```python
 
 ---
 
@@ -734,7 +734,7 @@ logback-spring.xml:
         <includeMdcKeyName>userId</includeMdcKeyName>
     </encoder>
 </appender>
-```
+```python
 
 ### 坑 5：成本失控
 

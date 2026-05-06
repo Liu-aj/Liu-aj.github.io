@@ -87,7 +87,7 @@ malicious_resume = """
 """
 
 # 攻击场景：HR Agent 自动处理简历时被劫持
-```
+```python
 
 #### 2.1.3 多轮对话注入（Multi-turn Injection）
 
@@ -301,7 +301,7 @@ test_environment:
     - "速率限制，防止拒绝服务"
     - "实时监控，异常立即中断"
     - "数据脱敏，测试数据标记"
-```
+```python
 
 ### 3.2 自动化测试脚本
 
@@ -802,7 +802,7 @@ class OutputFilter:
                 stats["redacted"] += len(matches)
         
         return output, stats
-```
+```python
 
 ### 4.3 权限控制层
 
@@ -1015,7 +1015,7 @@ class SecurityMonitor:
 
 ### 6.1 授权要求
 
-```
+```python
 测试前必须获取:
 ✓ 书面授权文件
 ✓ 测试范围定义

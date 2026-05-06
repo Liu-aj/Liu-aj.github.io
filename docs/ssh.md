@@ -28,7 +28,7 @@ ssh -i ~/.ssh/key_name user@host
 ```bash
 ssh-keygen -t ed25519 -C "your_email"
 ssh-keygen -t rsa -b 4096 -C "your_email"
-```
+```bash
 
 ### 复制公钥
 ```bash
@@ -47,7 +47,7 @@ Host alias
     Port 22
     IdentityFile ~/.ssh/key
     ForwardAgent yes
-```
+```bash
 
 ## 隧道转发
 

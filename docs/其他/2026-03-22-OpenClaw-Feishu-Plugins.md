@@ -252,7 +252,7 @@ channels:
       chat: true       # 群聊操作（默认启用）
       perm: false      # 权限管理（默认禁用，敏感操作）
       bitable: true    # 多维表格（默认启用）
-```
+```javascript
 
 **注意事项：**
 - `perm` 工具默认禁用，因为权限管理是敏感操作

@@ -62,7 +62,7 @@ agent = Agent(
     system_prompt=BASE_PROMPT + RULES,
     rules=RULES
 )
-```
+```python
 
 ### 3.3 上下文压缩策略
 
@@ -263,7 +263,7 @@ class TieredBudgetManager:
             "remaining": self.config.daily_limit - self.daily_used,
             "by_task_type": {task_type.value: self.check_usage(task_type) for task_type in TaskType}
         }
-```
+```python
 
 ### 4.3 自动降级策略
 
@@ -381,7 +381,7 @@ groups:
 
 ### 5.3 成本仪表盘
 
-```
+```python
 ┌─────────────────────────────────────────────────────────────────────┐
 │                    AI Agent 成本监控仪表盘                           │
 ├─────────────────────────────────────────────────────────────────────┤
