@@ -158,6 +158,9 @@ nav:
   - 调试技巧: debugging.md
   - Git忽略: gitignore.md
   - JavaScript进阶: javascript-advanced.md
+  - 数据结构: datastructures.md
+  - 算法: algorithms.md
+  - 异步编程: async-programming.md
   - 日志管理: logging.md
   - 错误处理: error-handling.md
   - Jest测试: testing-jest.md
@@ -166,6 +169,9 @@ nav:
   - 调试技巧: debugging.md
   - Git忽略: gitignore.md
   - JavaScript进阶: javascript-advanced.md
+  - 数据结构: datastructures.md
+  - 算法: algorithms.md
+  - 异步编程: async-programming.md
   - 日志管理: logging.md
   - 错误处理: error-handling.md
   - Jest测试: testing-jest.md
