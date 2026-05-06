@@ -169,6 +169,8 @@ nav:
   - GitHub Actions: github-actions.md
   - Grafana: grafana.md
   - Python进阶: python-advanced.md
+  - 函数式编程: functional-programming.md
+  - 代码分析: code-analysis.md
   - 开发环境: environment-setup.md
   - 调试技巧: debugging.md
   - Git忽略: gitignore.md
@@ -180,6 +182,8 @@ nav:
   - 错误处理: error-handling.md
   - Jest测试: testing-jest.md
   - Python进阶: python-advanced.md
+  - 函数式编程: functional-programming.md
+  - 代码分析: code-analysis.md
   - 开发环境: environment-setup.md
   - 调试技巧: debugging.md
   - Git忽略: gitignore.md
