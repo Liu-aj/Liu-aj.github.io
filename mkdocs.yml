@@ -151,6 +151,9 @@ nav:
   - Prometheus: prometheus.md
   - Kubernetes: kubernetes.md
   - 微服务: microservices.md
+  - 事件驱动: event-driven.md
+  - 缓存策略: caching.md
+  - 限流: rate-limiting.md
   - Serverless: serverless.md
   - 容器化: container.md
   - Docker Compose: docker-compose.md
