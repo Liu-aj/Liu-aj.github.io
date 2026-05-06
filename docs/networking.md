@@ -22,18 +22,18 @@ description: 网络基础知识
 ## 常用协议
 
 ### HTTP/HTTPS
-```
+```bash
 请求 → 请求行/头/体
 响应 → 状态码/头/体
 ```
 
 ### MQTT
-```
+```bash
 发布 → Topic → Broker → 订阅
 ```
 
 ### WebSocket
-```
+```bash
 握手 → 双向通信 → 心跳 → 关闭
 ```
 

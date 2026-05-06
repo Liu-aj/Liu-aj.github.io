@@ -22,14 +22,14 @@ description: RESTful API 设计指南
 ## URL 设计
 
 ### 好
-```
+```bash
 GET /users/123/posts
 GET /users?role=admin
 POST /users
 ```
 
 ### 差
-```
+```bash
 GET /getUsers
 POST /createUser
 DELETE /deleteUser?id=123
@@ -63,7 +63,7 @@ DELETE /deleteUser?id=123
 
 ## 版本控制
 
-```
+```bash
 GET /api/v1/users
 GET /api/v2/users
 ```

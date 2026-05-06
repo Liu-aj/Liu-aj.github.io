@@ -45,7 +45,7 @@ Thumbs.db
 
 ## Python
 
-```
+```bash
 __pycache__/
 *.py[cod]
 *$py.class
@@ -56,7 +56,7 @@ build/
 
 ## Node.js
 
-```
+```bash
 node_modules/
 npm-debug.log*
 yarn-debug.log*
