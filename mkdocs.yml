@@ -111,6 +111,9 @@ nav:
   - FAQ: faq.md
   - 问题排查: troubleshooting.md
   - 经验总结: insights.md
+  - 快捷键: shortcuts.md
+  - 安全指南: security.md
+  - 性能优化: performance.md
   - 术语表: glossary.md
   - 技术资源: resources.md
   - 速查表: cheatsheet.md
