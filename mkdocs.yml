@@ -149,11 +149,17 @@ nav:
   - 调试技巧: debugging.md
   - Git忽略: gitignore.md
   - JavaScript进阶: javascript-advanced.md
+  - 日志管理: logging.md
+  - 错误处理: error-handling.md
+  - Jest测试: testing-jest.md
   - Python进阶: python-advanced.md
   - 开发环境: environment-setup.md
   - 调试技巧: debugging.md
   - Git忽略: gitignore.md
   - JavaScript进阶: javascript-advanced.md
+  - 日志管理: logging.md
+  - 错误处理: error-handling.md
+  - Jest测试: testing-jest.md
   - 术语表: glossary.md
   - 技术资源: resources.md
   - 速查表: cheatsheet.md
