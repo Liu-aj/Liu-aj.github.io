@@ -116,6 +116,9 @@ nav:
   - 经验总结: insights.md
   - 快捷键: shortcuts.md
   - 安全指南: security.md
+  - 安全测试: security-testing.md
+  - 混沌工程: chaos-engineering.md
+  - 配置管理: configuration-management.md
   - 性能优化: performance.md
   - 架构设计: architecture.md
   - 测试指南: testing.md
