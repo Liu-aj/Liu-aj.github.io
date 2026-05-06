@@ -94,6 +94,9 @@ nav:
       - ha-ble-beacon-location.md
   - 3D打印:
       - bambu-a1-support-optimization.md
+  - 硬件开发:
+      - raspberry-pi.md
+      - openwrt.md
   - 智能家居:
       - zigbee2mqtt-guide-2026.md
   - AI开发:
@@ -119,9 +122,21 @@ nav:
   - 监控运维: monitoring.md
   - 云服务: cloud.md
   - DevOps: devops.md
+  - 实用脚本: scripts.md
   - 网络基础: networking.md
+  - Vim指南: vim.md
+  - SSH指南: ssh.md
+  - CSS指南: css.md
+  - 隐私保护: privacy.md
+  - 效率工具: productivity.md
+  - 正则表达式: regex.md
+  - 命令行进阶: command-line.md
+  - JSON/YAML: json-yaml.md
+  - 密码学基础: cryptography.md
   - Git进阶: git-advanced.md
   - Docker进阶: docker-advanced.md
+  - Python进阶: python-advanced.md
+  - JavaScript进阶: javascript-advanced.md
   - Python进阶: python-advanced.md
   - JavaScript进阶: javascript-advanced.md
   - 术语表: glossary.md
@@ -137,3 +152,9 @@ markdown_extensions:
   - tables
 
 # Add comparison to resources nav
+
+# Hardware section
+nav_append:
+  - 硬件开发:
+      - 树莓派: raspberry-pi.md
+      - OpenWRT: openwrt.md
