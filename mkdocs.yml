@@ -150,6 +150,9 @@ nav:
   - Nginx指南: nginx.md
   - Prometheus: prometheus.md
   - Kubernetes: kubernetes.md
+  - 微服务: microservices.md
+  - Serverless: serverless.md
+  - 容器化: container.md
   - Docker Compose: docker-compose.md
   - GitHub Actions: github-actions.md
   - Grafana: grafana.md
