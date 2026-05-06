@@ -72,8 +72,7 @@ openclaw skill exec <name>   # 执行指定 Skill
 
 在飞书等对话渠道中，可以直接提及需要的技能：
 
-```
-@AIContent 使用 weather 获取北京天气
+```bash
 ```
 
 ---
@@ -86,8 +85,7 @@ openclaw skill exec <name>   # 执行指定 Skill
 
 每个 Skill 需要一个独立的目录，基本结构如下：
 
-```
-my-skill/
+```bash
 ├── SKILL.md          # Skill 定义文件（必需）
 ├── scripts/          # 脚本目录（可选）
 ├── references/       // 参考文档（可选）

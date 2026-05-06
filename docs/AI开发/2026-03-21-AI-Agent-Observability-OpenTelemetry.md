@@ -15,8 +15,7 @@ title: AI Agent 可观测性 2.0：用 OpenTelemetry 打造全链路追踪体系
 
 传统微服务是线性的，AI Agent 是**树形多分支的**：
 
-```
-用户请求
+```bash
 ├─ 意图分析 (LLM)
 ├─ 工具选择决策
 │  ├─ LLM 推理

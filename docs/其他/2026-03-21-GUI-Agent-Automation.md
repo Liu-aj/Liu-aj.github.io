@@ -107,8 +107,7 @@ async def multi_agent_workflow():
 
 ### 4.1 MCP 架构
 
-```
-┌─────────────┐         ┌─────────────┐
+```bash
 │ Claude/App  │ ◄─────► │  MCP Host   │
 └─────────────┘         └──────┬──────┘
                                │

@@ -126,8 +126,7 @@ thread.setName("MyThread"); // 设置线程名称
 
 **线程状态转换图**：
 
-```
-NEW → RUNNABLE → BLOCKED/WAITING/TIMED_WAITING → RUNNABLE → TERMINATED
+```bash
 ```markdown
 
 ## 四、线程同步机制

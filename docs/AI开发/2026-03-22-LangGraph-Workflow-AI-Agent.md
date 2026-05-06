@@ -15,8 +15,7 @@ ReAct（Reasoning + Acting）是最经典的 Agent 模式。让我们用 LangGra
 
 ### 2.1 架构设计
 
-```
-用户输入
+```bash
     │
     ▼
 ┌─────────┐
@@ -148,8 +147,7 @@ display(Image(app.get_graph().draw_mermaid_png()))
 
 ### 3.1 场景描述
 
-```
-用户请求订票
+```bash
     │
     ▼
 ┌─────────┐
@@ -314,8 +312,7 @@ print(state2["result"])  # 输出：成功预订航班 MU1234
 
 ### 4.1 架构设计
 
-```
-                用户请求
+```bash
                     │
                     ▼
               ┌─────────┐

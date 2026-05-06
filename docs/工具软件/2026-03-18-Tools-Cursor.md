@@ -69,8 +69,7 @@ Cursor 的 Chat 功能让与 AI 的对话真正融入编码流程：
 - `Ctrl/Cmd + L`：打开 Chat 面板
 - `Ctrl/Cmd + I`：打开 Composer（后文详解）
 
-```
-用户: @UserService 这个服务的登录逻辑有什么问题？
+```bash
 
 AI: 分析 UserService 中的 login 方法后，我发现以下问题：
 1. 没有对密码进行时序攻击防护
@@ -90,8 +89,7 @@ Composer（`Ctrl/Cmd + I`）是 Cursor 的重量级功能，它可以：
 
 **Composer 工作流程：**
 
-```
-用户: 为用户模块添加登录限流功能
+```bash
 
 Composer 分析：
 1. 修改 UserService.java - 添加限流逻辑
@@ -245,8 +243,7 @@ public void process(List<String> items) {
 
 **好提示词的结构：**
 
-```
-[背景上下文] + [具体任务] + [约束条件] + [期望输出]
+```bash
 
 示例：
 背景：这是一个电商系统的订单服务，使用 Spring Boot
@@ -270,8 +267,7 @@ public void process(List<String> items) {
 
 ## 技巧三：测试驱动开发 (TDD) 工作流
 
-```
-步骤 1: 让 AI 编写测试用例（不要写实现）
+```bash
 用户: 为 PaymentService 编写测试，测试支付成功、失败、超时三种场景
 
 步骤 2: 运行测试确认失败
@@ -290,8 +286,7 @@ AI 自动运行测试、修复问题、直到全部通过
 
 快速上手新项目：
 
-```
-用户: 这个项目的认证流程是怎样的？
+```bash
 
 AI: 分析代码库后发现：
 1. 使用 JWT Token 认证

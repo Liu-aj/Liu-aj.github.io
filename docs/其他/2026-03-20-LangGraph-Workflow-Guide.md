@@ -514,8 +514,7 @@ result = app.invoke(Command(resume="approve"), config)
 
 ### 4.3 interrupt() 的工作原理
 
-```
-正常流程：Node A → Node B → Node C → END
+```bash
 
 interrupt 后：
 Node A → Node B → [PAUSED] ← 保存状态到 checkpoint
@@ -691,8 +690,7 @@ print(result["final_report"])
 
 ### 5.3 执行时序图
 
-```
-时间线：
+```bash
 0s ─────────────────────────────────────────────> 7.5s
 
 fetch_stock:    ████████ (2s)

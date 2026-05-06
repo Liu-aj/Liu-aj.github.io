@@ -26,8 +26,7 @@ WebAssembly 是一种栈式虚拟机的二进制指令格式，具有以下核�
 
 WebAssembly 的执行流程如下：
 
-```
-源代码 (Rust/C++/Go/...)
+```bash
     ↓ 编译 (wasm32-unknown-unknown target)
 Wasm 二进制模块 (.wasm)
     ↓ 加载和验证

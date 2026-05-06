@@ -19,8 +19,7 @@ title: AI Gateway 飞书插件集成实战：从零到企业级协作
 
 以下是典型的飞书插件注册日志：
 
-```
-[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+```bash
 [plugins] feishu_chat: Registered feishu_chat tool
 [plugins] feishu_wiki: Registered feishu_wiki tool
 [plugins] feishu_drive: Registered feishu_drive tool
@@ -41,8 +40,7 @@ title: AI Gateway 飞书插件集成实战：从零到企业级协作
 
 ### 插件间协作关系
 
-```
-┌─────────────────────────────────────────────────────────┐
+```bash
 │                    AI Gateway Core                       │
 └─────────────────────┬───────────────────────────────────┘
                       │

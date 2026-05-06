@@ -19,8 +19,7 @@ OpenClaw 是一个强大的 AI Agent 框架，支持通过插件扩展功能。�
 
 当 OpenClaw 启动时，飞书相关插件会自动注册：
 
-```
-[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+```bash
 [plugins] feishu_chat: Registered feishu_chat tool
 [plugins] feishu_wiki: Registered feishu_wiki tool
 [plugins] feishu_drive: Registered feishu_drive tool

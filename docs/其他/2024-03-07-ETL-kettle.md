@@ -72,8 +72,7 @@ KITCHEN：允许你批量使用由Chef设计的任务 (例如使用一个时间�
 2. 在画布空白处右键，选择"作业项"添加需要的组件
 
 **Step 2: 配置通用选项**
-```
-作业设置 → 常规：
+```bash
 - 作业名称：自定义名称
 - 目录：保存在指定目录
 - 描述：作业说明
@@ -81,8 +80,7 @@ KITCHEN：允许你批量使用由Chef设计的任务 (例如使用一个时间�
 
 **Step 3: 添加作业项**
 以"定时数据同步作业"为例：
-```
-[Start]
+```bash
   ↓
 [转换_数据抽取] → [转换_数据转换] → [转换_数据加载]
   ↓
@@ -98,8 +96,7 @@ KITCHEN：允许你批量使用由Chef设计的任务 (例如使用一个时间�
 #### 4.3 作业高级特性
 
 **错误处理：**
-```
-[转换] --成功--> [下一步]
+```bash
 [转换] --失败--> [发送邮件] --> [失败]
 ```
 - 勾选"执行每个输入行"
@@ -174,8 +171,7 @@ ORDER BY id
 
 **Step 4: 配置数据目标**
 以"表输出"为例：
-```
-步骤名称：表输出
+```bash
 目标表：target_table
 提交数量：1000
 批量操作：勾选
@@ -219,8 +215,7 @@ Kettle支持三种类型的参数，用于在不同组件之间传递数据和�
 2. 切换到"参数"标签
 3. 点击"获取参数"自动加载子转换的参数
 4. 手动添加自定义参数：
-```
-参数名称          | 默认值              | 描述
+```bash
 -----------------|---------------------|------------------
 START_DATE       | ${PreviousDay}      | 开始日期
 END_DATE         | ${CurrentDay}       | 结束日期
@@ -253,8 +248,7 @@ var batchSize = parseInt(getVariable('BATCH_SIZE', '1000'));
 **Step 3: 参数传递**
 
 **作业到转换的参数传递：**
-```
-作业设置 → 参数：
+```bash
   param_name = param_value
 
 转换中使用：
@@ -279,8 +273,7 @@ setVariable('YESTERDAY', dateStr, 's');
 ```
 
 **参数条件赋值：**
-```
-[如果值等于] 作业项：
+```bash
   变量：ENV
   值：PROD
   → [设置变量] VALUE=product_db
@@ -298,8 +291,7 @@ setVariable('YESTERDAY', dateStr, 's');
 **解决方案：**
 
 **1. 作业结构：**
-```
-[Start] → [检查表是否存在] → [转换_全量同步] → [成功]
+```bash
                         ↓ (表不存在)
                    [转换_增量同步] → [成功]
 ```
@@ -335,8 +327,7 @@ ORDER BY create_time
 ```
 
 **3. 作业参数配置：**
-```
-参数：
+```bash
   LAST_SYNC_TIME = ${PreviousDay} 00:00:00
   CURRENT_DATE = ${CurrentDate}
 ```
@@ -357,15 +348,13 @@ ORDER BY create_time
 **解决方案：**
 
 **1. 日志格式：**
-```
-timestamp|user_id|action|page_id|duration
+```bash
 2024-03-07 10:00:00|1001|click|page_001|5
 2024-03-07 10:00:01|1001|browse|page_002|30
 ```
 
 **2. 转换结构：**
-```
-[文本文件输入]
+```bash
   ↓
 [字符串操作] - 分割字段
   ↓
@@ -379,8 +368,7 @@ timestamp|user_id|action|page_id|duration
 **3. 详细配置：**
 
 **文本文件输入：**
-```
-文件名：/data/click_log_*.log
+```bash
 分隔符：|
 头部行数：0
 字段：
@@ -392,8 +380,7 @@ timestamp|user_id|action|page_id|duration
 ```
 
 **字符串操作：**
-```
-操作：分割字段到数组
+```bash
 源字段：line
 分隔符：|
 目标字段：field1,field2,field3,field4,field5
@@ -432,8 +419,7 @@ putRow(result);
 ```
 
 **插入更新：**
-```
-目标表：user_behavior_summary
+```bash
 关键字段：user_id, log_date
 更新字段：page_views, total_duration, total_score
 ```
@@ -447,8 +433,7 @@ putRow(result);
 **解决方案：**
 
 **1. 作业结构：**
-```
-[Start]
+```bash
   ↓
 [转换_获取MySQL数据] ──┐
 [转换_获取Oracle数据] ──┼──> [转换_数据合并去重] ──> [转换_写入仓库] ──> [成功]
@@ -486,8 +471,7 @@ WHERE status = 'ACTIVE'
 ```
 
 **4. 转换_数据合并去重：**
-```
-[合并记录]
+```bash
   标志字段：flagfield
   旧数据源：第一来源（MySQL）
   新数据源：第二来源（Oracle）
@@ -543,8 +527,7 @@ for each (u in uniqueUsers) {
 ```
 
 **6. 写入数据仓库：**
-```
-步骤：表输出
+```bash
 目标表：dw_users
 模式：插入/更新
 关键字段：user_id
@@ -559,8 +542,7 @@ for each (u in uniqueUsers) {
 **解决方案：**
 
 **1. 转换结构：**
-```
-[表输入_原始订单]
+```bash
   ↓
 [JavaScript_数据清洗]
   ↓
@@ -622,20 +604,17 @@ putRow(result);
 ```
 
 **3. 过滤记录步骤：**
-```
-条件：is_valid = true（布尔型，true/false）
+```bash
 ```
 
 **4. 异常数据输出：**
-```
-步骤：表输出
+```bash
 目标表：order_exception
 包含所有字段：true
 ```
 
 **5. 邮件通知：**
-```
-作业项：发送邮件
+```bash
 收件人：data-team@example.com
 主题：数据质量异常报告
 正文：
@@ -1151,8 +1130,7 @@ Kettle的性能调优是ETL项目中非常重要的一环，合理的配置可�
 
 在"表输入"步骤的数据库连接中，添加以下参数：
 
-```
-(1) 预处理语句优化
+```bash
 useServerPrepStmts：true
 cachePrepStmts：true
 
@@ -1225,8 +1203,7 @@ export PENTAHO_DI_JAVA_OPTIONS="-Xmx4096m -Xms1024m"
 ```
 
 **推荐配置（8GB内存机器）：**
-```
--Xmx6144m -Xms2048m -XX:+UseG1GC -XX:MaxGCPauseMillis=200
+```bash
 ```
 
 ### 5.4 调优最佳实践

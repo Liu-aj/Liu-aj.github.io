@@ -149,8 +149,7 @@ paginate_path: "/page:num/"  # 分页路径
 
 一个标准的 Jekyll 博客目录结构如下：
 
-```
-my-blog/
+```bash
 ├── _config.yml          # 配置文件
 ├── _includes/           # 可复用的组件（头部、底部、侧边栏等）
 ├── _layouts/            # 页面布局模板
@@ -184,8 +183,7 @@ my-blog/
 ### 6.1 创建新文章
 
 在 `_posts` 目录下创建 Markdown 文件，命名格式：
-```
-年-月-日-标题.md
+```bash
 ```
 
 例如：`2026-03-19-jekyll-tutorial.md`
@@ -244,8 +242,7 @@ Jekyll 支持 Liquid 模板语法：
 {% endfor %}
 
 {{ page.date | date: %Y年%m月%d日 }}
-```
-{% endraw %}
+```bash
 
 ---
 
@@ -370,8 +367,7 @@ theme: jekyll-theme-chirpy
 **5. 草稿功能**
 
 在 `_drafts` 目录下创建不带日期的文件：
-```
-_drafts/my-draft-post.md
+```bash
 ```
 
 预览草稿：
