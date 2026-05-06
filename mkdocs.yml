@@ -120,6 +120,9 @@ nav:
   - 架构设计: architecture.md
   - 测试指南: testing.md
   - 监控运维: monitoring.md
+  - 负载均衡: load-balancing.md
+  - ServiceMesh: service-mesh.md
+  - 可观测性: observability.md
   - 云服务: cloud.md
   - DevOps: devops.md
   - 实用脚本: scripts.md
