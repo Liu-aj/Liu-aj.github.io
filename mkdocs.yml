@@ -1,6 +1,7 @@
 site_name: Liuaj's Wiki
 site_description: 技术沉淀，持续精进
 site_url: https://liu-aj.github.io/
+use_directory_urls: true
 
 theme:
   name: material
@@ -32,18 +33,16 @@ plugins:
   - search:
       prebuild_index: true
   - blog:
-      blog_path: blog
-      navigation_depth: 2
-      archive: true
-      tags: true
-      categories: true
+      enabled: true
+      archive_name: 归档
+      categories_name: 分类
+      tags_name: 标签
 
 markdown_extensions:
   - pymdownx.highlight
   - pymdownx.superfences
   - admonition
   - pymdownx.details
-  - tables
   - tables
   - attr_list
   - md_in_html
@@ -60,3 +59,4 @@ nav:
       - HA 蓝牙Beacon室内定位: docs/ha-ble-beacon-location.md
       - 拓竹A1 支撑结构优化: docs/bambu-a1-support-optimization.md
       - Zigbee2MQTT设备与网络优化: docs/zigbee2mqtt-guide-2026.md
+  - 博客: blog/index.md
