@@ -140,6 +140,9 @@ nav:
   - GitLab指南: gitlab.md
   - Nginx指南: nginx.md
   - Prometheus: prometheus.md
+  - Kubernetes: kubernetes.md
+  - Docker Compose: docker-compose.md
+  - GitHub Actions: github-actions.md
   - Grafana: grafana.md
   - Python进阶: python-advanced.md
   - JavaScript进阶: javascript-advanced.md
