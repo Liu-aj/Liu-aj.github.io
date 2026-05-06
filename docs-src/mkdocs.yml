@@ -1,6 +1,7 @@
 site_name: OpenClaw 技术手册
 site_description: L先生的 AI 助手技术文档库
 site_url: https://liu-aj.github.io/
+docs_dir: .
 
 theme:
   name: material
