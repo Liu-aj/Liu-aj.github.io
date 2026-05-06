@@ -100,3 +100,12 @@ nav:
   - 最近更新: updates.md
 
 copyright: © 2024-2026 Liuaj's Wiki | 使用 <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">Material for MkDocs</a> 构建
+
+# Announcement bar for important messages
+extra:
+  announcement:
+    - icon: "🎉"
+      content: "欢迎访问 Liuaj's Wiki，如有问题请提交 Issue"
+
+  - 关于: contributing.md
+  - 术语表: glossary.md

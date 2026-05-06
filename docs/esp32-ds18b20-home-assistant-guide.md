@@ -8,6 +8,7 @@ tags:
 > 适用版本：ESPHome 2024.x + Home Assistant 2024.x
 
 ---
+description: ESP32开发指南
 
 ## 目录
 
@@ -20,6 +21,7 @@ tags:
 7. [常见问题排查](#7-常见问题排查)
 
 ---
+description: ESP32开发指南
 
 ## 1. 硬件准备
 
@@ -79,6 +81,7 @@ GND  ─────────────────── GND
 > 长线（>10m）可将电阻降至 **2.2kΩ~3.3kΩ**，短线（<1m）可用 **5.1kΩ~10kΩ**。
 
 ---
+description: ESP32开发指南
 
 ## 2. 接线图
 
@@ -131,6 +134,7 @@ dallas:
 > 💡 每路 GPIO 都需要独立的一个 4.7kΩ 电阻。
 
 ---
+description: ESP32开发指南
 
 ## 3. ESPHome 配置
 
@@ -323,6 +327,7 @@ sensor:
 ```
 
 ---
+description: ESP32开发指南
 
 ## 4. MQTT 集成 vs ESPHome 原生集成
 
@@ -380,6 +385,7 @@ mqtt:
 ```
 
 ---
+description: ESP32开发指南
 
 ## 5. Home Assistant 配置
 
@@ -462,6 +468,7 @@ line_size: 2
 > 💡 推荐安装 **HACS** 后在社区商店安装 `mini-graph-card` 插件。
 
 ---
+description: ESP32开发指南
 
 ## 6. 实用场景
 
@@ -541,6 +548,7 @@ sensor:
 - 告警：温度超范围立即推送（配合 Home Assistant 自动化）
 
 ---
+description: ESP32开发指南
 
 ## 7. 常见问题排查
 
@@ -625,6 +633,7 @@ dallas:
 | 缩短总线长度 | ⭐ 简单 | 彻底解决 |
 
 ---
+description: ESP32开发指南
 
 ## 快速参考卡
 
@@ -652,6 +661,7 @@ ESPHome 最小配置：
 ```
 
 ---
+description: ESP32开发指南
 
 *整理自 esp32.co.uk · ESPHome 官方文档 · 社区实战经验*
 *最后更新：2026-04*

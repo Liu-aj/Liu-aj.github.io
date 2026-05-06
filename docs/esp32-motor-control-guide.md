@@ -7,6 +7,7 @@ tags:
 > 舵机 / 步进电机 / 直流电机 (L298N) · MicroPython 实操手册
 
 ---
+description: ESP32开发指南
 
 ## 目录
 
@@ -18,6 +19,7 @@ tags:
 6. [常见问题](#6-常见问题)
 
 ---
+description: ESP32开发指南
 
 ## 1. 电机类型与选型
 
@@ -53,6 +55,7 @@ tags:
 | 价格 | ★☆☆ | ★★☆ | |
 
 ---
+description: ESP32开发指南
 
 ### 1.2 直流电机（DC Motor）
 
@@ -85,6 +88,7 @@ tags:
 | 减速 DC | 高扭矩 | 有齿轮间隙 | 机器人、自动化 |
 
 ---
+description: ESP32开发指南
 
 ### 1.3 步进电机（Stepper Motor）
 
@@ -123,6 +127,7 @@ tags:
 | 低成本项目 | 28BYJ-48（单极性减速步进） |
 
 ---
+description: ESP32开发指南
 
 ## 2. 驱动方案一览
 
@@ -184,6 +189,7 @@ GPIO27 ──────────── IN2
 - 大于 12V 时**必须去掉 5V 跳线帽**，从外部供给 5V
 
 ---
+description: ESP32开发指南
 
 ### 2.2 TB6600 控制器 — 步进电机驱动
 
@@ -246,6 +252,7 @@ GND     ──────────── DIR-
 > 📌 **NEMA 17 接线颜色**：不同厂家可能不同，建议用万用表测量——相通的两根线为一组（电阻约几欧姆）。
 
 ---
+description: ESP32开发指南
 
 ### 2.3 舵机直接用 ESP32 PWM
 
@@ -262,6 +269,7 @@ GND    ───────────── 棕线（GND）
 > ⚠️ **多个舵机**：必须外接 5V 电源（AMS1117-5.0 或 LM7805），ESP32 的 5V 引脚电流不足以驱动多个舵机。
 
 ---
+description: ESP32开发指南
 
 ## 3. ESP32 LEDC PWM 配置
 
@@ -315,6 +323,7 @@ step_pin = PWM(Pin(25), freq=10000, duty=512)  # 50%占空比
 | 步进脉冲 | 10000 Hz | 10 bit | 511 | 32768 |
 
 ---
+description: ESP32开发指南
 
 ## 4. MicroPython 实现
 
@@ -593,6 +602,7 @@ servos.release_all()
 ```
 
 ---
+description: ESP32开发指南
 
 ## 5. 实战项目
 
@@ -678,6 +688,7 @@ while True:
 - 角度版本：用舵机臂转动卷轴实现
 
 ---
+description: ESP32开发指南
 
 ### 5.2 机械臂关节（多舵机）
 
@@ -765,6 +776,7 @@ while True:
 ```
 
 ---
+description: ESP32开发指南
 
 ### 5.3 自动化阀门（舵机或步进）
 
@@ -851,6 +863,7 @@ valve.open()
 ```
 
 ---
+description: ESP32开发指南
 
 ## 6. 常见问题
 
@@ -878,6 +891,7 @@ s = Servo(23, min_duty=3000, max_duty=6800)  # 根据实际测试调整
 ```
 
 ---
+description: ESP32开发指南
 
 ### Q2: 电机发热严重
 
@@ -896,6 +910,7 @@ s = Servo(23, min_duty=3000, max_duty=6800)  # 根据实际测试调整
 ```
 
 ---
+description: ESP32开发指南
 
 ### Q3: 供电不足
 
@@ -925,6 +940,7 @@ s = Servo(23, min_duty=3000, max_duty=6800)  # 根据实际测试调整
 > ⚠️ **绝对禁止**：将 12V 直接接到 ESP32 的 5V 引脚！
 
 ---
+description: ESP32开发指南
 
 ### Q4: 步进电机丢步
 
@@ -942,6 +958,7 @@ s = Servo(23, min_duty=3000, max_duty=6800)  # 根据实际测试调整
 ```
 
 ---
+description: ESP32开发指南
 
 ### Q5: L298N 发烫但不工作
 
@@ -954,6 +971,7 @@ s = Servo(23, min_duty=3000, max_duty=6800)  # 根据实际测试调整
 ```
 
 ---
+description: ESP32开发指南
 
 ### Q6: ESP32 复位/崩溃
 
@@ -970,6 +988,7 @@ s = Servo(23, min_duty=3000, max_duty=6800)  # 根据实际测试调整
 ```
 
 ---
+description: ESP32开发指南
 
 ## 附录：接线速查图汇总
 
@@ -996,5 +1015,6 @@ GND    ── PUL- DIR-   GND      ─────────── ESP32 GND�
 ```
 
 ---
+description: ESP32开发指南
 
 *文档版本：v1.0 | 基于 ESP32 + MicroPython | 参考：CSDN / Random Nerd Tutorials / MakerGuides*

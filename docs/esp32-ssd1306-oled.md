@@ -7,6 +7,7 @@ tags:
 > 更新日期：2026-05-06
 
 ---
+description: ESP32开发指南
 
 ## 一、硬件选型
 
@@ -34,6 +35,7 @@ tags:
 > ⚠️ ESP32-C3 Super Mini 内置 0.42 寸 OLED 实际上是 **SH1106** 驱动（非 SSD1306），实测 SH1106 库效果更好
 
 ---
+description: ESP32开发指南
 
 ## 二、MicroPython 开发环境搭建
 
@@ -61,6 +63,7 @@ mip.install("ssd1306")
 ```
 
 ---
+description: ESP32开发指南
 
 ## 三、ssd1306 库使用详解
 
@@ -113,6 +116,7 @@ for x in range(128):
 ```
 
 ---
+description: ESP32开发指南
 
 ## 四、实战项目
 
@@ -184,6 +188,7 @@ display.show()
 > 安装 sh1106 库：`mip.install("sh1106")`
 
 ---
+description: ESP32开发指南
 
 ## 五、I2C 地址冲突排查
 
@@ -217,6 +222,7 @@ i2c1 = I2C(1, scl=Pin(9), sda=Pin(8))   # 总线1：传感器
 ```
 
 ---
+description: ESP32开发指南
 
 ## 六、低功耗优化 — 深度睡眠模式
 
@@ -249,6 +255,7 @@ data = rtc.memory()
 ```
 
 ---
+description: ESP32开发指南
 
 ## 七、参考资源
 
@@ -258,5 +265,6 @@ data = rtc.memory()
 - randomnerdtutorials.com：ESP32 OLED 教程
 
 ---
+description: ESP32开发指南
 
 *文档版本：v1.0*

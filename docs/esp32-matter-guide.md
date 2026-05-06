@@ -8,6 +8,7 @@ tags:
 > 更新日期：2026-05-06
 
 ---
+description: ESP32开发指南
 
 ## 一、Matter 协议快速入门
 
@@ -32,6 +33,7 @@ Matter（前身 Project CHIP - Connected Home over IP）是 CSA（连接标准�
 | ESP32-H2 | ❌ | ✅ | Thread + BLE 5.3（ Matter + BLE combo） |
 
 ---
+description: ESP32开发指南
 
 ### 1.2 网络拓扑
 
@@ -49,6 +51,7 @@ Matter（前身 Project CHIP - Connected Home over IP）是 CSA（连接标准�
 ```
 
 ---
+description: ESP32开发指南
 
 ## 二、开发环境搭建
 
@@ -87,6 +90,7 @@ Matter（前身 Project CHIP - Connected Home over IP）是 CSA（连接标准�
 ⚠️ **新手最常犯的错误：没改 Partition Scheme 导致配对失败**
 
 ---
+description: ESP32开发指南
 
 ## 三、Hello World — 第一个 Matter 设备
 
@@ -164,6 +168,7 @@ void loop() {
 5. 配对成功后在 App 中即可控制设备
 
 ---
+description: ESP32开发指南
 
 ## 四、Matter 设备类型一览（ESP32 Arduino）
 
@@ -201,6 +206,7 @@ void loop() {
 | 开关 | `MatterOnOffLight`（作为开关用） | 控制其他设备 |
 
 ---
+description: ESP32开发指南
 
 ## 五、多平台同时支持
 
@@ -219,6 +225,7 @@ Matter 的核心优势之一就是**本地同时支持多个平台**，不需要
 > ⚠️ 注意：部分平台可能要求设备先通过该平台的 App 完成初始配对。请查看各平台的具体要求。
 
 ---
+description: ESP32开发指南
 
 ## 六、常见问题排查
 
@@ -259,6 +266,7 @@ Serial.printf("\nWiFi connected, IP: %s\n", WiFi.localIP().toString().c_str());
 波特率设为 **115200**（Matter 默认）
 
 ---
+description: ESP32开发指南
 
 ## 七、参考资源
 
@@ -268,5 +276,6 @@ Serial.printf("\nWiFi connected, IP: %s\n", WiFi.localIP().toString().c_str());
 - ESP-Matter 框架详解（CSDN）：https://blog.csdn.net/weixin_29174141/article/details/158639351
 
 ---
+description: ESP32开发指南
 
 *下期预告：ESP32 家族选型指南 2026 — 完整型号对比与项目推荐*
