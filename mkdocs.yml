@@ -31,7 +31,10 @@ theme:
 
 plugins:
   - search
-  - blog
+  - blog:
+      enabled: true
+      archive_name: 归档
+      categories_name: 分类
 
 markdown_extensions:
   - pymdownx.highlight
@@ -44,6 +47,7 @@ markdown_extensions:
 
 nav:
   - 首页: index.md
+  - 博客: blog/
   - ESP32系列:
       - esp32-matter-guide.md
       - esp32-family-2026.md
@@ -57,4 +61,3 @@ nav:
       - bambu-a1-support-optimization.md
   - 智能家居:
       - zigbee2mqtt-guide-2026.md
-  - 博客: blog/index.md
