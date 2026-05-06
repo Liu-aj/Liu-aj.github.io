@@ -145,8 +145,14 @@ nav:
   - GitHub Actions: github-actions.md
   - Grafana: grafana.md
   - Python进阶: python-advanced.md
+  - 开发环境: environment-setup.md
+  - 调试技巧: debugging.md
+  - Git忽略: gitignore.md
   - JavaScript进阶: javascript-advanced.md
   - Python进阶: python-advanced.md
+  - 开发环境: environment-setup.md
+  - 调试技巧: debugging.md
+  - Git忽略: gitignore.md
   - JavaScript进阶: javascript-advanced.md
   - 术语表: glossary.md
   - 技术资源: resources.md
