@@ -140,6 +140,9 @@ nav:
   - JSON/YAML: json-yaml.md
   - 密码学基础: cryptography.md
   - Git进阶: git-advanced.md
+  - 版本控制: version-control.md
+  - CodeReview: code-review.md
+  - CI/CD: ci-cd.md
   - Docker进阶: docker-advanced.md
   - 终端配置: terminal.md
   - WSL指南: wsl.md
