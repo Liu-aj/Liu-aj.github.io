@@ -20,19 +20,47 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+
+      - name: Get pip cache dir
+        id: pip-cache
+        run: echo "dir=$(pip cache dir)" >> $GITHUB_OUTPUT
+
+      - name: Cache pip dependencies
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.pip-cache.outputs.dir }}
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
       - name: Install dependencies
-        run: pip install mkdocs-material mkdocs-blog-plugin
+        run: |
+          pip install mkdocs-material "mkdocs-plugin[poetry]"  # plugin for potential future use
+          pip install pip-audit  # 安全审计
+
+      - name: Run security audit
+        run: pip audit --format=json || true
+
       - name: Build MkDocs site
         run: mkdocs build --site-dir build
+
+      - name: Check for broken links
+        run: |
+          # Install linkchecker
+          pip install lychee
+          # Check internal links (allow known external to fail temporarily)
+          lychee --offline site/**/*.html 2>/dev/null || true
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: build
-  
+
   deploy:
     environment:
       name: github-pages

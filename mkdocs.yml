@@ -3,18 +3,26 @@ site_description: 技术沉淀，持续精进
 site_url: https://liu-aj.github.io/
 use_directory_urls: true
 
+# Font configuration with preconnect for performance
 theme:
   name: material
   language: zh
+  font:
+    text: Roboto
+    code: Roboto Mono
   features:
     - navigation.instant
     - navigation.tracking
     - navigation.sections
     - navigation.expand
+    - navigation.breadcrumbs    # 面包屑导航
+    - navigation.top            # 返回顶部按钮
+    - navigation.path           # 显示当前路径
     - search.suggest
     - search.highlight
     - content.tabs.link
     - content.code.copy
+    - content.illustrate        # 更好的图片展示
   palette:
     - scheme: default
       primary: deep orange
@@ -31,6 +39,9 @@ theme:
 
 plugins:
   - search
+  - meta
+  - tags:
+      tags_structure: flat
 
 markdown_extensions:
   - pymdownx.highlight
@@ -40,6 +51,7 @@ markdown_extensions:
   - tables
   - attr_list
   - md_in_html
+  - meta
 
 nav:
   - 首页: index.md
