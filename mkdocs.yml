@@ -30,13 +30,8 @@ theme:
         name: 切换白天模式
 
 plugins:
-  - search:
-      prebuild_index: true
-  - blog:
-      enabled: true
-      archive_name: 归档
-      categories_name: 分类
-      tags_name: 标签
+  - search
+  - blog
 
 markdown_extensions:
   - pymdownx.highlight
