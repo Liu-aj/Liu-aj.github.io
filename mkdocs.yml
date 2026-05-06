@@ -101,6 +101,9 @@ nav:
       - zigbee2mqtt-guide-2026.md
   - AI开发:
       - AI开发总览: AI开发-总览.md
+  - 机器学习: machine-learning.md
+  - 深度学习: deep-learning.md
+  - NLP: nlp.md
       - AI开发/index.md
   - 数据库:
       - 数据库/index.md
