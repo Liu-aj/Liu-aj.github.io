@@ -78,6 +78,7 @@ markdown_extensions:
 nav:
   - 首页: index.md
   - 阅读指南: guide.md
+  - 更新日志: changelog.md
   - ESP32系列:
       - ESP32总览: ESP32-总览.md
       - esp32-matter-guide.md
@@ -104,9 +105,12 @@ nav:
   - 其他:
       - 其他/index.md
   - 关于: contributing.md
+  - FAQ: faq.md
+  - 问题排查: troubleshooting.md
   - 术语表: glossary.md
   - 技术资源: resources.md
   - 速查表: cheatsheet.md
+  - 开发工具: tools.md
   - 最近更新: updates.md
 
 copyright: © 2024-2026 Liuaj's Wiki | 使用 <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">Material for MkDocs</a> 构建
