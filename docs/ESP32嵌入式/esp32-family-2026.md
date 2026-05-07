@@ -5,17 +5,7 @@ tags:
   - 嵌入式
   - 选型
 ---
-
-tags:
-  - ESP32
-  - 嵌入式
-  - IoT
-# ESP32 家族选型指南 2026 — 完整型号对比与项目推荐
-
-> 更新日期：2026-05-06 | 基于 Espressif 官方数据
-
----
-description: description: ESP32 家族选型指南 2026 — 完整型号对比与项目推荐 — 核心知识点与实战指南
+description: ESP32 家族选型指南 2026 — 完整型号对比与项目推荐 — 核心知识点与实战指南
 
 ## 一、全家族参数对比表（2026 最新）
 
@@ -33,7 +23,6 @@ description: description: ESP32 家族选型指南 2026 — 完整型号对比�
 | **ESP32-H4** | 双核 RISC-V | 96 MHz | 416 KB | ❌ 无 Wi-Fi | BLE 5.3 + ZB | Thread, Zigbee | RISC-V | H2 加强版 |
 | **ESP32-P4** | 双核 Xtensa LX7 | 480 MHz | 768 KB | 802.11 a/b/g/n/ac | BLE 5.0 | — | Xtensa | **高性能款**，多媒体方向 |
 
----
 description: ESP32 家族选型指南 2026 — 完整型号对比与项目推荐 — 核心知识点与实战指南
 
 ## 二、特殊型号深度解析
@@ -76,7 +65,6 @@ Matter   → 跨平台智能家居协议
 
 > 💡 如果要做插电设备，选 C6；如果做电池设备，选 H2
 
----
 description: ESP32description: ESP32 家族选型指南 2026 — 完整型号对比与项目推荐 — 核心知识点与实战指南
 
 ## 三、各型号典型应用场景
@@ -93,7 +81,6 @@ description: ESP32description: ESP32 家族选型指南 2026 — 完整型号对
 | **ESP32-H2** | ⭐电池供电 Matter 设备（开关、传感器） | 需要 Wi-Fi 的场景 |
 | **ESP32-P4** | 高性能多媒体、人机界面、工业计算 | 普通 IoT（性价比低） |
 
----
 description: ESP32开发指南
 
 ## 四、2026 采购建议
@@ -128,7 +115,6 @@ description: ESP32开发指南
 ✅ 优先买带 USB-C 的开发板，下载更方便
 ```
 
----
 description: ESP32开发指南
 
 ## 五、与同类产品对比
@@ -144,7 +130,6 @@ description: ESP32开发指南
 | 学习曲线 | 低 | 低 | 中 |
 | 适合场景 | IoT、智能家居 | 简单控制 | 工业、精密控制 |
 
----
 description: ESP32开发指南
 
 ## 六、快速选型决策树
@@ -163,7 +148,6 @@ description: ESP32开发指南
     └── BLE + Thread/Zigbee → ESP32-H2
 ```
 
----
 description: ESP32开发指南
 
 *文档版本：v1.0 | 基于 2026 年 4 月 Espressif 官方数据*

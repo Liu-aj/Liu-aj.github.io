@@ -6,24 +6,12 @@ tags:
   - Home Assistant
   - 传感器
 ---
-
-tags:
-  - ESP32
-  - 嵌入式
-  - IoT
-# ESP32 + DS18B20 + Home Assistant 完整实战手册
-
-> 参考来源：esp32.co.uk · ESPHome 官方文档  
-> 适用版本：ESPHome 2024.x + Home Assistant 2024.x
-
----
-description: description: ESP32 + DS18B20 + Home Assistant 完整实战手册 — 核心知识点与实战指南
+description: ESP32 + DS18B20 + Home Assistant 完整实战手册 — 核心知识点与实战指南
 
 ## 目录
 
 *目录已移除，使用侧边栏自动生成*
 
----
 description: ESP32 + DS18B20 + Home Assistant 完整实战手册 — 核心知识点与实战指南
 
 ## 1. 硬件准备
@@ -82,7 +70,6 @@ GND  ─────────────────── GND
 > 📌 **不要省略此电阻！** 缺少会导致读数完全乱码或无法通信。  
 > 长线（>10m）可将电阻降至 **2.2kΩ~3.3kΩ**，短线（<1m）可用 **5.1kΩ~10kΩ**。
 
----
 description: ESP32description: ESP32 + DS18B20 + Home Assistant 完整实战手册 — 核心知识点与实战指南
 
 ## 2. 接线图
@@ -135,7 +122,6 @@ dallas:
 
 > 💡 每路 GPIO 都需要独立的一个 4.7kΩ 电阻。
 
----
 description: ESP32开发指南
 
 ## 3. ESPHome 配置
@@ -328,7 +314,6 @@ sensor:
     unit_of_measurement: "°C"
 ```bash
 
----
 description: ESP32开发指南
 
 ## 4. MQTT 集成 vs ESPHome 原生集成
@@ -386,7 +371,6 @@ mqtt:
       value_template: "{{ value }}"
 ```bash
 
----
 description: ESP32开发指南
 
 ## 5. Home Assistant 配置
@@ -469,7 +453,6 @@ line_size: 2
 
 > 💡 推荐安装 **HACS** 后在社区商店安装 `mini-graph-card` 插件。
 
----
 description: ESP32开发指南
 
 ## 6. 实用场景
@@ -549,7 +532,6 @@ sensor:
 - 长线建议：降低上拉电阻至 2.2kΩ，5V 供电
 - 告警：温度超范围立即推送（配合 Home Assistant 自动化）
 
----
 description: ESP32开发指南
 
 ## 7. 常见问题排查
@@ -634,7 +616,6 @@ dallas:
 | 使用双绞屏蔽线（Cat5e）| ⭐⭐ 中等 | 明显改善 |
 | 缩短总线长度 | ⭐ 简单 | 彻底解决 |
 
----
 description: ESP32开发指南
 
 ## 快速参考卡
@@ -662,7 +643,6 @@ ESPHome 最小配置：
   5V 供电 + 2.2kΩ 上拉 + Cat5 网线 → 可达 100m
 ```bash
 
----
 description: ESP32开发指南
 
 *整理自 esp32.co.uk · ESPHome 官方文档 · 社区实战经验*
