@@ -63,7 +63,7 @@ nav:
       - 自学清单: about/learn.md
       - 资源地址: about/resources.md
       - 我的书单: about/book.md
-  - 打赏: donate.md
+      - 打赏: donate.md
   - ESP32嵌入式:
       - ESP32嵌入式/ESP32-总览.md
       - ESP32嵌入式/esp32-matter-guide.md
@@ -77,130 +77,126 @@ nav:
       - 智能家居/ha-ble-beacon-location.md
       - 智能家居/zigbee2mqtt-guide-2026.md
       - 智能家居/bambu-a1-support-optimization.md
-  - 硬件:
-      - 硬件/raspberry-pi.md
-      - 硬件/openwrt.md
-  - 软件工程:
-      - 软件工程/architecture.md
-      - 软件工程/microservices.md
-      - 软件工程/design-patterns.md
-      - 软件工程/clean-code.md
-      - 软件工程/docker-advanced.md
-      - 软件工程/docker-compose.md
-      - 软件工程/container.md
-      - 软件工程/kubernetes.md
-      - 软件工程/database-design.md
-      - 软件工程/mysql.md
-      - 软件工程/mongodb.md
-      - 软件工程/postgresql.md
-      - 软件工程/redis.md
-      - 软件工程/elasticsearch.md
-      - 软件工程/uml.md
-      - 软件工程/ci-cd.md
-      - 软件工程/github-actions.md
-      - 软件工程/gitlab.md
-      - 软件工程/gitops.md
-      - 软件工程/version-control.md
-      - 软件工程/devops.md
-      - 软件工程/cloud-native.md
-      - 软件工程/sre.md
-      - 软件工程/cloud.md
-      - 软件工程/api-design.md
-      - 软件工程/rest-api.md
-      - 软件工程/graphql.md
-      - 软件工程/openapi.md
-      - 软件工程/monitoring.md
-      - 软件工程/prometheus.md
-      - 软件工程/grafana.md
-      - 软件工程/logging.md
-      - 软件工程/observability.md
-      - 软件工程/security.md
-      - 软件工程/security-testing.md
-      - 软件工程/cryptography.md
-      - 软件工程/ssl-tls.md
-      - 软件工程/testing.md
-      - 软件工程/testing-jest.md
-      - 软件工程/code-review.md
-      - 软件工程/code-analysis.md
-      - 软件工程/serverless.md
-      - 软件工程/service-mesh.md
-      - 软件工程/chaos-engineering.md
-      - 软件工程/performance.md
-      - 软件工程/web-performance.md
-      - 软件工程/caching.md
-      - 软件工程/load-balancing.md
-      - 软件工程/rate-limiting.md
-      - 软件工程/nginx.md
-      - 软件工程/networking.md
-      - 软件工程/configuration-management.md
-      - 软件工程/web-security.md
-      - 软件工程/websockets.md
-      - 软件工程/css.md
-      - 软件工程/contributing.md
-      - 软件工程/documentation.md
-      - 软件工程/projects.md
   - AI开发:
-      - AI开发/AI开发-总览.md
+      - AI开发/index.md
       - AI开发/deep-learning.md
       - AI开发/machine-learning.md
       - AI开发/nlp.md
-  - Linux系统:
-      - Linux系统/linux-admin.md
-      - Linux系统/environment-setup.md
-      - Linux系统/environment.md
-      - Linux系统/debugging.md
-      - Linux系统/terminal.md
-      - Linux系统/ssh.md
-      - Linux系统/wsl.md
+      - AI开发/LangGraph-Workflow-Guide.md
+      - AI开发/LangGraph-Workflow-AI-Agent.md
+      - AI开发/ai-agent-production-design-patterns.md
+      - AI开发/AI-Agent-Production-Framework.md
+      - AI开发/ai-agent-evaluation-framework.md
+      - AI开发/AI-Agent-Error-Handling.md
+      - AI开发/ai-agent-red-team-testing-guide.md
+      - AI开发/GUI-Agent-Automation.md
+      - AI开发/MCP-Protocol-Practice.md
+      - AI开发/ai-architecture-conflict.md
+      - AI开发/AI-Architecture-Hybrid-System.md
+      - AI开发/OpenClaw-Feishu-Integration.md
+      - AI开发/OpenClaw-Feishu-Plugins.md
+      - AI开发/AI-Gateway-Feishu-Plugins.md
+      - AI开发/Claude-Code-Installation-Guide.md
+      - AI开发/N8N.md
+      - AI开发/Dify-Init.md
+      - AI开发/Edge-AI-Raspberry-Pi.md
+      - AI开发/AI-Agent-Local-Deployment.md
+      - AI开发/AI-Agent-Memory-System.md
+      - AI开发/AI-Agent-Cost-Optimization.md
+      - AI开发/AI-Agent-Observability-OpenTelemetry.md
+      - AI开发/WebAssembly-In-Practice.md
+      - AI开发/Speculative-Decoding-Guide.md
+      - AI开发/PagedAttention-Memory-Management.md
+      - AI开发/AI开发-工具.md
+  - 软件工程:
+      - 研发基础:
+          - 软件工程/architecture.md
+          - 软件工程/design-patterns.md
+          - 软件工程/clean-code.md
+          - 软件工程/code-review.md
+          - 软件工程/documentation.md
+          - 软件工程/uml.md
+          - 软件工程/projects.md
+          - 软件工程/contributing.md
+      - 云原生&DevOps:
+          - 软件工程/container.md
+          - 软件工程/docker-compose.md
+          - 软件工程/kubernetes.md
+          - 软件工程/ci-cd.md
+          - 软件工程/github-actions.md
+          - 软件工程/gitops.md
+          - 软件工程/devops.md
+          - 软件工程/cloud-native.md
+          - 软件工程/sre.md
+          - 软件工程/monitoring.md
+          - 软件工程/prometheus.md
+          - 软件工程/grafana.md
+          - 软件工程/logging.md
+          - 软件工程/observability.md
+      - 数据技术:
+          - 软件工程/database-design.md
+          - 软件工程/mysql.md
+          - 软件工程/mongodb.md
+          - 软件工程/postgresql.md
+          - 软件工程/redis.md
+          - 软件工程/elasticsearch.md
+      - 安全&网络:
+          - 软件工程/security.md
+          - 软件工程/web-security.md
+          - 软件工程/ssl-tls.md
+          - 软件工程/cryptography-basics.md
+          - 软件工程/networking.md
+          - 软件工程/nginx.md
+          - 软件工程/api-design.md
+          - 软件工程/rest-api.md
+          - 软件工程/graphql.md
+          - 软件工程/openapi.md
+          - 软件工程/websockets.md
+          - 软件工程/serverless.md
+          - 软件工程/service-mesh.md
+          - 软件工程/load-balancing.md
+          - 软件工程/rate-limiting.md
+          - 软件工程/caching.md
   - 效率工具:
       - 效率工具/quickstart.md
       - 效率工具/guide.md
-      - 效率工具/roadmap.md
-      - 效率工具/comparison.md
-      - 效率工具/changelog.md
-      - 效率工具/updates.md
-      - 效率工具/productivity.md
-      - 效率工具/shortcuts.md
-      - 效率工具/tools.md
-      - 效率工具/cheatsheet.md
+      - 开发工具:
+          - 效率工具/开发工具/cli-tools.md
+          - 效率工具/开发工具/cursor.md
+          - 效率工具/开发工具/jekyll-guide.md
+          - 效率工具/git.md
+          - 效率工具/git-advanced.md
+          - 效率工具/gitignore.md
+      - Linux系统:
+          - 效率工具/Linux系统/terminal.md
+          - 效率工具/Linux系统/environment.md
+          - 效率工具/Linux系统/environment-setup.md
+          - 效率工具/Linux系统/linux-admin.md
+          - 效率工具/Linux系统/ssh.md
+          - 效率工具/Linux系统/wsl.md
+          - 效率工具/Linux系统/debugging.md
       - 效率工具/vim.md
       - 效率工具/regex.md
       - 效率工具/json-yaml.md
       - 效率工具/markdown.md
-      - 效率工具/git-advanced.md
-      - 效率工具/gitignore.md
-      - 效率工具/privacy.md
-      - 效率工具/learning.md
+      - 效率工具/chrome.md
+      - 效率工具/javascript.md
+      - 效率工具/python-advanced.md
+      - 效率工具/shortcuts.md
+      - 效率工具/productivity.md
       - 效率工具/time-management.md
       - 效率工具/remote-work.md
       - 效率工具/scrum.md
       - 效率工具/faq.md
       - 效率工具/troubleshooting.md
-      - 效率工具/insights.md
-      - 效率工具/interview.md
       - 效率工具/best-practices.md
       - 效率工具/error-handling.md
       - 效率工具/scripts.md
-      - 效率工具/command-line.md
       - 效率工具/resources.md
-      - 效率工具/glossary.md
-      - 效率工具/algorithms.md
-      - 效率工具/datastructures.md
-      - 效率工具/functional-programming.md
-      - 效率工具/logic-programming.md
-      - 效率工具/event-driven.md
-      - 效率工具/async-programming.md
-      - 效率工具/javascript-advanced.md
-      - 效率工具/python-advanced.md
-      - 效率工具/cross-platform.md
-      - 效率工具/mobile-development.md
+      - 效率工具/updates.md
+      - 效率工具/changelog.md
+      - 效率工具/privacy.md
   - 其他:
       - 其他/index.md
-  - 工具软件:
-      - 工具软件/index.md
-  - 操作系统:
-      - 操作系统/index.md
-  - 数据库:
-      - 数据库/index.md
 
 copyright: © 2024-2026 Liuaj's Wiki | 使用 <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">Material for MkDocs</a> 构建

@@ -1,117 +1,48 @@
 ---
-title: AI开发
-description: AI开发相关文档索引
+title: AI开发总览
+description: AI开发技术总览
 tags:
-  - AI开发
-  - 文档索引
+- 文档
 ---
 
+# AI开发总览 🤖
 
-# AI开发
+> 整理 AI Agent、LLM、LangGraph 等相关开发技术
 
-共 13 篇文档
+***
 
----
+## 🧠 AI Agent
 
-## [2026 开发者 AI 工具箱：5 款提升编码效率的智能工具实测](2026-03-18-Tools-AI-Tools.md)
+智能体（Agent）是能够感知环境、做出决策并执行动作的 AI 系统。
 
-*📅 2026--*
+### 核心能力
 
-[阅读 →](2026-03-18-Tools-AI-Tools/)
+| 能力 | 说明 |
+|------|------|
+| 规划 | 将复杂任务分解为步骤 |
+| 记忆 | 短期/长期记忆管理 |
+| 工具 | 调用外部工具和 API |
+| 协作 | 多 Agent 协同工作 |
 
----
+### 实践指南
 
-## [AI智能体生产落地：评估框架与架构模式深度解析](2026-03-19-AI-Agent-Production-Framework.md)
+- [AI Agent 生产落地指南](AI开发/2026-03-19-AI-Agent-Production-Framework/)
+- [AI Agent 错误处理与容错](AI开发/2026-03-23-AI-Agent-Error-Handling/)
+- [AI Agent 成本优化](AI开发/2026-03-21-AI-Agent-Cost-Optimization/)
 
-*📅 2026--*
+## 🔧 开发框架
 
-[阅读 →](2026-03-19-AI-Agent-Production-Framework/)
+### LangGraph
+用于构建有状态多 actor 应用的框架
 
----
+- [LangGraph 工作流指南](AI开发/2026-03-20-LangGraph-Workflow-Guide/)
 
-## [AI架构融合之道：确定性系统与概率性智能的协同设计](2026-03-19-AI-Architecture-Hybrid-System.md)
+### Ollama
+本地运行 LLM
 
-*📅 2026--*
+- [Ollama 本地部署](AI开发/2026-03-20-AI-Agent-Local-Deployment/)
 
-[阅读 →](2026-03-19-AI-Architecture-Hybrid-System/)
+## 📊 相关文档
 
----
-
-## [边缘智能实战：在Raspberry Pi上部署轻量化AI模型](2026-03-19-Edge-AI-Raspberry-Pi.md)
-
-*📅 2026--*
-
-[阅读 →](2026-03-19-Edge-AI-Raspberry-Pi/)
-
----
-
-## [AI Agent 本地部署实战：Ollama + LangGraph 隐私优先工作流](2026-03-20-AI-Agent-Local-Deployment.md)
-
-*📅 2026--*
-
-[阅读 →](2026-03-20-AI-Agent-Local-Deployment/)
-
----
-
-## [AI Agent 记忆系统架构：从向量存储到长期记忆的演进之路](2026-03-20-AI-Agent-Memory-System.md)
-
-*📅 2026--*
-
-[阅读 →](2026-03-20-AI-Agent-Memory-System/)
-
----
-
-## [AI Agent 成本优化实战：从 Token 失控到预算可控的完整指南](2026-03-21-AI-Agent-Cost-Optimization.md)
-
-*📅 2026--*
-
-[阅读 →](2026-03-21-AI-Agent-Cost-Optimization/)
-
----
-
-## [AI Agent 可观测性 2.0：用 OpenTelemetry 打造全链路追踪体系](2026-03-21-AI-Agent-Observability-OpenTelemetry.md)
-
-*📅 2026--*
-
-[阅读 →](2026-03-21-AI-Agent-Observability-OpenTelemetry/)
-
----
-
-## [AI Gateway 飞书插件集成实战：从零到企业级协作](2026-03-22-AI-Gateway-Feishu-Plugins.md)
-
-*📅 2026--*
-
-[阅读 →](2026-03-22-AI-Gateway-Feishu-Plugins/)
-
----
-
-## [LangGraph 工作流编排实战：用有向图构建可控的 AI Agent](2026-03-22-LangGraph-Workflow-AI-Agent.md)
-
-*📅 2026--*
-
-[阅读 →](2026-03-22-LangGraph-Workflow-AI-Agent/)
-
----
-
-## [多模态 Agent 实战：从视觉 Function 到脑眼协同系统](2026-03-22-Multimodal-Agent-Vision-Function.md)
-
-*📅 2026--*
-
-[阅读 →](2026-03-22-Multimodal-Agent-Vision-Function/)
-
----
-
-## [AI Agent 错误处理实战：重试、熔断与优雅降级](2026-03-23-AI-Agent-Error-Handling.md)
-
-*📅 2026--*
-
-[阅读 →](2026-03-23-AI-Agent-Error-Handling/)
-
----
-
-## [AI开发](index.md)
-
-[阅读 →](index/)
-
----
-
+- [OpenClaw 飞书集成](AI开发/2026-03-22-OpenClaw-Feishu-Integration/)
+- [多模态 Agent](AI开发/2026-03-22-Multimodal-Agent-Vision-Function/)
