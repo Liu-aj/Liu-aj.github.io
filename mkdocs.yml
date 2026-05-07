@@ -3,25 +3,6 @@ site_description: 技术沉淀，持续精进 | AI/ESP32/Home Assistant/3D打印
 site_url: https://liu-aj.github.io/
 site_author: Liuaj
 
-extra:
-  generator: false
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/Liu-aj
-  google_analytics:
-    - G-XXXXXXXXXX
-    - auto
-  consent:
-    title: Cookie 同意
-    actions:
-      - accept
-      - reject
-  sitemap:
-    changefreq: weekly
-  announcement:
-    - icon: "🎉"
-      content: "欢迎访问 Liuaj's Wiki，如有问题请提交 Issue"
-
 theme:
   name: material
   language: zh
@@ -223,6 +204,3 @@ nav:
       - 数据库/index.md
 
 copyright: © 2024-2026 Liuaj's Wiki | 使用 <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">Material for MkDocs</a> 构建
-
-markdown_extensions:
-  - tables
