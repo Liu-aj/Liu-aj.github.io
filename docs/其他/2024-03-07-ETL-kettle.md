@@ -98,7 +98,7 @@ KITCHEN：允许你批量使用由Chef设计的任务 (例如使用一个时间�
 **错误处理：**
 ```bash
 [转换] --失败--> [发送邮件] --> [失败]
-```
+
 - 勾选"执行每个输入行"
 - 设置"失败时跳转"到错误处理流程
 
@@ -231,7 +231,7 @@ THREADS          | 4                   | 并行线程数
 SELECT * FROM orders
 WHERE order_date BETWEEN ? AND ?
 AND status = ?
-```
+
 - 依次在"参数"标签中配置：
   - START_DATE
   - END_DATE

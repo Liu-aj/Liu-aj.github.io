@@ -15,7 +15,7 @@ tags:
 
 ## 通用模板
 
-```
+
 # 依赖
 node_modules/
 venv/
