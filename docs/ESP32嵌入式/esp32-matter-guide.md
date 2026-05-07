@@ -17,7 +17,7 @@ tags:
 > 更新日期：2026-05-06
 
 ---
-description: ESP32开发指南
+description: description: ESP32 Matter 协议开发实战指南（2026） — 核心知识点与实战指南
 
 ## 一、Matter 协议快速入门
 
@@ -42,7 +42,7 @@ Matter（前身 Project CHIP - Connected Home over IP）是 CSA（连接标准�
 | ESP32-H2 | ❌ | ✅ | Thread + BLE 5.3（ Matter + BLE combo） |
 
 ---
-description: ESP32开发指南
+description: ESP32 Matter 协议开发实战指南（2026） — 核心知识点与实战指南
 
 ### 1.2 网络拓扑
 
@@ -59,7 +59,7 @@ description: ESP32开发指南
 ```
 
 ---
-description: ESP32开发指南
+description: ESP32description: ESP32 Matter 协议开发实战指南（2026） — 核心知识点与实战指南
 
 ## 二、开发环境搭建
 

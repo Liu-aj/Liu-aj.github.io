@@ -15,7 +15,7 @@ tags:
 > 更新日期：2026-05-06 | 基于 Espressif 官方数据
 
 ---
-description: ESP32开发指南
+description: description: ESP32 家族选型指南 2026 — 完整型号对比与项目推荐 — 核心知识点与实战指南
 
 ## 一、全家族参数对比表（2026 最新）
 
@@ -34,7 +34,7 @@ description: ESP32开发指南
 | **ESP32-P4** | 双核 Xtensa LX7 | 480 MHz | 768 KB | 802.11 a/b/g/n/ac | BLE 5.0 | — | Xtensa | **高性能款**，多媒体方向 |
 
 ---
-description: ESP32开发指南
+description: ESP32 家族选型指南 2026 — 完整型号对比与项目推荐 — 核心知识点与实战指南
 
 ## 二、特殊型号深度解析
 
@@ -77,7 +77,7 @@ Matter   → 跨平台智能家居协议
 > 💡 如果要做插电设备，选 C6；如果做电池设备，选 H2
 
 ---
-description: ESP32开发指南
+description: ESP32description: ESP32 家族选型指南 2026 — 完整型号对比与项目推荐 — 核心知识点与实战指南
 
 ## 三、各型号典型应用场景
 

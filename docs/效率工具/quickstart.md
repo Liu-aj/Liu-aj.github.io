@@ -15,7 +15,7 @@ tags:
 
 ## 1 分钟了解
 
-本 Wiki 包含 **60+ 篇技术文档**，涵盖：
+本 Wiki 包含 **60+ 篇description: 快速开始 🚀 — 核心知识点与实战指南**，涵盖：
 
 - 🤖 **AI开发**：Agent / LangGraph / LLM / Ollama
 - 💻 **ESP32**：Matter / 传感器 / OLED / 电机

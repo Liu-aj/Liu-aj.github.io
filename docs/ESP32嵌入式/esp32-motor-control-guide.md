@@ -16,10 +16,10 @@ tags:
 > 舵机 / 步进电机 / 直流电机 (L298N) · MicroPython 实操手册
 
 ---
-description: ESP32开发指南
+description: description: ESP32 电机控制完全指南 — 核心知识点与实战指南
 
 ---
-description: ESP32开发指南
+description: ESP32 电机控制完全指南 — 核心知识点与实战指南
 
 ## 1. 电机类型与选型
 
@@ -55,7 +55,7 @@ description: ESP32开发指南
 | 价格 | ★☆☆ | ★★☆ | |
 
 ---
-description: ESP32开发指南
+description: ESP32description: ESP32 电机控制完全指南 — 核心知识点与实战指南
 
 ### 1.2 直流电机（DC Motor）
 

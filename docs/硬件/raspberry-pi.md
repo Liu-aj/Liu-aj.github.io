@@ -1,6 +1,6 @@
 ---
 title: 树莓派
-description: 树莓派开发指南
+description: 树莓派description: 树莓派 🖥️ — 核心知识点与实战指南
 tags:
 - 树莓派
 - Raspberry Pi

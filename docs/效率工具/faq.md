@@ -32,7 +32,7 @@ tags:
 ## 技术相关
 
 ### Q: ESP32 支持 Matter 协议吗？
-**A:** 是的，ESP32-S3 和 ESP32-C6 支持 Matter 协议。具体请参考 [Matter 协议开发指南](esp32-matter-guide/)。
+**A:** 是的，ESP32-S3 和 ESP32-C6 支持 Matter 协议。具体请参考 [Matter 协议description: 常见问题 ❓ — 核心知识点与实战指南](esp32-matter-guide/)。
 
 ### Q: 如何本地运行 LLM？
 **A:** 推荐使用 [Ollama](AI开发/2026-03-20-AI-Agent-Local-Deployment/)，支持 Windows/macOS/Linux。

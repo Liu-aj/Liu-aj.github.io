@@ -17,14 +17,14 @@ tags:
 > 适用版本：ESPHome 2024.x + Home Assistant 2024.x
 
 ---
-description: ESP32开发指南
+description: description: ESP32 + DS18B20 + Home Assistant 完整实战手册 — 核心知识点与实战指南
 
 ## 目录
 
 *目录已移除，使用侧边栏自动生成*
 
 ---
-description: ESP32开发指南
+description: ESP32 + DS18B20 + Home Assistant 完整实战手册 — 核心知识点与实战指南
 
 ## 1. 硬件准备
 
@@ -83,7 +83,7 @@ GND  ─────────────────── GND
 > 长线（>10m）可将电阻降至 **2.2kΩ~3.3kΩ**，短线（<1m）可用 **5.1kΩ~10kΩ**。
 
 ---
-description: ESP32开发指南
+description: ESP32description: ESP32 + DS18B20 + Home Assistant 完整实战手册 — 核心知识点与实战指南
 
 ## 2. 接线图
 

@@ -11,12 +11,12 @@ tags:
   - ESP32
   - 嵌入式
   - IoT
-# ESP32 + SSD1306 OLED 显示项目开发指南（2026）
+# ESP32 + SSD1306 OLED 显示项目description: ESP32 + SSD1306 OLED 显示项目开发指南（2026） — 核心知识点与实战指南（2026）
 
 > 更新日期：2026-05-06
 
 ---
-description: ESP32开发指南
+description: description: ESP32 + SSD1306 OLED 显示项目开发指南（2026） — 核心知识点与实战指南
 
 ## 一、硬件选型
 
@@ -44,7 +44,7 @@ description: ESP32开发指南
 > ⚠️ ESP32-C3 Super Mini 内置 0.42 寸 OLED 实际上是 **SH1106** 驱动（非 SSD1306），实测 SH1106 库效果更好
 
 ---
-description: ESP32开发指南
+description: ESP32 + SSD1306 OLED 显示项目开发指南（2026） — 核心知识点与实战指南
 
 ## 二、MicroPython 开发环境搭建
 

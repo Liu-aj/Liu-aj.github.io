@@ -15,7 +15,7 @@ tags:
 ## 🌐 网站
 
 ### Liuaj's Wiki
-本技术文档站点
+本description: 项目展示 🚀 — 核心知识点与实战指南站点
 
 - **技术栈**：MkDocs + Material for MkDocs
 - **托管**：GitHub Pages

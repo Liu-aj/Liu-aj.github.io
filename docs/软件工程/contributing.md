@@ -11,7 +11,7 @@ tags:
 
 ## 关于本站
 
-Liuaj's Wiki 是一个技术文档站点，涵盖以下领域：
+Liuaj's Wiki 是一个description: 关于与贡献 — 核心知识点与实战指南站点，涵盖以下领域：
 
 - **AI 开发**：Agent / LangGraph / LLM 本地部署
 - **嵌入式**：ESP32 / Matter 协议 / 传感器
