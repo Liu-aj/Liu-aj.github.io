@@ -42,8 +42,7 @@ theme:
 plugins:
   - search
   - meta
-  - tags:
-      tags_structure: flat
+  - tags
 
 markdown_extensions:
   - pymdownx.highlight
@@ -64,10 +63,68 @@ nav:
       - 资源地址: about/resources.md
       - 我的书单: about/book.md
       - 打赏: donate.md
-  - ESP32嵌入式: ESP32嵌入式/ESP32-总览.md
-  - 智能家居: 智能家居/智能家居-总览.md
-  - AI应用开发: AI应用开发/AI应用-总览.md
-  - 后端工程: 后端工程/研发基础/architecture.md
-  - 效率工具: 效率工具/开发工具/cli-tools.md
+  - ESP32嵌入式:
+      - 总览: ESP32嵌入式/ESP32-总览.md
+      - Matter协议: ESP32嵌入式/esp32-matter-guide.md
+      - 家族选型: ESP32嵌入式/esp32-family-2026.md
+      - OLED显示: ESP32嵌入式/esp32-ssd1306-oled.md
+      - 电机控制: ESP32嵌入式/esp32-motor-control-guide.md
+      - DS18B20传感器: ESP32嵌入式/esp32-ds18b20-home-assistant-guide.md
+  - 智能家居:
+      - 总览: 智能家居/智能家居-总览.md
+      - HA仪表盘: 智能家居/ha-dashboard-theme-2026.md
+      - 蓝牙定位: 智能家居/ha-ble-beacon-location.md
+      - Zigbee2MQTT: 智能家居/zigbee2mqtt-guide-2026.md
+      - 拓竹A1: 智能家居/bambu-a1-support-optimization.md
+  - AI应用开发:
+      - 总览: AI应用开发/AI应用-总览.md
+      - Agent框架: AI应用开发/AI-Agent-Production-Framework.md
+      - LangGraph: AI应用开发/LangGraph-Workflow-Guide.md
+      - 本地LLM: AI应用开发/AI-Agent-Local-Deployment.md
+      - 成本优化: AI应用开发/AI-Agent-Cost-Optimization.md
+      - 可观测性: AI应用开发/AI-Agent-Observability-OpenTelemetry.md
+      - 错误处理: AI应用开发/AI-Agent-Error-Handling.md
+      - GUI自动化: AI应用开发/GUI-Agent-Automation.md
+      - MCP协议: AI应用开发/MCP-Protocol-Practice.md
+      - N8N工作流: AI应用开发/N8N.md
+      - Dify入门: AI应用开发/Dify-Init.md
+      - OpenClaw集成: AI应用开发/OpenClaw-Feishu-Integration.md
+  - 后端工程:
+      - 研发基础: 后端工程/研发基础/architecture.md
+      - 云原生&DevOps: 后端工程/云原生&DevOps/container.md
+      - 数据技术: 后端工程/数据技术/database-design.md
+      - 安全&网络: 后端工程/安全&网络/security.md
+  - 效率工具:
+      - 开发工具:
+          - CLI工具: 效率工具/开发工具/cli-tools.md
+          - Cursor: 效率工具/开发工具/cursor.md
+          - Jekyll: 效率工具/开发工具/jekyll-guide.md
+      - 版本控制:
+          - Git: 效率工具/版本控制/git.md
+          - Git进阶: 效率工具/版本控制/git-advanced.md
+          - Gitignore: 效率工具/版本控制/gitignore.md
+      - Linux系统:
+          - 终端: 效率工具/Linux系统/terminal.md
+          - 环境配置: 效率工具/Linux系统/environment.md
+          - SSH: 效率工具/Linux系统/ssh.md
+          - WSL: 效率工具/Linux系统/wsl.md
+      - 文本工具:
+          - Vim: 效率工具/文本工具/vim.md
+          - 正则: 效率工具/文本工具/regex.md
+          - JSON/YAML: 效率工具/文本工具/json-yaml.md
+          - Markdown: 效率工具/文本工具/markdown.md
+      - 编程语言:
+          - JavaScript: 效率工具/编程语言/javascript.md
+          - Python: 效率工具/编程语言/python-advanced.md
+      - 理论基础:
+          - 算法: 效率工具/理论基础/algorithms.md
+          - 数据结构: 效率工具/理论基础/datastructures.md
+          - 函数式: 效率工具/理论基础/functional-programming.md
+          - 异步编程: 效率工具/理论基础/async-programming.md
+      - 通用技能:
+          - 命令行: 效率工具/通用技能/command-line.md
+          - 跨平台: 效率工具/通用技能/cross-platform.md
+          - 脚本: 效率工具/通用技能/scripts.md
+          - 排错: 效率工具/通用技能/troubleshooting.md
 
 copyright: © 2024-2026 Liuaj's Wiki | 使用 <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">Material for MkDocs</a> 构建
