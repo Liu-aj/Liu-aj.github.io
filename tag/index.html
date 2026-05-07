@@ -19,7 +19,7 @@ title: 标签
 				<div class="sidebar-card">
 					<h1><i class="fa fa-fire"></i> 热门标签</h1>
 					<ul class="nav sidenav hot-tags">
-						{% assign sorted_tags = site.tags | sort %}
+						{% assign sorted_tags = site.tags | sort_natural %}
 						{% for tag in sorted_tags %}
 						{% if tag[1].size >= 2 %}
 						<li>
@@ -47,7 +47,7 @@ title: 标签
 						<div class="tag-cloud-section">
 							<h2 class="section-title"><i class="fa fa-tags"></i> 标签云</h2>
 							<div class="tag-cloud">
-								{% assign sorted_tags = site.tags | sort %}
+								{% assign sorted_tags = site.tags | sort_natural %}
 								{% for tag in sorted_tags %}
 								<a href="#{{ tag[0] | slugify }}" class="tag-cloud-item {% if tag[1].size >= 3 %}tag-hot{% endif %}">
 									{{ tag[0] }} <span class="tag-num">{{ tag[1].size }}</span>
@@ -59,7 +59,7 @@ title: 标签
 						<!-- 热门标签详情 -->
 						<div class="tag-details-section">
 							<h2 class="section-title"><i class="fa fa-list"></i> 热门标签详情</h2>
-							{% assign sorted_tags = site.tags | sort %}
+							{% assign sorted_tags = site.tags | sort_natural %}
 							{% for tag in sorted_tags %}
 							{% if tag[1].size >= 2 %}
 							<div class="tag-section" id="{{ tag[0] | slugify }}">
