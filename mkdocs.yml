@@ -77,6 +77,12 @@ markdown_extensions:
 
 nav:
   - 首页: index.md
+  - 关于:
+      - 关于: about/index.md
+      - 自学清单: about/learn.md
+      - 资源地址: about/resources.md
+      - 我的书单: about/book.md
+  - 打赏: donate.md
   - ESP32嵌入式:
       - ESP32嵌入式/ESP32-总览.md
       - ESP32嵌入式/esp32-matter-guide.md
