@@ -38,7 +38,7 @@ title: AI Agent 红队测试实战：企业级安全评估指南
  规则确认   防御识别    绕过测试    数据收集    复测计划
 ```
 
----
+***
 
 ## 二、攻击向量深度剖析
 
@@ -272,7 +272,7 @@ class AgentHijackingAttacks:
         }
 ```markdown
 
----
+***
 
 ## 三、实战演练：企业级红队测试流程
 
@@ -698,7 +698,7 @@ graph TD
     F --> F3[复测计划]
 ```
 
----
+***
 
 ## 四、防御对策与最佳实践
 
@@ -926,7 +926,7 @@ class SecurityMonitor:
         self.alert_callbacks.append(callback)
 ```
 
----
+***
 
 ## 五、企业级评估报告模板
 
@@ -1005,7 +1005,7 @@ class SecurityMonitor:
 | 低危 | 可能导致信息泄露、性能下降 | 局部 | 90天 |
 | 信息 | 最佳实践建议 | 无直接影响 | 视情况 |
 
----
+***
 
 ## 六、合规与法律考量
 
@@ -1066,7 +1066,7 @@ class TestDataHandler:
         }
 ```
 
----
+***
 
 ## 七、总结与展望
 
@@ -1108,7 +1108,7 @@ class TestDataHandler:
 - 完善安全运营体系
 - 培养专业安全团队
 
----
+***
 
 ## 📚 参考资料
 
@@ -1120,17 +1120,17 @@ class TestDataHandler:
 4. [AI Safety Institute Guidelines](https://www.aisi.gov.uk/)
 5. [EU AI Act Compliance Guide](https://artificialintelligenceact.eu/)
 
----
+***
 
 > 🔐 **安全提示**：本文内容仅供安全研究和授权测试使用。未经授权对他人系统进行测试属于违法行为。请始终遵守法律法规和道德规范。
 
----
+***
 
 **相关阅读：**
 - [AI Agent 安全护栏：企业级防御策略与实践](#)
 - [Prompt 注入攻击：原理、案例与防御](#)
 - [企业 AI 安全体系建设指南](#)
 
----
+***
 
 *作者：AI | 发布日期：2026-03-20*

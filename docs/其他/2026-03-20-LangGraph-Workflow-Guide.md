@@ -95,7 +95,7 @@ LangGraph 的核心思想来自**状态机**和**有向图**理论：
 
 这种设计让 Agent 从"不可控的推理链"变成"可编程的工作流"，同时保留了 LLM 的灵活性——在节点内部，你依然可以用 LLM 做任何智能决策。
 
----
+***
 
 ## 二、StateGraph 核心概念
 
@@ -215,7 +215,7 @@ async for event in app.astream_events({"messages": [HumanMessage(content="你好
     print(event)
 ```
 
----
+***
 
 ## 三、实战一：ReAct Agent——思考→行动→观察循环
 
@@ -360,7 +360,7 @@ print(result["messages"][-1].content)
 2. **循环结构**：`tools -> agent` 的边形成了思考-行动循环
 3. **终止条件**：`should_continue` 函数控制何时结束
 
----
+***
 
 ## 四、实战二：多步审批工作流——interrupt() 人工介入
 
@@ -542,7 +542,7 @@ app = workflow.compile(checkpointer=checkpointer)
 # 完全支持！
 ```python
 
----
+***
 
 ## 五、实战三：并行子任务编排——多分支并发执行
 
@@ -703,7 +703,7 @@ aggregate:                         ████ (汇总)
 而非 2 + 3 + 2.5 = 7.5s（串行）
 ```python
 
----
+***
 
 ## 六、生产部署最佳实践
 
@@ -786,7 +786,7 @@ async def run_with_progress():
             print(event["data"]["chunk"].content, end="", flush=True)
 ```
 
----
+***
 
 ## 七、总结与展望
 
@@ -822,7 +822,7 @@ LangGraph 仍在快速发展，2026年值得关注的特性：
 - **可视化编辑器**：拖拽式构建工作流
 - **更多集成**：与 LangSmith、LangServe 深度整合
 
----
+***
 
 ## 参考资料
 
@@ -830,6 +830,6 @@ LangGraph 仍在快速发展，2026年值得关注的特性：
 - [LangChain GitHub](https://github.com/langchain-ai/langchain)
 - [LangGraph 示例库](https://github.com/langchain-ai/langgraph/tree/main/examples)
 
----
+***
 
 > 💡 **本文代码**：所有示例代码已在 Python 3.11 + LangGraph 0.3 环境下测试通过，可直接用于学习和小规模应用。生产环境请根据实际情况调整错误处理和监控策略。

@@ -120,7 +120,7 @@ class HybridMemory:
         return total_chars // 4
 ```
 
----
+***
 
 ## 4. 实战二：Token 预算控制
 
@@ -302,7 +302,7 @@ class CostOptimizer:
         )
 ```markdown
 
----
+***
 
 ## 5. 实战三：监控与告警
 
@@ -409,7 +409,7 @@ groups:
 └─────────────────────────────────────────────────────────────────────┘
 ```python
 
----
+***
 
 ## 6. 生产环境部署建议
 
@@ -482,7 +482,7 @@ class CostReportGenerator:
         # 发送邮件逻辑
 ```markdown
 
----
+***
 
 ## 7. 2026 年成本优化新趋势
 
@@ -520,7 +520,7 @@ class CostReportGenerator:
 
 **推荐配置**：80% 本地（Llama-3-8B / Qwen-7B）+ 20% 云端
 
----
+***
 
 ## 8. 总结
 
@@ -554,7 +554,7 @@ class CostReportGenerator:
 2. 善用 Rules——一次设置，长期生效
 3. 实现失败快速返回——不要让 Agent 无限重试
 
----
+***
 
 ## 📚 参考资料
 
@@ -567,6 +567,6 @@ class CostReportGenerator:
 | OpenAI API 定价 | [openai.com/pricing](https://openai.com/pricing) |
 | DeepSeek API 定价 | [platform.deepseek.com](https://platform.deepseek.com/api-docs/pricing/) |
 
----
+***
 
 > 本文首发于 [L先生的博客](https://liu-aj.github.io)，版权所有，转载请注明出处。

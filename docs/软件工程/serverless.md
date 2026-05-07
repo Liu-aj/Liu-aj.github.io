@@ -11,7 +11,7 @@ tags:
 
 > 事件驱动架构
 
----
+***
 
 ## 特点
 
@@ -39,6 +39,6 @@ def handler(event, context):
 - 数据库变更
 - 定时任务
 
----
+***
 
 *Serverless 让开发更简单*

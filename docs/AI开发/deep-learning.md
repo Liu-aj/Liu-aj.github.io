@@ -9,7 +9,7 @@ tags:
 
 > 多层神经网络
 
----
+***
 
 ## 框架
 
@@ -34,6 +34,6 @@ class Net(nn.Module):
         return self.fc(x)
 ```
 
----
+***
 
 *深度学习推动 AI 革命*

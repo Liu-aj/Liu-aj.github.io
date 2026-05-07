@@ -5,8 +5,9 @@ tags:
   - Matter
   - IoT
   - 智能家居
+
+description: ESP32 Matter 协议开发实战指南（2026）
 ---
-description: ESP32 Matter 协议开发实战指南（2026） — 核心知识点与实战指南
 
 ## 一、Matter 协议快速入门
 
@@ -29,8 +30,7 @@ Matter（前身 Project CHIP - Connected Home over IP）是 CSA（连接标准�
 | ESP32-C3 | ✅ | ❌ | 仅 Wi-Fi |
 | ESP32-C6 | ✅ | ✅ | Wi-Fi 6 + Thread |
 | ESP32-H2 | ❌ | ✅ | Thread + BLE 5.3（ Matter + BLE combo） |
-
-description: ESP32 Matter 协议开发实战指南（2026） — 核心知识点与实战指南
+description:ESP32 Matter 协议开发实战指南（2026）
 
 ### 1.2 网络拓扑
 
@@ -45,8 +45,7 @@ description: ESP32 Matter 协议开发实战指南（2026） — 核心知识点
                     │   (via Wi-Fi)   │    │   (via Thread)  │
                     └─────────────────┘    └─────────────────┘
 ```
-
-description: ESP32description: ESP32 Matter 协议开发实战指南（2026） — 核心知识点与实战指南
+description:ESP32description: ESP32 Matter 协议开发实
 
 ## 二、开发环境搭建
 
@@ -82,8 +81,7 @@ description: ESP32description: ESP32 Matter 协议开发实战指南（2026） �
 | Erase All Flash Before Sketch Upload | `Enabled` | 清除 NVS 分区残留的配对信息，避免配对失败 |
 
 ⚠️ **新手最常犯的错误：没改 Partition Scheme 导致配对失败**
-
-description: ESP32开发指南
+description:ESP32开发指南
 
 ## 三、Hello World — 第一个 Matter 设备
 
@@ -159,8 +157,7 @@ void loop() {
 3. 扫描设备上的 QR 码（或输入配对码）
 4. 等待配对完成（约 30 秒）
 5. 配对成功后在 App 中即可控制设备
-
-description: ESP32开发指南
+description:ESP32开发指南
 
 ## 四、Matter 设备类型一览（ESP32 Arduino）
 
@@ -196,8 +193,7 @@ description: ESP32开发指南
 | 窗帘电机 | `MatterWindowCovering` | 开/停/关 |
 | 智能按钮 | `MatterGenericSwitch` | 按钮按下事件 |
 | 开关 | `MatterOnOffLight`（作为开关用） | 控制其他设备 |
-
-description: ESP32开发指南
+description:ESP32开发指南
 
 ## 五、多平台同时支持
 
@@ -214,8 +210,7 @@ Matter 的核心优势之一就是**本地同时支持多个平台**，不需要
 3. Alexa 同理
 
 > ⚠️ 注意：部分平台可能要求设备先通过该平台的 App 完成初始配对。请查看各平台的具体要求。
-
-description: ESP32开发指南
+description:ESP32开发指南
 
 ## 六、常见问题排查
 
@@ -254,8 +249,7 @@ Serial.printf("\nWiFi connected, IP: %s\n", WiFi.localIP().toString().c_str());
 ### Q4: 串口监视器乱码
 
 波特率设为 **115200**（Matter 默认）
-
-description: ESP32开发指南
+description:ESP32开发指南
 
 ## 七、参考资源
 
@@ -263,7 +257,6 @@ description: ESP32开发指南
 - ESP-Matter GitHub：https://github.com/espressif/esp-matter
 - Matter 示例代码：https://github.com/espressif/arduino-esp32/tree/master/libraries/Matter/examples
 - ESP-Matter 框架详解（CSDN）：https://blog.csdn.net/weixin_29174141/article/details/158639351
-
-description: ESP32开发指南
+description:ESP32开发指南
 
 *下期预告：ESP32 家族选型指南 2026 — 完整型号对比与项目推荐*

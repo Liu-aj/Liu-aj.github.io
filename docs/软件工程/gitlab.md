@@ -11,7 +11,7 @@ tags:
 
 > Self-hosted Git 仓库与 CI/CD
 
----
+***
 
 ## CI/CD
 
@@ -56,6 +56,6 @@ sudo apt-get install gitlab-runner
 sudo gitlab-runner register
 ```
 
----
+***
 
 *GitLab 是强大的 DevOps 平台*

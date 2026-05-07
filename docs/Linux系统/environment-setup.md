@@ -11,7 +11,7 @@ tags:
 
 > 常用开发环境配置
 
----
+***
 
 ## Python
 
@@ -60,6 +60,6 @@ export GOPATH=$HOME/go
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
----
+***
 
 *好的开发环境是高效开发的基础*

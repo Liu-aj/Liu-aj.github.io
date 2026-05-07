@@ -40,7 +40,7 @@ OpenClaw 提供了两类 Skills：内置 Skills 和自定义 Skills。
 - 可以复用团队沉淀的最佳实践
 - 便于分享和协作
 
----
+***
 
 ## 如何使用 Skills
 
@@ -75,7 +75,7 @@ openclaw skill exec <name>   # 执行指定 Skill
 ```bash
 ```
 
----
+***
 
 ## 如何创建自己的 Skill
 
@@ -151,7 +151,7 @@ cp -r my-skill ~/.openclaw/skills/
 clawhub publish my-skill
 ```
 
----
+***
 
 ## 最佳实践建议
 
@@ -161,7 +161,7 @@ clawhub publish my-skill
 4. **错误处理**：添加适当的异常捕获和提示
 5. **版本管理**：对 Skill 进行版本标注，便于追踪更新
 
----
+***
 
 ## 总结
 
@@ -169,6 +169,6 @@ OpenClaw Skills 为 AI Agent 提供了一套灵活、可扩展的能力体系。
 
 随着社区的贡献，OpenClaw 的 Skills 生态将不断丰富，为 AI Agent 的能力边界拓展更多可能性。
 
----
+***
 
 *本文基于 OpenClaw 框架编写，更多信息请参考官方文档。*

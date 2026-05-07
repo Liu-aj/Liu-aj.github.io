@@ -11,7 +11,7 @@ tags:
 
 > 异步事件处理
 
----
+***
 
 ## 模式
 
@@ -36,6 +36,6 @@ events.append(Event(type='UserCreated', data=user_data))
 state = reduce(apply_event, events)
 ```
 
----
+***
 
 *事件驱动让系统更松耦合*

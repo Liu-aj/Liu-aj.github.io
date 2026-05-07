@@ -11,7 +11,7 @@ tags:
 
 > 理解系统行为
 
----
+***
 
 ## 三要素
 
@@ -33,6 +33,6 @@ with tracer.start_as_current_span("operation") as span:
     process()
 ```
 
----
+***
 
 *可观测性让系统更透明*

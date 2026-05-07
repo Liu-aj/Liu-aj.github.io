@@ -11,7 +11,7 @@ tags:
 
 > 版本控制最佳实践
 
----
+***
 
 ## 分支策略
 
@@ -61,6 +61,6 @@ git rebase -i HEAD~3
 git cherry-pick <commit>
 ```
 
----
+***
 
 *好的版本控制让协作更顺畅*

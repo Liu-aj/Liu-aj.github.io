@@ -11,7 +11,7 @@ tags:
 
 > RESTful API 设计与最佳实践
 
----
+***
 
 ## REST 原则
 
@@ -72,6 +72,6 @@ GET /api/v1/users
 GET /api/v2/users
 ```
 
----
+***
 
 *好的 API 设计是好的用户体验的基础*

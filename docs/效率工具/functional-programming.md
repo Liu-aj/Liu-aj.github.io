@@ -10,7 +10,7 @@ tags:
 
 > 不可变数据的编程范式
 
----
+***
 
 ## 核心概念
 
@@ -40,6 +40,6 @@ from functools import reduce
 result = reduce(lambda acc, x: acc + x, map(lambda x: x * 2, filter(lambda x: x > 0, numbers)))
 ```
 
----
+***
 
 *函数式编程让代码更简洁*

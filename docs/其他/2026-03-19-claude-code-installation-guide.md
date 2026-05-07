@@ -13,6 +13,6 @@ title: Claude Code 安装与入门指南（国内踩坑版）
 - [Anthropic Console](https://console.anthropic.com/)
 - [npm 镜像站](https://npmmirror.com/)
 
----
+***
 
 *本文持续更新，如有问题欢迎留言讨论。*

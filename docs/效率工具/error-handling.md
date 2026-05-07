@@ -11,7 +11,7 @@ tags:
 
 > 优雅地处理错误
 
----
+***
 
 ## Python
 
@@ -58,6 +58,6 @@ async function fetchData(url) {
 }
 ```
 
----
+***
 
 *好的错误处理让系统更健壮*

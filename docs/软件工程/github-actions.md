@@ -11,7 +11,7 @@ tags:
 
 > GitHub 内置 CI/CD
 
----
+***
 
 ## 基本配置
 
@@ -44,6 +44,6 @@ jobs:
 | actions/setup-python | Python 环境 |
 | actions/cache | 缓存依赖 |
 
----
+***
 
 *GitHub Actions 让 CI/CD 变得简单*

@@ -1,6 +1,6 @@
 ---
 title: 文档编写
-description: 文档编写 📝 — 核心知识点与实战指南编写技巧
+description: 文档编写 📝
 tags:
 - 文档
 - Documentation

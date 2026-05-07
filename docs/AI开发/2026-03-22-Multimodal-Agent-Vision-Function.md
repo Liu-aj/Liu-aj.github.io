@@ -38,7 +38,7 @@ title: 多模态 Agent 实战：从视觉 Function 到脑眼协同系统
 2. **文档分析**：PDF、表格、图表理解
 3. **视觉推理**：从图像中提取信息并推理
 
----
+***
 
 ## 二、多模态 Agent 架构设计
 
@@ -73,7 +73,7 @@ title: 多模态 Agent 实战：从视觉 Function 到脑眼协同系统
 | Multimodal LLM | 多模态推理 | GPT-4V、Gemini Pro Vision |
 | Action Executor | 执行操作 | PyAutoGUI、Playwright |
 
----
+***
 
 ## 三、实战一：视觉 Function 封装
 
@@ -282,7 +282,7 @@ result = analyzer.analyze_screen(
 )
 ```
 
----
+***
 
 ## 四、实战二：跨模态对齐
 
@@ -581,7 +581,7 @@ class MultimodalRAG:
         return results
 ```python
 
----
+***
 
 ## 五、实战三：脑眼协同系统
 
@@ -868,7 +868,7 @@ if __name__ == "__main__":
     print(f"\n结果: {result}")
 ```
 
----
+***
 
 ## 六、实战四：文档理解 Agent
 
@@ -1121,7 +1121,7 @@ class TableAnalyzer:
         return json.loads(response.choices[0].message.content)
 ```python
 
----
+***
 
 ## 七、生产环境部署
 
@@ -1301,7 +1301,7 @@ class CostController:
         }
 ```
 
----
+***
 
 ## 八、2026 年多模态技术趋势
 
@@ -1335,7 +1335,7 @@ class CostController:
     └── 设计辅助
 ```
 
----
+***
 
 ## 九、总结
 
@@ -1369,7 +1369,7 @@ class CostController:
 | 多模态 RAG | https://www.53ai.com/news/RAG/2026032175328.html |
 | PyMuPDF 文档 | https://pymupdf.readthedocs.io/ |
 
----
+***
 
 > 多模态 Agent 是 AI 能力的重要突破。从"只能看文字"到"能看见世界"，这不仅是技术进步，更是应用场景的质变。
 >

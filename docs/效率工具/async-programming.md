@@ -11,7 +11,7 @@ tags:
 
 > 高效处理并发
 
----
+***
 
 ## Python
 
@@ -54,6 +54,6 @@ loop = asyncio.get_event_loop()
 loop.run_until_complete(main())
 ```
 
----
+***
 
 *异步让程序更高效*

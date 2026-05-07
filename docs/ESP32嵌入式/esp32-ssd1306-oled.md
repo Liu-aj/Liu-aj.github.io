@@ -6,7 +6,7 @@ tags:
   - SSD1306
   - 嵌入式
 ---
-description: ESP32 + SSD1306 OLED 显示项目开发指南（2026） — 核心知识点与实战指南
+description:ESP32 + SSD1306 OLED 显示项目开发指南（2026）
 
 ## 一、硬件选型
 
@@ -32,8 +32,7 @@ description: ESP32 + SSD1306 OLED 显示项目开发指南（2026） — 核心�
 | 库 | ssd1306（MicroPython）/ Adafruit SSD1306（Arduino） |
 
 > ⚠️ ESP32-C3 Super Mini 内置 0.42 寸 OLED 实际上是 **SH1106** 驱动（非 SSD1306），实测 SH1106 库效果更好
-
-description: ESP32 + SSD1306 OLED 显示项目开发指南（2026） — 核心知识点与实战指南
+description:ESP32 + SSD1306 OLED 显示项目开发指南（2026）
 
 ## 二、MicroPython 开发环境搭建
 
@@ -59,8 +58,7 @@ mip.install("ssd1306")
 
 # 方法2：手动上传 .py 库文件到开发板
 ```markdown
-
-description: ESP32开发指南
+description:ESP32开发指南
 
 ## 三、ssd1306 库使用详解
 
@@ -111,8 +109,7 @@ for x in range(128):
     display.show()
     utime.sleep(0.05)
 ```python
-
-description: ESP32开发指南
+description:ESP32开发指南
 
 ## 四、实战项目
 
@@ -182,8 +179,7 @@ display.show()
 ```python
 
 > 安装 sh1106 库：`mip.install("sh1106")`
-
-description: ESP32开发指南
+description:ESP32开发指南
 
 ## 五、I2C 地址冲突排查
 
@@ -215,8 +211,7 @@ i2c1 = I2C(1, scl=Pin(9), sda=Pin(8))   # 总线1：传感器
 
 # 方案2：使用 I2C MUX（ TCA9548A ）切换通道
 ```
-
-description: ESP32开发指南
+description:ESP32开发指南
 
 ## 六、低功耗优化 — 深度睡眠模式
 
@@ -247,8 +242,7 @@ rtc.memory(b"state_data_here")
 # 唤醒后读取
 data = rtc.memory()
 ```
-
-description: ESP32开发指南
+description:ESP32开发指南
 
 ## 七、参考资源
 
@@ -256,7 +250,6 @@ description: ESP32开发指南
 - sh1106 MicroPython 库：https://github.com/nickovchinnikov/micropython-sh1106
 - ESP32-C3 Super Mini OLED GitHub：https://github.com/ESP32Home/oled_042
 - randomnerdtutorials.com：ESP32 OLED 教程
-
-description: ESP32开发指南
+description:ESP32开发指南
 
 *文档版本：v1.0*

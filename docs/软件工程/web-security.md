@@ -10,7 +10,7 @@ tags:
 
 > 保护 Web 应用
 
----
+***
 
 ## XSS
 
@@ -49,6 +49,6 @@ query = f"SELECT * FROM users WHERE id = {user_id}"
 cursor.execute("SELECT * FROM users WHERE id = ?", (user_id,))
 ```
 
----
+***
 
 *安全是 Web 开发的重中之重*

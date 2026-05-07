@@ -11,7 +11,7 @@ tags:
 
 > 分布式系统架构
 
----
+***
 
 ## 原则
 
@@ -46,6 +46,6 @@ service UserService {
 - etcd
 - Eureka
 
----
+***
 
 *微服务让系统更灵活*

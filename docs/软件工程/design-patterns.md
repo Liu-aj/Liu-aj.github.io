@@ -10,7 +10,7 @@ tags:
 
 > 常见设计模式
 
----
+***
 
 ## 单例模式
 
@@ -54,6 +54,6 @@ class Subject:
             observer.update(self._state)
 ```
 
----
+***
 
 *设计模式是经验的积累*

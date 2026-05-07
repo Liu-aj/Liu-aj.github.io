@@ -11,7 +11,7 @@ tags:
 
 > 实时双向通信
 
----
+***
 
 ## 特点
 
@@ -45,6 +45,6 @@ async def connect():
         response = await ws.recv()
 ```
 
----
+***
 
 *WebSocket 让实时应用更简单*

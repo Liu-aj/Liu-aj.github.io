@@ -12,7 +12,7 @@ tags:
 
 > 常用命令与配置快速查阅
 
----
+***
 
 ## Git
 
@@ -103,6 +103,6 @@ idf.py -p /dev/ttyUSB0 flash
 idf.py monitor
 ```
 
----
+***
 
 *持续更新中...*

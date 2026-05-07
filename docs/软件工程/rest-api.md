@@ -11,7 +11,7 @@ tags:
 
 > 构建好的 REST API
 
----
+***
 
 ## 资源命名
 
@@ -53,6 +53,6 @@ GET /users?cursor=abc123
 GET /users?role=admin&sort=-created_at
 ```
 
----
+***
 
 *好的 API 设计是好的用户体验*

@@ -56,7 +56,7 @@ bundler --version
 # 输出类似：Bundler 2.5.6
 ```
 
----
+***
 
 ## 三、本地搭建步骤
 
@@ -94,7 +94,7 @@ jekyll s
 > jekyll serve --livereload
 > ```
 
----
+***
 
 ## 四、_config.yml 配置详解
 
@@ -143,7 +143,7 @@ paginate_path: "/page:num/"  # 分页路径
 | `timezone` | 时区 | `Asia/Shanghai` |
 | `paginate` | 分页数量 | 5、10、20 |
 
----
+***
 
 ## 五、目录结构说明
 
@@ -176,7 +176,7 @@ paginate_path: "/page:num/"  # 分页路径
 | `assets/` | CSS、JS、图片等静态资源 |
 | `_site/` | Jekyll 生成的最终网站（上传到 GitHub 的内容） |
 
----
+***
 
 ## 六、写文章（Markdown 格式）
 
@@ -244,7 +244,7 @@ Jekyll 支持 Liquid 模板语法：
 {{ page.date | date: %Y年%m月%d日 }}
 ```bash
 
----
+***
 
 ## 七、部署到 GitHub Pages
 
@@ -289,7 +289,7 @@ git push -u origin main
    - CNAME 记录：`www` → `yourusername.github.io`
    - A 记录：`@` → `185.199.108.153`（GitHub IP）
 
----
+***
 
 ## 八、常见问题与技巧
 

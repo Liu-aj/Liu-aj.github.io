@@ -11,7 +11,7 @@ tags:
 
 > 提升命令行效率
 
----
+***
 
 ## 文本处理
 
@@ -66,6 +66,6 @@ export VAR=value
 echo 'export PATH=$PATH:/new/path' >> ~/.bashrc
 ```
 
----
+***
 
 *掌握命令行，效率翻倍*

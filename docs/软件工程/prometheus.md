@@ -11,7 +11,7 @@ tags:
 
 > 云原生监控系统
 
----
+***
 
 ## 安装
 
@@ -43,6 +43,6 @@ scrape_configs:
 | memory_usage_bytes | 内存使用 |
 | disk_read_bytes_total | 磁盘读取 |
 
----
+***
 
 *Prometheus 是云原生监控的标准*

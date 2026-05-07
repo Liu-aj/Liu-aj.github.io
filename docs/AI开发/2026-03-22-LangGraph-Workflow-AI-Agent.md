@@ -139,7 +139,7 @@ from IPython.display import Image, display
 display(Image(app.get_graph().draw_mermaid_png()))
 ```
 
----
+***
 
 ## 三、实战：多步审批工作流
 
@@ -304,7 +304,7 @@ print(state2["result"])  # 输出：成功预订航班 MU1234
 | `checkpointer` | 持久化状态，支持断点续传 |
 | `thread_id` | 区分不同的执行实例 |
 
----
+***
 
 ## 四、实战：并行子任务编排
 
@@ -430,7 +430,7 @@ asyncio.run(main())
 | 串行执行 | 2.3 秒 | 三个任务依次执行 |
 | 并行执行 | 1.0 秒 | 自动识别最长路径 |
 
----
+***
 
 ## 五、生产部署
 
@@ -522,7 +522,7 @@ app.invoke(
 )
 ```python
 
----
+***
 
 ## 六、最佳实践与避坑指南
 
@@ -587,7 +587,7 @@ def handle_result(state: State) -> State:
     return normal_response(state)
 ```
 
----
+***
 
 ## 总结
 
@@ -612,7 +612,7 @@ LangGraph 通过**状态图**的方式，解决了 Agent 开发中的核心痛�
 
 LangGraph 不是银弹，但在需要**可控、可预测、可调试**的 Agent 场景中，它是目前最优解之一。
 
----
+***
 
 ## 参考资料
 
@@ -621,7 +621,7 @@ LangGraph 不是银弹，但在需要**可控、可预测、可调试**的 Agent
 - [LangSmith 监控平台](https://www.langchain.com/langsmith)
 - [LangGraph Examples](https://github.com/langchain-ai/langgraph/tree/main/examples)
 
----
+***
 
 > 💡 **作者注**：本文基于 LangGraph 2026 版本编写，主要特性包括 Command API、interrupt() 等。生产环境建议配合 LangSmith 使用，获得完整的可观测性。
 

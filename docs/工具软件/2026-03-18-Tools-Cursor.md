@@ -14,7 +14,7 @@ Cursor 是由 **Anysphere** 公司开发的 AI 原生代码编辑器，基于 VS
 
 根据官方数据，Cursor 已被**财富 500 强中超过一半**的公司采用，Salesforce 的 20,000 名开发者中有**超过 90%** 在使用 Cursor。
 
----
+***
 
 # 2️⃣ 产品定位：Cursor vs Claude Code
 
@@ -25,7 +25,7 @@ Cursor 是由 **Anysphere** 公司开发的 AI 原生代码编辑器，基于 VS
 | 适用人群 | 偏好 GUI 界面的开发者 | 喜欢终端操作的高级用户 |
 | 收费模式 | Hobby Free / Pro $20-60/月 / Teams $40/用户/月 / Enterprise Custom | Claude 订阅或 Anthropic Console 账户 |
 
----
+***
 
 # 3️⃣ 核心功能解析
 
@@ -53,7 +53,7 @@ function calculateTotal(items) {
 - 如果建议不完全正确，可以继续编辑后再次触发
 - Tab 会学习你的编码风格，使用越多越精准
 
----
+***
 
 ## 💬 Chat — 对话式编程
 
@@ -77,7 +77,7 @@ AI: 分析 UserService 中的 login 方法后，我发现以下问题：
 3. Token 过期处理逻辑不完整
 ```
 
----
+***
 
 ## 🎼 Composer — 多文件编辑代理
 
@@ -98,7 +98,7 @@ Composer 分析：
 4. 添加单元测试 LoginRateLimitTest.java
 ```
 
----
+***
 
 ## 🤖 Agent — 自主编程代理
 
@@ -120,7 +120,7 @@ Agent 是 Cursor 的旗舰功能，它可以自主运行、并行处理任务：
 - 适合简单重复性工作，但复杂逻辑仍需人工确认
 - 支持多轮对话和上下文记忆
 
----
+***
 
 ## ✏️ Inline Edit — 行内编辑
 
@@ -160,7 +160,7 @@ public void process(List<String> items) {
 }
 ```
 
----
+***
 
 # 4️⃣ 附加功能
 
@@ -176,7 +176,7 @@ public void process(List<String> items) {
 - 命令行版本，支持自动化脚本
 - 可与 CI/CD 流程集成
 
----
+***
 
 # 5️⃣ 性能对比
 
@@ -187,7 +187,7 @@ public void process(List<String> items) {
 | 内存占用 | 较高 (500MB+) | 极低 (50MB) |
 | 离线能力 | 部分功能可用 | 需要网络 |
 
----
+***
 
 # 6️⃣ 定价方案（2026 最新）
 
@@ -206,7 +206,7 @@ public void process(List<String> items) {
 - 大量 AI 辅助开发：Pro+ 或 Ultra
 - 企业级部署：Enterprise
 
----
+***
 
 # 7️⃣ 实战技巧
 
@@ -237,7 +237,7 @@ public void process(List<String> items) {
 - 引用文件而非复制内容
 - 团队共享，提交到 git
 
----
+***
 
 ## 技巧二：有效的提示词编写
 
@@ -263,7 +263,7 @@ public void process(List<String> items) {
 | 说明优先级 | "优先保证可读性" |
 | 提供测试用例 | "输入 X 应返回 Y" |
 
----
+***
 
 ## 技巧三：测试驱动开发 (TDD) 工作流
 
@@ -280,7 +280,7 @@ public void process(List<String> items) {
 AI 自动运行测试、修复问题、直到全部通过
 ```
 
----
+***
 
 ## 技巧四：代码库理解
 
@@ -300,7 +300,7 @@ AI: 分析代码库后发现：
 - src/auth/TokenProvider.java
 ```
 
----
+***
 
 # 8️⃣ 扩展能力
 
@@ -312,7 +312,7 @@ AI: 分析代码库后发现：
 - **Slack** 集成：消息通知
 - **数据库** 连接：查询和操作
 
----
+***
 
 ## 🛠️ Skills
 
@@ -327,7 +327,7 @@ AI: 分析代码库后发现：
 3. 错误响应包含错误码和详细信息
 ```
 
----
+***
 
 ## ⚙️ Hooks
 
@@ -342,7 +342,7 @@ AI: 分析代码库后发现：
 }
 ```markdown
 
----
+***
 
 # 9️⃣ 常见陷阱和最佳实践
 
@@ -355,7 +355,7 @@ AI: 分析代码库后发现：
 - 编写测试验证关键逻辑
 - 使用 Agent Review 功能进行二次检查
 
----
+***
 
 ## ⚠️ 陷阱二：Context 污染
 
@@ -366,7 +366,7 @@ AI: 分析代码库后发现：
 - 使用 `@Past Chats` 引用历史而非复制
 - 定期清理无关上下文
 
----
+***
 
 ## ⚠️ 陷阱三：过度依赖 AI
 
@@ -377,7 +377,7 @@ AI: 分析代码库后发现：
 - 对复杂问题先自己思考方案
 - 把 AI 当作助手而非替代者
 
----
+***
 
 ## ⚠️ 陷阱四：忽略规则文件维护
 
@@ -388,7 +388,7 @@ AI: 分析代码库后发现：
 - 发现问题及时更新
 - 保持 Rules 简洁聚焦
 
----
+***
 
 ## ✅ 最佳实践总结
 
@@ -399,7 +399,7 @@ AI: 分析代码库后发现：
 5. **定期 Review**：使用内置审查工具检查代码质量
 6. **团队协作**：共享 Rules、Commands 和 Skills
 
----
+***
 
 # 🔟 适用场景分析
 
@@ -417,7 +417,7 @@ AI: 分析代码库后发现：
 - 📱 需要在移动端编程（iOS app）
 - 🌐 需要 Web 端访问
 
----
+***
 
 # 总结
 
@@ -432,7 +432,7 @@ AI: 分析代码库后发现：
 
 > **一句话总结**：Cursor 让写代码从"敲击键盘"变成"表达意图"，从"搜索答案"变成"对话解决"。
 
----
+***
 
 **参考资源：**
 - [Cursor 官网](https://cursor.com)
@@ -440,6 +440,6 @@ AI: 分析代码库后发现：
 - [Cursor 最佳实践博客](https://cursor.com/blog/agent-best-practices)
 - [Cursor 定价页面](https://cursor.com/pricing)
 
----
+***
 
 *本文基于 Cursor 官方文档和实践经验撰写，技术细节以官方最新发布为准。*

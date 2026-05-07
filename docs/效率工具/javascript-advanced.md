@@ -11,7 +11,7 @@ tags:
 
 > 整理 JavaScript 高级用法
 
----
+***
 
 ## Async/Await
 
@@ -67,6 +67,6 @@ promise
     .catch(error => console.error(error));
 ```
 
----
+***
 
 *JavaScript 是 Web 的语言*

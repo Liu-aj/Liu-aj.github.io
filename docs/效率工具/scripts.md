@@ -11,7 +11,7 @@ tags:
 
 > 收集常用脚本，提升效率
 
----
+***
 
 ## Shell 脚本
 
@@ -75,6 +75,6 @@ def sync_files(src, dst):
                 shutil.copy2(item, dst_file)
 ```
 
----
+***
 
 *持续收集...*

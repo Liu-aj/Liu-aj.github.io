@@ -43,7 +43,7 @@ title: AI Agent 错误处理实战：重试、熔断与优雅降级
 
 **没有错误处理 = 一个错误可能引发无限循环，最终导致系统崩溃。**
 
----
+***
 
 ## 二、重试机制：第一道防线
 
@@ -187,7 +187,7 @@ RETRY_CONFIG = {
 }
 ```
 
----
+***
 
 ## 三、熔断器：防止级联失败
 
@@ -380,7 +380,7 @@ class LLMAgent:
             return self._fallback_tool_response(tool_name, params)
 ```
 
----
+***
 
 ## 四、优雅降级：兜底策略
 
@@ -596,7 +596,7 @@ class AgentWithDegradation:
         pass
 ```
 
----
+***
 
 ## 五、工具调用容错
 
@@ -969,7 +969,7 @@ class ToolCallValidator:
         return None
 ```markdown
 
----
+***
 
 ## 六、生产实战：监控与告警
 
@@ -1285,7 +1285,7 @@ groups:
 }
 ```markdown
 
----
+***
 
 ## 七、最佳实践总结
 
@@ -1384,7 +1384,7 @@ AGENT_ERROR_HANDLING_CONFIG = {
 }
 ```
 
----
+***
 
 ## 八、结语
 
@@ -1402,7 +1402,7 @@ AI Agent 的错误处理不是"锦上添花"，而是"生死攸关"。
 没有错误处理的 Agent，就像一辆没有刹车的跑车——
 性能再好，也不敢上路。
 
----
+***
 
 ## 参考资料
 
@@ -1412,6 +1412,6 @@ AI Agent 的错误处理不是"锦上添花"，而是"生死攸关"。
 - [OpenAI API Best Practices](https://platform.openai.com/docs/guides/error-codes)
 - [Anthropic API Errors](https://docs.anthropic.com/claude/reference/errors)
 
----
+***
 
 *本文基于 OpenClaw Agent Team 的实践经验总结，感谢所有踩过的坑。*

@@ -11,7 +11,7 @@ tags:
 
 > 定义多容器应用
 
----
+***
 
 ## 基本配置
 
@@ -49,6 +49,6 @@ docker-compose logs -f      # 查看日志
 docker-compose exec web sh  # 进入容器
 ```
 
----
+***
 
 *Docker Compose 简化多容器管理*

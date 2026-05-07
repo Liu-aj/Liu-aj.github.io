@@ -11,7 +11,7 @@ tags:
 
 > 以 Git 为核心的运维
 
----
+***
 
 ## 原则
 
@@ -36,6 +36,6 @@ spec:
     namespace: default
 ```
 
----
+***
 
 *GitOps 让部署更安全*

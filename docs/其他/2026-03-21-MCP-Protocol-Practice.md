@@ -47,7 +47,7 @@ title: MCP 协议实战：从 Function Calling 到企业级工具调用的范式
 | 工具共享 | 手动复制 | Server 复用 |
 | 生态成熟度 | 高 | 成长中 |
 
----
+***
 
 ## 实战一：构建 MCP Server
 
@@ -165,7 +165,7 @@ async def read_resource(uri: str) -> str:
     raise ValueError(f"未知资源：{uri}")
 ```
 
----
+***
 
 ## 实战二：MCP Client 集成
 
@@ -225,7 +225,7 @@ async def handle_tool_response(result: list):
             print(f"资源：{content.uri}")
 ```bash
 
----
+***
 
 ## 实战三：企业级 MCP 部署
 
@@ -361,7 +361,7 @@ await gateway.connect_all()
 weather = await gateway.call_tool("get_weather", {"city": "北京"})
 ```markdown
 
----
+***
 
 ## 生产环境部署建议
 
@@ -464,7 +464,7 @@ services:
       replicas: 2
 ```
 
----
+***
 
 ## 2026 年 MCP 生态趋势
 
@@ -511,7 +511,7 @@ mcp_server_code = await llm.generate(prompt)
 # 生成的代码可以直接部署
 ```markdown
 
----
+***
 
 ## 总结
 
@@ -532,7 +532,7 @@ mcp_server_code = await llm.generate(prompt)
 
 MCP 协议代表了 AI Agent 工具调用的新范式。从硬编码到协议化，从单一工具到联邦市场，MCP 正在重塑企业级 AI 应用的基础设施。
 
----
+***
 
 **参考资料：**
 

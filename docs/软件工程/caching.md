@@ -11,7 +11,7 @@ tags:
 
 > 提升性能
 
----
+***
 
 ## 缓存策略
 
@@ -40,6 +40,6 @@ def get_user(user_id):
 - LRU (Least Recently Used)
 - LFU (Least Frequently Used)
 
----
+***
 
 *缓存是性能优化的利器*

@@ -136,7 +136,7 @@ eza -l --time-style=relative
 eza -l --mounts
 ```bash
 
----
+***
 
 ## fd - 更友好的 find 替代品
 
@@ -255,7 +255,7 @@ fd -l pattern
 fd -p '.*/lesson-\d+/[a-z]+\.(jpg|png)'
 ```bash
 
----
+***
 
 ## ripgrep - 超快的 grep 替代品
 
@@ -387,7 +387,7 @@ rg --column pattern
 rg --auto-hybrid-regex pattern
 ```bash
 
----
+***
 
 ## btop - 颜值超高的系统监控工具
 
@@ -501,7 +501,7 @@ btop --config /path/to/config
 btop --boxes cpu mem
 ```bash
 
----
+***
 
 ## 总结
 
@@ -564,6 +564,6 @@ curl -fLo "Hack Nerd Font.ttf" https://github.com/ryanoasis/nerd-fonts/raw/maste
 
 安装后在终端设置中选择该字体即可。
 
----
+***
 
 这 5 个工具已经成为我日常终端工作不可或缺的一部分。它们不仅提升了效率，也让终端体验更加愉悦。如果你还没有尝试过，强烈推荐安装体验！

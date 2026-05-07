@@ -11,7 +11,7 @@ tags:
 
 > 数据可视化与仪表盘
 
----
+***
 
 ## 数据源
 
@@ -51,6 +51,6 @@ groups:
           summary: High CPU usage detected
 ```
 
----
+***
 
 *Grafana 让监控数据可视化*

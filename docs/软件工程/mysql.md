@@ -11,7 +11,7 @@ tags:
 
 > 流行的开源关系数据库
 
----
+***
 
 ## 基本操作
 
@@ -41,6 +41,6 @@ slow_query_log = 1
 long_query_time = 2
 ```
 
----
+***
 
 *MySQL 是 Web 应用最流行的数据库*

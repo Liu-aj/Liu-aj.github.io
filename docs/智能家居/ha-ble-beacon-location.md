@@ -11,7 +11,7 @@ tags:
 
 > 更新日期：2026-05-06
 
----
+***
 
 ## 一、技术原理
 
@@ -52,7 +52,7 @@ iBeacon 是 BLE 广播包的标准化格式：
 | **房间级定位** | BLE Tag + 多节点 RSSI 对比 | 房间级别 |
 | **物品追踪** | 单点 BLE Tag 信号阈值 | 大概区域 |
 
----
+***
 
 ## 二、硬件方案
 
@@ -93,7 +93,7 @@ iBeacon 是 BLE 广播包的标准化格式：
 - 避免放在金属配电箱内
 - 距地面 1-1.5 米
 
----
+***
 
 ## 三、HA 集成方案对比
 
@@ -134,7 +134,7 @@ iBeacon 是 BLE 广播包的标准化格式：
 - ✅ 配置简单，HA 官方支持思路
 - ❌ 定位精度一般，依赖 RSSI 稳定性
 
----
+***
 
 ### 方案 B：ESPresense 集成
 
@@ -184,7 +184,7 @@ iBeacon 是 BLE 广播包的标准化格式：
 | 适合场景 | 简单存在检测 | 精准房间定位 |
 | MQTT 必需？ | 否 | 是 |
 
----
+***
 
 ## 四、完整配置流程
 
@@ -245,7 +245,7 @@ automation:
         entity_id: light.living_room_main
 ```markdown
 
----
+***
 
 ## 五、实战应用场景
 
@@ -290,7 +290,7 @@ automation:
 
 配合宠物佩戴的 BLE Tag，设置"宠物进入某区域"触发通知
 
----
+***
 
 ## 六、精度优化技巧
 
@@ -302,7 +302,7 @@ automation:
 | **睡眠区域排除** | 夜间关闭部分自动化，避免频繁触发 |
 | **信号滤波** | 使用指数移动平均平滑 RSSI 数据 |
 
----
+***
 
 ## 七、参考资源
 
@@ -311,6 +311,6 @@ automation:
 - ESPresense：https://esphome.io/projects?query=espresense
 - Home Assistant BLE 追踪：https://www.home-assistant.io/integrations/bluetooth_le_tracker/
 
----
+***
 
 *文档版本：v1.0*

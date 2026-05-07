@@ -12,7 +12,7 @@ tags:
 
 > 配置高效的终端环境
 
----
+***
 
 ## Shell
 
@@ -65,6 +65,6 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
 ```
 
----
+***
 
 *好的终端环境让效率提升*

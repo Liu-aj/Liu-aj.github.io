@@ -11,7 +11,7 @@ tags:
 
 > 整理常见问题及解答
 
----
+***
 
 ## 网站相关
 
@@ -27,7 +27,7 @@ tags:
 ### Q: 文档有错误怎么办？
 **A:** 欢迎提交 [GitHub Issue](https://github.com/Liu-aj/Liu-aj.github.io/issues) 反馈。
 
----
+***
 
 ## 技术相关
 
@@ -40,7 +40,7 @@ tags:
 ### Q: Home Assistant 如何接入 Zigbee 设备？
 **A:** 使用 [Zigbee2MQTT](zigbee2mqtt-guide-2026/) 方案，将 Zigbee 设备转为 MQTT 接入 Home Assistant。
 
----
+***
 
 ## 其他
 
@@ -50,6 +50,6 @@ tags:
 ### Q: 可以参与贡献吗？
 **A:** 可以，请参考 [贡献指南](contributing/)。
 
----
+***
 
 *更多问题欢迎提交 Issue*

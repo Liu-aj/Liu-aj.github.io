@@ -33,7 +33,7 @@ title: AI Agent 可观测性 2.0：用 OpenTelemetry 打造全链路追踪体系
 | 关键决策点必追踪 | 工具选择、记忆检索、LLM 调用 |
 | 错误异常完整记录 | 幻觉检测、失败原因、超时重试 |
 
----
+***
 
 ## 二、OpenTelemetry 基础配置
 
@@ -62,7 +62,7 @@ trace.set_tracer_provider(provider)
 tracer = trace.get_tracer("ai-agent")
 ```python
 
----
+***
 
 ## 三、LLM 调用追踪
 
@@ -118,7 +118,7 @@ def chat_with_memory(user_input: str, conversation_id: str):
         return response.choices[0].message.content
 ```
 
----
+***
 
 ## 四、工具调用追踪
 
@@ -153,7 +153,7 @@ def select_tool(user_query: str, available_tools: list) -> str:
         return selected
 ```python
 
----
+***
 
 ## 五、记忆检索追踪
 
@@ -187,7 +187,7 @@ memory_hit_counter = meter.create_counter("memory.hit.count")
 memory_latency = meter.create_histogram("memory.retrieval.latency", unit="ms")
 ```
 
----
+***
 
 ## 六、幻觉检测与告警
 
@@ -218,7 +218,7 @@ def check_hallucination(response: str, sources: list) -> bool:
   expr: rate(memory_hit[1h]) / (rate(memory_hit[1h]) + rate(memory_miss[1h])) < 0.3
 ```python
 
----
+***
 
 ## 七、生产环境最佳实践
 
@@ -261,7 +261,7 @@ def sanitize(text: str, max_len: int = 500) -> str:
 | **阿里云 SLS** | 本地化合规 | 国内企业 |
 | **Jaeger** | 开源轻量 | 开发测试 |
 
----
+***
 
 ## 八、完整示例
 
@@ -315,7 +315,7 @@ async def handle_query(query: str, user_id: str):
         return response
 ```
 
----
+***
 
 ## 九、2026 年趋势
 
@@ -323,7 +323,7 @@ async def handle_query(query: str, user_id: str):
 - **预测性可观测性**：Token 消耗、延迟、幻觉率预测
 - **多模态 Trace**：图像、音频、视频追踪
 
----
+***
 
 ## 总结
 
@@ -346,13 +346,13 @@ async def handle_query(query: str, user_id: str):
 4. **建立 SLO**：定义响应时间、准确率标准
 5. **持续迭代**：根据故障复盘优化
 
----
+***
 
 ## 参考资料
 
 - [OpenTelemetry 官方文档](https://opentelemetry.io/docs/)
 - [Honeycomb: Observability 2.0](https://www.honeycomb.io/blog/observability-2-0)
 
----
+***
 
 > 代码已在 Python 3.11 + OpenTelemetry 1.22 验证通过。

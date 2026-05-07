@@ -11,7 +11,7 @@ tags:
 
 > 强大的开源关系数据库
 
----
+***
 
 ## 基本操作
 
@@ -56,6 +56,6 @@ CREATE INDEX idx_name_lower ON users(LOWER(name));
 CREATE INDEX idx_active ON users(created_at) WHERE is_active = true;
 ```
 
----
+***
 
 *PostgreSQL 是最强大的开源数据库*

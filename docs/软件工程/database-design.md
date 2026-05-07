@@ -10,7 +10,7 @@ tags:
 
 > 数据库规范化与性能优化
 
----
+***
 
 ## 规范化
 
@@ -61,6 +61,6 @@ EXPLAIN SELECT * FROM users WHERE email = 'test@example.com';
 CREATE INDEX idx_email ON users(email);
 ```
 
----
+***
 
 *好的数据库设计是系统性能的基础*

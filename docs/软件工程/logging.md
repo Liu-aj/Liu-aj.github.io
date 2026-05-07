@@ -11,7 +11,7 @@ tags:
 
 > 日志记录与管理
 
----
+***
 
 ## Python 日志
 
@@ -57,6 +57,6 @@ logger.info('hello world');
 - Loki + Grafana
 - EFK (Elasticsearch + Fluentd + Kibana)
 
----
+***
 
 *好的日志是问题排查的关键*

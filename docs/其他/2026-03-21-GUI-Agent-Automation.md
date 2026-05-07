@@ -101,7 +101,7 @@ async def multi_agent_workflow():
     return await Agent(task=f"生成推荐报告：{analysis}", llm=llm).run()
 ```
 
----
+***
 
 ## 4. 实战二：Playwright MCP 集成
 
@@ -176,7 +176,7 @@ response = client.messages.create(
 | `browser_screenshot` | 截图 |
 | `browser_select` | 选择下拉框 |
 
----
+***
 
 ## 5. 实战三：桌面应用自动化
 
@@ -232,7 +232,7 @@ async def erp_automation():
 asyncio.run(erp_automation())
 ```python
 
----
+***
 
 ## 6. 生产环境部署建议
 
@@ -307,7 +307,7 @@ GUI_AGENT_LATENCY = Histogram(
 )
 ```markdown
 
----
+***
 
 ## 7. 2026 年新趋势
 
@@ -339,7 +339,7 @@ agent = MultiDeviceAgent(
 
 Agent 从用户操作中学习，自动创建流程模板。
 
----
+***
 
 ## 8. 总结
 
@@ -369,10 +369,10 @@ Agent 从用户操作中学习，自动创建流程模板。
 | Playwright MCP | https://github.com/anthropics/mcp-server-playwright |
 | Claude Computer Use | https://www.anthropic.com/computer-use |
 
----
+***
 
 > 💡 **下一步**：选择一个适合的场景（数据采集、表单填写），从 Browser Use 开始动手实践。
 
----
+***
 
 *本文发布于 2026 年 3 月，技术发展日新月异，请以官方最新文档为准。*

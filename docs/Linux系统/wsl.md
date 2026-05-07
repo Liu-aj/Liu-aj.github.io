@@ -12,7 +12,7 @@ tags:
 
 > Windows 上的 Linux 子系统
 
----
+***
 
 ## 安装
 
@@ -58,6 +58,6 @@ sudo usermod -aG docker $USER
 # 开启 Docker Desktop WSL integration
 ```
 
----
+***
 
 *WSL 让 Windows 也能愉快地使用 Linux*

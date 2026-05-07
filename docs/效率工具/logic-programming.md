@@ -10,7 +10,7 @@ tags:
 
 > 声明式编程范式
 
----
+***
 
 ## Prolog
 
@@ -24,6 +24,6 @@ grandparent(X, Y) :- parent(X, Z), parent(Z, Y).
 true.
 ```
 
----
+***
 
 *逻辑编程适合 AI 和规则系统*

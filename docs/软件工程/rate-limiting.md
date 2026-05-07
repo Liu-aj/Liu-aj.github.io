@@ -10,7 +10,7 @@ tags:
 
 > 保护系统资源
 
----
+***
 
 ## 算法
 
@@ -46,6 +46,6 @@ class TokenBucket:
         return False
 ```
 
----
+***
 
 *限流保护系统稳定性*

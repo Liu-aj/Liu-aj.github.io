@@ -11,7 +11,7 @@ tags:
 
 > 快速定位和解决问题
 
----
+***
 
 ## Python
 
@@ -55,6 +55,6 @@ tail -f /var/log/syslog
 journalctl -u service
 ```
 
----
+***
 
 *调试是开发的核心技能*

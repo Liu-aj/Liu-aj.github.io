@@ -11,7 +11,7 @@ tags:
 
 > 更新日期：2026-05-06
 
----
+***
 
 ## 一、Card-mod 插件安装与配置
 
@@ -40,7 +40,7 @@ frontend:
 
 > card-mod 依赖 Lovelace UI，请确保 HA 版本 >= 2024.3
 
----
+***
 
 ## 二、2026 社区精选主题推荐
 
@@ -60,7 +60,7 @@ frontend:
 - **仓库**：https://github.com/com片/bubble-card
 - **特点**：弹出式卡片设计，悬停显示详情，适合做信息聚合面板
 
----
+***
 
 ### 信息密度风格
 
@@ -81,7 +81,7 @@ frontend:
 - **特点**：经典科幻风格，适合树莓派小屏
 - **适合**：个性化玩家
 
----
+***
 
 ### 2026 年新晋主题
 
@@ -91,7 +91,7 @@ frontend:
 | **soft-ui-dark** | 柔和暗色，卡片玻璃化 | 社区精选 |
 | **ios-themes** | iOS 17 风格，动态壁纸 | 社区精选 |
 
----
+***
 
 ## 三、主题定制实战步骤
 
@@ -132,7 +132,7 @@ card_mod:
     }
 ```
 
----
+***
 
 ## 四、新手常见避坑指南
 
@@ -180,7 +180,7 @@ card_mod:
 4. 最终效果通过 YAML 版本控制（可回溯）
 ```
 
----
+***
 
 ## 五、Card-mod 常用样式代码片段
 
@@ -220,7 +220,7 @@ card_mod:
     }
 ```
 
----
+***
 
 ## 六、参考资源
 
@@ -229,6 +229,6 @@ card_mod:
 - HA 社区主题帖：https://community.home-assistant.io/c/themes/46
 - 2026 HA Dashboard 刷新讨论：https://www.reddit.com/r/homeassistant/comments/1qlb9rr/
 
----
+***
 
 *文档版本：v1.0 | 建议配合 HA 2026.5+ 使用*

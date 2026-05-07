@@ -9,7 +9,7 @@ tags:
 
 > 从数据中学习
 
----
+***
 
 ## 类型
 
@@ -34,6 +34,6 @@ model.fit(X_train, y_train)
 predictions = model.predict(X_test)
 ```
 
----
+***
 
 *机器学习是 AI 的基础*

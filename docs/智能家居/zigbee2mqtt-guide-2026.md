@@ -11,7 +11,7 @@ tags:
 
 > 更新日期：2026-05-06
 
----
+***
 
 ## 一、2026 年 Zigbee 设备推荐清单
 
@@ -36,7 +36,7 @@ tags:
 - 部分 Aqara 设备需要Aqara Hub 才能完整功能（但 Zigbee2MQTT 可直接接入）
 - 推荐固件版本 >= 2024
 
----
+***
 
 ### 1.2 Tuya Zigbee IR 遥控器
 
@@ -54,7 +54,7 @@ tags:
 - 不能双向反馈（不知道空调是否真的开了）
 - 建议配合温度传感器做闭环控制
 
----
+***
 
 ### 1.3 烟雾报警器推荐
 
@@ -66,7 +66,7 @@ tags:
 
 **推荐 Heiman HS1SA**：性价比最高，兼容性广
 
----
+***
 
 ### 1.4 其他高性价比设备
 
@@ -78,7 +78,7 @@ tags:
 | **智能墙壁开关** | 绿米 T1/T2 | 单火线版适合改造，无需零线 |
 | **LED 调光模块** | 绿米 LED Driver | 可调色温，接入 HA 后做日光同步 |
 
----
+***
 
 ## 二、Zigbee Mesh 网络优化
 
@@ -125,7 +125,7 @@ Zigbee Mesh 网络的核心特性：
 | 无线摄像头 | 更改 Zigbee 信道避开（Zigbee 频道 11-26，尝试切换） |
 | 金属外壳设备 | 协调器不要放在金属配电箱内 |
 
----
+***
 
 ## 三、Zigbee2MQTT 配置要点（2026 版本）
 
@@ -173,7 +173,7 @@ advanced:
 5. 看到新设备出现 → 记录 friendly_name
 6. 在 HA 中自动出现实体
 
----
+***
 
 ## 四、常见问题排查
 
@@ -212,7 +212,7 @@ Devices → 选择设备 → 右上角 "Update" 或 "Check for updates"
 - 下载最新固件（Zigbee2MQTT 官网兼容列表）
 - 通过 flash programmer 或 Z2M 内置工具更新
 
----
+***
 
 ## 五、参考资源
 
@@ -221,6 +221,6 @@ Devices → 选择设备 → 右上角 "Update" 或 "Check for updates"
 - HA 社区论坛：https://community.home-assistant.io/
 - ESP32 Zigbee 系列对比：见 `docs/esp32-family-2026.md`
 
----
+***
 
 *文档版本：v1.0 | 推荐配合 CC2652 Coordinator 使用*

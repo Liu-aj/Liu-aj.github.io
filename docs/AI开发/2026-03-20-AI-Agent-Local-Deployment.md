@@ -34,7 +34,7 @@ title: AI Agent 本地部署实战：Ollama + LangGraph 隐私优先工作流
 
 > 💡 **提示**：如果只是入门体验，8GB 内存 + 无显卡的笔记本也能运行 3B 模型，只是速度较慢。
 
----
+***
 
 ## 3. 实战一：Ollama 本地部署
 
@@ -134,7 +134,7 @@ curl http://localhost:11434/api/chat -d '{
 | `num_gpu` | GPU 层数 | -1 (自动) | 按显卡调整 |
 | `num_thread` | CPU 线程数 | 自动 | CPU 核心数 |
 
----
+***
 
 ## 4. 实战二：LangGraph Agent 搭建
 
@@ -326,7 +326,7 @@ with open("agent_workflow.png", "wb") as f:
      └──────────────┘
 ```python
 
----
+***
 
 ## 5. 实战三：RAG 知识库集成
 
@@ -579,7 +579,7 @@ python rag_agent.py
 来源: docs/员工手册.pdf, docs/请假制度.md
 ```bash
 
----
+***
 
 ## 6. 实战四：企业级部署
 
@@ -797,7 +797,7 @@ OLLAMA_NUM_PARALLEL=4
 OLLAMA_MAX_LOADED_MODELS=2
 ```bash
 
----
+***
 
 ## 7. 生产环境最佳实践
 
@@ -946,7 +946,7 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
----
+***
 
 ## 8. 2026 年本地部署新趋势
 
@@ -1036,7 +1036,7 @@ selector = ModelSelector()
 model = selector.get_model("请详细分析这篇文章的核心观点")
 ```
 
----
+***
 
 ## 9. 总结
 
@@ -1082,14 +1082,14 @@ model = selector.get_model("请详细分析这篇文章的核心观点")
 | Qwen 模型系列 | [https://qwenlm.github.io](https://qwenlm.github.io) |
 | Chroma 向量数据库 | [https://www.trychroma.com](https://www.trychroma.com) |
 
----
+***
 
 > 💡 **下一步**：完成本地部署后，您可以继续探索：
 > - 搭建多 Agent 协作系统
 > - 集成企业知识库（飞书、钉钉等）
 > - 开发专业领域 Agent（代码助手、数据分析等）
 
----
+***
 
 *本文代码已在以下环境测试通过：*
 - *Ollama 0.5.x*

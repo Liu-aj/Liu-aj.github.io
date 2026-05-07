@@ -70,7 +70,7 @@ def test_agent_response():
     assert implements_sorting_algorithm(response)  # 语义理解
 ```python
 
----
+***
 
 ## 二、AI 智能体评估五大支柱
 
@@ -281,7 +281,7 @@ class UXEvaluator:
         }
 ```python
 
----
+***
 
 ## 三、核心架构模式详解
 
@@ -535,7 +535,7 @@ class CodeWriterAgent(Agent):
 | 对等协作 | 需要多角度分析 | 高 | 低 |
 | 混合模式 | 复杂综合任务 | 高 | 中 |
 
----
+***
 
 ## 四、实战：构建评估管道
 
@@ -815,7 +815,7 @@ class AgentTestSuite:
         return comparisons
 ```
 
----
+***
 
 ## 五、生产环境最佳实践
 
@@ -1076,7 +1076,7 @@ class VersionManager:
             yaml.dump(data, f)
 ```
 
----
+***
 
 ## 总结 🎯
 
@@ -1093,6 +1093,6 @@ AI 智能体从原型到生产的跨越，需要在以下方面持续投入：
 
 希望本文的框架和代码示例，能帮助你在智能体落地之路上少走弯路。
 
----
+***
 
 *本文首发于 [技术博客]，欢迎交流讨论。代码示例已上传 GitHub：[链接]*

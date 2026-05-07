@@ -12,7 +12,7 @@ ETL是英文Extract-Transform-Load的缩写，用来描述将数据从来源端�
 
 
 用途
----
+***
 
 Kettle是一款开源的 ETL工具，纯 Java编写，绿色无需安装，数据抽取高效稳定 (数据迁移工具)。Kettle中有两种脚本文件，transformation和job。transformation完成针对数据的基础转换，job则完成整个工作流的控制。 Kettle中文名称叫水壶，该项目的主程序员MATT希望把各种数据放到一个壶里，然后以一种指定的格式流出。&#x20;
 
@@ -29,7 +29,7 @@ KITCHEN：允许你批量使用由Chef设计的任务 (例如使用一个时间�
 
 
 安装
----
+***
 
 [下载地址](https://www.hitachivantara.com/en-us/products/pentaho-plus-platform/data-integration-analytics/pentaho-community-edition.html "https://www.hitachivantara.com/en-us/products/pentaho-plus-platform/data-integration-analytics/pentaho-community-edition.html")：&#x20;
 
@@ -280,7 +280,7 @@ setVariable('YESTERDAY', dateStr, 's');
   → [设置变量] MAX_ROWS=100000
 ```
 
----
+***
 
 ### 4.6 实战案例
 
@@ -339,7 +339,7 @@ ORDER BY create_time
 0 2 * * * /opt/kettle/kitchen.sh -file=/jobs/order_sync.kjb -level=Basic
 ```markdown
 
----
+***
 
 #### 案例二：用户行为日志处理
 
@@ -424,7 +424,7 @@ putRow(result);
 更新字段：page_views, total_duration, total_score
 ```
 
----
+***
 
 #### 案例三：多数据源数据合并
 
@@ -533,7 +533,7 @@ for each (u in uniqueUsers) {
 关键字段：user_id
 ```markdown
 
----
+***
 
 #### 案例四：实时数据清洗与质量检查
 
@@ -623,7 +623,7 @@ putRow(result);
   请登录系统查看详细异常数据
 ```sql
 
----
+***
 
 ### 循环处理
 
@@ -721,7 +721,7 @@ for (var i = 0; i < value; i++) {
 putRows(rows);
 ```sql
 
----
+***
 
 ### 脚本编写
 
@@ -798,7 +798,7 @@ WHERE order_date >= DATE_SUB(CURRENT_DATE, INTERVAL 30 DAY)
 CALL sp_calculate_summary(?, ?, ?);
 ```
 
----
+***
 
 ### Java脚本
 
@@ -916,7 +916,7 @@ try {
 }
 ```
 
----
+***
 
 ### JavaScript脚本
 

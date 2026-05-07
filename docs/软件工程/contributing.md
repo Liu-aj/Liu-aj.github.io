@@ -40,6 +40,6 @@ Liuaj's Wiki 是一个description: 关于与贡献 — 核心知识点与实战�
 
 MIT License
 
----
+***
 
 *联系维护者：[GitHub Issues](https://github.com/Liu-aj/Liu-aj.github.io/issues)*

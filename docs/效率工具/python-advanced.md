@@ -11,7 +11,7 @@ tags:
 
 > 整理 Python 高级用法
 
----
+***
 
 ## 装饰器
 
@@ -78,6 +78,6 @@ def process_users(users: List[Dict[str, str]]) -> Optional[str]:
     return users[0].get("name")
 ```
 
----
+***
 
 *Python 之禅：简单优于复杂*

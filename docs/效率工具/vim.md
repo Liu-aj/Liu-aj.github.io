@@ -11,7 +11,7 @@ tags:
 
 > Vi IMproved - 强大的文本编辑器
 
----
+***
 
 ## 模式
 
@@ -61,6 +61,6 @@ set mouse=a
 syntax on
 ```
 
----
+***
 
 *掌握 Vim 需要时间，但值得*
